@@ -1,4 +1,5 @@
 import { AppStyled } from "./AppStyle";
+import { Button } from "./components/common/button/Button";
 
 function App() {
   return (
