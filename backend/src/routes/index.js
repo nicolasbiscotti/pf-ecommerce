@@ -1,8 +1,7 @@
 const { Router } = require("express");
-
-const products = require("./products/products");
-const suppliers = require("./suppliers/post/suppliers");
-const categories = require("./categories/post/categories");
+const products = require("./products/products.router");
+const suppliers = require("./suppliers/suppliers.router");
+const categories = require("./categories/categories.roter");
 
 const router = Router();
 

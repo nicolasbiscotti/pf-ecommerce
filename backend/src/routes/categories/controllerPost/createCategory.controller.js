@@ -1,9 +1,6 @@
-const { Router } = require("express");
-const categories = Router();
 const { Category } = require("../../../db");
-module.exports = categories;
 
-categories.post("/", async (req, res, next) => {
+const createCategories = async (req, res, next) => {
   try {
     const { name } = req.body;
     const [category, created] = await Category.findOrCreate({
@@ -17,4 +14,6 @@ categories.post("/", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+};
+
+module.exports = createCategories;

@@ -1,14 +1,9 @@
-const { Router } = require("express");
-const createProduct = Router();
-
 const { Product, Supplier, Image, Category } = require("../../../db");
 const { isCategories } = require("../../../services/isCategory");
 const { createImages } = require("./services/createImages");
 const { createSuppliers } = require("./services/createSuppliers");
 
-module.exports = createProduct;
-
-createProduct.post("/", async (req, res, next) => {
+const createProduct = async (req, res, next) => {
   try {
     const {
       name,
@@ -50,4 +45,6 @@ createProduct.post("/", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+};
+
+module.exports = createProduct;
