@@ -26,9 +26,11 @@ El boilerplate cuenta con dos carpetas: `backend` y `frontend`. En estas carpeta
 Será necesario que creen desde psql una base de datos llamada `pf_ecommerce`, un archivo .env dentro de backend y setearlo acorde a sus propios datos ej:
 
 ```
+DB_HOST=localhost
+DB_NAME=pf_ecommerce
 DB_USER=postgres
 DB_PASSWORD=password
-DB_HOST=localhost
+PORT=3001
 ```
 
 El contenido de `frontend` fue creado usando: Create React App.
