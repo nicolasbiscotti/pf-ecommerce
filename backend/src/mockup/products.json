@@ -1,15 +1,21 @@
 {
-  "products":[
+  "products": [
     {
       "name": "Samsung Galaxy International Vs",
       "description": "Tres cámaras traseras: ultra gran angular, gran angular y teleobjetivo. Cámara delantera TrueDepth de 12mpx con modo retrato y control de profundidad. Graba y edita videos en 4K con gran nivel de detalle.",
       "mainImg": "https://rubiktheme.com/demo/emarket_demo/97-home_default/mug-the-best-is-yet-to-come.jpg",
-      "imgs": ["https://rubiktheme.com/demo/emarket_demo/98-large_default/mug-the-best-is-yet-to-come.jpg","https://rubiktheme.com/demo/emarket_demo/99-large_default/mug-the-best-is-yet-to-come.jpg","https://rubiktheme.com/demo/emarket_demo/100-large_default/mug-the-best-is-yet-to-come.jpg"],
-      "suppliers": [{
-        "name": "edwin",
-        "phone": 3335544,
-        "email": "edwin@gmail.com"
-      }],
+      "imgs": [
+        "https://rubiktheme.com/demo/emarket_demo/98-large_default/mug-the-best-is-yet-to-come.jpg",
+        "https://rubiktheme.com/demo/emarket_demo/99-large_default/mug-the-best-is-yet-to-come.jpg",
+        "https://rubiktheme.com/demo/emarket_demo/100-large_default/mug-the-best-is-yet-to-come.jpg"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
       "categories": [2],
       "salePrice": 1000,
       "purchasePrice": 500,
@@ -20,28 +26,39 @@
       "name": "Samsung Galaxy Note 10+ Plus Sm-n975u 12gb 512gb Snapdragon",
       "description": "El Samsung Galaxy Note 10+ marca la décima generación de la serie flagship de Samsung y es el modelo más poderoso de la serie Note 10. El Galaxy Note 10+ llega con una pantalla Dynamic AMOLED de 6.8 pulgadas a resolución QHD+ y está potenciado por un procesador Snapdragon 855+ en USA y China, mientras que en el resto del mundo utiliza el Exynos 9825. Con 12GB de memoria RAM y 256GB o 512GB de almacenamiento interno expandible, el Galaxy Note 10+ tiene una cámara cuádruple de 12 MP + 12 MP + 16 MP + ToF VGA en su posterior, mientras que al frente su cámara selfie es de 10 MP de gran angular y autofoco, incrustada en la pantalla perforada. El Galaxy Note 10+ completa sus características con una batería de 4300 mAh con soporte para carga rápida, parlantes stereo, lector de huellas embebido en pantalla, reconocimiento de iris, sonido HiFi, soporte para el stylus S Pen mediante Bluetooth y corre One UI con Android 9.0 Pie debajo.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
-      "imgs": ["https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp","https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp","https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp"],
-      "suppliers": [{
-        "name": "edwin",
-        "phone": 3335544,
-        "email": "edwin@gmail.com"
-      }],
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
       "categories": [2],
       "salePrice": 1500,
       "purchasePrice": 800,
       "stock": 100,
       "discount": 0
-    }, 
+    },
     {
       "name": "Pc Torre Gamer Amd Ryzen 3 3200g Ssd 480gb Ram 16gb Mon 22",
       "description": "PROCESADOR: RYZEN 3 3200G RELOJ DE AUMENTO MÁX. HASTA 4.0GHZ N.º DE NÚCLEOS DE CPU: 4. N.º DE SUBPROCESOS: 4.TARJETA DE VIDEO: VEGA 8 DE 2GB. N.º DE NÚCLEOS DE GPU: 8. MEMORIA RAM: 16GB PC DDR4 3000MHZ. BOARD PLACA : GIGABYTE GA-A320M-S2H. DISCO SOLIDO: SSD 480GB CONEXION SATA. MONITOR INCLUIDO :22 PULGADAS FULL HD (1920px X 1080px) ON HDMI & VGA. CAJA & CHASIS :MEDIA ATX METALICO (INCLUYE 1 VENTILADOR CON LUZ). FUENTE DE PODER: 780VA NORMAL. ACCESORIOS: KIT TECLADO Y MOUSE GAMER DE LUCES. SISTEMA OPERATIVO: WINDOWS 10.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_962606-MCO45570808279_042021-O.webp",
-      "imgs": ["https://http2.mlstatic.com/D_NQ_NP_610026-MCO45570780764_042021-O.webp","https://http2.mlstatic.com/D_NQ_NP_725912-MCO45570763982_042021-O.webp"],
-      "suppliers": [{
-        "name": "edwin",
-        "phone": 3335544,
-        "email": "edwin@gmail.com"
-      }],
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_610026-MCO45570780764_042021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_725912-MCO45570763982_042021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
       "categories": [1],
       "salePrice": 900,
       "purchasePrice": 400,
@@ -52,12 +69,18 @@
       "name": "Audífonos gamer Kotion G2000 negro y rojo con luz LED",
       "description": "Con micrófono incorporado. Tipo de conector: Jack 3.5 mm/USB. El largo del cable es de 2m. Sonido superior y sin límites.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_601870-MLA45260595246_032021-O.webp",
-      "imgs": ["https://http2.mlstatic.com/D_NQ_NP_845918-MLA45260588453_032021-O.webp","https://http2.mlstatic.com/D_NQ_NP_930290-MLA45260588455_032021-O.webp","https://http2.mlstatic.com/D_NQ_NP_956449-MLA45260588460_032021-O.webp"],
-      "suppliers": [{
-        "name": "edarko",
-        "phone": 1118899,
-        "email": "edarko@gmail.com"
-      }],
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_845918-MLA45260588453_032021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_930290-MLA45260588455_032021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_956449-MLA45260588460_032021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edarko",
+          "phone": 1118899,
+          "email": "edarko@gmail.com"
+        }
+      ],
       "categories": [4],
       "salePrice": 50,
       "purchasePrice": 10,
@@ -68,16 +91,130 @@
       "name": "Procesador gamer AMD Ryzen 5 5600X 100-100000065BOX de 6 núcleos y 4.6GHz de frecuencia",
       "description": "Memoria caché de 32 MB, rápida y volátil. Soporta memoria RAM DDR4. Su potencia es de 65 W. Cuenta con 12 hilos que favorecen la ejecución de múltiples programas a la vez. Procesador innovador desarrollado bajo altos estándares de calidad.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_967555-MLA45376143334_032021-O.webp",
-      "imgs": ["https://http2.mlstatic.com/D_NQ_NP_719577-MLA45376096858_032021-O.webp"],
-      "suppliers": [{
-        "name": "edarko",
-        "phone": 1118899,
-        "email": "edarko@gmail.com"
-      }],
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_719577-MLA45376096858_032021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edarko",
+          "phone": 1118899,
+          "email": "edarko@gmail.com"
+        }
+      ],
       "categories": [7],
       "salePrice": 400,
       "purchasePrice": 200,
       "stock": 40,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi Pocophone Poco X3 Pro",
+      "description": "Tiene 4 cámaras traseras de 48Mpx/8Mpx/2Mpx/2Mpx.Cámara delantera de 20Mpx.Procesador Snapdragon 860 Octa-Core de 2.96GHz con 8GB de RAM.",
+      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_792858-MLA48354116522_112021-O.webp",
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_792858-MLA48354116522_112021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_847472-MLA48354170139_112021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_678022-MLA48354116462_112021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
+      "categories": [2],
+      "salePrice": 400,
+      "purchasePrice": 300,
+      "stock": 9,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi Poco F3 5G",
+      "description": "Tiene 3 cámaras traseras de 48Mpx/8Mpx/5Mpx.Cámara delantera de 20Mpx.Procesador Snapdragon 870 Octa-Core de 3.2GHz con 8GB de RAM.",
+      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_704731-MLA48493702902_122021-O.webp",
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_704731-MLA48493702902_122021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_896297-MLA48493895191_122021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_749545-MLA48493878283_122021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
+      "categories": [2],
+      "salePrice": 600,
+      "purchasePrice": 500,
+      "stock": 11,
+      "discount": 0
+    },
+    {
+      "name": " Libre Huawei Y9 Prime",
+      "description": "Cámara: 16 Mpx + 8Mpx +2Mpx con flash.Procesador: Huawei HiSilicon Kirin 710F.Memoria interna: 128GB / 4GB.",
+      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_631102-MCO43439277175_092020-O.webp",
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_631102-MCO43439277175_092020-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_990124-MCO43439262706_092020-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_618404-MCO43439277184_092020-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
+      "categories": [2],
+      "salePrice": 700,
+      "purchasePrice": 600,
+      "stock": 9,
+      "discount": 0
+    },
+    {
+      "name": " Libre Huawei Y9 Prime",
+      "description": "Cámara: 16 Mpx + 8Mpx +2Mpx con flash.Procesador: Huawei HiSilicon Kirin 710F.Memoria interna: 128GB / 4GB.",
+      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_789307-MCO48599521472_122021-O.webp",
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_789307-MCO48599521472_122021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_984992-MCO48599521474_122021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_938583-MCO48599521473_122021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
+      "categories": [2],
+      "salePrice": 700,
+      "purchasePrice": 600,
+      "stock": 9,
+      "discount": 0
+    },
+    {
+      "name": "Apple iPhone SE ",
+      "description": "Cámara gran angular de 12 MP con modo Retrato, Iluminación de Retrato, Control de Profundidad, HDR Inteligente de última generación y video 4K.Chip A13 Bionic con Neural Engine de tercera generación.Pantalla Retina HD de 4,7 pulgadas.",
+      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_782477-MLA47681019810_092021-O.webp",
+      "imgs": [
+        "https://http2.mlstatic.com/D_NQ_NP_782477-MLA47681019810_092021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_919806-MLA47681019815_092021-O.webp",
+        "https://http2.mlstatic.com/D_NQ_NP_620110-MLA47681043240_092021-O.webp"
+      ],
+      "suppliers": [
+        {
+          "name": "edwin",
+          "phone": 3335544,
+          "email": "edwin@gmail.com"
+        }
+      ],
+      "categories": [2],
+      "salePrice": 1000,
+      "purchasePrice": 900,
+      "stock": 9,
       "discount": 0
     }
   ]
