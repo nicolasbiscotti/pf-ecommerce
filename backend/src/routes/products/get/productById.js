@@ -3,13 +3,28 @@ const { Product, Category, Image } = require("../../../db");
 const productById = Router();
 
 productById.get("/:id", async (req, res, next) => {
-  const id = Number.parseInt(req.params.id, 10);
+  const id = req.params.id;
   try {
     const product = await Product.findByPk(id, {
       attributes: { exclude: ["purchasePrice", "createdAt", "updatedAt"] },
-      include: [{ model: Category, as: "categories" }, { model: Image }],
+      include: [
+        {
+          model: Category,
+          as: "categories",
+          through: { attributes: [] },
+        },
+        {
+          model: Image,
+          as: "images",
+          through: { attributes: [] },
+        },
+      ],
     });
-    res.json({ product });
+    if (product) {
+      res.json(product);
+    } else {
+      res.json({ msg: "Product not found." });
+    }
   } catch (error) {
     next(error);
   }
