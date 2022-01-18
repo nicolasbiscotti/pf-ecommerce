@@ -71,6 +71,7 @@ Category.belongsToMany(Product, {
 });
 
 Product.belongsToMany(Image, {
+  as: "images",
   through: "ProductImage",
   timestamps: false,
 });
