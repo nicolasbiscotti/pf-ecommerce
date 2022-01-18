@@ -6,7 +6,7 @@ const productById = require("./get/productById");
 const products = Router();
 
 products.post("/", createProduct);
+products.route("/id/:id").get(productById);
 products.get("/", getProdcut);
-products.use("/id", productById);
 
 module.exports = products;

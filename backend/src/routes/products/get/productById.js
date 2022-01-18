@@ -1,8 +1,8 @@
-const { Router } = require("express");
+// const { Router } = require("express");
 const { Product, Category, Image } = require("../../../db");
-const productById = Router();
+// const productById = Router();
 
-productById.get("/:id", async (req, res, next) => {
+const productById = async (req, res, next) => {
   const id = req.params.id;
   try {
     const product = await Product.findByPk(id, {
@@ -28,6 +28,6 @@ productById.get("/:id", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-});
+};
 
 module.exports = productById;
