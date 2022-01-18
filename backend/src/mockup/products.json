@@ -27,8 +27,6 @@
       "description": "El Samsung Galaxy Note 10+ marca la décima generación de la serie flagship de Samsung y es el modelo más poderoso de la serie Note 10. El Galaxy Note 10+ llega con una pantalla Dynamic AMOLED de 6.8 pulgadas a resolución QHD+ y está potenciado por un procesador Snapdragon 855+ en USA y China, mientras que en el resto del mundo utiliza el Exynos 9825. Con 12GB de memoria RAM y 256GB o 512GB de almacenamiento interno expandible, el Galaxy Note 10+ tiene una cámara cuádruple de 12 MP + 12 MP + 16 MP + ToF VGA en su posterior, mientras que al frente su cámara selfie es de 10 MP de gran angular y autofoco, incrustada en la pantalla perforada. El Galaxy Note 10+ completa sus características con una batería de 4300 mAh con soporte para carga rápida, parlantes stereo, lector de huellas embebido en pantalla, reconocimiento de iris, sonido HiFi, soporte para el stylus S Pen mediante Bluetooth y corre One UI con Android 9.0 Pie debajo.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
       "imgs": [
-        "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
-        "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp"
       ],
       "suppliers": [
@@ -152,29 +150,7 @@
       "discount": 0
     },
     {
-      "name": " Libre Huawei Y9 Prime",
-      "description": "Cámara: 16 Mpx + 8Mpx +2Mpx con flash.Procesador: Huawei HiSilicon Kirin 710F.Memoria interna: 128GB / 4GB.",
-      "mainImg": "https://http2.mlstatic.com/D_NQ_NP_631102-MCO43439277175_092020-O.webp",
-      "imgs": [
-        "https://http2.mlstatic.com/D_NQ_NP_631102-MCO43439277175_092020-O.webp",
-        "https://http2.mlstatic.com/D_NQ_NP_990124-MCO43439262706_092020-O.webp",
-        "https://http2.mlstatic.com/D_NQ_NP_618404-MCO43439277184_092020-O.webp"
-      ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
-      "categories": [2],
-      "salePrice": 700,
-      "purchasePrice": 600,
-      "stock": 9,
-      "discount": 0
-    },
-    {
-      "name": " Libre Huawei Y9 Prime",
+      "name": "Libre Huawei Y9 Prime",
       "description": "Cámara: 16 Mpx + 8Mpx +2Mpx con flash.Procesador: Huawei HiSilicon Kirin 710F.Memoria interna: 128GB / 4GB.",
       "mainImg": "https://http2.mlstatic.com/D_NQ_NP_789307-MCO48599521472_122021-O.webp",
       "imgs": [
