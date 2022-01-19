@@ -1,8 +1,5 @@
 import { css } from "styled-components";
-
-export const mainBgcolor = "#263c97";
-export const borderscolor = "rgba(255, 255, 255, 0.15)";
-export const lightblue = "#0dcaf0";
+import { lightblue } from "./utilsColors";
 
 export const flexSpacebetweenCenter = css`
   display: flex;

@@ -1,9 +1,9 @@
-import styles from "./index.module.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { fetchAllCategories, fetchAllProducts } from "../../../redux/reducers/products/actions";
 import BigCont from "./Containers/BigCont";
 import Filterbar from "./Containers/Filterbar";
+import { ShopStyled } from "./styles";
 
 export default function Shop(){
     const dispatch=useDispatch();
@@ -12,9 +12,9 @@ export default function Shop(){
     dispatch(fetchAllCategories());
 
     return (
-        <div className={styles.shop}>
+        <ShopStyled>
             <Filterbar/>
             <BigCont/>
-        </div>
+        </ShopStyled>
     )
 }

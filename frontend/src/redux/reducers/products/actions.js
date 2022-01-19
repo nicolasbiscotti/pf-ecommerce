@@ -36,11 +36,11 @@ function actionCreator(actionType,data){
   }
 }
 
-export const fetchAllProducts = function (limit=100,offset=0){
+export const fetchAllProducts = function (){
   return async function (dispatch){
     dispatch(loading())
     try{
-      const res= await axios.get(`http://localhost:3001/products?limit=${limit}&offset=${offset}`);
+      const res= await axios.get(`http://localhost:3001/products`);
       dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
     }catch(error){
       console.log(error)
