@@ -1,18 +1,17 @@
-import styles from "./BigCont.module.css";
 import React from "react";
 import Descriptioner from "../Comp/Descriptioner";
 import Paginner from "../Comp/Paginner";
 import Sorter from "../Comp/Sorter";
+import { BigContStyled } from "../styles";
 import Viewcards from "./ViewCards";
 
-export default function BigCont({products}){
+export default function BigCont(){
     return (
-        <div className={styles.bc}>
-            Esto va a la derecha
+        <BigContStyled>
             <Descriptioner/>
             <Sorter />
-            <Viewcards products={products}/>
+            <Viewcards/>
             <Paginner/>
-        </div>
+        </BigContStyled>
     )
 }
