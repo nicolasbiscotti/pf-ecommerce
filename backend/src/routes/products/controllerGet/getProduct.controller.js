@@ -1,6 +1,7 @@
 const { PRODUCT_PER_PAGE } = require("../../../constants/product");
 const { Product, Op } = require("../../../db");
 const { propsFindAndCountAll } = require("./services/basicPropsFind");
+const { cleanProduct } = require("./services/cleanProduct");
 const { includeCategory } = require("./services/includeCategory");
 
 const getProduct = async (req, res, next) => {
@@ -18,7 +19,7 @@ const getProduct = async (req, res, next) => {
       productsByPage: PRODUCT_PER_PAGE,
       pageCount: Math.ceil(count / PRODUCT_PER_PAGE),
       productCount: count,
-      products: rows,
+      products: cleanProduct(rows),
     };
     res.json(rows.length ? data : { msg: "Not found products" });
   } catch (error) {
