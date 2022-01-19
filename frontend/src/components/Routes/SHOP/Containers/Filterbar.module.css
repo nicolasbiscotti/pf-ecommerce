@@ -1,0 +1,4 @@
+.fb{
+    display: flex;
+    flex-direction: column;
+}
