@@ -1,83 +1,72 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import a from "./index.module.css";
+import "./index.module.css";
 import searchIcon from "./search-iconwhite.png";
 import logginIcon from "./loggin-icon.png";
 import cartIcon from "./cart-icon.png";
 import burgerIcon from "./burger-icon.png";
+import {
+  Cart,
+  Header,
+  Login,
+  Logo,
+  BurgerMenu,
+  NavFoot,
+  NavHeader,
+  NavMain,
+  SearchBar,
+  Shopbutton,
+  UserItems,
+  Shopsection,
+} from "./NavBarStyle";
 
 export default function NavBar() {
   return (
-    <header className={a.header}>
-      <div className={a.navheader}>
+    <Header>
+      <NavHeader>
         <span>English</span>
-      </div>
-      <div className={a.mainnav}>
-        <nav className={a.navmainnav}>
-          <div>
-            <NavLink to="/" className={a.ekommerce}>
-              e- kommerce
-            </NavLink>
-            <NavLink to="/home" className={a.ekommerce}>
-              home
-            </NavLink>
-          </div>
-          <div className={a.searchBar}>
-            <input
-              className={a.searchInput}
-              placeholder="Search our catalog"
-            ></input>
-            <button className={a.searchButton}>
+      </NavHeader>
+      <NavMain>
+        <nav>
+          <Logo to="/home">e-kommerce</Logo>
+          <SearchBar>
+            <input placeholder="Search our catalog" />
+            <button>
               <img src={searchIcon} alt="search icon" />
             </button>
-          </div>
-          <div className={a.loginandcart}>
-            <div className={a.logginCartBox}>
-              <button className={a.logginButton}>
-                <img src={logginIcon} alt="loggin icon" />
-              </button>
-              <div className={a.logginCartText}>
+          </SearchBar>
+          <UserItems>
+            <Login>
+              <img src={logginIcon} alt="loggin icon" />
+              <div>
                 <p>Sign in</p>
                 <p>Create an Account</p>
               </div>
-            </div>
-            <div className={a.logginCartBox + " " + a.cartBox}>
-              <button className={a.cartButton}>
-                <img src={cartIcon} alt="cart icon" />
-              </button>
-              <div className={a.logginCartText}>
+            </Login>
+            <Cart>
+              <img src={cartIcon} alt="cart icon" />
+              <div>
                 <p>My Cart</p>
                 <p>
                   <b>$0.00</b>
                 </p>
               </div>
-            </div>
-          </div>
+            </Cart>
+          </UserItems>
         </nav>
-      </div>
+      </NavMain>
 
-      <div className={a.navfoot}>
-        <div className={a.burgermenu}>
-          <button className={a.buttonBurger}>
-            <img src={burgerIcon} alt="burger icon" />
-          </button>
-          <span>MENU O USUARIO</span>
-        </div>
-        <div className={a.navshop}>
-          {/* ------- A modo de ejemplo -------: para cambiar despues segun las secciones */}
-          <button className={a.buttonsNavShop}>
-            <NavLink to="/shop">SHOP</NavLink>
-          </button>
-          <button className={a.buttonsNavShop}>
-            <NavLink to="/favorites">FAVORITOS</NavLink>
-          </button>
-          <button className={a.buttonsNavShop}>MARCAS</button>
-          <button className={a.buttonsNavShop}>RECOMENDADOS</button>
-        </div>
-        <div>
-          <span>'Spend $120 more and get free shipping!'</span>
-        </div>
-      </div>
-    </header>
+      <NavFoot>
+        <BurgerMenu>
+          <img src={burgerIcon} alt="burger icon" />
+          <span>MENU</span>
+        </BurgerMenu>
+        <Shopsection>
+          <Shopbutton to="/shop">SHOP</Shopbutton>
+          <Shopbutton to="/favorites">FAVORITOS</Shopbutton>
+          <Shopbutton to="/favorites">SECTION I</Shopbutton>
+        </Shopsection>
+        <span>'Spend $120 more and get free shipping!'</span>
+      </NavFoot>
+    </Header>
   );
 }
