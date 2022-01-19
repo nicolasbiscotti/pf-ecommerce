@@ -1,30 +1,16 @@
 const { PRODUCT_PER_PAGE } = require("../../../constants/product");
-const { Product, Category } = require("../../../db");
+const { Product } = require("../../../db");
+const { propsFindAndCountAll } = require("./services/basicPropsFind");
+const { includeCategory } = require("./services/includeCategory");
 
 const getProduct = async (req, res, next) => {
   try {
     const { idCategory, page = 0, typeOrder } = req.query;
-    const hashTypeOrder = {
-      expensive: [["salePrice", "DESC"]],
-      cheap: [["salePrice", "ASC"]],
-    };
-    const basicPropsFind = {
-      attributes: ["id", "name", "salePrice", "mainImg", "discount"],
-      offset: page * PRODUCT_PER_PAGE,
-      limit: PRODUCT_PER_PAGE,
-      order: hashTypeOrder[typeOrder] || [],
-    };
+    const propsFind = propsFindAndCountAll(page, typeOrder); //me trae las props basicas para le find
+    const include = includeCategory(idCategory);
     const { count, rows } = await Product.findAndCountAll({
-      include: [
-        {
-          model: Category,
-          as: "categories",
-          where: idCategory ? { id: idCategory } : {},
-          through: { attributes: [] },
-        },
-      ],
-      ...basicPropsFind,
-      distinct: true,
+      include,
+      ...propsFind,
     });
     const data = {
       page: parseInt(page),
