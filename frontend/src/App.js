@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppStyled } from "./AppStyle";
+import { Footer } from "./components/Footer/Footer";
 
 import NavBar from "./components/NavBar/index";
 // ------------Añadir componentes: --------------//
@@ -21,6 +22,7 @@ function App() {
           <Route path="addproducts" />
         </Route>
       </Routes>
+      <Footer/>
     </AppStyled>
   );
 }
