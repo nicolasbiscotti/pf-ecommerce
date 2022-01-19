@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyledImageGalery } from "./styled";
 
-export default function ImageGalery({ images }) {
+export default function ImageGalery({ images, defaulImage }) {
   const [imageShown, setImageShown] = useState("");
 
   const onSetImageShownHandler = (e) => {
@@ -12,7 +12,7 @@ export default function ImageGalery({ images }) {
     <StyledImageGalery>
       <div className="producMainImage">
         <img
-          src={imageShown ? imageShown : images[0]}
+          src={imageShown ? imageShown : defaulImage}
           alt="product main"
           className="mainImage"
         />
