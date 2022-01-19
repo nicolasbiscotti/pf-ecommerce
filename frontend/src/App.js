@@ -12,7 +12,7 @@ import Shop from "./components/Routes/SHOP/index";
 function App() {
   return (
     <AppStyled className="App">
-      {/* <NavBar /> */}
+      <NavBar />
       <Routes>
         <Route path="/shop" element={<Shop/>}/>
         <Route path="/favorites" />
