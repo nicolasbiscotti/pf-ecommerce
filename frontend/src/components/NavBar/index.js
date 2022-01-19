@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.module.css";
 import searchIcon from "./search-iconwhite.png";
 import logginIcon from "./loggin-icon.png";
 import cartIcon from "./cart-icon.png";
