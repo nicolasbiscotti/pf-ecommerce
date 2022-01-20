@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppStyled } from "./AppStyle";
+import { Footer } from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="addproducts" />
         </Route>
       </Routes>
+      <Footer />
     </AppStyled>
   );
 }
