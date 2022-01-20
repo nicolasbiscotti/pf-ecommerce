@@ -22,7 +22,7 @@ function App() {
           <Route path="addproducts" />
         </Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </AppStyled>
   );
 }
