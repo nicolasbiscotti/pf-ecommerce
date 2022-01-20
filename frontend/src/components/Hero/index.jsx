@@ -1,5 +1,5 @@
-import ContainerCarousel from "./ContainerCarousel/ContainerCarousel";
-import ContainerGrid from "./ContainerGrid/ContainerGrid";
+import ContainerCarousel from "./ContainerCarousel";
+import ContainerGrid from "./ContainerGrid";
 import { StyledHero } from "./styled";
 
 const data = {

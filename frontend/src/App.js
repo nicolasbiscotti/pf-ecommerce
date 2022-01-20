@@ -4,7 +4,7 @@ import { AppStyled } from "./AppStyle";
 import Shop from "./components/Routes/SHOP/index";
 import { Footer } from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Home from "./components/pages/Home/Home";
+import Home from "./components/Routes/Home";
 
 function App() {
   return (
