@@ -4,11 +4,6 @@ import { AppStyled } from "./AppStyle";
 import { Footer } from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/index";
 import Header from "./components/Header/Header";
-// ------------Añadir componentes: --------------//
-//import Shop from './components/Shop/index';                             //-Home Shop
-//import ProductDetail from './components/ProductDetail/index';           //-Detalle del producto
-//import ProductCreateForm from './components/ProductCreateForm/index';   //-Form creación de producto
-=======
 
 function App() {
   return (
