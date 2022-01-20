@@ -9,7 +9,7 @@ export const ContainerFooterInfoStyled = styled.div`
 
   @media screen and (min-width: 768px) {
     width: 100%;
-    margin: 0 2rem;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

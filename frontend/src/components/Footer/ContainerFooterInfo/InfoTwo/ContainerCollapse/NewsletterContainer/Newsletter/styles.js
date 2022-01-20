@@ -8,7 +8,7 @@ export const NewsLetterStyled = styled.div`
   input {
     width: 100%;
     max-width: 350px;
-    padding: 3%;
+    padding: 1rem;
     height: 50px;
     border: none;
     border-radius: 5px 0 0 5px;
@@ -17,9 +17,11 @@ export const NewsLetterStyled = styled.div`
     }
   }
   button {
+    display: flex;
+    align-items: center;
     background-color: #16bcdc;
-    padding: 3%;
-    line-height: 1;
+    padding: 0 1rem;
+    max-width: 200px;
     height: 50px;
     border: none;
     border-radius: 0 5px 5px 0;
