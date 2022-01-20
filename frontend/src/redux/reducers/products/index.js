@@ -1,41 +1,41 @@
 import { LOADING, SET_PRODUCT_DETAIL } from "./actions";
 import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES } from "./const";
 
-const initialStore = {
+const initialState = {
   isLoading: false,
   product: {},
   products: [],
   categories: []
 };
 
-export const products = (store = initialStore, { type, payload }) => {
+export const products = (state = initialState, { type, payload }) => {
   switch (type) {
     /* case value:
       return; */
     case LOADING:
       return {
-        ...store,
+        ...state,
         isLoading: true,
       };
     case SET_PRODUCT_DETAIL:
       return {
-        ...store,
+        ...state,
         product: payload,
         isLoading: false,
       };
     case GET_ALL_PRODUCTS:
       return {
-        ...store,
+        ...state,
         products: payload,
         isLoading: false
       }
     case GET_ALL_CATEGORIES:
       return {
-        ...store,
+        ...state,
         categories: payload,
         isLoading: false
       }
     default:
-      return store;
+      return state;
   }
 };
