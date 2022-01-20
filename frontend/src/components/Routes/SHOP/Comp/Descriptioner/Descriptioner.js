@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { DescriptionerStyled } from "../styles";
+import { DescriptionerStyled } from "./DescriptionerStyled";
 
 export default function Descriptioner(){
     const category=useSelector((state)=>state.filters.isDefaults?null:state.filters.category);

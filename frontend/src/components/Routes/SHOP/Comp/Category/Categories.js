@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CategoriesStyled } from "../styles";
-import { selectCategory } from "../../../../redux/reducers/filters/actions";
+import { CategoriesStyled } from "./CategoryStyle";
+import { selectCategory } from "../../../../../redux/reducers/filters/actions";
 
 export default function Categories(){
     const categories=useSelector((state)=>state.products.categories);
@@ -10,7 +10,7 @@ export default function Categories(){
     function clicCategory(e){
         const id=Number(e.target.id);
         if(id===-1){
-            console.log('aun no')
+            dispatch(selectCategory({id:-1,name:'All'}));
         }else{
             dispatch(selectCategory(categories[id]))
         }
