@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterStyled } from "../styles";
+import { FilterStyled } from "./FilterStyled";
 
 export default function Filter(){
     return (

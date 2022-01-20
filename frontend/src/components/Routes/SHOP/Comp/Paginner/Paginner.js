@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { PaginnerStyled } from "../styles";
+import { PaginnerStyled } from "./PaginnerStyled";
 
 export default function Paginner(){
     const pageCount = useSelector((state)=>state.products.isLoading?null:state.products.products.pageCount);

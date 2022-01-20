@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { SorterStyled } from "../styles";
+import { SorterStyled } from "./SorterStyled";
 
 export default function Sorter(){
     const nproduct=useSelector((state)=>state.products.isLoading?0:state.products.products.productCount);

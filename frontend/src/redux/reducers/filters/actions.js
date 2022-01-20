@@ -24,7 +24,17 @@ export const selectCategory = function(category){
         try {
             const filters= await store.getState().filters || {isDefault:true}
             var query= await setFilterQuerys(filters,'category');
-            const res= await axios.get(`http://localhost:3001/products?idCategory=${category.id}` + query);
+            var url;
+            if(category.id===-1 && category.name==='All'){
+                if(query===''){
+                    url='/products'
+                }else{
+                    url='/products?' + query.slice(1)
+                }
+            }else{
+                url=`/products?idCategory=${category.id}` + query
+            }
+            const res= await axios.get(url);
             dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
             dispatch(actionCreator(SELECT_CATEGORY,category))
         } catch (error) {

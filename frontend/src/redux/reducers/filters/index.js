@@ -7,6 +7,12 @@ const initialStore = {
 export const filters = (store = initialStore, { type, payload }) => {
   switch (type) {
     case SELECT_CATEGORY:
+      if(payload.name==='All' && payload.id===-1){
+        delete store['category']
+        return {
+          ...store,
+        }
+      }
       return {
         ...store,
         category:payload,
