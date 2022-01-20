@@ -1,6 +1,6 @@
 import axios from "axios";
 import { store } from "../../store/index";
-import { SELECT_CATEGORY } from "./consts";
+import { SELECT_CATEGORY, SELECT_TYPE_SORT } from "./consts";
 import { actionCreator } from "../products/actions";
 import { GET_ALL_PRODUCTS } from "../products/const";
 
@@ -12,7 +12,7 @@ function setFilterQuerys(filters,params){
         if(filters.category!==undefined && params!=='category'){
             querys=querys+`&idCategory=${filters.category.id}`
         }
-        if(filters.sort!==undefined){
+        if(filters.sort!==undefined && params!=='sort'){
             querys=querys+`&typeOrder=${filters.sort}`
         }
     }
@@ -38,7 +38,23 @@ export const selectCategory = function(category){
             dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
             dispatch(actionCreator(SELECT_CATEGORY,category))
         } catch (error) {
+            console.log(error);
+            alert('Network error')
+        }
+    }
+}
+
+export const selectTypeSort = function(typeSort){
+    return async function(dispatch){
+        try {
+            const filters= await store.getState().filters || {isDefault:true}
+            var query= await setFilterQuerys(filters,'sort');
+            const res= await axios.get(`/products?typeOrder=${typeSort}` + query)
+            dispatch(actionCreator(GET_ALL_PRODUCTS,res.data));
+            dispatch(actionCreator(SELECT_TYPE_SORT,typeSort))
+        } catch (error) {
             console.log(error)
+            alert('Network error')
         }
     }
 }
