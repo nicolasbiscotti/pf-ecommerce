@@ -8,8 +8,8 @@ export default function Categories(){
     const dispatch=useDispatch()
     
     function clicCategory(e){
-        const id=e.target.id;
-        if(id==-1){
+        const id=Number(e.target.id);
+        if(id===-1){
             console.log('aun no')
         }else{
             dispatch(selectCategory(categories[id]))

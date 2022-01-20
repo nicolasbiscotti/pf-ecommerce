@@ -7,7 +7,7 @@ export default function Descriptioner(){
     
     return (
         <DescriptionerStyled>
-            <img src='https://rubiktheme.com/demo/emarket_demo/c/4-category_default/computer-accessories.jpg'/>
+            <img src='https://rubiktheme.com/demo/emarket_demo/c/4-category_default/computer-accessories.jpg' alt='img-category'/>
             <h1>{category?category.name:'ALL PRODUCTS'}</h1>
             <p>A continuación visualizará todos los productos disponibles en esta categoría.</p>
         </DescriptionerStyled>

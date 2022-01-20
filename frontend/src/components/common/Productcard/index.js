@@ -1,18 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Productcard.module.css"
+import { ProductCardStyled } from "./style";
 
 export default function ProductCard({product}){
     return (
         <Link to={`/detailts/${product.id}`}>
-            <div className={styles.card}>
-                <img src={product.mainImg}/>
+            <ProductCardStyled>
+                <img src={product.mainImg} alt='img-product'/>
                 <h4>{product.name}</h4>
                 <section>
                     <h5>${product.salePrice}</h5>
                     <button>BUY</button>
                 </section>
-            </div>
+            </ProductCardStyled>
         </Link>
     )
 }
