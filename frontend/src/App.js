@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppStyled } from "./AppStyle";
 import { Footer } from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/index";
 import Header from "./components/Header/Header";
 
 function App() {
