@@ -7,4 +7,7 @@ export const NavTopStyled = styled.div`
   @media screen and (min-width: 550px) and (max-width: 992px) {
     height: 3vh;
   }
+  @media screen and (min-width: 0px) and (max-width: 550px) {
+    height: 2.5vh;
+  }
 `;

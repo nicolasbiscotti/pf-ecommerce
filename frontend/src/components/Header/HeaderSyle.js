@@ -16,4 +16,8 @@ export const HeaderStyled = styled.header`
     position: sticky;
     top: -18vh;
   }
+  @media screen and (min-width: 0px) and (max-width: 550px) {
+    position: sticky;
+    top: -17.5vh;
+  }
 `;
