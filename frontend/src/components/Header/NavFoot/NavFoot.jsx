@@ -8,7 +8,6 @@ function NavFoot() {
     <NavFootStyled>
       <BurgerMenu />
       <Shopsection />
-      <span>'Spend $120 more and get free shipping!'</span>
     </NavFootStyled>
   );
 }
