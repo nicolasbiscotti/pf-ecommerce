@@ -1,4 +1,5 @@
 import axios from "axios";
+import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES } from "./const";
 
 export const LOADING = "LOADING";
 export const SET_PRODUCT_DETAIL = "SET_PRODUCT_DETAIL";
@@ -26,4 +27,35 @@ export function fetchProductDetail(productId) {
       console.log(error);
     }
   };
+}
+
+export function actionCreator(actionType,data){
+  return {
+    type: actionType,
+    payload: data
+  }
+}
+
+export const fetchAllProducts = function(){
+  return async function (dispatch){
+    dispatch(loading())
+    try{
+      const res= await axios.get('http://localhost:3001/products');
+      dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
+    }catch(error){
+      console.log(error)
+    }
+  }
+}
+
+export const fetchAllCategories = function (){
+  return async function (dispatch){
+    dispatch(loading());
+    try {
+      const res= await axios.get('http://localhost:3001/categories');
+      dispatch(actionCreator(GET_ALL_CATEGORIES,res.data))
+    } catch (error) {
+      console.log(error)
+    }
+  }
 }
