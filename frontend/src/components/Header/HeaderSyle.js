@@ -7,6 +7,7 @@ export const HeaderStyled = styled.header`
   top: -23.6vh;
   width: 100%;
   background: ${mainBgcolor};
+  z-index: 1;
   * {
     font-family: "Rubik", sans-serif;
     line-height: 1.25rem;

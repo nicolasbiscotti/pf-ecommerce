@@ -1,4 +1,4 @@
-import Card from "../Card";
+import Card from "../Card/Card";
 import { StyledContainerGrid } from "./styled";
 
 export default function ContainerGrid({ data }) {

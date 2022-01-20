@@ -1,10 +1,6 @@
-import ContainerCarousel from "./ContainerCarousel/index";
-import ContainerGrid from "./ContainerGrid/index";
+import ContainerCarousel from "./ContainerCarousel/ContainerCarousel";
+import ContainerGrid from "./ContainerGrid/ContainerGrid";
 import { StyledHero } from "./styled";
-
-
-
-
 
 const data = {
   carousel: [
