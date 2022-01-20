@@ -4,7 +4,7 @@ import { NavTopStyled } from "./NavTopStyled";
 function NavTop() {
   return (
     <NavTopStyled>
-      <span>English</span>
+      <span></span>
     </NavTopStyled>
   );
 }

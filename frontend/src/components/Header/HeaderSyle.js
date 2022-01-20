@@ -3,13 +3,17 @@ import { mainBgcolor } from "../../utilsStyles/utilsColors";
 import "../../utilsStyles/rubikFont.css";
 
 export const HeaderStyled = styled.header`
-  position: fixed;
-  top: 0;
-  width: 100vw;
+  position: sticky;
+  top: -23.6vh;
+  width: 100%;
   background: ${mainBgcolor};
   * {
     font-family: "Rubik", sans-serif;
     line-height: 1.25rem;
     font-size: 14px;
+  }
+  @media screen and (min-width: 550px) and (max-width: 992px) {
+    position: sticky;
+    top: -18vh;
   }
 `;
