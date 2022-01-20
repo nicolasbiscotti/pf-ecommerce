@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const FooterStyled = styled.footer`
-  overflow: hidden;
-  margin-top: 80rem;
   background-color: #1f2024;
   height: auto;
 
