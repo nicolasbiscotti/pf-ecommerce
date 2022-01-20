@@ -6,6 +6,7 @@ module.exports = {
         model: Category,
         as: "categories",
         where: idCategory ? { id: idCategory } : {},
+        attributes: [],
         through: { attributes: [] },
       },
     ];

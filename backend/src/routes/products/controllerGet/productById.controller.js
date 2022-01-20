@@ -21,7 +21,11 @@ const productById = async (req, res, next) => {
       ],
     });
     if (product) {
-      res.json(product);
+      const images = product.images.map((image) => image.url);
+      if (images.indexOf(product.mainImg) < 0) {
+        images.unshift(product.mainImg);
+      }
+      res.json({ ...product.toJSON(), images });
     } else {
       res.json({ msg: "Product not found." });
     }
