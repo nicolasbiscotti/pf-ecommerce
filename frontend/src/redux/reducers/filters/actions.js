@@ -58,3 +58,16 @@ export const selectTypeSort = function(typeSort){
         }
     }
 }
+
+export const changePage = function(page){
+    return async function(dispatch){
+        try {
+            const filters= await store.getState().filters || {isDefault:true}
+            var query= await setFilterQuerys(filters,'');
+            const res= await axios.get(`/products?page=${page}`+query)
+            dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
+        } catch (error){
+            console.log(error)
+        }
+    }
+}
