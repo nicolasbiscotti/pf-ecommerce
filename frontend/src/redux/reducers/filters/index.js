@@ -1,4 +1,4 @@
-import { SELECT_CATEGORY } from "./consts";
+import { SELECT_CATEGORY, SELECT_TYPE_SORT } from "./consts";
 
 const initialStore = {
   isDefault:true
@@ -18,6 +18,12 @@ export const filters = (store = initialStore, { type, payload }) => {
         category:payload,
         isDefault:false
       };
+    case SELECT_TYPE_SORT:
+      return {
+        ...store,
+        sort:payload,
+        isDefault:false
+      }
     default:
       return store;
   }

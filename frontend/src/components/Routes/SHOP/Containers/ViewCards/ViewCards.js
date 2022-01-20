@@ -5,17 +5,17 @@ import { ViewcardStyled } from "./ViewCardStyled";
 
 export default function Viewcards(){
     const products=useSelector((state)=>state.products.isLoading?[]:state.products.products.products) || []
-    
+    console.log(products);
     if(products.length===0){
         return (
             <div>
-                Aun no
+                <h1>Don't have products</h1>
             </div>
         )
     }else{
         return (
             <ViewcardStyled>
-                {products.map((p,i)=><ProductCard product={p} key={i}/>)}
+                {products.map((p,i)=><ProductCard key={i} product={p}/>)}
             </ViewcardStyled>
         )
     }
