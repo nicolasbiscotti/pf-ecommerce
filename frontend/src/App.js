@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { AppStyled } from "./AppStyle";
 import { Footer } from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Home from "./components/pages/Home";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path="shop" />
         <Route path="favorites" />
-        <Route path="/home" />
+        <Route path="/home" element={<Home />} />
         <Route path={`/details/:idProduct`} />
         <Route path="dashboard/*">
           <Route path="addproducts" />
