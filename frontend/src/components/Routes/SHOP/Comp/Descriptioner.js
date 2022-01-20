@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 import { DescriptionerStyled } from "../styles";
 
 export default function Descriptioner(){
-    var category=useSelector((state)=>state.products.category)
-
+    const category=useSelector((state)=>state.filters.isDefaults?null:state.filters.category);
+    
     return (
         <DescriptionerStyled>
             <img src='https://rubiktheme.com/demo/emarket_demo/c/4-category_default/computer-accessories.jpg'/>
-            <h1>{category.name}</h1>
-            <p>A continuación visualizará todos los productos disponibles</p>
+            <h1>{category?category.name:'ALL PRODUCTS'}</h1>
+            <p>A continuación visualizará todos los productos disponibles en esta categoría.</p>
         </DescriptionerStyled>
     )
 }

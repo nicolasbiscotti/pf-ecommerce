@@ -5,8 +5,7 @@ const initialStore = {
   isLoading: false,
   product: {},
   products: [],
-  categories: [],
-  category: {id:0,name:'all'}
+  categories: []
 };
 
 export const products = (store = initialStore, { type, payload }) => {

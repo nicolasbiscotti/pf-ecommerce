@@ -29,18 +29,18 @@ export function fetchProductDetail(productId) {
   };
 }
 
-function actionCreator(actionType,data){
+export function actionCreator(actionType,data){
   return {
     type: actionType,
     payload: data
   }
 }
 
-export const fetchAllProducts = function (){
+export const fetchAllProducts = function(){
   return async function (dispatch){
     dispatch(loading())
     try{
-      const res= await axios.get(`http://localhost:3001/products`);
+      const res= await axios.get('http://localhost:3001/products');
       dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
     }catch(error){
       console.log(error)
