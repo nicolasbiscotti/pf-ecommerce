@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const CategoriesStyled=styled.div`
     background-color: #fff;
-    border-radius: 3px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border-bottom: solid #fff 10px;
+    border-radius: 4px;
+    border: solid #fff 15px;
     font-family: "Rubik",sans-serif;
-
+    width: 100%;
+    
     h1,h3{
         margin-top: 10px;
         margin-left: 10px;
@@ -15,8 +14,6 @@ export const CategoriesStyled=styled.div`
     }
 
     h1{
-        padding: 3%;
-        padding-top: 4%;
         border-bottom: solid #0dcaf0 2px;
         color: #222;
     }
@@ -25,12 +22,5 @@ export const CategoriesStyled=styled.div`
         padding-left: 3%;
         color: #666;
         border-bottom: solid #F3FCFC  1px;
-    }
-
-    @media screen and (min-width: 550) and (max-width: 768) {
-        h1{
-            width: 80%;
-            font-size: 20%;
-        }
     }
 `;
