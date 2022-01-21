@@ -22,12 +22,14 @@ const { conn } = require("./src/db.js");
 const {
   loadMockCategories,
   loadMockProducts,
+  loadMockSuppliers,
 } = require("./src/services/fillDatabase.js");
 const PORT = process.env.PORT;
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
+    await loadMockSuppliers();
     await loadMockCategories();
     await loadMockProducts();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
