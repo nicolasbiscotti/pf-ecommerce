@@ -9,13 +9,7 @@
         "https://rubiktheme.com/demo/emarket_demo/99-large_default/mug-the-best-is-yet-to-come.jpg",
         "https://rubiktheme.com/demo/emarket_demo/100-large_default/mug-the-best-is-yet-to-come.jpg"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [1],
       "categories": [2],
       "salePrice": 1000,
       "purchasePrice": 500,
@@ -29,13 +23,7 @@
       "imgs": [
         "https://http2.mlstatic.com/D_NQ_NP_875764-MCO40903761389_022020-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [1],
       "categories": [2],
       "salePrice": 1500,
       "purchasePrice": 800,
@@ -50,13 +38,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_610026-MCO45570780764_042021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_725912-MCO45570763982_042021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [1],
       "categories": [1],
       "salePrice": 900,
       "purchasePrice": 400,
@@ -72,13 +54,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_930290-MLA45260588455_032021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_956449-MLA45260588460_032021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edarko",
-          "phone": 1118899,
-          "email": "edarko@gmail.com"
-        }
-      ],
+      "suppliers": [2],
       "categories": [4],
       "salePrice": 50,
       "purchasePrice": 10,
@@ -92,13 +68,7 @@
       "imgs": [
         "https://http2.mlstatic.com/D_NQ_NP_719577-MLA45376096858_032021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edarko",
-          "phone": 1118899,
-          "email": "edarko@gmail.com"
-        }
-      ],
+      "suppliers": [2],
       "categories": [7],
       "salePrice": 400,
       "purchasePrice": 200,
@@ -114,13 +84,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_847472-MLA48354170139_112021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_678022-MLA48354116462_112021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [3],
       "categories": [2],
       "salePrice": 400,
       "purchasePrice": 300,
@@ -136,13 +100,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_896297-MLA48493895191_122021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_749545-MLA48493878283_122021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [3],
       "categories": [2],
       "salePrice": 600,
       "purchasePrice": 500,
@@ -158,13 +116,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_984992-MCO48599521474_122021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_938583-MCO48599521473_122021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [4],
       "categories": [2],
       "salePrice": 700,
       "purchasePrice": 600,
@@ -180,13 +132,7 @@
         "https://http2.mlstatic.com/D_NQ_NP_919806-MLA47681019815_092021-O.webp",
         "https://http2.mlstatic.com/D_NQ_NP_620110-MLA47681043240_092021-O.webp"
       ],
-      "suppliers": [
-        {
-          "name": "edwin",
-          "phone": 3335544,
-          "email": "edwin@gmail.com"
-        }
-      ],
+      "suppliers": [5],
       "categories": [2],
       "salePrice": 1000,
       "purchasePrice": 900,

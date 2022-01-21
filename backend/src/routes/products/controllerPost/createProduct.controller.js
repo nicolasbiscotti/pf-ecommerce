@@ -1,7 +1,6 @@
 const { Product, Supplier, Image, Category } = require("../../../db");
 const { isCategories } = require("../../../services/isCategory");
 const { createImages } = require("./services/createImages");
-const { createSuppliers } = require("./services/createSuppliers");
 
 const createProduct = async (req, res, next) => {
   try {
@@ -34,9 +33,8 @@ const createProduct = async (req, res, next) => {
     });
     if (created) {
       const intancesImage = await createImages(Image, imgs);
-      const intancesSupplier = await createSuppliers(Supplier, suppliers);
       await product.setImages(intancesImage);
-      await product.setSuppliers(intancesSupplier);
+      await product.setSuppliers(suppliers);
       await product.setCategories(categories);
       res.json({ msg: "Product created successfully" });
     } else {
