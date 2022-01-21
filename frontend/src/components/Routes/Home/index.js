@@ -1,6 +1,5 @@
 import { StyledHome } from "./styled";
 import Header from "../../../components/Header/Header";
-import Hero from "../../Hero";
 import { Footer } from "../../../components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 
