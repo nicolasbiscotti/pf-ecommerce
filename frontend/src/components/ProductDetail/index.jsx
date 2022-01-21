@@ -13,8 +13,10 @@ export default function ProductDetail() {
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.product);
   const isLoading = useSelector((state) => state.products.isLoading);
-
+  
+  // eslint-disable-next-line
   const loadProduct = () => dispatch(fetchProductDetail(idProduct));
+  // eslint-disable-next-line
   useEffect(loadProduct, []);
 
   return (
