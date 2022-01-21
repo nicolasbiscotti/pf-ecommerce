@@ -5,11 +5,13 @@ export const ProductCardStyled = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   background-color: #fefefe;
+  margin-bottom: 1.5rem;
   align-items: center;
   padding: 1rem;
   min-width: 130px;
   min-height: 280px;
   text-align: center;
+  width: 48%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   img {
     object-fit: contain;
@@ -37,5 +39,13 @@ export const ProductCardStyled = styled.div`
     margin: 0.3rem;
     font-size: 1.5rem;
     color: #16bcdc;
+  }
+
+  @media screen and (min-width: 550px) {
+    max-width: 250px;
+  }
+
+  @media screen and (min-width: 992px) {
+    max-width: 250px;
   }
 `;
