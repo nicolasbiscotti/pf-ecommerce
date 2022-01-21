@@ -37,7 +37,7 @@ export default function Filter(){
                 <input type={'number'} name='priceMin' value={range.min} onChange={handleChance} id="min" /><br/>
                 <span>Max: </span>
                 <input type={'number'} name='priceMax' value={range.max} onChange={handleChance} id="max" /><br/>
-                <input type={'submit'} name='Get Products' value={'Get Products'} id='button' />
+                <input type={'submit'} name='Get Products' value={'Get Products'} id='button' onClick={handleSubmit}/>
             </form>
         </FilterStyled>
     )
