@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const PaginnerStyled=styled.div``;
+export const PaginnerStyled = styled.div`
+  height: auto;
+`;
