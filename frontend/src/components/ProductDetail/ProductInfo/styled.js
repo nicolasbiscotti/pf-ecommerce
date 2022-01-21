@@ -27,10 +27,11 @@ export const StyledProductInfo = styled.section`
       padding: 5px 0;
     }
     .productAttributes {
+      font-size: 1.3rem;
       margin-bottom: 7px;
       padding: 5px 0;
       .attribute {
-        max-width: 200px;
+        max-width: 300px;
         display: flex;
         justify-content: space-around;
         label {
@@ -44,6 +45,7 @@ export const StyledProductInfo = styled.section`
       }
     }
     .productDescription {
+      font-size: 1.3rem;
       margin-bottom: 7px;
       padding: 5px 0;
       .descriptionText {
