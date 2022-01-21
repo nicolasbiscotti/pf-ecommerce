@@ -1,7 +1,13 @@
 import React from "react";
+import { DashboardStyled } from "./style";
+import DashboardMobile from "./DashboardMobile/DashboardMobile";
 
 const Dashboard = () => {
-  return <DashboardStyled>dashborad</DashboardStyled>;
+  return (
+    <DashboardStyled>
+      <DashboardMobile />
+    </DashboardStyled>
+  );
 };
 
 export default Dashboard;
