@@ -1,34 +1,41 @@
 import React, { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { SearchStyled } from "./SearchStyled";
 import searchIcon from "../../../../utilsStyles/utilsImages/search-iconwhite.png";
+import { fetchSearchProducts } from "../../../../redux/reducers/products/actions";
 
 function Search({ data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [inputWord, setInputWord] = useState("");
   const searchInput = useRef();
+  const dispatch = useDispatch();
 
   const handleCleanInput = (f = [], i = "") => {
     setFilteredData(f);
     setInputWord(i);
   };
+
   const handleFilter = (event) => {
     if (event.target.value === "") {
       handleCleanInput();
     } else {
       const searchWord = event.target.value;
-      let count = 0; //hardcodeo para cortar a 15 elementos filtrados
-      const newFilter = data.filter((value) => {
-        if (count < 16) {
-          const isInclude = value.name
-            .toLowerCase()
-            .includes(searchWord.toLowerCase());
-          if (isInclude) count++;
-          return isInclude;
-        } else return false;
-      });
+      let newFilter = [];
+      let count = 0;
+      for (let i = 0; i < data.length; i++) {
+        if (count > 5) break;
+        const isInclude = data[i].name
+          .toLowerCase()
+          .includes(searchWord.toLowerCase());
+        if (isInclude) {
+          count++;
+          newFilter.push(data[i]);
+        }
+      }
       handleCleanInput(newFilter, searchWord);
     }
   };
+
   const handleSugestionClick = (event) => {
     handleCleanInput([], event.target.innerHTML);
     searchInput.current.focus();
@@ -36,7 +43,7 @@ function Search({ data }) {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("submit"); /// HANDLE SUBMIT
+    dispatch(fetchSearchProducts(inputWord));
     handleCleanInput();
   };
 
@@ -48,9 +55,7 @@ function Search({ data }) {
         onChange={handleFilter}
         value={inputWord}
         ref={searchInput}
-        onKeyDown={(event) =>
-          event.key === "Enter" ? handleOnSubmit(event) : console.log()
-        }
+        onKeyDown={(event) => event.key === "Enter" && handleOnSubmit(event)}
       />
       <button onClick={handleOnSubmit}>
         <img src={searchIcon} alt="search icon" />

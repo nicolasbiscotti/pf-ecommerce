@@ -10,10 +10,14 @@ const getProduct = async (req, res, next) => {
     const include = includeCategory(idCategory);
     const { count, rows } = await Product.findAndCountAll({
       where: name
-        ? {
-            name: { [Op.iLike]: `%${name}%` },
-            salePrice: { [Op.between]: [parseInt(min), parseInt(max)] },
-          }
+        ? !min && !max
+          ? {
+              name: { [Op.iLike]: `%${name}%` },
+            }
+          : {
+              name: { [Op.iLike]: `%${name}%` },
+              salePrice: { [Op.between]: [parseInt(min), parseInt(max)] },
+            }
         : min && max
         ? {
             salePrice: { [Op.between]: [parseInt(min), parseInt(max)] },
