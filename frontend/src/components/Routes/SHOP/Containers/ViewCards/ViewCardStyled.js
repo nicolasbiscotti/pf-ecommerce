@@ -8,20 +8,4 @@ export const ViewcardStyled = styled.div`
   flex-wrap: wrap;
   margin-top: 5rem;
   height: auto;
-  .containerProduct {
-    width: 48%;
-    display: block;
-  }
-
-  @media screen and (min-width: 550px) {
-    .containerProduct {
-      max-width: 250px;
-    }
-  }
-
-  @media screen and (min-width: 992px) {
-    .containerProduct {
-      max-width: 250px;
-    }
-  }
 `;
