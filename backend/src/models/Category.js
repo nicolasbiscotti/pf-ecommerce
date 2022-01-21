@@ -11,6 +11,13 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,
       },
+      img: {
+        type: DataTypes.STRING,
+        unique: true,
+        validate: {
+          isUrl: true,
+        },
+      },
     },
     { timestamps: false }
   );

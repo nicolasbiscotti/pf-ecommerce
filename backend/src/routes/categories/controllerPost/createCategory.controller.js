@@ -2,9 +2,10 @@ const { Category } = require("../../../db");
 
 const createCategories = async (req, res, next) => {
   try {
-    const { name } = req.body;
+    const { name, img } = req.body;
     const [category, created] = await Category.findOrCreate({
       where: { name },
+      defaults: { img },
     });
     if (!created) {
       res.json({ msg: "Category already exists", category });
