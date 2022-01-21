@@ -5,8 +5,13 @@ export default function ContainerGrid({ data }) {
   return (
     <StyledContainerGrid>
       {
-        data.map(({ imgsrc, id }) =>
-          <Card key={id} imgsrc={imgsrc} text/>)
+        data.map(({ imgsrc, id, name, category }) =>
+          <Card 
+            key={id} 
+            imgsrc={imgsrc} 
+            name={name}
+            category={category}
+          />)
       }
     </StyledContainerGrid>
   )

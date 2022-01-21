@@ -59,8 +59,8 @@ export default function Slide({
           color="white"
           hoverBgColor="#16bcdc"
           hoverBorder="3px solid #16bcdc"
-          height="60px"
-          width="180px"
+          height="40px"
+          width="160px"
           radius="30px"
         ><Link to={`/detail/${dataid}`} className="link">
             DISCOVER NOW
