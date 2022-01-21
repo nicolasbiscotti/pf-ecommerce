@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { DashboardMobileStyled } from "./style";
+import { SideBarMobileStyled } from "./style";
 import { GoThreeBars } from "react-icons/go";
 
-const DashboardMobile = () => {
+const SideBarMobile = () => {
   return (
-    <DashboardMobileStyled>
+    <SideBarMobileStyled>
       <GoThreeBars color="white" />
       <nav>
         <Link to="create/product">Productos</Link>
@@ -14,8 +14,8 @@ const DashboardMobile = () => {
         <Link to="">Categorias</Link>
         <Link to="">Proveedores</Link>
       </nav>
-    </DashboardMobileStyled>
+    </SideBarMobileStyled>
   );
 };
 
-export default DashboardMobile;
+export default SideBarMobile;

@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Dashboard from "./Dashboard/Dashboard";
+import SideBar from "./SideBar/SideBar";
 import { AdminStyled } from "./style";
 
 const Admin = () => {
   return (
     <AdminStyled>
-      <Dashboard />
+      <SideBar />
       <Outlet />
     </AdminStyled>
   );

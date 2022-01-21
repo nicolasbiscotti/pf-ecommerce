@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DashboardMobileStyled = styled.nav`
+export const SideBarMobileStyled = styled.nav`
   background-color: #303030;
   a {
     display: block;
