@@ -20,7 +20,7 @@ export default function Categories(){
         <CategoriesStyled>
             <h1>Categories</h1>
             <h3 onClick={clicCategory} id={-1}>All products</h3>
-            {categories.map((c,i)=><h3 key={i} onClick={clicCategory} id={i}>{c.name}</h3>)}
+            {categories.map((c,i)=><h3 key={i} onClick={clicCategory} id={i}>{c.name[0].toUpperCase()+c.name.slice(1)}</h3>)}
         </CategoriesStyled>
     )
 }
