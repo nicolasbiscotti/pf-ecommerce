@@ -1,6 +1,6 @@
 import axios from "axios";
 import { store } from "../../store/index";
-import { SELECT_CATEGORY, SELECT_TYPE_SORT } from "./consts";
+import { SELECT_CATEGORY, SELECT_PRICE_RANGE, SELECT_TYPE_SORT } from "./consts";
 import { actionCreator } from "../products/actions";
 import { GET_ALL_PRODUCTS } from "../products/const";
 
@@ -14,6 +14,9 @@ function setFilterQuerys(filters,params){
         }
         if(filters.sort!==undefined && params!=='sort'){
             querys=querys+`&typeOrder=${filters.sort}`
+        }
+        if(filters.priceRange!==undefined && params!=='priceRange'){
+            querys=querys+`&min=${filters.priceRange.min}&max=${filters.priceRange.max}`
         }
     }
     return querys
@@ -67,6 +70,20 @@ export const changePage = function(page){
             const res= await axios.get(`/products?page=${page}`+query)
             dispatch(actionCreator(GET_ALL_PRODUCTS,res.data))
         } catch (error){
+            console.log(error)
+        }
+    }
+}
+
+export const setPriceRange = function(priceRange){
+    return async function(dispatch){
+        try {
+            const filters= await store.getState().filters || {isDefault:true}
+            var query= await setFilterQuerys(filters,'priceRange');
+            const res= await axios.get(`/products?min=${priceRange.min}&max=${priceRange.max}`+query);
+            dispatch(actionCreator(GET_ALL_PRODUCTS,res.data));
+            dispatch(actionCreator(SELECT_PRICE_RANGE,priceRange))
+        } catch (error) {
             console.log(error)
         }
     }
