@@ -8,7 +8,7 @@ function NavMain() {
   return (
     <NavMainStyled>
       <nav>
-        <Logo to="/home" span="e-kommerce" />
+        <Logo to="/" span="e-kommerce" />
         <Search />
         <UserItems />
       </nav>

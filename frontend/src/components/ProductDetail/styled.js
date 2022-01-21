@@ -9,6 +9,7 @@ export const StyledProductDetail = styled.div`
   padding: 1.1rem;
   background-color: #f7f7f7;
   .mainProductWrapper {
+    flex: 1;
     display: flex;
     padding: 0.9375rem;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);

@@ -1,12 +1,14 @@
-import Hero from "../../Hero";
+import { StyledHome } from "./styled";
+import Header from "../../../components/Header/Header";
+import { Footer } from "../../../components/Footer/Footer";
+import { Outlet } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      <section><h1>Hot Trending Products</h1></section>
-      <section><h1>Categories</h1></section>
-    </div>
+    <StyledHome>
+      <Header />
+      <Outlet />
+      <Footer />
+    </StyledHome>
   );
 }
-
