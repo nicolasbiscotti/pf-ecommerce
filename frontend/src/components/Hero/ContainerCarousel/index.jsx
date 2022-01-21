@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Slide from './Slide';
 import { StyledContainerCarousel } from './styled';
 
 export default function ContainerCarousel({ data }) {
@@ -14,9 +15,14 @@ export default function ContainerCarousel({ data }) {
         {
           data.map((slide, id) => {
             return (
-              <div className={`fade mySlides${id === visibleSlide ? " visible" : ""}`} key={id}>
-                <img src={slide.imgsrc} alt="carousel 1" />
-              </div>
+              <Slide 
+                key={slide.id} 
+                className={`fade mySlides${id === visibleSlide ? " visible" : ""}`}
+                dataimg={slide.imgsrc}
+                datadetail={slide.id}
+                datah1={slide.name}
+                datatext={slide.tca}
+              />
             )
           })
         }

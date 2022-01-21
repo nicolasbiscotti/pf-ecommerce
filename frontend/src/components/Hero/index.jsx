@@ -27,21 +27,25 @@ const data = {
     {
       id: "1",
       name: "Canyon Star Raider",
+      category: "Headphone & Audio",
       imgsrc: "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_banner1.jpg?v=1631867823"
     },
     {
       id: "2",
       name: "Galaxy Buds Plus",
+      category: "Cellphone & Tablets",
       imgsrc: "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_banner3.jpg?v=1631867823"
     },
     {
       id: "3",
       name: "Phone Galaxy S20",
+      category: "Wireless Earbuds",
       imgsrc: "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_banner2.jpg?v=1631867823"
     },
     {
       id: "4",
       name: "Chair Swoon Lounge",
+      category: "Decor & Furniture",
       imgsrc: "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_banner4.jpg?v=1631867823"
     }
   ]

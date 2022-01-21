@@ -11,9 +11,12 @@ export const Button = styled.button`
   padding: ${({ padding }) => padding || "5px"};
   text-transform: ${({ textTransform }) => textTransform || "uppercase"};
   width: ${({ width }) => width || "10rem"};
+  height: ${({ height }) => height || "auto"};
   &:hover {
     background-color: ${({ hoverBgColor }) => hoverBgColor || "#0695B1"};
     color: ${({ hoverColor }) => hoverColor || "#fff"};
+    border: ${({ hoverBorder }) => hoverBorder || "none"};
+
   }
   cursor: pointer;
   transition: all 0.3s ease;

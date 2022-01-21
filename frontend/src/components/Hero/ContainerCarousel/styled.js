@@ -11,13 +11,7 @@ export const StyledContainerCarousel = styled.div`
     position: relative;
     margin: auto;
   }
-  
-  .mySlides {
-    display:none;
-  }
-  .mySlides.visible {
-    display:block;
-  }
+
 
   .dots {
     position: absolute;
