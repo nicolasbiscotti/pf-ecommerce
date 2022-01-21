@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import SelectBox from "../../../common/SelectBox/SelectBox";
 import { CreateProductStyled } from "./style";
 
 const CreateProduct = () => {
+  const allCategories = useSelector(({ allCategories }) => allCategories);
   return (
     <CreateProductStyled>
       <input type="text" placeholder="name" />
@@ -17,12 +20,8 @@ const CreateProduct = () => {
       ></textarea>
       <input type="file" />
       <input type="file" />
-      <select name="" id="">
-        <option value="">suppliers</option>
-      </select>
-      <select name="" id="">
-        <option value="">categories</option>
-      </select>
+      <SelectBox data={allCategories} />
+      <SelectBox />
     </CreateProductStyled>
   );
 };
