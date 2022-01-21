@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "../button/Button";
 import { ProductCardStyled } from "./style";
 
-export default function ProductCard({product}){
-    return (
-        <Link to={`/detailts/${product.id}`}>
-            <ProductCardStyled>
-                <img src={product.mainImg} alt='img-product'/>
-                <h4>{product.name}</h4>
-                <section>
-                    <h5>${product.salePrice}</h5>
-                    <button>BUY</button>
-                </section>
-            </ProductCardStyled>
-        </Link>
-    )
+export default function ProductCard({ product }) {
+  return (
+    <Link className="containerProduct" to={`/detailts/${product.id}`}>
+      <ProductCardStyled>
+        <img src={product.mainImg} alt="img-product" />
+        <h4>{product.name}</h4>
+        <section>
+          <h5>${product.salePrice}</h5>
+          <Button width="60px">BUY</Button>
+        </section>
+      </ProductCardStyled>
+    </Link>
+  );
 }
 
 // {
