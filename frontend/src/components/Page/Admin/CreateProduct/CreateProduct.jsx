@@ -1,10 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelectorEffect } from "../../../../hooks/useSelectorEffect";
 import SelectBox from "../../../common/SelectBox/SelectBox";
+import { propsCategories } from "./props";
 import { CreateProductStyled } from "./style";
 
 const CreateProduct = () => {
-  const allCategories = useSelector(({ allCategories }) => allCategories);
+  const { allCategories } = useSelectorEffect(propsCategories);
   return (
     <CreateProductStyled>
       <input type="text" placeholder="name" />
