@@ -1,0 +1,1 @@
+export const SET_ALL_SUPPLIERS = "SET_ALL_SUPPLIERS";

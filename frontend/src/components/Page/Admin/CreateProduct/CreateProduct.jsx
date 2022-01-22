@@ -1,11 +1,11 @@
 import React from "react";
-import { useSelectorEffect } from "../../../../hooks/useSelectorEffect";
+import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import SelectBox from "../../../common/SelectBox/SelectBox";
 import { propsCategories } from "./props";
 import { CreateProductStyled } from "./style";
 
 const CreateProduct = () => {
-  const { allCategories } = useSelectorEffect(propsCategories);
+  const { allCategories } = useGetStateDispatch(propsCategories);
   return (
     <CreateProductStyled>
       <input type="text" placeholder="name" />
