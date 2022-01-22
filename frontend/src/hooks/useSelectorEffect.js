@@ -6,6 +6,6 @@ export const useSelectorEffect = ({ nameReducer, nameState, action }) => {
   const state = useSelector((state) => state[nameReducer][nameState]);
   useEffect(() => {
     dispatch(action());
-  }, [dispatch]);
+  }, [dispatch, action]);
   return { [nameState]: state };
 };
