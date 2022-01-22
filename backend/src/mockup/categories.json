@@ -1,11 +1,29 @@
 {
   "categories": [
-    { "name": "computer" },
-    { "name": "mobile" },
-    { "name": "tv" },
+    {
+      "name": "computer",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-5.jpg?v=1631867823"
+    },
+    {
+      "name": "mobile",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-4.jpg?v=1631867823"
+    },
+    {
+      "name": "tv",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-6.jpg?v=1631867823"
+    },
     { "name": "accessory" },
-    { "name": "tablet" },
-    { "name": "laptop" },
-    { "name": "procesador" }
+    {
+      "name": "tablet",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-3.jpg?v=1631867823"
+    },
+    {
+      "name": "laptop",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-1.jpg?v=1631867823"
+    },
+    {
+      "name": "procesador",
+      "img": "https://cdn.shopify.com/s/files/1/0603/7232/0427/files/market_h3-category-2.jpg?v=1631867823"
+    }
   ]
 }
