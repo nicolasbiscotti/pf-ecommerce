@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { SearchStyled } from "./SearchStyled";
 import searchIcon from "../../../../utilsStyles/utilsImages/search-iconwhite.png";
@@ -7,8 +8,22 @@ import { fetchSearchProducts } from "../../../../redux/reducers/products/actions
 function Search({ data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [inputWord, setInputWord] = useState("");
-  const searchInput = useRef();
+  const searchInput = useRef(null);
   const dispatch = useDispatch();
+  const [showSuggestions, setShowSuggestions] = useState(true);
+  let navigate = useNavigate();
+
+  const handleOuterClick = (e) => {
+    if (!searchInput.current.contains(e.target)) {
+      setShowSuggestions(false);
+    } else {
+      setShowSuggestions(true);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOuterClick);
+  }, []);
 
   const handleCleanInput = (f = [], i = "") => {
     setFilteredData(f);
@@ -43,7 +58,8 @@ function Search({ data }) {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    dispatch(fetchSearchProducts(inputWord));
+    navigate("/shop"); //redirect
+    setTimeout(dispatch(fetchSearchProducts(inputWord), 3000)); //hardcodeado
     handleCleanInput();
   };
 
@@ -61,7 +77,7 @@ function Search({ data }) {
         <img src={searchIcon} alt="search icon" />
       </button>
 
-      {filteredData.length !== 0 && (
+      {filteredData.length !== 0 && showSuggestions && (
         <div className="dataResult">
           {filteredData.slice(0, 4).map((value, key) => {
             return (

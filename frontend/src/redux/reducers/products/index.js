@@ -39,7 +39,7 @@ export const products = (state = initialState, { type, payload }) => {
     case GET_ALL_SEARCH:
       return {
         ...state,
-        searchProducts: payload,
+        products: payload,
         isLoading: false,
       };
     default:
