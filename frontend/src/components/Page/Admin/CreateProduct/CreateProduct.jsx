@@ -1,11 +1,13 @@
 import React from "react";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
+import { Button } from "../../../common/button/Button";
 import SelectBox from "../../../common/SelectBox/SelectBox";
-import { propsCategories } from "./props";
+import { propsCategories, propsSuppliers } from "./props";
 import { CreateProductStyled } from "./style";
 
 const CreateProduct = () => {
   const { allCategories } = useGetStateDispatch(propsCategories);
+  const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   return (
     <CreateProductStyled>
       <input type="text" placeholder="name" />
@@ -21,8 +23,9 @@ const CreateProduct = () => {
       ></textarea>
       <input type="file" />
       <input type="file" />
-      <SelectBox data={allCategories} />
-      <SelectBox />
+      <SelectBox data={allCategories} title={"categories"} />
+      <SelectBox data={allSuppliers} title={"suppliers"} />
+      <Button>Crear</Button>
     </CreateProductStyled>
   );
 };

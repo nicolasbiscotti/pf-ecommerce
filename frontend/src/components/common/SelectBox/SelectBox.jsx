@@ -1,15 +1,13 @@
 import React from "react";
+import { Button } from "../button/Button";
+import { renderBoxData } from "./services";
 import { SelectBoxStyled } from "./style";
 
-const SelectBox = ({ data }) => {
+const SelectBox = ({ data, title }) => {
   return (
     <SelectBoxStyled>
-      {data &&
-        data.map(({ id, name }) => (
-          <option key={id} value={id}>
-            {name}
-          </option>
-        ))}
+      <Button>{title}</Button>
+      {data && renderBoxData(data)}
     </SelectBoxStyled>
   );
 };
