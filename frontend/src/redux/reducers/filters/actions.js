@@ -5,6 +5,7 @@ import {
   SELECT_PRICE_RANGE,
   SELECT_TYPE_SORT,
   SELECT_NAME_SEARCH,
+  UNSELECT_NAME_SEARCH,
 } from "./consts";
 import { actionCreator } from "../products/actions";
 import { GET_ALL_PRODUCTS } from "../products/const";
@@ -24,6 +25,9 @@ function setFilterQuerys(filters, params) {
       querys =
         querys + `&min=${filters.priceRange.min}&max=${filters.priceRange.max}`;
     }
+    if (filters.nameSearch !== undefined) {
+      querys = querys + `&name=${filters.nameSearch.name}`;
+    }
   }
   return querys;
 }
@@ -31,6 +35,8 @@ function setFilterQuerys(filters, params) {
 export const selectCategory = function (category) {
   return async function (dispatch) {
     try {
+      dispatch(actionCreator(UNSELECT_NAME_SEARCH));
+
       const filters = (await store.getState().filters) || { isDefault: true };
       var query = await setFilterQuerys(filters, "category");
       var url;
@@ -84,13 +90,9 @@ export const selectNameSearch = function (name) {
 export const changePage = function (page) {
   return async function (dispatch) {
     try {
-      const filtersSearch = await store.getState().filters.nameSearch;
-      if (filtersSearch && filtersSearch.isCurrent === true) {
-        var query = `&name=${filtersSearch.name}`;
-      } else {
-        const filters = (await store.getState().filters) || { isDefault: true };
-        query = await setFilterQuerys(filters, "");
-      }
+      const filters = (await store.getState().filters) || { isDefault: true };
+      var query = await setFilterQuerys(filters, "");
+
       const res = await axios.get(`/products?page=${page}` + query);
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
     } catch (error) {

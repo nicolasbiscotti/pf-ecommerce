@@ -12,9 +12,9 @@ import { ShopStyled } from "./styles";
 
 export default function Shop() {
   const dispatch = useDispatch();
-  const isDefault = useSelector((store) => store.filters.isDefault);
+  const nameSearch = useSelector((store) => store.filters.nameSearch);
 
-  isDefault && dispatch(fetchAllProducts());
+  nameSearch === undefined && dispatch(fetchAllProducts());
   dispatch(fetchAllCategories());
 
   useEffect(() => {

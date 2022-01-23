@@ -37,14 +37,16 @@ function Search({ data }) {
       const searchWord = event.target.value;
       let newFilter = [];
       let count = 0;
-      for (let i = 0; i < data.length; i++) {
-        if (count > 5) break;
-        const isInclude = data[i].name
-          .toLowerCase()
-          .includes(searchWord.toLowerCase());
-        if (isInclude) {
-          count++;
-          newFilter.push(data[i]);
+      if (data) {
+        for (let i = 0; i < data.length; i++) {
+          if (count > 5) break;
+          const isInclude = data[i].name
+            .toLowerCase()
+            .includes(searchWord.toLowerCase());
+          if (isInclude) {
+            count++;
+            newFilter.push(data[i]);
+          }
         }
       }
       handleCleanInput(newFilter, searchWord);
@@ -59,7 +61,7 @@ function Search({ data }) {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     inputWord.length > 0 && (await dispatch(selectNameSearch(inputWord)));
-    navigate("/shop"); //redirect
+    navigate("/shop");
     handleCleanInput();
   };
 

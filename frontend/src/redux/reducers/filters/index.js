@@ -37,16 +37,16 @@ export const filters = (store = initialStore, { type, payload }) => {
         isDefault: false,
       };
     case SELECT_NAME_SEARCH:
+      delete store["category"];
       return {
         ...store,
-        nameSearch: { name: payload, isCurrent: true },
+        nameSearch: { name: payload },
         isDefault: false,
       };
     case UNSELECT_NAME_SEARCH:
       delete store["nameSearch"];
       return {
         ...store,
-        isDefault: true,
       };
     default:
       return store;
