@@ -1,5 +1,5 @@
 import { LOADING, SET_PRODUCT_DETAIL } from "./actions";
-import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES, GET_ALL_SEARCH } from "./const";
+import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES } from "./const";
 
 const initialState = {
   isLoading: false,
@@ -34,12 +34,6 @@ export const products = (state = initialState, { type, payload }) => {
       return {
         ...state,
         categories: payload,
-        isLoading: false,
-      };
-    case GET_ALL_SEARCH:
-      return {
-        ...state,
-        searchProducts: payload,
         isLoading: false,
       };
     default:
