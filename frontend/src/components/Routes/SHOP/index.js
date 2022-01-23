@@ -12,11 +12,9 @@ import { ShopStyled } from "./styles";
 
 export default function Shop() {
   const dispatch = useDispatch();
-  const renderingforsearch = useSelector(
-    (store) => store.filters.nameSearch?.isCurrent
-  ); // inrendering ask if its for search
+  const isDefault = useSelector((store) => store.filters.isDefault);
 
-  renderingforsearch === undefined && dispatch(fetchAllProducts());
+  isDefault && dispatch(fetchAllProducts());
   dispatch(fetchAllCategories());
 
   useEffect(() => {
