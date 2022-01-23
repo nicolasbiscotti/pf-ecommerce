@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES, GET_ALL_SEARCH } from "./const";
+import { GET_ALL_PRODUCTS, GET_ALL_CATEGORIES } from "./const";
 
 export const LOADING = "LOADING";
 export const SET_PRODUCT_DETAIL = "SET_PRODUCT_DETAIL";
@@ -42,18 +42,6 @@ export const fetchAllProducts = function () {
     try {
       const res = await axios.get("/products");
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
-export const fetchSearchProducts = function (queryname) {
-  return async function (dispatch) {
-    dispatch(loading());
-    try {
-      const res = await axios.get(`/products?name=${queryname}`);
-      dispatch(actionCreator(GET_ALL_SEARCH, res.data));
     } catch (error) {
       console.log(error);
     }
