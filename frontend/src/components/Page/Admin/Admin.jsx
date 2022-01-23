@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import SideBar from "./SideBar/SideBarContent/SideBarContent";
+import SideBar from "./SideBar/SideBar";
 
 import { AdminStyled } from "./style";
 
