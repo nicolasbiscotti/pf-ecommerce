@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { SearchStyled } from "./SearchStyled";
 import searchIcon from "../../../../utilsStyles/utilsImages/search-iconwhite.png";
-import { fetchSearchProducts } from "../../../../redux/reducers/products/actions";
+import { selectNameSearch } from "../../../../redux/reducers/filters/actions";
 
 function Search({ data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [inputWord, setInputWord] = useState("");
-  const searchInput = useRef(null);
+  const searchInput = useRef();
   const dispatch = useDispatch();
   const [showSuggestions, setShowSuggestions] = useState(true);
   let navigate = useNavigate();
@@ -56,10 +56,10 @@ function Search({ data }) {
     searchInput.current.focus();
   };
 
-  const handleOnSubmit = (event) => {
+  const handleOnSubmit = async (event) => {
     event.preventDefault();
+    inputWord.length > 0 && (await dispatch(selectNameSearch(inputWord)));
     navigate("/shop"); //redirect
-    setTimeout(dispatch(fetchSearchProducts(inputWord), 3000)); //hardcodeado
     handleCleanInput();
   };
 

@@ -5,7 +5,6 @@ import {
   SELECT_PRICE_RANGE,
   SELECT_TYPE_SORT,
   SELECT_NAME_SEARCH,
-  UNSELECT_NAME_SEARCH,
 } from "./consts";
 import { actionCreator } from "../products/actions";
 import { GET_ALL_PRODUCTS } from "../products/const";
@@ -47,7 +46,6 @@ export const selectCategory = function (category) {
       const res = await axios.get(url);
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
       dispatch(actionCreator(SELECT_CATEGORY, category));
-      dispatch(actionCreator(UNSELECT_NAME_SEARCH, ""));
     } catch (error) {
       console.log(error);
       alert("Network error");
@@ -63,7 +61,6 @@ export const selectTypeSort = function (typeSort) {
       const res = await axios.get(`/products?typeOrder=${typeSort}` + query);
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
       dispatch(actionCreator(SELECT_TYPE_SORT, typeSort));
-      dispatch(actionCreator(UNSELECT_NAME_SEARCH, ""));
     } catch (error) {
       console.log(error);
       alert("Network error");
@@ -112,7 +109,6 @@ export const setPriceRange = function (priceRange) {
       );
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
       dispatch(actionCreator(SELECT_PRICE_RANGE, priceRange));
-      dispatch(actionCreator(UNSELECT_NAME_SEARCH, ""));
     } catch (error) {
       console.log(error);
     }
