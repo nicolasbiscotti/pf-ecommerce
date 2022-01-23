@@ -1,13 +1,13 @@
 import React from "react";
-import SideBarMobile from "./SideBarMobile/SideBarMobile";
+import SideBarContent from "./SideBarContent/SideBarContent";
 import { SideBarStyled } from "./style";
 
-const SideBar = () => {
+const ContainerSideBar = () => {
   return (
     <SideBarStyled>
-      <SideBarMobile />
+      <SideBarContent />
     </SideBarStyled>
   );
 };
 
-export default SideBar;
+export default ContainerSideBar;
