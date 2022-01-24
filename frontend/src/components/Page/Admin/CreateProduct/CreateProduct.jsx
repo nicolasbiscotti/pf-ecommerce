@@ -12,35 +12,42 @@ import { useDispatch } from "react-redux";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import {
   SET_CREATE_PRODUCT_NAME,
+  SET_CREATE_SALE_PRICE,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
+  SET_CP_STOCK,
 } from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
-  const handleOnChangeName = (e) => {
-    const name = e.target.value;
-    dispatch(actionGenerator(SET_CREATE_PRODUCT_NAME, name));
-  };
-  const handleOnChangePurchePrice = (e) => {
-    const purchesePrice = e.target.value;
-    dispatch(
-      actionGenerator(
-        SET_CREATE_PRODUCT_PURCHASE_PRICE,
-        parseInt(purchesePrice)
-      )
-    );
+  const handleOnChangeInputs = ({ e, type }) => {
+    const value = e.target.value;
+    dispatch(actionGenerator(type, value));
   };
   return (
     <CreateProductStyled>
-      <InputName handleChange={handleOnChangeName} />
+      <InputName
+        handleChange={(e) =>
+          handleOnChangeInputs({ e, type: SET_CREATE_PRODUCT_NAME })
+        }
+      />
       <InputNumber
         placeholder="sale price"
-        handleChange={handleOnChangePurchePrice}
+        handleChange={(e) =>
+          handleOnChangeInputs({ e, type: SET_CREATE_SALE_PRICE })
+        }
       />
-      <InputNumber placeholder="purchase price" />
-      <InputNumber placeholder="stock" />
+      <InputNumber
+        placeholder="purchise price"
+        handleChange={(e) =>
+          handleOnChangeInputs({ e, type: SET_CREATE_PRODUCT_PURCHASE_PRICE })
+        }
+      />
+      <InputNumber
+        placeholder="stock"
+        handleChange={(e) => handleOnChangeInputs({ e, type: SET_CP_STOCK })}
+      />
       <TextArea />
       <InputFile />
       <InputFile />
