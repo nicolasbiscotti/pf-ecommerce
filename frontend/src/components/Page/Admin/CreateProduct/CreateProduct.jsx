@@ -25,12 +25,20 @@ const CreateProduct = () => {
   };
   const handleOnChangePurchePrice = (e) => {
     const purchesePrice = e.target.value;
-    dispatch(actionGenerator(SET_CREATE_PRODUCT_PURCHASE_PRICE, purchesePrice));
+    dispatch(
+      actionGenerator(
+        SET_CREATE_PRODUCT_PURCHASE_PRICE,
+        parseInt(purchesePrice)
+      )
+    );
   };
   return (
     <CreateProductStyled>
       <InputName handleChange={handleOnChangeName} />
-      <InputNumber placeholder="sale price" />
+      <InputNumber
+        placeholder="sale price"
+        handleChange={handleOnChangePurchePrice}
+      />
       <InputNumber placeholder="purchase price" />
       <InputNumber placeholder="stock" />
       <TextArea />

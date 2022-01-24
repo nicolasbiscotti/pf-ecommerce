@@ -1,8 +1,13 @@
-const InputNumber = ({ id, placeholder }) => {
+const InputNumber = ({ placeholder, handleChange }) => {
   return (
     <div>
-      <input id={id} type="number" placeholder={placeholder} />
-      <label htmlFor={id}></label>
+      <input
+        id={placeholder}
+        type="number"
+        placeholder={placeholder}
+        onChange={(e) => handleChange(e)}
+      />
+      <label htmlFor={placeholder}></label>
     </div>
   );
 };
