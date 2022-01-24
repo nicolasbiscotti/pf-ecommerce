@@ -5,7 +5,7 @@ const InputNumber = ({ placeholder, handleChange }) => {
         id={placeholder}
         type="number"
         placeholder={placeholder}
-        onChange={(e) => handleChange(e)}
+        onChange={handleChange ? (e) => handleChange(e) : null}
       />
       <label htmlFor={placeholder}></label>
     </div>

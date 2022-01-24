@@ -4,7 +4,7 @@ const InputName = ({ handleChange, value }) => {
       <input
         type="text"
         placeholder="name"
-        onChange={(e) => handleChange(e)}
+        onChange={handleChange ? (e) => handleChange(e) : null}
         value={value}
       />
     </div>
