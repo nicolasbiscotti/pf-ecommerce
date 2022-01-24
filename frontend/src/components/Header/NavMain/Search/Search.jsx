@@ -36,18 +36,10 @@ function Search({ data }) {
     } else {
       const searchWord = event.target.value;
       let newFilter = [];
-      let count = 0;
       if (data) {
-        for (let i = 0; i < data.length; i++) {
-          if (count > 5) break;
-          const isInclude = data[i].name
-            .toLowerCase()
-            .includes(searchWord.toLowerCase());
-          if (isInclude) {
-            count++;
-            newFilter.push(data[i]);
-          }
-        }
+        newFilter = data.filter((product) =>
+          product.name.toLowerCase().includes(searchWord.toLowerCase())
+        );
       }
       handleCleanInput(newFilter, searchWord);
     }

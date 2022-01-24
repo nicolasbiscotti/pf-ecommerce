@@ -5,7 +5,6 @@ import {
   SELECT_PRICE_RANGE,
   SELECT_TYPE_SORT,
   SELECT_NAME_SEARCH,
-  UNSELECT_NAME_SEARCH,
 } from "./consts";
 import { actionCreator } from "../products/actions";
 import { GET_ALL_PRODUCTS } from "../products/const";
@@ -35,17 +34,19 @@ function setFilterQuerys(filters, params) {
 export const selectCategory = function (category) {
   return async function (dispatch) {
     try {
-      dispatch(actionCreator(UNSELECT_NAME_SEARCH));
-
       const filters = (await store.getState().filters) || { isDefault: true };
       var query = await setFilterQuerys(filters, "category");
       var url;
+      const filterName = filters.nameSearch;
       if (category.id === -1 && category.name === "All") {
-        if (query === "") {
+        filterName
+          ? (url = `/products?name=${filterName.name}`)
+          : (url = "/products");
+        /* if (query === "") {
           url = "/products";
         } else {
           url = "/products?" + query.slice(1);
-        }
+        } */
       } else {
         url = `/products?idCategory=${category.id}` + query;
       }
@@ -91,8 +92,7 @@ export const changePage = function (page) {
   return async function (dispatch) {
     try {
       const filters = (await store.getState().filters) || { isDefault: true };
-      var query = await setFilterQuerys(filters, "");
-
+      const query = await setFilterQuerys(filters, "");
       const res = await axios.get(`/products?page=${page}` + query);
       dispatch(actionCreator(GET_ALL_PRODUCTS, res.data));
     } catch (error) {

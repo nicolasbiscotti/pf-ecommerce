@@ -3,7 +3,7 @@ import {
   SELECT_PRICE_RANGE,
   SELECT_TYPE_SORT,
   SELECT_NAME_SEARCH,
-  UNSELECT_NAME_SEARCH,
+  UNSELECT_FILTERS,
 } from "./consts";
 
 const initialStore = {
@@ -38,15 +38,20 @@ export const filters = (store = initialStore, { type, payload }) => {
       };
     case SELECT_NAME_SEARCH:
       delete store["category"];
+      delete store["priceRange"];
       return {
         ...store,
         nameSearch: { name: payload },
         isDefault: false,
       };
-    case UNSELECT_NAME_SEARCH:
+    case UNSELECT_FILTERS:
       delete store["nameSearch"];
+      delete store["category"];
+      delete store["sort"];
+      delete store["priceRange"];
       return {
         ...store,
+        isDefault: true,
       };
     default:
       return store;
