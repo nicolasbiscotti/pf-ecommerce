@@ -1,28 +1,26 @@
 import React from "react";
-import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
-import { Button } from "../../../common/button/Button";
-import SelectBox from "../../../common/SelectBox/SelectBox";
-import { propsCategories, propsSuppliers } from "./props";
 import { CreateProductStyled } from "./style";
+import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
+import { propsCategories, propsSuppliers } from "./props";
+import { Button } from "../../../common/button/Button";
+import InputFile from "../../../common/InputFile/InputFile";
+import InputNumber from "../../../common/InputNumber/InputNumber";
+import SelectBox from "../../../common/SelectBox/SelectBox";
+import TextArea from "../../../common/TextArea/TextArea";
+import InputName from "../../../common/InputName/InputName";
 
 const CreateProduct = () => {
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   return (
     <CreateProductStyled>
-      <input type="text" placeholder="name" />
-      <input type="number" placeholder="sale price" />
-      <input type="number" placeholder="purchase price" />
-      <input type="number" placeholder="stock" />
-      <textarea
-        name=""
-        id=""
-        cols="30"
-        rows="10"
-        placeholder="description"
-      ></textarea>
-      <input type="file" />
-      <input type="file" />
+      <InputName />
+      <InputNumber placeholder="sale price" />
+      <InputNumber placeholder="purchase price" />
+      <InputNumber placeholder="stock" />
+      <TextArea />
+      <InputFile />
+      <InputFile />
       <SelectBox data={allCategories} title={"categories"} />
       <SelectBox data={allSuppliers} title={"suppliers"} />
       <Button>Crear</Button>
