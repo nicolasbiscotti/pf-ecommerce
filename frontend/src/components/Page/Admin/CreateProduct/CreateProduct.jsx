@@ -8,13 +8,28 @@ import InputNumber from "../../../common/InputNumber/InputNumber";
 import SelectBox from "../../../common/SelectBox/SelectBox";
 import TextArea from "../../../common/TextArea/TextArea";
 import InputName from "../../../common/InputName/InputName";
+import { useDispatch } from "react-redux";
+import { actionGenerator } from "../../../../services/actionGenerator";
+import {
+  SET_CREATE_PRODUCT_NAME,
+  SET_CREATE_PRODUCT_PURCHASE_PRICE,
+} from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
+  const dispatch = useDispatch();
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
+  const handleOnChangeName = (e) => {
+    const name = e.target.value;
+    dispatch(actionGenerator(SET_CREATE_PRODUCT_NAME, name));
+  };
+  const handleOnChangePurchePrice = (e) => {
+    const purchesePrice = e.target.value;
+    dispatch(actionGenerator(SET_CREATE_PRODUCT_PURCHASE_PRICE, purchesePrice));
+  };
   return (
     <CreateProductStyled>
-      <InputName />
+      <InputName handleChange={handleOnChangeName} />
       <InputNumber placeholder="sale price" />
       <InputNumber placeholder="purchase price" />
       <InputNumber placeholder="stock" />

@@ -1,7 +1,12 @@
-const InputName = () => {
+const InputName = ({ handleChange, value }) => {
   return (
     <div>
-      <input type="text" placeholder="name" />
+      <input
+        type="text"
+        placeholder="name"
+        onChange={(e) => handleChange(e)}
+        value={value}
+      />
     </div>
   );
 };
