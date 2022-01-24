@@ -55,11 +55,11 @@ module.exports = (sequelize) => {
     },
     { timestamps: false }
   );
-  const generateHash = async (password) => bcrypt.hash(password, 12);
+  const generateHash = (password) => bcrypt.hash(password, 12);
 
-  const setPassword = (user) => {
+  const setPassword = async (user) => {
     if (user.changed("password")) {
-      user.password = generateHash(user.password());
+      user.password = await generateHash(user.password());
     }
   };
   // Sequelize hooks fot set password before create an user or update user password field.
