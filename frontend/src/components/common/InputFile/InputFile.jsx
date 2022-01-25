@@ -1,7 +1,11 @@
-const InputFile = () => {
+const InputFile = ({ handleChange, multiple }) => {
   return (
     <div>
-      <input type="file" />
+      {multiple ? (
+        <input type="file" onChange={handleChange} multiple />
+      ) : (
+        <input type="file" onChange={handleChange} />
+      )}
     </div>
   );
 };
