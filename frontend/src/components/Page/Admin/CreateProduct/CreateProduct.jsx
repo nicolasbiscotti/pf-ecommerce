@@ -23,6 +23,8 @@ import {
 } from "../../../../redux/reducers/createProduct/const";
 import { axiosPost } from "../../../../services/axios";
 import { urlCloudinary } from "../../../../constants/cloudinary";
+import { validateCreateProduct } from "./validate";
+import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
@@ -38,6 +40,10 @@ const CreateProduct = () => {
 
   const handleOnSubmitCreateProduct = (e) => {
     e.preventDefault();
+    const objError = validateCreateProduct(createProduct);
+    if (Object.keys(objError).length === 0) {
+      dispatch(reqCreteProduct(createProduct));
+    }
   };
 
   const handleCategories = ({ dataSelectBox }) => {

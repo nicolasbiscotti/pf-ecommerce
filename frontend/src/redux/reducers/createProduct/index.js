@@ -8,6 +8,7 @@ import {
   SET_CREATE_PRODUCT_NAME,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
   SET_CREATE_SALE_PRICE,
+  SET_RES_BACK_CP,
 } from "./const";
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
   imgs: [],
   categories: [],
   suppliers: [],
+  resBackCreateProduct: null,
 };
 
 export const createProduct = (state = initialState, { type, payload }) => {
@@ -32,17 +34,17 @@ export const createProduct = (state = initialState, { type, payload }) => {
     case SET_CREATE_SALE_PRICE:
       return {
         ...state,
-        salePrice: payload,
+        salePrice: parseInt(payload),
       };
     case SET_CREATE_PRODUCT_PURCHASE_PRICE:
       return {
         ...state,
-        purchasePrice: payload,
+        purchasePrice: parseInt(payload),
       };
     case SET_CP_STOCK:
       return {
         ...state,
-        stock: payload,
+        stock: parseInt(payload),
       };
     case SET_CP_DESCRIPTION:
       return {
@@ -68,6 +70,11 @@ export const createProduct = (state = initialState, { type, payload }) => {
       return {
         ...state,
         imgs: payload,
+      };
+    case SET_RES_BACK_CP:
+      return {
+        ...state,
+        resBackCreateProduct: payload,
       };
     default:
       return state;
