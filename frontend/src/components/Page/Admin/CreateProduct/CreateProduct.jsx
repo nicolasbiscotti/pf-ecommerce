@@ -16,6 +16,8 @@ import {
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
   SET_CP_STOCK,
   SET_CP_DESCRIPTION,
+  SET_CP_CATEGORIES,
+  SET_CP_SUPPLIERS,
 } from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
@@ -26,8 +28,17 @@ const CreateProduct = () => {
     const value = e.target.value;
     dispatch(actionGenerator(type, value));
   };
+  const handleOnSubmitCreateProduct = (e) => {
+    e.preventDefault();
+  };
+  const handleCategories = ({ dataSelectBox }) => {
+    dispatch(actionGenerator(SET_CP_CATEGORIES, dataSelectBox));
+  };
+  const handleSuppliers = ({ dataSelectBox }) => {
+    dispatch(actionGenerator(SET_CP_SUPPLIERS, dataSelectBox));
+  };
   return (
-    <CreateProductStyled>
+    <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName
         handleChange={(e) =>
           handleOnChangeInputs({ e, type: SET_CREATE_PRODUCT_NAME })
@@ -56,8 +67,16 @@ const CreateProduct = () => {
       />
       <InputFile />
       <InputFile />
-      <SelectBox data={allCategories} title={"categories"} />
-      <SelectBox data={allSuppliers} title={"suppliers"} />
+      <SelectBox
+        data={allCategories}
+        title={"categories"}
+        action={handleCategories}
+      />
+      <SelectBox
+        data={allSuppliers}
+        title={"suppliers"}
+        action={handleSuppliers}
+      />
       <Button>Crear</Button>
     </CreateProductStyled>
   );

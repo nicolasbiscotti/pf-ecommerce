@@ -1,7 +1,9 @@
 import {
+  SET_CP_CATEGORIES,
   SET_CP_DESCRIPTION,
   SET_CP_MAIN_IMG,
   SET_CP_STOCK,
+  SET_CP_SUPPLIERS,
   SET_CREATE_PRODUCT_NAME,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
   SET_CREATE_SALE_PRICE,
@@ -50,6 +52,16 @@ export const createProduct = (state = initialState, { type, payload }) => {
       return {
         ...state,
         mainImg: payload,
+      };
+    case SET_CP_CATEGORIES:
+      return {
+        ...state,
+        categories: payload,
+      };
+    case SET_CP_SUPPLIERS:
+      return {
+        ...state,
+        suppliers: payload,
       };
     default:
       return state;
