@@ -6,13 +6,20 @@ import Card from './Card'
 export default function Categories() {
   const dispatch = useDispatch()
   const homeCategories = useSelector(({ categories }) => categories.homeCategories)
-  
-  useEffect(() => {dispatch(getHomeCategories())}, [])
-  
+
+
+  useEffect(()=> dispatch(getHomeCategories()), [dispatch])
+
 
   return (
     <StyledCategories>
-      {homeCategories.map((category, index) => <Card key={index} {...category} index={index}/>)}
+      <div>
+        <h2>CATEGORIES</h2>
+      </div>
+      <div className="categoriesContainer fade">
+        {homeCategories.map((category, index) => <Card key={index} {...category} index={index} />)}
+
+      </div>
     </StyledCategories>
   )
 }

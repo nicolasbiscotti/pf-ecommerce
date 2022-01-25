@@ -17,7 +17,7 @@ export const getHomeCategories = function () {
   return async function (dispatch) {
     try {
       const categories = await axiosGet("/categories");
-      dispatch(actionGenerator(SET_HOME_CATEGORIES, categories));
+      dispatch(actionGenerator(SET_HOME_CATEGORIES, categories.slice(0,6)));
     } catch (error) {
       console.log(error);
     }
