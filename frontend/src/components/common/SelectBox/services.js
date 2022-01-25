@@ -1,4 +1,9 @@
-export const renderBoxData = ({ data, dataSelectBox, setDataSelectBox }) => {
+export const renderBoxData = ({
+  data,
+  dataSelectBox,
+  setDataSelectBox,
+  init,
+}) => {
   const handleOnChangeChecks = (e) => {
     const value = parseInt(e.target.value);
     if (dataSelectBox.includes(value)) {
@@ -17,6 +22,7 @@ export const renderBoxData = ({ data, dataSelectBox, setDataSelectBox }) => {
               type="checkbox"
               value={id}
               onChange={handleOnChangeChecks}
+              checked={init.includes(id)}
             />
             <label htmlFor={name}>{name}</label>
           </span>

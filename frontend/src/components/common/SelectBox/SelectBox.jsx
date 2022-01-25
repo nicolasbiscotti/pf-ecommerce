@@ -3,15 +3,15 @@ import { Button } from "../button/Button";
 import { renderBoxData } from "./services";
 import { SelectBoxStyled } from "./style";
 
-const SelectBox = ({ data, title, action }) => {
-  const [dataSelectBox, setDataSelectBox] = useState([]);
+const SelectBox = ({ data, title, action, init }) => {
+  const [dataSelectBox, setDataSelectBox] = useState(init ? init : []);
   useEffect(() => {
     action && action({ dataSelectBox });
-  }, [dataSelectBox, action]);
+  }, [dataSelectBox]);
   return (
     <SelectBoxStyled>
       <Button>{title}</Button>
-      {data && renderBoxData({ data, dataSelectBox, setDataSelectBox })}
+      {data && renderBoxData({ data, dataSelectBox, setDataSelectBox, init })}
     </SelectBoxStyled>
   );
 };
