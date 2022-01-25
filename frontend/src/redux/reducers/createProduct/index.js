@@ -1,4 +1,6 @@
 import {
+  SET_CP_DESCRIPTION,
+  SET_CP_MAIN_IMG,
   SET_CP_STOCK,
   SET_CREATE_PRODUCT_NAME,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
@@ -25,22 +27,29 @@ export const createProduct = (state = initialState, { type, payload }) => {
         name: payload,
       };
     case SET_CREATE_SALE_PRICE:
-      const copyPayloadSalePrice = payload;
       return {
         ...state,
-        salePrice: parseInt(copyPayloadSalePrice),
+        salePrice: payload,
       };
     case SET_CREATE_PRODUCT_PURCHASE_PRICE:
-      const copyPayloadPurchasePrice = payload;
       return {
         ...state,
-        purchasePrice: parseInt(copyPayloadPurchasePrice),
+        purchasePrice: payload,
       };
     case SET_CP_STOCK:
-      const copyPayloadStock = payload;
       return {
         ...state,
-        stock: parseInt(copyPayloadStock),
+        stock: payload,
+      };
+    case SET_CP_DESCRIPTION:
+      return {
+        ...state,
+        description: payload,
+      };
+    case SET_CP_MAIN_IMG:
+      return {
+        ...state,
+        mainImg: payload,
       };
     default:
       return state;
