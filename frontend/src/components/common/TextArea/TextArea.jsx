@@ -1,4 +1,4 @@
-const TextArea = () => {
+const TextArea = ({ handleChange, value }) => {
   return (
     <textarea
       name=""
@@ -6,6 +6,8 @@ const TextArea = () => {
       cols="30"
       rows="10"
       placeholder="description"
+      value={value}
+      onChange={handleChange ? (e) => handleChange(e) : null}
     ></textarea>
   );
 };
