@@ -8,7 +8,7 @@ import InputNumber from "../../../common/InputNumber/InputNumber";
 import SelectBox from "../../../common/SelectBox/SelectBox";
 import TextArea from "../../../common/TextArea/TextArea";
 import InputName from "../../../common/InputName/InputName";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import {
   SET_CREATE_PRODUCT_NAME,
@@ -24,6 +24,7 @@ const CreateProduct = () => {
   const dispatch = useDispatch();
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
+  const { categories, suppliers } = useSelector((state) => state.createProduct);
   const handleOnChangeInputs = ({ e, type }) => {
     const value = e.target.value;
     dispatch(actionGenerator(type, value));
@@ -71,11 +72,13 @@ const CreateProduct = () => {
         data={allCategories}
         title={"categories"}
         action={handleCategories}
+        init={categories}
       />
       <SelectBox
         data={allSuppliers}
         title={"suppliers"}
         action={handleSuppliers}
+        init={suppliers}
       />
       <Button>Crear</Button>
     </CreateProductStyled>
