@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { CreateProductStyled } from "./style";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import { propsCategories, propsSuppliers } from "./props";
@@ -52,13 +52,19 @@ const CreateProduct = () => {
     }
   };
 
-  const handleCategories = ({ dataSelectBox }) => {
-    dispatch(actionGenerator(SET_CP_CATEGORIES, dataSelectBox));
-  };
+  const handleCategories = useCallback(
+    ({ dataSelectBox }) => {
+      dispatch(actionGenerator(SET_CP_CATEGORIES, dataSelectBox));
+    },
+    [dispatch]
+  );
 
-  const handleSuppliers = ({ dataSelectBox }) => {
-    dispatch(actionGenerator(SET_CP_SUPPLIERS, dataSelectBox));
-  };
+  const handleSuppliers = useCallback(
+    ({ dataSelectBox }) => {
+      dispatch(actionGenerator(SET_CP_SUPPLIERS, dataSelectBox));
+    },
+    [dispatch]
+  );
 
   const handleOnChangeImgs = async (e) => {
     const imgs = e.target.files;

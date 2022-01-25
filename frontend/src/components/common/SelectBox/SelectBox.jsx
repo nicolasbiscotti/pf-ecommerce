@@ -7,7 +7,7 @@ const SelectBox = ({ data, title, action, init }) => {
   const [dataSelectBox, setDataSelectBox] = useState(init ? init : []);
   useEffect(() => {
     action && action({ dataSelectBox });
-  }, [dataSelectBox]);
+  }, [dataSelectBox, action]);
   return (
     <SelectBoxStyled>
       <Button>{title}</Button>
