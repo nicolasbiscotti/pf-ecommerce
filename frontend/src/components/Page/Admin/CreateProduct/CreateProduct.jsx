@@ -15,6 +15,7 @@ import {
   SET_CREATE_SALE_PRICE,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
   SET_CP_STOCK,
+  SET_CP_DESCRIPTION,
 } from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
@@ -48,7 +49,11 @@ const CreateProduct = () => {
         placeholder="stock"
         handleChange={(e) => handleOnChangeInputs({ e, type: SET_CP_STOCK })}
       />
-      <TextArea />
+      <TextArea
+        handleChange={(e) =>
+          handleOnChangeInputs({ e, type: SET_CP_DESCRIPTION })
+        }
+      />
       <InputFile />
       <InputFile />
       <SelectBox data={allCategories} title={"categories"} />
