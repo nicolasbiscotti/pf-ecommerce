@@ -16,7 +16,7 @@ export default function Categories() {
       <div>
         <h2>CATEGORIES</h2>
       </div>
-      <div className="categoriesContainer fade">
+      <div className="categoriesContainer">
         {homeCategories.map((category, index) => <Card key={index} {...category} index={index} />)}
 
       </div>
