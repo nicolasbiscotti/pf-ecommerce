@@ -21,7 +21,9 @@ module.exports = (config) => {
       },
       async (req, username, password, done) => {
         try {
-          const user = await User.findByUsername(req.body.username);
+          const user = await User.findOne({
+            where: { username: req.body.username },
+          });
           if (!user) {
             req.session.messages.push({
               text: "Invalid username or password.",
@@ -59,7 +61,7 @@ module.exports = (config) => {
       },
       async (jwtPayload, done) => {
         try {
-          const user = await User.findById(jwtPayload.userId);
+          const user = await User.findByPk(jwtPayload.userId);
           return done(null, user);
         } catch (error) {
           return done(error);
@@ -72,7 +74,7 @@ module.exports = (config) => {
   });
   passport.deserializeUser(async (userId, done) => {
     try {
-      const user = await User.findById(userId); // deserialization of the userId
+      const user = await User.findByPk(userId); // deserialization of the userId
       return done(null, user);
     } catch (error) {
       return done(error);

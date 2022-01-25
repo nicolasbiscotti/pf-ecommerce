@@ -5,7 +5,7 @@ const userById = async (req, res, next) => {
   try {
     const user = await User.findByPk(id);
     if (user) {
-      res.json({ ...user, password: user.password() });
+      res.json({ ...user.dataValues });
     } else {
       res.json({ msg: "Some went wrong." });
     }
