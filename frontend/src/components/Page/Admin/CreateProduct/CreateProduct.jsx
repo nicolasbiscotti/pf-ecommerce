@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CreateProductStyled } from "./style";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import { propsCategories, propsSuppliers } from "./props";
@@ -32,6 +32,13 @@ const CreateProduct = () => {
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   const createProduct = useSelector((state) => state.createProduct);
   const { categories, suppliers } = useSelector((state) => state.createProduct);
+  const [objError, setObjError] = useState(
+    validateCreateProduct(createProduct)
+  );
+
+  useEffect(() => {
+    setObjError(validateCreateProduct(createProduct));
+  }, [createProduct]);
 
   const handleOnChangeInputs = ({ e, type }) => {
     const value = e.target.value;
@@ -40,7 +47,6 @@ const CreateProduct = () => {
 
   const handleOnSubmitCreateProduct = (e) => {
     e.preventDefault();
-    const objError = validateCreateProduct(createProduct);
     if (Object.keys(objError).length === 0) {
       dispatch(reqCreteProduct(createProduct));
     }
