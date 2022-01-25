@@ -5,8 +5,8 @@ import Categories from "./Categories"
 export default function Home() {
   return (
     <StyledHome>
-      {/* <Hero /> */}
       <Categories />
+      {/* <Hero /> */}
     </StyledHome>
   );
 }

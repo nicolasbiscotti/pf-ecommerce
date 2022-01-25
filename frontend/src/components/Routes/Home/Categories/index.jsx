@@ -1,18 +1,18 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {getAllCategories} from '../../../../redux/reducers/categories/actions'
+import { getHomeCategories } from '../../../../redux/reducers/categories/actions'
+import { StyledCategories } from './styled'
+import Card from './Card'
 export default function Categories() {
-  const homeCategories = useSelector(({categories}) => categories.allCategories)
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getAllCategories())
-  }, [dispatch])
+  const homeCategories = useSelector(({ categories }) => categories.homeCategories)
   
+  useEffect(() => {dispatch(getHomeCategories())}, [])
+  
+
   return (
-    <div>
-      {homeCategories?.map((category) => <div>holo {category.name}</div>)}
-      This must be Categories buttons
-    </div>
-  ) 
+    <StyledCategories>
+      {homeCategories.map((category, index) => <Card key={index} {...category} index={index}/>)}
+    </StyledCategories>
+  )
 }
