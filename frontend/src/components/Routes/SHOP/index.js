@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { UNSELECT_NAME_SEARCH } from "../../../redux/reducers/filters/consts";
+import { UNSELECT_FILTERS } from "../../../redux/reducers/filters/consts";
 import {
   actionCreator,
   fetchAllCategories,
@@ -12,14 +12,14 @@ import { ShopStyled } from "./styles";
 
 export default function Shop() {
   const dispatch = useDispatch();
-  const isDefault = useSelector((store) => store.filters.isDefault);
+  const nameSearch = useSelector((store) => store.filters.nameSearch);
 
-  isDefault && dispatch(fetchAllProducts());
+  nameSearch === undefined && dispatch(fetchAllProducts());
   dispatch(fetchAllCategories());
 
   useEffect(() => {
     return () => {
-      dispatch(actionCreator(UNSELECT_NAME_SEARCH));
+      dispatch(actionCreator(UNSELECT_FILTERS));
     };
   }, [dispatch]);
 

@@ -62,7 +62,7 @@ export default function Slide({
           height="40px"
           width="160px"
           radius="30px"
-        ><Link to={`/detail/${dataid}`} className="link">
+        ><Link to={`/shop`} className="link">
             DISCOVER NOW
           </Link></Button>
 

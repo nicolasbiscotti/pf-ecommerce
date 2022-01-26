@@ -1,3 +1,3 @@
 import styled from "styled-components";
 
-export const SelectBoxStyled = styled.select``;
+export const SelectBoxStyled = styled.section``;

@@ -1,0 +1,10 @@
+recibe 4 props data, title , action e init
+
+la data es un [{id,name}] el cual va a mapear y dibujará un select de checks,
+tiene un estado local donde va guardando la información al interactuar con el select [id,id,id,...] un arr de ids typeof number
+
+title es la información que va dibujar el button interno del select
+
+action es un metodo (opcional) que va a ejecutarse cada que el estado local del select cambie, enviará un objeto como parametro de la action {dataSelect}
+
+init (opcional) será el estado inicial del estado local, esto le permitirá decidir si los checks están marcados o no... reviselo en la practica
