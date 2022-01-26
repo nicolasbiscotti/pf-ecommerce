@@ -14,21 +14,24 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title }) => {
   return (
     <SelectBoxStyled>
       <Button>{title}</Button>
-      {data &&
-        data.map(({ id, name }) => {
-          return (
-            <span key={name}>
-              <input
-                id={name}
-                type="checkbox"
-                value={id}
-                onChange={handleOnChangeChecks}
-                checked={state.includes(id)}
-              />
-              <label htmlFor={name}>{name}</label>
-            </span>
-          );
-        })}
+      {data && (
+        <div>
+          {data.map(({ id, name }) => {
+            return (
+              <span key={name}>
+                <input
+                  id={name}
+                  type="checkbox"
+                  value={id}
+                  onChange={handleOnChangeChecks}
+                  checked={state.includes(id)}
+                />
+                <label htmlFor={name}>{name}</label>
+              </span>
+            );
+          })}
+        </div>
+      )}
     </SelectBoxStyled>
   );
 };

@@ -13,9 +13,9 @@ import {
 
 const initialState = {
   name: "",
-  salePrice: "",
-  purchasePrice: "",
-  stock: "",
+  salePrice: "0",
+  purchasePrice: "0",
+  stock: "0",
   description: "",
   mainImg: "",
   imgs: [],
