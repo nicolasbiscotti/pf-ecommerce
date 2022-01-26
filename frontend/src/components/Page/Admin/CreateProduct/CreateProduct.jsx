@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CreateProductStyled } from "./style";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import {
@@ -9,6 +9,8 @@ import {
   propsName,
   propsPurchesePrice,
   propsSalePrice,
+  propsSelectCategories,
+  propsSelectSuppliers,
   propsStock,
   propsSuppliers,
 } from "./props";
@@ -20,11 +22,6 @@ import SelectBox from "../../../common/SelectBox/SelectBox";
 import TextArea from "../../../common/TextArea/TextArea";
 import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
-import { actionGenerator } from "../../../../services/actionGenerator";
-import {
-  SET_CP_CATEGORIES,
-  SET_CP_SUPPLIERS,
-} from "../../../../redux/reducers/createProduct/const";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
 
@@ -33,7 +30,6 @@ const CreateProduct = () => {
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   const createProduct = useSelector((state) => state.createProduct);
-  const { categories, suppliers } = useSelector((state) => state.createProduct);
   const [objError, setObjError] = useState(
     validateCreateProduct(createProduct)
   );
@@ -49,20 +45,6 @@ const CreateProduct = () => {
     }
   };
 
-  const handleCategories = useCallback(
-    ({ dataSelectBox }) => {
-      dispatch(actionGenerator(SET_CP_CATEGORIES, dataSelectBox));
-    },
-    [dispatch]
-  );
-
-  const handleSuppliers = useCallback(
-    ({ dataSelectBox }) => {
-      dispatch(actionGenerator(SET_CP_SUPPLIERS, dataSelectBox));
-    },
-    [dispatch]
-  );
-
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName {...propsName} />
@@ -72,18 +54,8 @@ const CreateProduct = () => {
       <TextArea {...propsDescription} />
       <InputFile {...propsMainImg} />
       <InputFileMultiple {...propsImgs} />
-      <SelectBox
-        data={allCategories}
-        title={"categories"}
-        action={handleCategories}
-        init={categories}
-      />
-      <SelectBox
-        data={allSuppliers}
-        title={"suppliers"}
-        action={handleSuppliers}
-        init={suppliers}
-      />
+      <SelectBox data={allCategories} {...propsSelectCategories} />
+      <SelectBox data={allSuppliers} {...propsSelectSuppliers} />
       <Button>Crear</Button>
     </CreateProductStyled>
   );
