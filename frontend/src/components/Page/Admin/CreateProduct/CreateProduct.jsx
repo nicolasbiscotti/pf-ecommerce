@@ -1,7 +1,13 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { CreateProductStyled } from "./style";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
-import { propsCategories, propsSuppliers } from "./props";
+import {
+  propsCategories,
+  propsPurchesePrice,
+  propsSalePrice,
+  propsStock,
+  propsSuppliers,
+} from "./props";
 import { Button } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputNumber from "../../../common/InputNumber/InputNumber";
@@ -12,8 +18,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import {
   SET_CREATE_PRODUCT_NAME,
-  SET_CREATE_SALE_PRICE,
-  SET_CREATE_PRODUCT_PURCHASE_PRICE,
   SET_CP_STOCK,
   SET_CP_DESCRIPTION,
   SET_CP_CATEGORIES,
@@ -106,26 +110,12 @@ const CreateProduct = () => {
       dispatch(actionGenerator(SET_CP_IMGS, []));
     };
   }, [dispatch]);
-
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName nameReducer={"createProduct"} type={SET_CREATE_PRODUCT_NAME} />
-      <InputNumber
-        placeholder="sale price"
-        handleChange={(e) =>
-          handleOnChangeInputs({ e, type: SET_CREATE_SALE_PRICE })
-        }
-      />
-      <InputNumber
-        placeholder="purchise price"
-        handleChange={(e) =>
-          handleOnChangeInputs({ e, type: SET_CREATE_PRODUCT_PURCHASE_PRICE })
-        }
-      />
-      <InputNumber
-        placeholder="stock"
-        handleChange={(e) => handleOnChangeInputs({ e, type: SET_CP_STOCK })}
-      />
+      <InputNumber {...propsSalePrice} />
+      <InputNumber {...propsPurchesePrice} />
+      <InputNumber {...propsStock} />
       <TextArea
         handleChange={(e) =>
           handleOnChangeInputs({ e, type: SET_CP_DESCRIPTION })
