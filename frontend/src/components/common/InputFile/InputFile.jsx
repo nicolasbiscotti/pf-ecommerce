@@ -1,11 +1,25 @@
-const InputFile = ({ handleChange, multiple }) => {
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { actionGenerator } from "../../../services/actionGenerator";
+
+import { loadImg } from "./services";
+
+const InputFile = ({ type }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(actionGenerator(type, ""));
+    };
+  }, [dispatch, type]);
+
+  const handleOnChangeImg = async (e) => {
+    await loadImg({ e, dispatch, type });
+  };
+
   return (
     <div>
-      {multiple ? (
-        <input type="file" onChange={handleChange} multiple />
-      ) : (
-        <input type="file" onChange={handleChange} />
-      )}
+      <input type="file" onChange={handleOnChangeImg} />
     </div>
   );
 };

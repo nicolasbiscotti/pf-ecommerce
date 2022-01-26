@@ -13,9 +13,9 @@ import {
 
 const initialState = {
   name: "",
-  salePrice: 0,
-  purchasePrice: 0,
-  stock: 0,
+  salePrice: "",
+  purchasePrice: "",
+  stock: "",
   description: "",
   mainImg: "",
   imgs: [],
@@ -34,17 +34,17 @@ export const createProduct = (state = initialState, { type, payload }) => {
     case SET_CREATE_SALE_PRICE:
       return {
         ...state,
-        salePrice: parseInt(payload),
+        salePrice: payload,
       };
     case SET_CREATE_PRODUCT_PURCHASE_PRICE:
       return {
         ...state,
-        purchasePrice: parseInt(payload),
+        purchasePrice: payload,
       };
     case SET_CP_STOCK:
       return {
         ...state,
-        stock: parseInt(payload),
+        stock: payload,
       };
     case SET_CP_DESCRIPTION:
       return {
@@ -57,14 +57,22 @@ export const createProduct = (state = initialState, { type, payload }) => {
         mainImg: payload,
       };
     case SET_CP_CATEGORIES:
+      const stateCategories = state.categories;
+      const newCategories = stateCategories.includes(payload)
+        ? stateCategories.filter((item) => item !== payload)
+        : [...stateCategories, payload];
       return {
         ...state,
-        categories: payload,
+        categories: newCategories,
       };
     case SET_CP_SUPPLIERS:
+      const stateSuppliers = state.suppliers;
+      const newSuppliers = stateSuppliers.includes(payload)
+        ? stateSuppliers.filter((item) => item !== payload)
+        : [...stateSuppliers, payload];
       return {
         ...state,
-        suppliers: payload,
+        suppliers: newSuppliers,
       };
     case SET_CP_IMGS:
       return {
