@@ -14,6 +14,7 @@ import {
 } from "./props";
 import { Button } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
+import InputFileMultiple from "../../../common/InputFileMultiple/InputFileMultiple";
 import InputNumber from "../../../common/InputNumber/InputNumber";
 import SelectBox from "../../../common/SelectBox/SelectBox";
 import TextArea from "../../../common/TextArea/TextArea";
@@ -23,8 +24,6 @@ import { actionGenerator } from "../../../../services/actionGenerator";
 import {
   SET_CP_CATEGORIES,
   SET_CP_SUPPLIERS,
-  SET_CP_IMGS,
-  SET_CP_MAIN_IMG,
 } from "../../../../redux/reducers/createProduct/const";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
@@ -72,7 +71,7 @@ const CreateProduct = () => {
       <InputNumber {...propsStock} />
       <TextArea {...propsDescription} />
       <InputFile {...propsMainImg} />
-      {/* <InputFile {...propsImgs} multiple /> */}
+      <InputFileMultiple {...propsImgs} />
       <SelectBox
         data={allCategories}
         title={"categories"}
