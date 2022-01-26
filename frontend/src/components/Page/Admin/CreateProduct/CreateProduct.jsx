@@ -109,11 +109,7 @@ const CreateProduct = () => {
 
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
-      <InputName
-        handleChange={(e) =>
-          handleOnChangeInputs({ e, type: SET_CREATE_PRODUCT_NAME })
-        }
-      />
+      <InputName nameReducer={"createProduct"} type={SET_CREATE_PRODUCT_NAME} />
       <InputNumber
         placeholder="sale price"
         handleChange={(e) =>
