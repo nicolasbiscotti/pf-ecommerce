@@ -64,12 +64,6 @@ const CreateProduct = () => {
     [dispatch]
   );
 
-  useEffect(() => {
-    return () => {
-      dispatch(actionGenerator(SET_CP_MAIN_IMG, ""));
-      dispatch(actionGenerator(SET_CP_IMGS, []));
-    };
-  }, [dispatch]);
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName {...propsName} />
@@ -78,7 +72,7 @@ const CreateProduct = () => {
       <InputNumber {...propsStock} />
       <TextArea {...propsDescription} />
       <InputFile {...propsMainImg} />
-      <InputFile {...propsImgs} multiple />
+      {/* <InputFile {...propsImgs} multiple /> */}
       <SelectBox
         data={allCategories}
         title={"categories"}
