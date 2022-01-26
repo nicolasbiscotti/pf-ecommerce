@@ -3,6 +3,8 @@ import { CreateProductStyled } from "./style";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import {
   propsCategories,
+  propsDescription,
+  propsName,
   propsPurchesePrice,
   propsSalePrice,
   propsStock,
@@ -17,9 +19,6 @@ import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import {
-  SET_CREATE_PRODUCT_NAME,
-  SET_CP_STOCK,
-  SET_CP_DESCRIPTION,
   SET_CP_CATEGORIES,
   SET_CP_SUPPLIERS,
   SET_CP_IMGS,
@@ -43,11 +42,6 @@ const CreateProduct = () => {
   useEffect(() => {
     setObjError(validateCreateProduct(createProduct));
   }, [createProduct]);
-
-  const handleOnChangeInputs = ({ e, type }) => {
-    const value = e.target.value;
-    dispatch(actionGenerator(type, value));
-  };
 
   const handleOnSubmitCreateProduct = (e) => {
     e.preventDefault();
@@ -112,15 +106,11 @@ const CreateProduct = () => {
   }, [dispatch]);
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
-      <InputName nameReducer={"createProduct"} type={SET_CREATE_PRODUCT_NAME} />
+      <InputName {...propsName} />
       <InputNumber {...propsSalePrice} />
       <InputNumber {...propsPurchesePrice} />
       <InputNumber {...propsStock} />
-      <TextArea
-        handleChange={(e) =>
-          handleOnChangeInputs({ e, type: SET_CP_DESCRIPTION })
-        }
-      />
+      <TextArea {...propsDescription} />
       <InputFile handleChange={handleOnChangeImg} />
       <InputFile handleChange={handleOnChangeImgs} multiple />
       <SelectBox

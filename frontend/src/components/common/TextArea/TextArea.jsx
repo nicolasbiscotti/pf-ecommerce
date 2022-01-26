@@ -1,4 +1,13 @@
-const TextArea = ({ handleChange, value }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { actionGenerator } from "../../../services/actionGenerator";
+
+const TextArea = ({ type, nameReducer }) => {
+  const dispatch = useDispatch();
+  const { description } = useSelector((state) => state[nameReducer]);
+  const handleOnChange = (e) => {
+    const description = e.target.value;
+    dispatch(actionGenerator(type, description));
+  };
   return (
     <textarea
       name=""
@@ -6,8 +15,8 @@ const TextArea = ({ handleChange, value }) => {
       cols="30"
       rows="10"
       placeholder="description"
-      value={value}
-      onChange={handleChange ? (e) => handleChange(e) : null}
+      value={description}
+      onChange={handleOnChange}
     ></textarea>
   );
 };
