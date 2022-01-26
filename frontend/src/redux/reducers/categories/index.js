@@ -1,7 +1,8 @@
-import { SET_ALL_CATEGORIES } from "./const";
+import { SET_ALL_CATEGORIES, SET_HOME_CATEGORIES } from "./const";
 
 const initialState = {
   allCategories: [],
+  homeCategories: [],
 };
 
 export const categories = (state = initialState, { type, payload }) => {
@@ -10,6 +11,11 @@ export const categories = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allCategories: payload,
+      };
+    case SET_HOME_CATEGORIES:
+      return {
+        ...state,
+        homeCategories: payload
       };
     default:
       return state;
