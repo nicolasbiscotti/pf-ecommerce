@@ -4,6 +4,8 @@ import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGe
 import {
   propsCategories,
   propsDescription,
+  propsImgs,
+  propsMainImg,
   propsName,
   propsPurchesePrice,
   propsSalePrice,
@@ -24,8 +26,6 @@ import {
   SET_CP_IMGS,
   SET_CP_MAIN_IMG,
 } from "../../../../redux/reducers/createProduct/const";
-import { axiosPost } from "../../../../services/axios";
-import { urlCloudinary } from "../../../../constants/cloudinary";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
 
@@ -64,40 +64,6 @@ const CreateProduct = () => {
     [dispatch]
   );
 
-  const handleOnChangeImgs = async (e) => {
-    const imgs = e.target.files;
-    const allUrlsImgs = [];
-    try {
-      for (let i = 0; i < imgs.length; i++) {
-        const element = imgs[i];
-        const formData = new FormData();
-        formData.append("file", element);
-        formData.append("upload_preset", "pf-ecommerce");
-        const data = await axiosPost(urlCloudinary, formData);
-        const urlImg = data.secure_url;
-        allUrlsImgs.push(urlImg);
-      }
-      dispatch(actionGenerator(SET_CP_IMGS, allUrlsImgs));
-    } catch (error) {
-      console.log(error);
-      dispatch(actionGenerator(SET_CP_IMGS, []));
-    }
-  };
-  const handleOnChangeImg = async (e) => {
-    const imgs = e.target.files;
-    const formData = new FormData();
-    formData.append("file", imgs[0]);
-    formData.append("upload_preset", "pf-ecommerce");
-    try {
-      const data = await axiosPost(urlCloudinary, formData);
-      const urlImg = data.secure_url;
-      dispatch(actionGenerator(SET_CP_MAIN_IMG, urlImg));
-    } catch (error) {
-      console.log(error);
-      dispatch(actionGenerator(SET_CP_MAIN_IMG, ""));
-    }
-  };
-
   useEffect(() => {
     return () => {
       dispatch(actionGenerator(SET_CP_MAIN_IMG, ""));
@@ -111,8 +77,8 @@ const CreateProduct = () => {
       <InputNumber {...propsPurchesePrice} />
       <InputNumber {...propsStock} />
       <TextArea {...propsDescription} />
-      <InputFile handleChange={handleOnChangeImg} />
-      <InputFile handleChange={handleOnChangeImgs} multiple />
+      <InputFile {...propsMainImg} />
+      <InputFile {...propsImgs} multiple />
       <SelectBox
         data={allCategories}
         title={"categories"}

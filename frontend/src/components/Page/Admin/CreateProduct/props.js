@@ -1,6 +1,8 @@
 import { getAllCategories } from "../../../../redux/reducers/categories/actions";
 import {
   SET_CP_DESCRIPTION,
+  SET_CP_IMGS,
+  SET_CP_MAIN_IMG,
   SET_CP_STOCK,
   SET_CREATE_PRODUCT_NAME,
   SET_CREATE_PRODUCT_PURCHASE_PRICE,
@@ -44,4 +46,10 @@ export const propsStock = {
 export const propsDescription = {
   type: SET_CP_DESCRIPTION,
   nameReducer: "createProduct",
+};
+export const propsMainImg = {
+  type: SET_CP_MAIN_IMG,
+};
+export const propsImgs = {
+  type: SET_CP_IMGS,
 };
