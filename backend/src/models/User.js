@@ -33,11 +33,11 @@ module.exports = (sequelize) => {
       },
       firstName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       lastName: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
@@ -68,6 +68,6 @@ module.exports = (sequelize) => {
 
   // add functionality to the User prototype to compare if a plain password encrypt to the saved hash.
   User.prototype.comparePassword = async function (candidatePassword) {
-    return bcrypt.compare(candidatePassword, this.password);
+    return bcrypt.compare(candidatePassword, this.password());
   };
 };

@@ -7,6 +7,9 @@ import ProductDetail from "./components/ProductDetail";
 import Admin from "./components/Page/Admin/Admin";
 import CreateProduct from "./components/Page/Admin/CreateProduct/CreateProduct";
 import Hero from "./components/Hero";
+import RegisterForm from "./components/Login/RegisterForm";
+import LoginForm from "./components/Login/LoginForm";
+import WhoAmI from "./components/Login/WhoAmI";
 
 function App() {
   return (
@@ -22,6 +25,10 @@ function App() {
         <Route path="/admin" element={<Admin />}>
           <Route path="create/product" element={<CreateProduct />} />
         </Route>
+
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/login/whoami" element={<WhoAmI />} />
       </Routes>
     </AppStyled>
   );

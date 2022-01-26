@@ -2,7 +2,7 @@ const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const LocalStrategy = require("passport-local").Strategy;
 /* eslint-disable no-unused-vars */
-const User = require("../../db");
+const { User } = require("../../db");
 
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
@@ -25,27 +25,16 @@ module.exports = (config) => {
             where: { username: req.body.username },
           });
           if (!user) {
-            req.session.messages.push({
-              text: "Invalid username or password.",
-              type: "danger",
-            });
             return done(null, false);
           }
-          if (user && !user.verified) {
-            req.session.messages.push({
-              text: "Please verify your email address!",
-              type: "danger",
-            });
-            return done(null, false);
-          }
+          // if (user && !user.verified) {
+          //   return done(null, false);
+          // }
           const isValid = await user.comparePassword(req.body.password);
           if (!isValid) {
-            req.session.messages.push({
-              text: "Invalid username or password",
-              type: "danger",
-            });
             return done(null, false);
           }
+
           return done(null, user);
         } catch (error) {
           return done(error);
@@ -64,7 +53,7 @@ module.exports = (config) => {
           const user = await User.findByPk(jwtPayload.userId);
           return done(null, user);
         } catch (error) {
-          return done(error);
+          return done(null, false);
         }
       }
     )

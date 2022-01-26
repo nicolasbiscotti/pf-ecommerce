@@ -8,9 +8,9 @@ const createUser = async (req, res, next) => {
       defaults: { username, password, firstName, lastName, type },
     });
     if (created) {
-      res.json({ user, msg: "User created successfully" });
+      res.json({ user, message: "User created successfully" });
     } else {
-      res.json({ msg: "Something went wrog" });
+      res.json({ message: "Something went wrog" });
     }
   } catch (error) {
     next(error);

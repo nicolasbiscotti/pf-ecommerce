@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-
+const cors = require("cors");
 // We are using cookie based sessions
 // http://expressjs.com/en/resources/middleware/cookie-session.html
 const session = require("cookie-session");
@@ -18,6 +18,8 @@ const server = express();
 const passport = setupPassport({ JWTSECRET: process.env.JWTSECRET });
 
 server.name = "API";
+
+server.use(cors());
 
 // Initialize session management with cookie-session
 server.use(
