@@ -4,7 +4,7 @@ import { actionGenerator } from "../../../services/actionGenerator";
 
 import { loadImg } from "./services";
 
-const InputFile = ({ type }) => {
+const InputFile = ({ type, err }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +19,11 @@ const InputFile = ({ type }) => {
 
   return (
     <div>
-      <input type="file" onChange={handleOnChangeImg} />
+      <input id="image" type="file" onChange={handleOnChangeImg} />
+      <label htmlFor="image">
+        Image
+        {err.mainImg && <span>*</span>}
+      </label>
     </div>
   );
 };

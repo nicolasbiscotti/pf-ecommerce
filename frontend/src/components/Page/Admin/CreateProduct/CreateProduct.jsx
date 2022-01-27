@@ -47,15 +47,19 @@ const CreateProduct = () => {
 
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
-      <InputName {...propsName} />
-      <InputNumber {...propsSalePrice} />
-      <InputNumber {...propsPurchesePrice} />
-      <InputNumber {...propsStock} />
-      <TextArea {...propsDescription} />
-      <InputFile {...propsMainImg} />
-      <InputFileMultiple {...propsImgs} />
-      <SelectBox data={allCategories} {...propsSelectCategories} />
-      <SelectBox data={allSuppliers} {...propsSelectSuppliers} />
+      <InputName {...propsName} err={objError} />
+      <InputNumber {...propsSalePrice} err={objError} />
+      <InputNumber {...propsPurchesePrice} err={objError} />
+      <InputNumber {...propsStock} err={objError} />
+      <TextArea {...propsDescription} err={objError} />
+      <InputFile {...propsMainImg} err={objError} />
+      <InputFileMultiple {...propsImgs} err={objError} />
+      <SelectBox
+        data={allCategories}
+        {...propsSelectCategories}
+        err={objError}
+      />
+      <SelectBox data={allSuppliers} {...propsSelectSuppliers} err={objError} />
       <Button>Crear</Button>
     </CreateProductStyled>
   );

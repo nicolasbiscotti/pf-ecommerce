@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
 
-const InputName = ({ nameReducer, type }) => {
+const InputName = ({ nameReducer, type, err }) => {
   const dispatch = useDispatch();
   const { name } = useSelector((state) => state[nameReducer]);
   const handleOnChangeName = (e) => {
@@ -10,12 +10,11 @@ const InputName = ({ nameReducer, type }) => {
   };
   return (
     <div>
-      <input
-        type="text"
-        placeholder="name"
-        onChange={handleOnChangeName}
-        value={name}
-      />
+      <input id="name" type="text" onChange={handleOnChangeName} value={name} />
+      <label htmlFor="name">
+        Name
+        {err.name && <span>*</span>}
+      </label>
     </div>
   );
 };

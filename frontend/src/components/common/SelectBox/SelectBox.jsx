@@ -4,7 +4,7 @@ import { actionGenerator } from "../../../services/actionGenerator";
 import { Button } from "../button/Button";
 import { SelectBoxStyled } from "./style";
 
-const SelectBox = ({ data, nameReducer, nameKey, type, title }) => {
+const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state[nameReducer][nameKey]);
   const handleOnChangeChecks = (e) => {
@@ -13,7 +13,10 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title }) => {
   };
   return (
     <SelectBoxStyled>
-      <Button>{title}</Button>
+      <Button>
+        {title}
+        {err[nameKey] && <span>*</span>}
+      </Button>
       {data && (
         <div>
           {data.map(({ id, name }) => {
