@@ -7,6 +7,7 @@ import Layout from "./components/Routes/Layout";
 import ProductDetail from "./components/ProductDetail";
 import Admin from "./components/Page/Admin/Admin";
 import CreateProduct from "./components/Page/Admin/CreateProduct/CreateProduct";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="favorites" />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>
