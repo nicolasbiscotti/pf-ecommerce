@@ -7,6 +7,7 @@ import Layout from "./components/Routes/Layout";
 import ProductDetail from "./components/ProductDetail";
 import Admin from "./components/Page/Admin/Admin";
 import CreateProduct from "./components/Page/Admin/CreateProduct/CreateProduct";
+import CreateCategories from "./components/Page/Admin/CreateCategories/CreateCategories";
 import RegisterForm from "./components/Login/RegisterForm";
 import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
@@ -24,6 +25,7 @@ function App() {
 
         <Route path="/admin" element={<Admin />}>
           <Route path="create/product" element={<CreateProduct />} />
+          <Route path="create/category" element={<CreateCategories />} />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>
