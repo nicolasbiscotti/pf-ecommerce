@@ -36,11 +36,16 @@ const SideBarContent = () => {
           <Link className="hvr-bounce-to-right" to="">
             Usuarios
           </Link>
-          <Link className="hvr-bounce-to-right" to="">
+          <Link className="hvr-bounce-to-right" to="create/category">
             Categorias
           </Link>
           <Link className="hvr-bounce-to-right" to="">
             Proveedores
+          </Link>
+        </div>
+        <div className="signOut">
+          <Link className="hvr-bounce-to-right" to="/">
+            Cerrar Sesion
           </Link>
         </div>
       </nav>
