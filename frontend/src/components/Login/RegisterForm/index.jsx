@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { StyledRegisterForm } from "./styled";
+import { StyledForm } from "../Styled/StyledForm";
 import axios from "axios";
+import validateUser from "../utils/validate";
+import { BsInfoCircle } from "react-icons/bs";
+import { StyledButton } from "../Styled/StyledButton";
+import { Link } from "react-router-dom";
 
 export default function RegisterForm() {
   const [user, setUser] = useState({
@@ -9,14 +13,31 @@ export default function RegisterForm() {
     password: "",
     confirmpassword: "",
   });
+  const [disabled, setDisabled] = useState(true);
+  const [errors, setErrors] = useState({});
 
   const userChangeHandler = (e) => {
-    setUser((user) => {
-      return {
-        ...user,
-        [e.target.name]: e.target.value,
-      };
+    const newUser = { ...user, [e.target.name]: e.target.value };
+    setUser(() => {
+      return newUser;
     });
+    setErrors(() => {
+      const errors = {};
+      for (const error of validateUser(newUser).errors) {
+        errors[error.type] = error.message;
+      }
+      return errors;
+    });
+    setDisabled(
+      () =>
+        validateUser(newUser).errors.length > 0 ||
+        validateUser(newUser, [
+          "username",
+          "email",
+          "password",
+          "confirmpassword",
+        ]).hasRequired
+    );
   };
 
   const onSubmitHandler = async (e) => {
@@ -27,9 +48,18 @@ export default function RegisterForm() {
   };
 
   return (
-    <StyledRegisterForm>
+    <StyledForm>
       <form className="formSignup" action="" method="post" name="form">
-        <label htmlFor="username">User Name</label>
+        <label htmlFor="username">
+          User Name{" "}
+          {errors.username ? (
+            <span className="errorHelp">
+              <BsInfoCircle /> <span>{errors.username}</span>
+            </span>
+          ) : (
+            " "
+          )}
+        </label>
         <input
           className="formStyling"
           type="text"
@@ -38,7 +68,16 @@ export default function RegisterForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">
+          Email
+          {errors.email ? (
+            <span className="errorHelp">
+              <BsInfoCircle /> <span>{errors.email}</span>
+            </span>
+          ) : (
+            " "
+          )}
+        </label>
         <input
           className="formStyling"
           type="email"
@@ -47,7 +86,16 @@ export default function RegisterForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">
+          Password
+          {errors.password ? (
+            <span className="errorHelp">
+              <BsInfoCircle /> <span>{errors.password}</span>
+            </span>
+          ) : (
+            " "
+          )}
+        </label>
         <input
           className="formStyling"
           type="password"
@@ -56,7 +104,16 @@ export default function RegisterForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
-        <label htmlFor="confirmpassword">Confirm password</label>
+        <label htmlFor="confirmpassword">
+          Confirm password
+          {errors.confirmpassword ? (
+            <span className="errorHelp">
+              <BsInfoCircle /> <span>{errors.confirmpassword}</span>
+            </span>
+          ) : (
+            " "
+          )}
+        </label>
         <input
           className="formStyling"
           type="password"
@@ -65,10 +122,14 @@ export default function RegisterForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
-        <button className="btnSignup" onClick={onSubmitHandler}>
+        <StyledButton onClick={onSubmitHandler} disabled={disabled}>
           Sign Up
-        </button>
+        </StyledButton>
+
+        <StyledButton as={Link} to="/login" backgroundcolor="#6c728d">
+          Sing In
+        </StyledButton>
       </form>
-    </StyledRegisterForm>
+    </StyledForm>
   );
 }
