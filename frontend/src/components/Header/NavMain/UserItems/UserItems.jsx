@@ -48,6 +48,7 @@ export default function UserItems() {
       setUser({});
     } catch (error) {
       setFetchError(error.message);
+      console.log(fetchError);
     }
   };
 
