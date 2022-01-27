@@ -1,6 +1,3 @@
-import React, { useEffect } from "react";
-import { UserItemsStyled } from "./UserItemsStyled";
-import Box from "./Box/Box";
 import axios from "axios";
 import { useState } from "react";
 
@@ -25,8 +22,8 @@ instance.interceptors.request.use(
   }
 );
 
-export default function UserItems() {
-  const [user, setUser] = useState({ username: "" });
+export default function WhoAmI() {
+  const [user, setUser] = useState([]);
   const [fetchError, setFetchError] = useState(null);
 
   const getUser = async () => {
@@ -48,29 +45,20 @@ export default function UserItems() {
       setUser({});
     } catch (error) {
       setFetchError(error.message);
-      console.log(fetchError);
     }
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      getUser();
-    }
-  }, []);
-
   return (
-    <UserItemsStyled>
-      <Box
-        logout={logout}
-        Imgsrc="user"
-        Imgalt="User image"
-        Text={
-          localStorage.getItem("jwt")
-            ? [user.username, "Log out"]
-            : ["Sign in", "Create an Account"]
-        }
-      />
-      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", "$0.00"]} />
-    </UserItemsStyled>
+    <div>
+      <section>
+        <button onClick={getUser}>Get User</button>
+        <button onClick={logout}>Logout</button>
+        <p>
+          {user.username} - {user.email} -{" "}
+          {localStorage.getItem("jwt") ? "logged" : "logged out"}
+        </p>
+        {fetchError && <p style={{ color: "red" }}>{fetchError}</p>}
+      </section>
+    </div>
   );
 }
