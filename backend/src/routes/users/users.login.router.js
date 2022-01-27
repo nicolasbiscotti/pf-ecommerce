@@ -19,7 +19,10 @@ usersLogin.post(
         process.env.JWTSECRET,
         { expiresIn: "24h" }
       );
-      return res.json({ jwt: token });
+      return res.json({
+        jwt: token,
+        message: { text: "You are logged in now!!", type: "success" },
+      });
     } catch (err) {
       return next(err);
     }
