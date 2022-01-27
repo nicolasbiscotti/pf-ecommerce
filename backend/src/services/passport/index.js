@@ -25,6 +25,10 @@ module.exports = (config) => {
             where: { username: req.body.username },
           });
           if (!user) {
+            req.session.messages.push({
+              text: 'Invalid username or password.',
+              type: 'danger',
+            });
             return done(null, false);
           }
           // if (user && !user.verified) {
@@ -32,6 +36,10 @@ module.exports = (config) => {
           // }
           const isValid = await user.comparePassword(req.body.password);
           if (!isValid) {
+            req.session.messages.push({
+              text: 'Invalid username or password.',
+              type: 'danger',
+            });
             return done(null, false);
           }
 
