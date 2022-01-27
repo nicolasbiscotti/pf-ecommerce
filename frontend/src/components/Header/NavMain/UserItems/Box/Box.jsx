@@ -10,18 +10,25 @@ function Box({ Imgsrc, Imgalt, Text, logout }) {
 
   const navigate = useNavigate();
 
-  const onnavigate = () => {
+  const loginOrHome = () => {
     const to = localStorage.getItem("jwt") ? "/" : "/login";
     navigate(to);
+  };
+  const logoutOrRegister = () => {
+    if (localStorage.getItem("jwt")) {
+      logout();
+    } else {
+      navigate("/login/register");
+    }
   };
 
   return (
     <BoxStyled>
       <img src={Imgsrc === "user" ? userIc : cartIc} alt={Imgalt} />
       <div>
-        <p onClick={onnavigate}>{Text[0]}</p>
+        <p onClick={loginOrHome}>{Text[0]}</p>
 
-        <p onClick={logout}>
+        <p onClick={logoutOrRegister}>
           {Text[1].includes(".") ? <b>{Text[1]}</b> : Text[1]}
         </p>
       </div>
