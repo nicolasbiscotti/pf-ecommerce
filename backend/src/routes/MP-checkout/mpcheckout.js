@@ -2,6 +2,8 @@ const server = require("express").Router();
 const express = require("express");
 const cors = require("cors");
 
+const { URL_REACT } = process.env;
+
 // SDK de Mercado Pago
 const mercadopago = require("mercadopago");
 // Agrega credenciales
@@ -35,9 +37,9 @@ server.post("/", (req, res) => {
       },
     ],
     back_urls: {
-      success: "http://localhost:3000/feedback",
-      failure: "http://localhost:3000/feedback",
-      pending: "http://localhost:3000/feedback",
+      success: `${URL_REACT}/feedback`,
+      failure: `${URL_REACT}/feedback`,
+      pending: `${URL_REACT}/feedback`,
     },
     auto_return: "approved",
   };

@@ -60,6 +60,13 @@ export default function PayPalCheckout({ order, amountToPay }) {
         alert("An error ocurred while processing the paymnet");
       });
   };
+  const onError = (error) => {
+    console.log(error);
+    alert("Payment failed, try again");
+  };
+  const onCancel = (data, actions) => {
+    alert("Payment was cancel by the user");
+  };
   return (
     <PayPalScriptProvider
       options={{
@@ -71,13 +78,14 @@ export default function PayPalCheckout({ order, amountToPay }) {
         style={{
           layout: "horizontal",
           color: "gold",
-          label: "pay",
           size: "medium",
+          height: 40,
         }}
         createOrder={(data, actions) => payment(data, actions)}
         onApprove={(data, actions) => onApprove(data, actions)}
+        onCancel={(data, actions) => onCancel(data, actions)}
+        onError={(error) => onError(error)}
       />
-      ;
     </PayPalScriptProvider>
   );
 }

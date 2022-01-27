@@ -1,15 +1,14 @@
 import React from "react";
 import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
-import StripeCheckout from "./StripeCheckout/StripeCheckout";
-import MpagoCheckout from "./MpagoCheckout/MpagoCheckout";
+import MPCheckout from "./MPCheckout/MPCheckout";
+import { CheckoutStyled } from "./CheckoutStyled";
 
 function Checkout() {
   return (
-    <>
+    <CheckoutStyled>
       <PayPalCheckout />
-      <StripeCheckout />
-      <MpagoCheckout />
-    </>
+      <MPCheckout />
+    </CheckoutStyled>
   );
 }
 
