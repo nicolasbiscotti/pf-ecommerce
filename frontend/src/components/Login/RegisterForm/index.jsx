@@ -4,7 +4,9 @@ import axios from "axios";
 import validateUser from "../utils/validate";
 import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setMessage } from "../../../redux/reducers/messages/actions";
 
 export default function RegisterForm() {
   const [user, setUser] = useState({
@@ -40,11 +42,22 @@ export default function RegisterForm() {
     );
   };
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post("/users", { ...user });
-    if (data.user) alert(JSON.stringify(data.user));
-    else alert(data.message);
+    try {
+      const { data } = await axios.post("/users", { ...user });
+      dispatch(setMessage(data.message));
+      if (data.successfully) {
+        navigate("/login");
+      } else {
+        navigate("/login/register");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -126,7 +139,10 @@ export default function RegisterForm() {
           Sign Up
         </StyledButton>
 
-        <StyledButton as={Link} to="/login" backgroundcolor="#6c728d">
+        <StyledButton
+          onClick={() => navigate("/login")}
+          backgroundcolor="#6c728d"
+        >
           Sing In
         </StyledButton>
       </form>

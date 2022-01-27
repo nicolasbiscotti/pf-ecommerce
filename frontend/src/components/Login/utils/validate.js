@@ -6,6 +6,8 @@
 
 export default function validateUser(user, required = []) {
   const errors = [];
+  var mailformat =
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (user.username && user.username.length < 6) {
     errors.push({
@@ -21,7 +23,7 @@ export default function validateUser(user, required = []) {
     });
   }
 
-  if (user.email && user.email.length < 8) {
+  if (user.email && !user.email.match(mailformat)) {
     errors.push({
       type: "email",
       message: "it is not a valid one.",
@@ -31,7 +33,7 @@ export default function validateUser(user, required = []) {
   if (user.confirmpassword && user.confirmpassword !== user.password) {
     errors.push({
       type: "confirmpassword",
-      message: "must have at least 8 characters.",
+      message: "passwords must match.",
     });
   }
 

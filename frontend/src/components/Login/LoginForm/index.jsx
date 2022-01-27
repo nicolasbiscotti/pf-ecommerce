@@ -4,7 +4,9 @@ import axios from "axios";
 import { BsInfoCircle } from "react-icons/bs";
 import validateUser from "../utils/validate";
 import { StyledButton } from "../Styled/StyledButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setMessage } from "../../../redux/reducers/messages/actions";
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -33,11 +35,27 @@ export default function LoginForm() {
     );
   };
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post("/users/login", { ...user });
-    if (data.jwt) {
-      localStorage.setItem("jwt", data.jwt);
+    try {
+      const { data } = await axios.post("/users/login", { ...user });
+      if (data.jwt) {
+        localStorage.setItem("jwt", data.jwt);
+        dispatch(setMessage(data.message));
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+      dispatch(
+        setMessage({
+          text: "Invalid username or password.",
+          type: "danger",
+        })
+      );
+      navigate("/login");
     }
   };
 
@@ -86,7 +104,10 @@ export default function LoginForm() {
           Sign In
         </StyledButton>
 
-        <StyledButton as={Link} to="register" backgroundcolor="#6c728d">
+        <StyledButton
+          onClick={() => navigate("register")}
+          backgroundcolor="#6c728d"
+        >
           Create an acount
         </StyledButton>
       </form>

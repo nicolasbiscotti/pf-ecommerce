@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AppStyled } from "./AppStyle";
 import Shop from "./components/Routes/SHOP/index";
 import Home from "./components/Routes/Home";
@@ -20,7 +20,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
-          <Route path="favorites" />
         </Route>
 
         <Route path="/admin" element={<Admin />}>
@@ -33,6 +32,7 @@ function App() {
         </Route>
 
         <Route path="/login/whoami" element={<WhoAmI />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AppStyled>
   );
