@@ -2,6 +2,11 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const cors = require("cors");
+const {
+  JWTSECRET,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+} = require("./constants/config");
 // We are using cookie based sessions
 // http://expressjs.com/en/resources/middleware/cookie-session.html
 const session = require("cookie-session");
@@ -15,7 +20,11 @@ require("./db.js");
 
 const server = express();
 // passport set up.
-const passport = setupPassport({ JWTSECRET: process.env.JWTSECRET });
+const passport = setupPassport({
+  JWTSECRET,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+});
 
 server.name = "API";
 

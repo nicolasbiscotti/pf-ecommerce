@@ -1,6 +1,7 @@
 const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const LocalStrategy = require("passport-local").Strategy;
+const GitHubStrategy = require("passport-github2").Strategy;
 /* eslint-disable no-unused-vars */
 const { User } = require("../../db");
 
@@ -26,8 +27,8 @@ module.exports = (config) => {
           });
           if (!user) {
             req.session.messages.push({
-              text: 'Invalid username or password.',
-              type: 'danger',
+              text: "Invalid username or password.",
+              type: "danger",
             });
             return done(null, false);
           }
@@ -37,8 +38,8 @@ module.exports = (config) => {
           const isValid = await user.comparePassword(req.body.password);
           if (!isValid) {
             req.session.messages.push({
-              text: 'Invalid username or password.',
-              type: 'danger',
+              text: "Invalid username or password.",
+              type: "danger",
             });
             return done(null, false);
           }
@@ -66,6 +67,27 @@ module.exports = (config) => {
       }
     )
   );
+
+  passport.use(
+    new GitHubStrategy(
+      {
+        clientID: config.GITHUB_CLIENT_ID,
+        clientSecret: config.GITHUB_CLIENT_SECRET,
+        scope: ["user:email"], // what we want to access from the github profile (only the email)
+        callbackURL: "http://localhost:3001/auth/githab/callback",
+        passReqToCallback: true,
+      },
+      async (req, accessToken, refreshToken, profile, deno) => {
+        try {
+          console.log(profile);
+          return done(null, false);
+        } catch (error) {
+          return done(error);
+        }
+      }
+    )
+  );
+
   passport.serializeUser((user, done) => {
     done(null, user.id); // serializatiion of the user
   });

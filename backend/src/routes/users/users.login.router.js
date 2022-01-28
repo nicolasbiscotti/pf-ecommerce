@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const { JWTSECRET } = require("../../constants/config");
 
 const usersLogin = Router();
 
@@ -16,7 +17,7 @@ usersLogin.post(
         {
           userId: req.user.id,
         },
-        process.env.JWTSECRET,
+        JWTSECRET,
         { expiresIn: "24h" }
       );
       return res.json({
