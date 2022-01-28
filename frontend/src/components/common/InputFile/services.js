@@ -1,4 +1,4 @@
-import { urlCloudinary } from "../../../constants/cloudinary";
+import { namePreset, urlCloudinary } from "../../../constants/cloudinary";
 import { actionGenerator } from "../../../services/actionGenerator";
 import { axiosPost } from "../../../services/axios";
 
@@ -6,7 +6,7 @@ export const loadImg = async function ({ e, dispatch, type }) {
   const imgs = e.target.files;
   const formData = new FormData();
   formData.append("file", imgs[0]);
-  formData.append("upload_preset", "pf-ecommerce");
+  formData.append("upload_preset", namePreset);
   try {
     const data = await axiosPost(urlCloudinary, formData);
     const urlImg = data.secure_url;
