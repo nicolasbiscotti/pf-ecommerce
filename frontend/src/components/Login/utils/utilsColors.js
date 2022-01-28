@@ -1,9 +1,6 @@
 export const mainBgcolor = "#263c97";
 export const borderscolor = "rgba(255, 255, 255, 0.15)";
 export const lightblue = "#0dcaf0";
-export const blackHard ="#111111"
-export const blackLight= "#222222"
-export const redHard= "#E8474C"
 
 /* :root {
     --bs-blue: #0d6efd;

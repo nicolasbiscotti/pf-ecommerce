@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { blackLight, redHard } from "../../../utilsStyles/utilsColors";
 
-export const InputNumberSyled = styled.div`
+export const InputNameStyled = styled.div`
   input {
     color: white;
     width: 100%;
@@ -13,17 +13,9 @@ export const InputNumberSyled = styled.div`
       background-color: gray;
     }
   }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
   label {
-    display: block;
     margin-bottom: 10px;
+    display: block;
   }
   span {
     color: ${redHard};

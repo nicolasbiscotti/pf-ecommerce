@@ -14,7 +14,6 @@ import {
   propsStock,
   propsSuppliers,
 } from "./props";
-import { Button } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputFileMultiple from "../../../common/InputFileMultiple/InputFileMultiple";
 import InputNumber from "../../../common/InputNumber/InputNumber";
@@ -24,6 +23,7 @@ import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
+import { EdarButton } from "../../../common/EdarButton/EdarButton";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
@@ -47,16 +47,24 @@ const CreateProduct = () => {
 
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
-      <InputName {...propsName} />
-      <InputNumber {...propsSalePrice} />
-      <InputNumber {...propsPurchesePrice} />
-      <InputNumber {...propsStock} />
-      <TextArea {...propsDescription} />
-      <InputFile {...propsMainImg} />
-      <InputFileMultiple {...propsImgs} />
-      <SelectBox data={allCategories} {...propsSelectCategories} />
-      <SelectBox data={allSuppliers} {...propsSelectSuppliers} />
-      <Button>Crear</Button>
+      <InputName {...propsName} err={objError} />
+      <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
+      <InputNumber
+        {...propsPurchesePrice}
+        err={objError}
+        keyErr="purchasePrice"
+      />
+      <InputNumber {...propsStock} err={objError} keyErr="stock" />
+      <TextArea {...propsDescription} err={objError} />
+      <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
+      <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
+      <SelectBox
+        data={allCategories}
+        {...propsSelectCategories}
+        err={objError}
+      />
+      <SelectBox data={allSuppliers} {...propsSelectSuppliers} err={objError} />
+      <EdarButton>Create</EdarButton>
     </CreateProductStyled>
   );
 };

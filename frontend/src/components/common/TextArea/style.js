@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { blackLight, redHard } from "../../../utilsStyles/utilsColors";
 
-export const InputNumberSyled = styled.div`
-  input {
+export const TextAreaStyled = styled.div`
+  textarea {
     color: white;
     width: 100%;
     background-color: ${blackLight};
@@ -12,14 +12,6 @@ export const InputNumberSyled = styled.div`
     &:focus {
       background-color: gray;
     }
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type="number"] {
-    -moz-appearance: textfield;
   }
   label {
     display: block;

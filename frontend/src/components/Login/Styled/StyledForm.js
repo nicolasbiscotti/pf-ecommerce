@@ -1,35 +1,37 @@
 import styled from "styled-components";
+import { formCard } from "../utils/utilsMixins";
 
-export const StyledRegisterForm = styled.div`
+export const StyledForm = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   .formSignup {
-    width: 50vw;
-    background-color: #373e64;
-    opacity: 0.9;
-    padding: 5rem;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 300;
-    padding-left: 37px;
-    padding-right: 37px;
+    ${formCard};
     label {
       font-weight: 400;
       text-transform: uppercase;
       font-size: 13px;
-      padding-left: 15px;
+      padding-left: 5px;
       padding-bottom: 10px;
       color: rgba(255, 255, 255, 0.7);
       display: block;
+      .errorHelp {
+        display: flex;
+        align-items: center;
+        text-transform: none;
+        color: tomato;
+        span {
+          margin-left: 5px;
+        }
+      }
     }
     .formStyling {
       color: white;
       width: 100%;
       height: 35px;
       padding-left: 15px;
-      border: none;
+      border: 0;
       border-radius: 5px;
       margin-bottom: 20px;
       background: rgba(255, 255, 255, 0.2);
@@ -37,24 +39,6 @@ export const StyledRegisterForm = styled.div`
         outline: none;
         background: rgba(255, 255, 255, 0.5);
         color: white;
-      }
-    }
-    .btnSignup {
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 13px;
-      text-align: center;
-      color: #ffffff;
-      padding: 8px 0;
-      width: 100%;
-      height: 35px;
-      border: none;
-      border-radius: 5px;
-      margin-top: 23px;
-      background-color: #16bcdc;
-      &:hover {
-        cursor: pointer;
-        background-color: #0d6efd;
       }
     }
   }

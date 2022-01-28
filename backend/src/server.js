@@ -59,6 +59,17 @@ server.use((req, res, next) => {
 server.use(passport.initialize());
 server.use(passport.session());
 
+// This sets up 'flash messaging'
+// With that, we can store messages to the user in the session
+
+server.use(async (req, res, next) => {
+  // Set up flash messaging
+  if (!req.session.messages) {
+    req.session.messages = [];
+  }
+  return next();
+});
+
 server.use("/", routes);
 
 // Error catching endware.
@@ -67,6 +78,7 @@ server.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || err;
   console.error(err);
+  console.log(`----------->flash errors: ${req.session.messages[0]}`);
   res.status(status).send(message);
 });
 

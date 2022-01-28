@@ -4,13 +4,22 @@ const createUser = async (req, res, next) => {
   try {
     const { username, password, firstName, lastName, email, type } = req.body;
     const [user, created] = await User.findOrCreate({
-      where: { email },
+      where: { email, username },
       defaults: { username, password, firstName, lastName, type },
     });
     if (created) {
-      res.json({ user, message: "User created successfully" });
+      res.json({
+        successfully: true,
+        message: { text: "User created successfully", type: "success" },
+      });
     } else {
-      res.json({ message: "Something went wrog" });
+      res.json({
+        successfully: false,
+        message: {
+          text: "The given email address or the username exist already!",
+          type: "danger",
+        },
+      });
     }
   } catch (error) {
     next(error);
