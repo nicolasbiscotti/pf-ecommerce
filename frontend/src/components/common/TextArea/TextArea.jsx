@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
+import { TextAreaStyled } from "./style";
 
 const TextArea = ({ type, nameReducer, err }) => {
   const dispatch = useDispatch();
@@ -9,7 +10,11 @@ const TextArea = ({ type, nameReducer, err }) => {
     dispatch(actionGenerator(type, description));
   };
   return (
-    <div>
+    <TextAreaStyled>
+      <label htmlFor={"description"}>
+        Description
+        {err.description && <span>*</span>}
+      </label>
       <textarea
         name=""
         id="description"
@@ -18,11 +23,7 @@ const TextArea = ({ type, nameReducer, err }) => {
         value={description}
         onChange={handleOnChange}
       ></textarea>
-      <label htmlFor={"description"}>
-        Description
-        {err.description && <span>*</span>}
-      </label>
-    </div>
+    </TextAreaStyled>
   );
 };
 

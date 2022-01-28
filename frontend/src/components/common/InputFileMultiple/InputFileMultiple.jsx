@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
 import { loadImgs } from "./services";
+import { InputFileMultipleStyled } from "./style";
 
 const InputFileMultiple = ({ type, err }) => {
   const dispatch = useDispatch();
@@ -16,13 +17,13 @@ const InputFileMultiple = ({ type, err }) => {
     await loadImgs({ e, dispatch, type });
   };
   return (
-    <div>
+    <InputFileMultipleStyled>
       <input id="imgs" type="file" onChange={handleOnChangeImgs} multiple />
       <label htmlFor="imgs">
         Other Images
         {err.imgs && <span>*</span>}
       </label>
-    </div>
+    </InputFileMultipleStyled>
   );
 };
 

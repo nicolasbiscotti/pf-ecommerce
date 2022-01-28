@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
 
 import { loadImg } from "./services";
+import { InputFileStyled } from "./style";
 
 const InputFile = ({ type, err }) => {
   const dispatch = useDispatch();
@@ -18,13 +19,13 @@ const InputFile = ({ type, err }) => {
   };
 
   return (
-    <div>
-      <input id="image" type="file" onChange={handleOnChangeImg} />
+    <InputFileStyled>
       <label htmlFor="image">
         Image
         {err.mainImg && <span>*</span>}
       </label>
-    </div>
+      <input id="image" type="file" onChange={handleOnChangeImg} />
+    </InputFileStyled>
   );
 };
 
