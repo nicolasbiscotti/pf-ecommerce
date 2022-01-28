@@ -74,11 +74,10 @@ function CreateCategories() {
           <h3>Agregar Categoria </h3>
           <form action="" onSubmit={handleSubmit}>
             <InputName
-              handleChange={(e) =>
-                handleOnChange({ e, type: SET_CREATE_CATEGORY_NAME })
-              }
+              nameReducer="createCategories"
+              type="SET_CREATE_CATEGORY_NAME"
             />
-            <InputFile handleChange={handleOnChangeImg} />
+            <InputFile type="SET_CREATE_CATEGORY_IMG" />
             <Button type="submit" width="100%" padding="10px 0">
               Agregar
             </Button>
