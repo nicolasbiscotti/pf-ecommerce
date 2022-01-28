@@ -6,7 +6,7 @@ export const InputFileStyled = styled.div`
     display: inline-block;
     background-color: #e8474c;
     border: none;
-    color: inherit;
+    color: white;
     font-weight: bold;
     width: 150px;
     text-align: center;
