@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { StyledProductInfo } from "./styled";
+import AddtoCart from "../../common/addToCard";
 
 export default function ProductInfo({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -63,7 +64,7 @@ export default function ProductInfo({ product }) {
                 +
               </button>
             </div>
-            <button className="addCart">ADD TO CART</button>
+            <AddtoCart product={product} className="addCart" />
           </div>
         </div>
       </div>

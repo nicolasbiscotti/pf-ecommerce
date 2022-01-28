@@ -1,13 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux"; 
 import { CartStyled } from "./styles";
-import CartObj from "./cartobj";
+import Cards from "./cards";
+import Detailtbar from "./detailbar";
 
-export const Cart = function(){
-    const cart = new CartObj();
+const Cart = function(){
+    const cart = useSelector(state=>state.cart);
+
+    console.log(cart)
     
     return (
         <CartStyled>
-            prueba
+            <h1>SHOPPING CART</h1>
+            <div>
+                <Cards {...cart} />
+                <Detailtbar />
+            </div>
         </CartStyled>
     )
 }
+
+export default Cart;

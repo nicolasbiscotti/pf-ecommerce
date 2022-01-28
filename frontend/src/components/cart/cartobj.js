@@ -1,5 +1,5 @@
-export default function CartObj(){
-    this.products=[];
+export default function CartObj(array = []){
+    this.products=array;
     this.countProducts=this.products.length;
 }
 
@@ -8,7 +8,7 @@ CartObj.prototype.existProduct = function(product){
     return false;
 }
 
-CartObj.prototype.addProduct = function(product, count = 1){
+CartObj.prototype.addProduct = function({product, count = 1}){
     if(this.existProduct(product)){
         return false;
     }else{
@@ -17,6 +17,7 @@ CartObj.prototype.addProduct = function(product, count = 1){
             price: product.price,
             count: count
         });
+        this.countProducts=this.products.length;
         return true;
     }
 }
@@ -24,13 +25,14 @@ CartObj.prototype.addProduct = function(product, count = 1){
 CartObj.prototype.deleteProduct = function(product){
     if(this.existProduct(product)){
         this.products=this.products.filter((e)=>e.idProduct!==product.id);
+        this.countProducts=this.products.length;
         return true;
     }else{
         return false;
     }
 }
 
-CartObj.prototype.setCountProduct = function(product,count){
+CartObj.prototype.setCountProduct = function({product,count}){
     if(this.existProduct(product)){
         this.products=this.products.map((e)=>{
             if(e.idProduct===product){
