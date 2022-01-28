@@ -4,7 +4,6 @@ const width = "150px";
 //recuerde poner positon:relative; al padre
 export const labelFileStyle = () => css`
   display: inline-block;
-  margin-bottom: 10px;
   background-color: #e8474c;
   border: none;
   color: white;

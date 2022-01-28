@@ -23,7 +23,7 @@ import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
-import { EdarButton } from "../../../common/EdarButton/EdarButton";
+import { Button } from "../../../common/button/Button";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ const CreateProduct = () => {
         err={objError}
       />
       <SelectBox data={allSuppliers} {...propsSelectSuppliers} err={objError} />
-      <EdarButton>Create</EdarButton>
+      <Button>Create</Button>
     </CreateProductStyled>
   );
 };

@@ -8,7 +8,6 @@ export const basicInputStyle = () => css`
   border: none;
   padding: 10px;
   outline: none;
-  margin-bottom: 10px;
   &:focus {
     background-color: gray;
   }
