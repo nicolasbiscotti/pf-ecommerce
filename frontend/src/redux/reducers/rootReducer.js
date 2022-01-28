@@ -5,7 +5,7 @@ import { filters } from "./filters";
 import { categories } from "./categories";
 import { suppliers } from "./suppliers";
 import { createProduct } from "./createProduct";
-import { createCategories } from "./crud categories";
+import { createCategory } from "./crud categories";
 import { message } from "./messages";
 
 export const rootReducer = combineReducers({
@@ -15,6 +15,6 @@ export const rootReducer = combineReducers({
   categories,
   suppliers,
   createProduct,
-  createCategories,
+  createCategory,
   message,
 });

@@ -10,7 +10,7 @@ const initialState = {
   img: "",
 };
 
-export const createCategories = (state = initialState, { type, payload }) => {
+export const createCategory = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_CREATE_CATEGORY_NAME:
       return {
