@@ -1,4 +1,4 @@
-import { API_URL } from "../constants";
+import { REACT_APP_BACKEND } from "../constants";
 import axios from "axios";
 
 const corsAxios = axios.create();
@@ -6,7 +6,7 @@ const corsAxios = axios.create();
 corsAxios.interceptors.request.use(
   (config) => {
     const { origin } = new URL(config.url);
-    const allowedOrigins = [API_URL];
+    const allowedOrigins = [REACT_APP_BACKEND];
     const token = localStorage.getItem("jwt");
 
     if (allowedOrigins.includes(origin)) {
@@ -22,11 +22,11 @@ corsAxios.interceptors.request.use(
 export default corsAxios;
 
 export const corsAxiosGet = async (url) => {
-  const { data } = await corsAxios.get(`${API_URL}${url}`);
+  const { data } = await corsAxios.get(`${REACT_APP_BACKEND}${url}`);
   return data;
 };
 
 export const corsAxiosPost = async (url, body) => {
-  const { data } = await corsAxios.post(`${API_URL}${url}`, { ...body });
+  const { data } = await corsAxios.post(`${REACT_APP_BACKEND}${url}`, { ...body });
   return data;
 };

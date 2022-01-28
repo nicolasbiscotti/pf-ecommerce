@@ -6,6 +6,7 @@ const {
   JWTSECRET,
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
+  REDIRECT_URI,
 } = require("./constants/config");
 // We are using cookie based sessions
 // http://expressjs.com/en/resources/middleware/cookie-session.html
@@ -24,6 +25,7 @@ const passport = setupPassport({
   JWTSECRET,
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
+  REDIRECT_URI,
 });
 
 server.name = "API";

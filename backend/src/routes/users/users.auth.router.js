@@ -7,6 +7,7 @@ const usersAuth = Router();
 /** GET route to initiate GitHub authentication flow */
 usersAuth.get("/", passport.authenticate("github"), async (req, res, next) => {
   try {
+    console.log(`_________-----> /user/auth/github`);
     return next({ message: "Not implementes" });
   } catch (err) {
     return next(err);

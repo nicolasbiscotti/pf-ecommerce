@@ -1,2 +1,9 @@
-export const API_URL = process.env.REACT_APP_BACKEND;
+export const REACT_APP_BACKEND = process.env.REACT_APP_BACKEND;
 export const REACT_APP_REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+
+export const REACT_APP_GITHUB_CLIENT_SECRET =
+  process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+export const REACT_APP_GITHUB_CLIENT_ID =
+  process.env.REACT_APP_GITHUB_CLIENT_ID;
+export const REACT_APP_PROXY_URL = process.env.REACT_APP_PROXY_URL;
+export const REACT_APP_BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
