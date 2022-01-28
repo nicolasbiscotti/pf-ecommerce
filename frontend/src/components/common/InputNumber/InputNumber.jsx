@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
+import { toUpperCaseFirstCharacter } from "../../../services/services";
+import { InputNumberSyled } from "./style";
 
-const InputNumber = ({ placeholder, type, nameReducer, nameKey }) => {
+const InputNumber = ({ placeholder, type, nameReducer, nameKey, err }) => {
   const dispatch = useDispatch();
   const value = useSelector((state) => state[nameReducer][nameKey]);
   const handleOnChange = (e) => {
@@ -9,16 +11,19 @@ const InputNumber = ({ placeholder, type, nameReducer, nameKey }) => {
     dispatch(actionGenerator(type, number));
   };
   return (
-    <div>
+    <InputNumberSyled>
+      <label htmlFor={placeholder}>
+        {toUpperCaseFirstCharacter(placeholder)}
+        {err[nameKey] && <span>*</span>}
+      </label>
       <input
         id={placeholder}
         type="number"
-        placeholder={placeholder}
         onChange={handleOnChange}
         value={value}
+        min={0}
       />
-      <label htmlFor={placeholder}></label>
-    </div>
+    </InputNumberSyled>
   );
 };
 
