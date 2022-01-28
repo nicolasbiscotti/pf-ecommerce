@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import {
+  inputFileStyle,
+  labelFileStyle,
+} from "../../../utilsStyles/mixInputFile";
+import { errSpan } from "../../../utilsStyles/mixSpan";
 
 export const InputFileMultipleStyled = styled.div`
-  /*   label {
-    background-color: #e8474c;
-    border: none;
-    padding: 0.5em 2em;
-    color: inherit;
-    font-weight: bold;
+  position: relative;
+  label {
+    ${labelFileStyle}
   }
   input {
-    opacity: 0;
-    position: absolute;
-    right: 0;
-  } */
+    ${inputFileStyle}
+  }
+  span {
+    ${errSpan}
+  }
 `;

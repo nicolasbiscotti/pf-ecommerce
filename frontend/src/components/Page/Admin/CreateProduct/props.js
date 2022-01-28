@@ -59,11 +59,11 @@ export const propsSelectCategories = {
   type: SET_CP_CATEGORIES,
   nameReducer: "createProduct",
   nameKey: "categories",
-  title: "Categories",
+  title: "CATEGORIES",
 };
 export const propsSelectSuppliers = {
   type: SET_CP_SUPPLIERS,
   nameReducer: "createProduct",
   nameKey: "suppliers",
-  title: "Suppliers",
+  title: "SUPPLIERS",
 };

@@ -7,6 +7,7 @@ export const reqCreteProduct = function (body) {
     try {
       const resBackCreateProduct = await axiosPost("/products", body);
       dispatch(actionGenerator(SET_RES_BACK_CP, resBackCreateProduct));
+      alert(resBackCreateProduct.msg);
     } catch (error) {
       console.log(error);
     }

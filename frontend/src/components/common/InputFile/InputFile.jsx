@@ -21,7 +21,7 @@ const InputFile = ({ type, err, keyErr }) => {
   return (
     <InputFileStyled>
       <label htmlFor="image">
-        Image
+        IMG
         {err && err[keyErr] && <span>*</span>}
       </label>
       <input id="image" type="file" onChange={handleOnChangeImg} />

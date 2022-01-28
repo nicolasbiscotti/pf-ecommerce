@@ -1,11 +1,34 @@
 import styled from "styled-components";
-import { blackHard } from "../../../../utilsStyles/utilsColors";
 
 export const CreateProductStyled = styled.form`
-  margin: 0 auto;
+  display: grid;
+  gap: 3px;
   color: white;
-  background-color: ${blackHard};
-  width: 320px;
-  margin-top: 50px;
-  padding: 20px;
+  min-width: 320px;
+  max-width: 640px;
+  padding: 25px;
+  .selects {
+    display: grid;
+    gap: 3px;
+  }
+  .files {
+    display: grid;
+    gap: 3px;
+  }
+  @media (min-width: 375px) {
+    .files {
+      grid-template-columns: auto auto 1fr;
+    }
+    .selects {
+      grid-template-columns: auto auto 1fr;
+    }
+  }
+  @media (min-width: 768px) {
+    margin-left: 250px;
+    .price {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+  }
 `;

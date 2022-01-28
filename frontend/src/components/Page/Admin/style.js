@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import { blackHard } from "../../../utilsStyles/utilsColors";
 
 export const AdminStyled = styled.section`
-  display: flex;
+  background-color: ${blackHard};
+  min-height: 100vh;
 `;
