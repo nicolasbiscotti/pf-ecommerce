@@ -48,12 +48,16 @@ const CreateProduct = () => {
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName {...propsName} err={objError} />
-      <InputNumber {...propsSalePrice} err={objError} />
-      <InputNumber {...propsPurchesePrice} err={objError} />
-      <InputNumber {...propsStock} err={objError} />
+      <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
+      <InputNumber
+        {...propsPurchesePrice}
+        err={objError}
+        keyErr="purchasePrice"
+      />
+      <InputNumber {...propsStock} err={objError} keyErr="stock" />
       <TextArea {...propsDescription} err={objError} />
-      <InputFile {...propsMainImg} err={objError} />
-      <InputFileMultiple {...propsImgs} err={objError} />
+      <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
+      <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
       <SelectBox
         data={allCategories}
         {...propsSelectCategories}
