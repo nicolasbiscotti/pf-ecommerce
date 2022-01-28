@@ -138,6 +138,1106 @@
       "purchasePrice": 900,
       "stock": 9,
       "discount": 0
+    },
+    {
+      "name": "Hp Notebook Gaming 15.6\" 15-EC1025la AMD Ryzen 5",
+      "description": " Sistema operativo Windows 10, Procesador AMD Ryzen 5 4600H SixCore, Velocidad del procesador: Desde 3.0 GHz hasta 4.0 GHz, Pantalla WLED Full HD de 15.6\" (1920 x 1080 px), Memoria sólida de 256B / Memoria RAM de 8GB DDR4, Cámara web HD TrueVision con dos micrófonos digitales, Calidad de sonido: Audio de B&O con dos altavoces, Gráficos integrados NVIDIA GeForce GTX 1050 de 3GB, Conectividad: Bluetooth v4.2, Puertos: 1 SuperSpeed USB TipoC / 1 SuperSpeed USB TipoA / 1 USB 2.0 TipoA / 1 HDMI 2.0 / 1 RJ45 / 1 Smart Pin de CA, Duración de la batería: Hasta 10 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/470068-750-750/Hp-Notebook-Gaming-15-6-15-EC1025la-AMD-Ryzen-5-1-226754036.jpg?v=637671215845800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/470039-100-100/Hp-Notebook-Gaming-15-6-15-EC1025la-AMD-Ryzen-5-2-226754036.jpg?v=637671200889200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/470040-100-100/Hp-Notebook-Gaming-15-6-15-EC1025la-AMD-Ryzen-5-3-226754036.jpg?v=637671202696500000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/470041-100-100/Hp-Notebook-Gaming-15-6-15-EC1025la-AMD-Ryzen-5-4-226754036.jpg?v=637671202711670000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1299,
+      "purchasePrice": 1000,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "LG Ultrabook Gram 14Z90P 14\" Intel Core i5",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i51165G7 QuadCore de hasta 4.2 GHz, Pantalla IPS WUXGA de 14\" (1920 x 1200 px), Memoria sólida de 256GB / Memoria RAM de 8GB DDR4, Cámara web HD con micrófono integrado, Sitema de sonido HD con DTS X Ultra, Gráficos Intel Iris Xe integrados, Teclado retroiluminado, Botón de encendido con huella digital, Conectividad: Bluetooth v5.1, Lector de tarjetas: MicroSD, Puertos: 2 USB 3.2 / HDMI, Duración de la batería: Hasta 25.5 horas,14Z90P  G.AJ52B4",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/452384-750-750/LG-Ultrabook-Gram-14Z90P-14-Intel-Core-i7-1-209590726.jpg?v=637608366141470000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/445222-100-100/LG-Ultrabook-Gram-14Z90P-14-Intel-Core-i7-10-209590726.jpg?v=637590284721130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445223-100-100/LG-Ultrabook-Gram-14Z90P-14-Intel-Core-i7-11-209590726.jpg?v=637590284723000000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445224-100-100/LG-Ultrabook-Gram-14Z90P-14-Intel-Core-i7-12-209590726.jpg?v=637590284725030000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 700,
+      "purchasePrice": 500,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Asus Laptop 14\" GA401IHR-K2038T AMD Ryzen 7",
+      "description": " Sistema operativo Windows 10, Procesador AMD Ryzen 7 4800HS OctaCore de 2.9 GHz, Pantalla QHD de 14\" (2560 x 1440 px), Memoria sólida de 512GB / Memoria RAM de 16GB, Tarjeta gráfica NVIDIA GeForce GTX 1650, Tenología de sonido: GSYNC, Conectividad: Bluetooth v5.1 / WiFi 6, Lector de tarjetas: SD, Puertos: 1 USB 2.0 / 1 USB 3.0 / HDMI, Tiempo de carga: 2 horas, Duración de la batería: Hasta 8 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/471561-750-750/Asus-Laptop-14-GA401IHR-K2038T-AMD-Ryzen-7-1-227192463.jpg?v=637673268288030000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/471531-100-100/Asus-Laptop-14-GA401IHR-K2038T-AMD-Ryzen-7-2-227192463.jpg?v=637673256430400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/471532-100-100/Asus-Laptop-14-GA401IHR-K2038T-AMD-Ryzen-7-3-227192463.jpg?v=637673256434130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/471533-100-100/Asus-Laptop-14-GA401IHR-K2038T-AMD-Ryzen-7-4-227192463.jpg?v=637673256440530000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1800,
+      "purchasePrice": 1400,
+      "stock": 15,
+      "discount": 0
+    },
+
+    {
+      "name": "Hp Laptop 14\" 14-DW2088WM Intel Core i5",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i51135G7 QuadCore, Velocidad del procesador: Hasta 4.2 GHz, Pantalla WLED HD de 14\" (1366 x 768 px), Memoria sólida de 256B / Memoria RAM de 8GB DDR4, Teclado en inglés, Cámara web Hp TrueVision HD, Gráficos integrados Intel iRIS Xe, Conectividad: Bluetooth v4.2, Puertos: 1 USB TipoC / 2 USB TipoA / 1 HDMI 1.4b, Duración de la batería: Hasta 9 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/474212-750-750/Hp-Laptop-14-14-DW2088WM-Intel-Core-i5-1-225748900.jpg?v=637684174150070000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/474204-100-100/Hp-Laptop-14-14-DW2088WM-Intel-Core-i5-2-225748900.jpg?v=637684162388500000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/474205-100-100/Hp-Laptop-14-14-DW2088WM-Intel-Core-i5-3-225748900.jpg?v=637684162391170000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/474206-100-100/Hp-Laptop-14-14-DW2088WM-Intel-Core-i5-4-225748900.jpg?v=637684162393700000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 800,
+      "purchasePrice": 600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Acer Notebook 14 Swift 3 SF314-59-59TX Intel Core i5\" - Acer Notebook 14\" Swift 3 SF314-59-59TX Intel Core i5",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i51135G7 de 2.4 GHz, Pantalla IPS Full HD de 14.1\" (1280 x 720 px), Memoria sólida de 512GB / Memoria RAM de 8GB, Tecnología de sonido: Dolby Audio, Gráficos integrados Intel Xe, Conectividad: Bluetooth v5.0, Puertos: 1 USB TipoC / 2 USB 3.1 / 1 USB 2.0 / HDMI, Duración de la batería de 13 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/473242-750-750/Acer-Notebook-14-Swift-3-SF314-59-59TX-Intel-Core-i5-1-226754034.jpg?v=637678548584800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/473228-100-100/Acer-Notebook-14-Swift-3-SF314-59-59TX-Intel-Core-i5-2-226754034.jpg?v=637678542791300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473229-100-100/Acer-Notebook-14-Swift-3-SF314-59-59TX-Intel-Core-i5-3-226754034.jpg?v=637678542795670000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473230-100-100/Acer-Notebook-14-Swift-3-SF314-59-59TX-Intel-Core-i5-4-226754034.jpg?v=637678542798330000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1000,
+      "purchasePrice": 600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Notebook 10.1 IdeaPad D330 Intel Celeron N4020\" - Lenovo Notebook 10.1\" IdeaPad D330 Intel Celeron N4020",
+      "description": " Sistema operativo Windows 10 Home Modo S, Procesador Intel Celeron N4020 DualCore de 1.1 GHz, Pantalla desmontable IPS HD de 10.1\" (1280 x 800 px), Memoria eMMC 5.1 de 64GB / Memoria RAM de 4GB, Teclado imantado en español, Cámara principal de 5MP / Cámara frontal de 2MP, Parlantes estéreo 2 x 1 watt, Gráficos Intel UHD 600 integrados, Conectividad: Bluetooth v4.2, Puertos: 2 USB 2.0 / 1 USBC 3.2, Duración de la batería: Hasta 8 horas, según condiciones de uso,82H0S00C00 ",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/468698-750-750/Lenovo-Notebook-10-1-IdeaPad-D330-Intel-Celeron-N4020-1-215848654.jpg?v=637665795228370000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/468673-100-100/Lenovo-Notebook-10-1-IdeaPad-D330-Intel-Celeron-N4020-2-215848654.jpg?v=637665793270630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468674-100-100/Lenovo-Notebook-10-1-IdeaPad-D330-Intel-Celeron-N4020-3-215848654.jpg?v=637665793272370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468675-100-100/Lenovo-Notebook-10-1-IdeaPad-D330-Intel-Celeron-N4020-4-215848654.jpg?v=637665793273900000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 2000,
+      "purchasePrice": 1500,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Chromebook 14\" S330 MediaTek MT8173C",
+      "description": " Sistema operativo Chrome OS, Procesador MediaTek MT8173C QuadCore de 2.1 GHz, Pantalla TN Antirreflejo HD de 14\" (1366 x 768 px), Memoria eMMC 5.1 de 64GB / Memoria RAM de 4GB, Teclado en inglés, Cámara web HD de 720p, Parlantes estéreo 2 x 2 watts, Gráficos PowerVR GX6250 integrados, Conectividad: Bluetooth v4.1, Puertos: 1 USB 3.1 / 1 USBC 3.1 / HDMI, Duración de la batería: Hasta 10 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/468700-750-750/Lenovo-Notebook-14-Chromebook-S330-MediaTek-MT8173C-1-228873452.jpg?v=637665795245570000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/468684-100-100/Lenovo-Notebook-14-Chromebook-S330-MediaTek-MT8173C-2-228873452.jpg?v=637665793293800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468685-100-100/Lenovo-Notebook-14-Chromebook-S330-MediaTek-MT8173C-3-228873452.jpg?v=637665793295800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468686-100-100/Lenovo-Notebook-14-Chromebook-S330-MediaTek-MT8173C-4-228873452.jpg?v=637665793297700000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1800,
+      "purchasePrice": 1500,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Notebook Gaming 15.6 X571GT-HN1020T Intel Core i5 GTX1650\" - Notebook Gaming 15.6\" X571GT-HN1020T Intel Core i5 GTX1650",
+      "description": " Sistema operativo Windows 10, Procesador Intel Core i59300H QuadCore de 2.4 GHz, Pantalla Full HD de 15.6\" (1920 x 1080 px), Memoria sólida de 512GB / Memoria RAM de 8GB, Tarjeta gráfica NVIDIA GeForce GTX 1650, Tecnología de sonido: Harman / Kardon, Conectividad: Bluetooth v5.0 / WiFi 6, Lector de tarjetas: SD / MiniSD / MicroSD, Puertos: 1 USB 2.0 / 1 USB 3.0 / HDMI, Tiempo de carga: 2 horas, Duración de la batería: Hasta 8 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/471562-750-750/Asus-Notebook-15-6-VivoBook-X571GT-HN1020T-Intel-Core-i5-1-227192464.jpg?v=637673268293130000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/471536-100-100/Asus-Notebook-15-6-VivoBook-X571GT-HN1020T-Intel-Core-i5-2-227192464.jpg?v=637673256449770000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/471537-100-100/Asus-Notebook-15-6-VivoBook-X571GT-HN1020T-Intel-Core-i5-3-227192464.jpg?v=637673256452730000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/471538-100-100/Asus-Notebook-15-6-VivoBook-X571GT-HN1020T-Intel-Core-i5-4-227192464.jpg?v=637673256455230000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 700,
+      "purchasePrice": 500,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei Laptop MateBook X 13\" Intel Core i5",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i510210U QuadCore, Velocidad de hasta 1.6 GHz, Pantalla Táctil LTPS de 13\" (3000 x 2000 px), Memoria sólida de 512GB / Memoria RAM de 16GB DDR4, Cámara web HD de 720p, Micrófonos: 2 / Altavoces: 4, Gráficos Intel UHD integrados, Conectividad: Bluetooth v5.0, Lector de tarjetas: MicroSD, Puertos: 2 USBC, Duración de la batería: Hasta 9 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/445332-750-750/Huawei-Laptop-MateBook-X-13-Intel-Core-i5-1-207216706.jpg?v=637590290837600000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/514223-100-100/Huawei-Laptop-MateBook-X-13-Intel-Core-i5-3-207216706.jpg?v=637784052625600000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/514224-100-100/Huawei-Laptop-MateBook-X-13-Intel-Core-i5-4-207216706.jpg?v=637784052630130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/514225-100-100/Huawei-Laptop-MateBook-X-13-Intel-Core-i5-5-207216706.jpg?v=637784052632800000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1200,
+      "purchasePrice": 800,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Laptop 14\" IdeaPad 3i Intel Core i3",
+      "description": " Sistema operativo Windows 10 Home Español, Procesador Intel Core i31005G1 DualCore de hasta 1.2 GHz, Pantalla IPS HD de 14\" (1366 x 768 px), Disco duro de 1TB / Memoria RAM de 4GB, Cámara web de 0.3MP con Obturador de privacidad, Parlantes estéreo 1.5 x 2 watts, Tecnología de sonido Dolby Audio, Gráficos Intel UHD integrados, Bisagra de inclinación: 180°, Lector de tarjetas: MicroSD, Conectividad: Bluetooth v5.0, Puertos: 1 USB 2.0 / 2 USB 3.2 / HDMI, Duración de la batería: Hasta 7.5 horas, según condiciones de uso,81WD00HFLM",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/470790-750-750/Lenovo-Laptop-14-IdeaPad-3i-Intel-Core-i3-1-224256291.jpg?v=637672622003000000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/470727-100-100/Lenovo-Laptop-14-IdeaPad-3i-Intel-Core-i3-2-224256291.jpg?v=637672605294800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/470728-100-100/Lenovo-Laptop-14-IdeaPad-3i-Intel-Core-i3-3-224256291.jpg?v=637672605312130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/470729-100-100/Lenovo-Laptop-14-IdeaPad-3i-Intel-Core-i3-4-224256291.jpg?v=637672605326200000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 500,
+      "purchasePrice": 300,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Notebook 13.3\" IdeaPad S540 + Tablet 8505FS",
+      "description": " Sistema operativo Windows 10 Home Español, Procesador Intel Core i7 10510U QuadCore de 1.8 GHz, Pantalla IPS Full QHD de 13.3\" (2560 x 1600 px), Memoria sólida de 512GB / Memoria RAM de 16GB, Teclado iluminado, Cámara web HD de 720p con Reconocimiento Facial, Parlantes estéreo 2 x 2 watts, Tecnología de sonido Dolby Audio, Gráficos Intel UHD integrados, Conectividad: Bluetooth v5.0 / WiFi 6, Puertos: 1 USB 3.1 / 2 USBC 3.1, Duración de la batería: Hasta 18 horas, según condiciones de uso, Sistema operativo Android Pie 9.0, Procesador MediaTek Helio A22 QuadCore de 2.0 GHz, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible de hasta 128GB, Cámara principal de 5MP / Cámara frontal de 2MP, 2 Parlantes con sonido Dolby Atmos, Conectividad: Bluetooth v5.0, Duración de la batería: Hasta 18 horas, Incluye: Docking para cargar,81XA008VLM",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/464220-750-750/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-1-225660728.jpg?v=637654464414770000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/464211-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-10-225660728.jpg?v=637654452647030000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464212-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-2-225660728.jpg?v=637654452650930000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464213-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-3-225660728.jpg?v=637654452654700000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 1000,
+      "purchasePrice": 800,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Acer Notebook 15.6 Aspire 5 A515-54-31E3 Intel Core i3\" - Acer Notebook 15.6\" Aspire 5 A515-54-31E3 Intel Core i3",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i310110U de 2.1 GHz, Pantalla IPS Full HD de 15.6\" (1280 x 720 px), Memoria sólida de 256GB / Memoria RAM de 8GB, Tecnología de sonido: Dolby Audio, Gráficos integrados Intel UHD, Conectividad: Bluetooth v5.0, Puertos: 1 USB TipoC / 2 USB 3.1 / 1 USB 2.0 / HDMI, Duración de la batería de 8 horas, según condiciones de uso",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/473141-750-750/Acer-Notebook-15-6-Aspire-5-A515-Intel-Core-i3-1-222830950.jpg?v=637677785826370000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/473055-100-100/Acer-Notebook-15-6-Aspire-5-A515-Intel-Core-i3-2-222830950.jpg?v=637677778245700000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473056-100-100/Acer-Notebook-15-6-Aspire-5-A515-Intel-Core-i3-3-222830950.jpg?v=637677778253200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473057-100-100/Acer-Notebook-15-6-Aspire-5-A515-Intel-Core-i3-4-222830950.jpg?v=637677778255870000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 600,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Chuwi Notebook Herobook Pro 14.1 Intel Celeron N4020\" - Chuwi Notebook Herobook Pro 14.1\" Intel Celeron N4020",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Celeron N4020 de hasta 2.4 GHz, Pantalla IPS 2K de 14.1\" (2160 x 1400 px), Memoria sólida de 256GB / Memoria RAM de 8GB DDR4, Gráficos integrados Intel UHD 600, Conectividad: Bluetooth v5.1, Lector de tarjetas multimedia MicroSD, Puertos: 1 USB 3.0 / 1 USB TipoC / 1 Jack 3.5 mm, Duración de la batería: Hasta 6.5 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/452478-750-750/Chuwi-Notebook-Herobook-Pro-14-1-Intel-Celeron-N4020-1-215341210.jpg?v=637608622468130000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/452658-100-100/Chuwi-Notebook-Herobook-Pro-14-1-Intel-Celeron-N4020-2-215341210.jpg?v=637608626937370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452659-100-100/Chuwi-Notebook-Herobook-Pro-14-1-Intel-Celeron-N4020-3-215341210.jpg?v=637608626954400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452660-100-100/Chuwi-Notebook-Herobook-Pro-14-1-Intel-Celeron-N4020-4-215341210.jpg?v=637608626961900000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 450,
+      "purchasePrice": 300,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Chuwi Notebook Gemibook 13\" Intel Celeron J4115",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Celeron J4115 de hasta 2.4 GHz, Pantalla IPS 2K de 13\" (2160 x 1400 px), Memoria sólida de 256GB / Memoria RAM de 12GB DDR4, Gráficos integrados Intel UHD 600, Conectividad: Bluetooth v5.1, Lector de tarjetas multimedia MicroSD, Puertos: 1 USB 3.0 / 1 USB TipoC / 1 Jack 3.5 mm, Duración de la batería: Hasta 6.5 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/452477-750-750/Chuwi-Notebook-Gemibook-13-Intel-Celeron-J4115-1-215341209.jpg?v=637608622465170000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/452654-100-100/Chuwi-Notebook-Gemibook-13-Intel-Celeron-J4115-2-215341209.jpg?v=637608626891930000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452655-100-100/Chuwi-Notebook-Gemibook-13-Intel-Celeron-J4115-3-215341209.jpg?v=637608626901300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452656-100-100/Chuwi-Notebook-Gemibook-13-Intel-Celeron-J4115-4-215341209.jpg?v=637608626913500000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 550,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Chuwi Notebook Corebook Pro 13\" Intel Core i3",
+      "description": " Sistema operativo Windows 10 Home, Procesador Intel Core i36157U de hasta 2.4 GHz, Pantalla IPS 2K de 13\" (2160 x 1400 px), Memoria sólida de 256GB / Memoria RAM de 8GB DDR4, Gráficos integrados Intel Iris 550, Conectividad: Bluetooth v4.2, Lector de tarjetas multimedia MicroSD, Puertos: 1 USB 3.0 / 1 USB TipoC / 1 Jack, Duración de la batería: Hasta 7.5 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/452476-750-750/Chuwi-Notebook-Corebook-Pro-13-Intel-Core-i3-1-215341208.jpg?v=637608622462500000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/452649-100-100/Chuwi-Notebook-Corebook-Pro-13-Intel-Core-i3-2-215341208.jpg?v=637608626835400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452650-100-100/Chuwi-Notebook-Corebook-Pro-13-Intel-Core-i3-3-215341208.jpg?v=637608626846970000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452651-100-100/Chuwi-Notebook-Corebook-Pro-13-Intel-Core-i3-4-215341208.jpg?v=637608626857600000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 600,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Hp Laptop 14\" HP 348 2X033LT Intel Core i5",
+      "description": " Sistema operativo Windows 10 Pro de 64 bits, Procesador Intel Core i510210U QuadCore de 1.6 GHz, Pantalla LED HD de 14\" (1366 x 768 px), Memoria sólida de 256GB / Memoria RAM de 8GB DDR4, Cámara web Hp TrueVision HD, Tarjeta de video AMD Radeon 530 de 2GB DDR5, Conectividad: Bluetooth v5.0, Puertos: 3 USB 3.1 / 1 USB 3.1 TipoC / HDMI, Duración de la batería: Hasta 3 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/444259-750-750/Hp-Laptop-14-HP-348-2X033LT-Intel-Core-i5-1-201622048.jpg?v=637586778683100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/428250-100-100/Hp-Laptop-14-HP-348-2X033LT-Intel-Core-i5-2-201622048.jpg?v=637535172106200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/428251-100-100/Hp-Laptop-14-HP-348-2X033LT-Intel-Core-i5-3-201622048.jpg?v=637535172108070000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/428252-100-100/Hp-Laptop-14-HP-348-2X033LT-Intel-Core-i5-4-201622048.jpg?v=637535172110270000"
+      ],
+      "suppliers": [1],
+      "categories": [6],
+      "salePrice": 900,
+      "purchasePrice": 600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Galaxy S20 FE Blue",
+      "description": " Sistema operativo Android 10, Procesador Snapdragon 865 OctaCore de 2.8 GHz, Pantalla Super AMOLED Full HD+ de 6.5\" (1080 x 2400 px), Memoria interna de 128GB / Memoria RAM de 6GB, Memoria expandible de hasta 1TB, Multicámara principal de 12MP + 12MP + 8MP / Cámara frontal de 32MP, Grabación de video en UHD 4K (3840 x 2160 px con 30fps), Conectividad: Bluetooth v5.0 / NFC, Capacidad de la batería de 4500 mAh,SMG780GZBLLTP",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/458469-750-750/Samsung-Galaxy-S20-FE-Blue-1-212512538.jpg?v=637624970388530000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/458410-100-100/Samsung-Galaxy-S20-FE-Blue-2-212512538.jpg?v=637624959126800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/458411-100-100/Samsung-Galaxy-S20-FE-Blue-3-212512538.jpg?v=637624959134130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/458412-100-100/Samsung-Galaxy-S20-FE-Blue-4-212512538.jpg?v=637624959136330000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 650,
+      "purchasePrice": 500,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi Mi 10T US Cosmic Black",
+      "description": " Dispositivo con DualSim, Sistema operativo Android 10, Procesador Qualcomm Snapdragon 865 OctaCore de 2.8 GHz, Pantalla LCD Full HD+ de 6.67\" (2340 x 1080 px), Memoria interna de 128GB / Memoria RAM de 6GB, Multicámara principal de 64MP + 13MP + 5 MP / Cámara frontal 20MP, Grabación de video en 8K (7680 x 4320 px), Conectividad Bluetooth v5.0, Tipo de cargador: MIUI, Capacidad de la batería de 5000 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/434875-750-750/Xiaomi-Mi-10T-US-Cosmic-Black-1-192765974.jpg?v=637557646835100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/434827-100-100/Xiaomi-Mi-10T-US-Cosmic-Black-2-192765974.jpg?v=637557644774600000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/434828-100-100/Xiaomi-Mi-10T-US-Cosmic-Black-3-192765974.jpg?v=637557644776630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/434829-100-100/Xiaomi-Mi-10T-US-Cosmic-Black-4-192765974.jpg?v=637557644780070000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 550,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi Mi 10T US Lunar Silver",
+      "description": " Dispositivo con DualSim, Sistema operativo Android 10, Procesador Qualcomm Snapdragon 865 OctaCore de 2.8 GHz, Pantalla LCD Full HD+ de 6.67\" (2340 x 1080 px), Memoria interna de 128GB / Memoria RAM de 6GB, Multicámara principal de 64MP + 13MP + 5 MP / Cámara frontal 20MP, Grabación de video en 8K (7680 x 4320 px), Conectividad Bluetooth v5.0, Capacidad de la batería de 5000 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/415876-750-750/Xiaomi-Mi-10T-US-Lunar-Silver-1-196586164.jpg?v=637504076144700000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/415900-100-100/Xiaomi-Mi-10T-US-Lunar-Silver-2-196586164.jpg?v=637504080157670000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/415901-100-100/Xiaomi-Mi-10T-US-Lunar-Silver-3-196586164.jpg?v=637504080160630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/415902-100-100/Xiaomi-Mi-10T-US-Lunar-Silver-4-196586164.jpg?v=637504080163000000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 550,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi Redmi 9A US Granite",
+      "description": " Dispositivo con DualSim, Sistema operativo Android 10 + Miui 12, Procesador MediaTek Helio G25 OctaCore de 2.0GHz, Pantalla LCD HD+ de 5.53\" (720 x 1600 px), Memoria interna de 32GB / Memoria RAM de 2GB, Cámara principal de 13MP / Cámara frontal 5MP, Grabación de video en FHD (1920 x 1080 px) de 30fps, Conectividad Bluetooth v5.0, Capacidad de la batería de 5000 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/412430-750-750/Xiaomi-Redmi-9A-US-Granite-1-196435220.jpg?v=637491228188100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/412405-100-100/Xiaomi-Redmi-9A-US-Granite-2-196435220.jpg?v=637491228109800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/412406-100-100/Xiaomi-Redmi-9A-US-Granite-3-196435220.jpg?v=637491228113870000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/412407-100-100/Xiaomi-Redmi-9A-US-Granite-4-196435220.jpg?v=637491228116700000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 200,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+
+    {
+      "name": "Samsung Galaxy S21 FE Gris",
+      "description": "Sistema operativo Android 12 con One UI Procesador Octa-Core Pantalla Full HD+ Dynamic Amoled 2X de 6.4 Memoria interna de 128GB / Memoria RAM de 6GB Multicámara principal de 12MP + 12MP + 8MP / Cámara frontal de 32MP Grabación de video en UHD 8K (7680 x 4320 px) de 24fps Conectividad: Bluetooth v5.0 / 5G / Wifi / NFC Batería con capacidad de 4500 mAh Cable de carga USB tipo C",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/510609-750-750/Botella-Deportiva-450ml-Thermos-Azul-Samsung-Galaxy-S21-FE-Gris-1-269789359.jpg?v=637776057895230000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/510601-100-100/Botella-Deportiva-450ml-Thermos-Azul-Samsung-Galaxy-S21-FE-Gris-2-269789359.jpg?v=637776057794300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/510602-100-100/Botella-Deportiva-450ml-Thermos-Azul-Samsung-Galaxy-S21-FE-Gris-3-269789359.jpg?v=637776057798530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/510603-100-100/Botella-Deportiva-450ml-Thermos-Azul-Samsung-Galaxy-S21-FE-Gris-4-269789359.jpg?v=637776057800870000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 800,
+      "purchasePrice": 600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi 11 Lite Peach Pink",
+      "description": "Dispositivo con Dual-Sim Sistema operativo Android 11 Procesador: Qualcomm Snapdragon 778G Octacore de 2.4 Ghz Pantalla AMOLED FHD+ de 6.55 (2400 x 1080 px) Memoria interna de 128GB / Memoria RAM de 6GB Memoria expandible Multicámara de 64 MP + 8 MP + 5 MP / Cámara frontal de 20 MP Resolución de grabación de video en 4K Con lector de huella Bluetooth 5.2 Capacidad de la batería de 4250 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/493135-750-750/Xiaomi-11-Lite-Peach-Pink-1-244529304.jpg?v=637717207688700000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/492815-100-100/Xiaomi-11-Lite-Peach-Pink-2-244529304.jpg?v=637716659710400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/492816-100-100/Xiaomi-11-Lite-Peach-Pink-3-244529304.jpg?v=637716659712600000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/492817-100-100/Xiaomi-11-Lite-Peach-Pink-4-244529304.jpg?v=637716659714800000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 450,
+      "purchasePrice": 300,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Xiaomi 11 Lite Bubblegum Blue ",
+      "description": "Dispositivo con Dual-Sim Sistema operativo Android 11 Procesador: Qualcomm Snapdragon 778G Octacore de 2.4 Ghz Pantalla AMOLED FHD+ de 6.55 (2400 x 1080 px) Memoria interna de 256GB / Memoria RAM de 8GB Memoria expandible Multicámara de 64 MP + 8 MP + 5 MP / Cámara frontal de 20 MP Resolución de grabación de video en 4K Con lector de huella Bluetooth 5.2 Capacidad de la batería de 4250 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/492857-750-750/Xiaomi-11-Lite-Bubblegum-Blue-Smartband-5-1-244529306.jpg?v=637716663999570000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/492829-100-100/Xiaomi-11-Lite-Bubblegum-Blue-Smartband-5-2-244529306.jpg?v=637716659747200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/492830-100-100/Xiaomi-11-Lite-Bubblegum-Blue-Smartband-5-3-244529306.jpg?v=637716659750300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/492857-100-100/Xiaomi-11-Lite-Bubblegum-Blue-Smartband-5-1-244529306.jpg?v=637716663999570000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 500,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Poco M3 Pro EU Power Black",
+      "description": "Dispositivo con Dual-Sim Sistema operativo Android 11 Procesador Mediatek Dimensity 700 Octa-Core de 2.2 GHz Pantalla LCD Full HD+ de 6.5 (2400 x 1080 px) Memoria interna de 128GB / Memoria RAM de 6GB Memoria expandible de 256GB Multicámara de 48MP + 2MP + 2MP / Cámara frontal 8MP Reproducción de video en Full HD+ (2440 x 1080 px) Grabación de video en Full HD (1920 x 1080 px) de 30fps Conectividad Bluetooth v5.1 Capacidad de la batería de 5000 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/473261-750-750/Poco-M3-Pro-EU-Power-Black-1-214356231.jpg?v=637678659381700000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/473255-100-100/Poco-M3-Pro-EU-Power-Black-2-214356231.jpg?v=637678651738930000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473256-100-100/Poco-M3-Pro-EU-Power-Black-3-214356231.jpg?v=637678651741700000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/473261-100-100/Poco-M3-Pro-EU-Power-Black-1-214356231.jpg?v=637678659381700000"
+      ],
+      "suppliers": [3],
+      "categories": [2],
+      "salePrice": 300,
+      "purchasePrice": 200,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "SoyMomo Tablet para Niños Kid Pro + Cover Rosa",
+      "description": " Sistema operativo Android 9.0 Pie, Procesador Spectrum SC9863 OctaCore de hasta 1.6 GHz, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Cámara principal de 8MP / Cámara frontal de 5MP, Resolución de grabación en 720p, Algoritmo de inteligencia que detecta el cyberbullying (acoso virtual), App con Control Parental, Bloqueo remoto: Desde la app de Control Parental también puedes bloquear la tablet, Configuración de horario de uso, Duración de la batería: Hasta 10 horas, Incluye: Cover",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/469458-750-750/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Rosa-1-218501595.jpg?v=637668064976630000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/469380-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Rosa-2-218501595.jpg?v=637668060679830000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/469381-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Rosa-3-218501595.jpg?v=637668060699570000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/469382-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Rosa-4-218501595.jpg?v=637668060719570000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 200,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "SoyMomo Tablet para Niños Kid Pro + Cover Azul",
+      "description": " Sistema operativo Android 9.0 Pie, Procesador Spectrum SC9863 OctaCore de hasta 1.6 GHz, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Cámara principal de 8MP / Cámara frontal de 5MP, Resolución de grabación en 720p, Algoritmo de inteligencia que detecta el cyberbullying (acoso virtual), App con Control Parental, Bloqueo remoto: Desde la app de Control Parental también puedes bloquear la tablet, Configuración de horario de uso, Duración de la batería: Hasta 10 horas, Incluye: Cover",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/469457-750-750/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Azul-1-218501594.jpg?v=637668064968030000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/469377-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Azul-2-218501594.jpg?v=637668058840430000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/469378-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Azul-3-218501594.jpg?v=637668058852400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/469379-100-100/SoyMomo-Tablet-para-Ni-os-Kid-Pro-Cover-Azul-4-218501594.jpg?v=637668058855870000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 200,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Notebook 13.3\" IdeaPad S540 + Tablet 8505FS",
+      "description": " Sistema operativo Windows 10 Home Español, Procesador Intel Core i7 10510U QuadCore de 1.8 GHz, Pantalla IPS Full QHD de 13.3\" (2560 x 1600 px), Memoria sólida de 512GB / Memoria RAM de 16GB, Teclado iluminado, Cámara web HD de 720p con Reconocimiento Facial, Parlantes estéreo 2 x 2 watts, Tecnología de sonido Dolby Audio, Gráficos Intel UHD integrados, Conectividad: Bluetooth v5.0 / WiFi 6, Puertos: 1 USB 3.1 / 2 USBC 3.1, Duración de la batería: Hasta 18 horas, según condiciones de uso, Sistema operativo Android Pie 9.0, Procesador MediaTek Helio A22 QuadCore de 2.0 GHz, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible de hasta 128GB, Cámara principal de 5MP / Cámara frontal de 2MP, 2 Parlantes con sonido Dolby Atmos, Conectividad: Bluetooth v5.0, Duración de la batería: Hasta 18 horas, Incluye: Docking para cargar,81XA008VLM",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/464220-750-750/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-1-225660728.jpg?v=637654464414770000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/464211-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-10-225660728.jpg?v=637654452647030000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464212-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-2-225660728.jpg?v=637654452650930000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464213-100-100/Lenovo-Laptop-13-3-IdeaPad-S540-Intel-Core-i7-Tablet-TB-8505FS-3-225660728.jpg?v=637654452654700000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 1000,
+      "purchasePrice": 800,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Smart Tab M8 Iron Grey",
+      "description": " Sistema operativo Android 9.0 Pie, Procesador MediaTek Helio A22 QuadCore de 2.0 GHz, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible hasta 128GB / Memoria RAM de 2GB, Cámara principal de 5MP / Cámara frontal de 2MP, Resolución de grabación en 720p, Lector de tarjetas: Micro SD, Conectividad: Bluetooth v4.0, Duración de la batería: Hasta 18 horas,ZA5C0067PE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/447221-750-750/Lenovo-Smart-Tab-M8-Iron-Grey-1-199500564.jpg?v=637598364158930000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/447216-100-100/Lenovo-Smart-Tab-M8-Iron-Grey-2-199500564.jpg?v=637598364091230000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/447217-100-100/Lenovo-Smart-Tab-M8-Iron-Grey-3-199500564.jpg?v=637598364110170000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/447218-100-100/Lenovo-Smart-Tab-M8-Iron-Grey-4-199500564.jpg?v=637598364125670000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 200,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei MatePad T10 + Cover Blue",
+      "description": " Sistema operativo EMUI 10.1 (Basado en Android 10), Procesador Kirin 710A OctaCore de hasta 2.0 GHz, Pantalla IPS HD de 9.7\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible hasta 512GB, Cámara principal de 5MP / Cámara frontal 2MP, Calidad de sonido: Histen 6.1 Efecto de Sonido, Resolución de video HD (1280 x 720 pixeles), Conectividad: Bluetooth v5.0, Batería con capacidad de 5100 mAh, Incluye: Cover Blue",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/452475-750-750/Huawei-MatePad-T10-Cover-Blue-1-214810328.jpg?v=637608622455670000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/452647-100-100/Huawei-MatePad-T10-Cover-Blue-2-214810328.jpg?v=637608626810730000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452648-100-100/Huawei-MatePad-T10-Cover-Blue-3-214810328.jpg?v=637608626823430000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/452475-100-100/Huawei-MatePad-T10-Cover-Blue-1-214810328.jpg?v=637608622455670000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 250,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Tab M10 HD 2da Generación",
+      "description": " Sistema operativo Android 10 Q, Procesador MediaTek Helio P22T OctaCore de 2.3 GHz, Pantalla IPS HD de 10.1\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible de hasta 1TB, Cámara principal de 8MP / Cámara frontal de 5MP, Resolución de grabación en 1080p, 2 Parlantes frontales con Dolby Atmos, Conectividad: Bluetooth v5.0, Duración de la batería: Hasta 10 horas,ZA6V0100PE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/464645-750-750/Lenovo-Tab-M10-HD-2da-Generaci-n-1-209590728.jpg?v=637657156761670000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/464631-100-100/Lenovo-Tab-M10-HD-2da-Generaci-n-2-209590728.jpg?v=637657146887530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464632-100-100/Lenovo-Tab-M10-HD-2da-Generaci-n-3-209590728.jpg?v=637657146891300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464633-100-100/Lenovo-Tab-M10-HD-2da-Generaci-n-4-209590728.jpg?v=637657146894430000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 189,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Tab M10 HD 2da Generación",
+      "description": " Sistema operativo Android 10 Q, Procesador MediaTek Helio P22T OctaCore de 2.3 GHz, Pantalla IPS HD de 10.1\" (1280 x 800 px), Memoria interna de 64GB / Memoria RAM de 4GB, Memoria expandible de hasta 1TB, Cámara principal de 8MP / Cámara frontal de 5MP, Resolución de grabación en 1080p, 2 Parlantes con sonido Dolby Atmos, Conectividad: Bluetooth v5.0, Duración de la batería: Hasta 10 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/468696-750-750/Lenovo-Tab-M10-HD-2da-Generaci-n-1-210869719.jpg?v=637665795201130000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/468662-100-100/image-3f5d4e1df743453d82a083f9c2a9de0b.jpg?v=637665740167800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468663-100-100/Lenovo-Tab-M10-HD-2da-Generaci-n-3-210869719.jpg?v=637665793244470000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/468664-100-100/Lenovo-Tab-M10-HD-2da-Generaci-n-4-210869719.jpg?v=637665793246670000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 250,
+      "purchasePrice": 200,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Lenovo Tab M8 HD 2da Generación LTE",
+      "description": " Sistema operativo Android 9.0 Pie, Procesador MediaTek Helio A22 QuadCore de 2.0 GHz, LTE: Terminal para datos de alta velocidad, Pantalla IPS HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible de hasta 2TB, Cámara principal de 5MP / Cámara frontal de 2MP, Resolución de grabación en 1080p, Parlante frontal con Dolby Atmos, Conectividad: Bluetooth v5.0, Duración de la batería: Hasta 18 horas",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/464646-750-750/Lenovo-Tab-M8-HD-2da-Generaci-n-1-210038584.jpg?v=637657156765000000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/464637-100-100/Lenovo-Tab-M8-HD-2da-Generaci-n-2-210038584.jpg?v=637657146905700000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464638-100-100/Lenovo-Tab-M8-HD-2da-Generaci-n-3-210038584.jpg?v=637657146912570000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/464639-100-100/Lenovo-Tab-M8-HD-2da-Generaci-n-4-210038584.jpg?v=637657146915230000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 120,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei MatePad 10.4",
+      "description": " Sistema operativo EMUI 10.1 (Basado en Android 10), Procesador Kirin 810 OctaCore de 2.27 GHz, Pantalla IPS Full HD de 10.4\" (2000 x 1200 px), Memoria interna de 64GB / Memoria RAM de 4GB, Memoria expandible hasta 512GB, Cámara principal de 8MP / Cámara frontal 8MP, Calidad de sonido: Histen 6.0 Efecto de Sonido, Resolución de video Full HD (1980 x 1080 pixeles), Conectividad: Bluetooth v5.1, Batería con capacidad de 7250 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/454096-750-750/Huawei-MatePad-10-4-1-208096155.jpg?v=637613634793700000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/441464-100-100/Huawei-MatePad-10-4-10-208096155.jpg?v=637575752706400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/441465-100-100/Huawei-MatePad-10-4-2-208096155.jpg?v=637575752708530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/441466-100-100/Huawei-MatePad-10-4-3-208096155.jpg?v=637575752711500000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 300,
+      "purchasePrice": 200,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei MediaPad T3 8'' KOBE-W09C",
+      "description": " Sistema operativo EMUI 5.1, Procesador Quadcore A53 1.4 GHz, Pantalla HD IPS de 8\" (1280 x 800 px), Memoria interna de 16GB / Memoria RAM de 2GB, Cámara principal de 5MP / Cámara frontal de 2MP, Conectividad Wifi y Bluetooth 4.1, Capacidad de la batería 4800 mAh, Garantía de 1 año",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/356721-750-750/Huawei-MediaPad-T3-8---KOBE-W09C-2-143643542.jpg?v=637251852197930000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/356722-100-100/Huawei-MediaPad-T3-8---KOBE-W09C-3-143643542.jpg?v=637251852203700000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/356723-100-100/Huawei-MediaPad-T3-8---KOBE-W09C-4-143643542.jpg?v=637251852206530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/356724-100-100/Huawei-MediaPad-T3-8---KOBE-W09C-5-143643542.jpg?v=637251852255870000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 120,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei MatePad T10",
+      "description": " Sistema operativo EMUI 10, Procesador Kirin 710A OctaCore de 2.0 GHz, Pantalla IPS HD de 9.7\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Memoria expandible hasta 512GB, Cámara principal de 5MP / Cámara frontal 2MP, Calidad de sonido: Histen 6.1 Efecto de Sonido, Resolución de video: Hasta 1280 x 720 pixeles, Conectividad: Bluetooth v5.0, Batería con capacidad de 5100 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/395574-750-750/Huawei-MatePad-T10-1-184694261.jpg?v=637420487769330000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/395416-100-100/Huawei-MatePad-T10-2-184694261.jpg?v=637420477950600000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/395417-100-100/Huawei-MatePad-T10-3-184694261.jpg?v=637420477952800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/395574-100-100/Huawei-MatePad-T10-1-184694261.jpg?v=637420487769330000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 189,
+      "purchasePrice": 150,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Huawei Matepad T8 Azul",
+      "description": " Sistema operativo Android 10, Procesador MTK MT8768 OctaCore de 2.0 GHz, Pantalla HD de 8\" (1280 x 800 px), Memoria interna de 32GB / Memoria RAM de 2GB, Cámara principal de 5MP / Cámara frontal 2MP, Conectividad: Bluetooth v5.0, Batería con capacidad de 5100 mAh",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/370976-750-750/Huawei-Matepad-T8-Azul-1-152561489.jpg?v=637312077893500000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/370967-100-100/Huawei-Matepad-T8-Azul-2-152561489.jpg?v=637312074342370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/370968-100-100/Huawei-Matepad-T8-Azul-3-152561489.jpg?v=637312074348000000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/370969-100-100/Huawei-Matepad-T8-Azul-4-152561489.jpg?v=637312074350370000"
+      ],
+      "suppliers": [4],
+      "categories": [5],
+      "salePrice": 150,
+      "purchasePrice": 100,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Genius Teclado Inalámbrico + Mouse Inalámbrico Smart KM-8200",
+      "description": " Tipo de teclas: Cóncavas, Teclas de función personalizadas, Plug and Play, Interfaz: USB, Altura ajustable, Alimentación: 2 pilas AAA, Compatibilidad: Windows (7 / 8 / 8.1 / 10 o superior) / macOS X 10.8 o superior, Conexión inalámbrica avanzada de 2.4 GHz, Velocidad del sensor: Hasta 1000 DPI, Número de botones: 3, Interfaz: USB, Alimentación: 1 pila AA, Compatibilidad: Windows (7 / 8 / 8.1 / 10 o superior) / macOS X 10.8 o superior",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/394599-750-750/Genius-Teclado-Inal-mbrico-Mouse-Inal-mbrico-Smart-KM-8200-1-143632604.jpg?v=637418570799800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/394599-100-100/Genius-Teclado-Inal-mbrico-Mouse-Inal-mbrico-Smart-KM-8200-1-143632604.jpg?v=637418570799800000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 25,
+      "purchasePrice": 10,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Bitdefender Antivirus Plus 2020",
+      "description": " Versión: 2020, Tiempo de licencia: 15 meses, Usurio: 1 PC, Soporte integral en todo momento, Prevención de ataques web, Prevención de banca en línea, Gestor de contraseñas, Piloto automático VPN para navegar de anónima y segura, Compatible con: Windows 7 o posteriores",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/370978-750-750/Bitdefender-Antivirus-Plus-2020-1-156792263.jpg?v=637312077900070000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/370978-100-100/Bitdefender-Antivirus-Plus-2020-1-156792263.jpg?v=637312077900070000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 19,
+      "purchasePrice": 10,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Genius Teclado + Mouse Óptico KM-160",
+      "description": " Tipo de teclas: En bloque, Plug and Play, Interfaz: USB, Altura ajustable, Largo del cable: 1.5 metros, Compatibilidad: Windows (7 / 8 / 8.1 / 10 o superior) / macOS X 10.8 o superior, Tecnología de seguimiento: Óptico, Velocidad del sensor: Hasta 1000 DPI, Número de botones: 3, Interfaz: USB, Largo del cable: 1.5 metros, Compatibilidad: Windows (7 / 8 / 8.1 / 10 o superior) / macOS X 10.8 o superior",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/394597-750-750/Genius-Teclado-Mouse-ptico-KM-160-1-143632602.jpg?v=637418570796070000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/394597-100-100/Genius-Teclado-Mouse-ptico-KM-160-1-143632602.jpg?v=637418570796070000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 15,
+      "purchasePrice": 10,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Nex Kit de Limpieza 3 en 1 ACP001",
+      "description": " Remueve polvo y huellas dactilares, Líquido especial para limpiar esquinas y revestimientos de la pantalla, Limpia sin rayar ni dañar la superficie, Paño microfibra para secado rápido, Ideal para: Smartphones / Cámaras digitales / Tablets / Laptops,Incluye:",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/462322-750-750/Nex-Kit-de-Limpieza-3-en-1-ACP001-1-77865426.jpg?v=637644952270730000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/462322-100-100/Nex-Kit-de-Limpieza-3-en-1-ACP001-1-77865426.jpg?v=637644952270730000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 10,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Sigma Mouse Pad SIG-X37",
+      "description": " Mouse pad para cualquier estilo de juego, Base de goma antideslizante enrollable, Superficie de tela, Material: Caucho natural / Tejido, Medidas (Anch x Prof): 27.5 x 24 cm",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446248-750-750/Sigma-Mouse-Pad-SIG-X37-1-204535988.jpg?v=637594974665700000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446496-100-100/Sigma-Mouse-Pad-SIG-X37-2-204535988.jpg?v=637594981398630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446497-100-100/Sigma-Mouse-Pad-SIG-X37-3-204535988.jpg?v=637594981401130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446498-100-100/Sigma-Mouse-Pad-SIG-X37-4-204535988.jpg?v=637594981426900000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 5,
+      "purchasePrice": 2,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Sigma Mouse Pad SIG-X7",
+      "description": " Mouse pad para cualquier estilo de juego, Base de goma antideslizante enrollable, Esquinas bordadas para mayor duración, Material: Caucho natural / Tejido, Medidas (Anch x Prof): 22 x 10 cm",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446246-750-750/Sigma-Mouse-Pad-SIG-X7-1-204535986.jpg?v=637594974659470000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446486-100-100/Sigma-Mouse-Pad-SIG-X7-2-204535986.jpg?v=637594981302200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446487-100-100/Sigma-Mouse-Pad-SIG-X7-3-204535986.jpg?v=637594981305500000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446488-100-100/Sigma-Mouse-Pad-SIG-X7-4-204535986.jpg?v=637594981309100000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 5,
+      "purchasePrice": 2,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Astrom HUB USB 2.0 AT-1000 4 Puertos",
+      "description": " Diseño compacto, Puertos: 4 USB 2.0, Soporta ratios de interferencia de hasta 480 Mbps, Plug and Play, Fácil de transportar, Estructura de aluminio, Puerto de entrada para corriente externa (5V), Incluye: Cable de Conexión USB a Mini USB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446242-750-750/Astrom-HUB-USB-2-0-AT-1000-4-Puertos-1-204535982.jpg?v=637594974637870000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446468-100-100/Astrom-HUB-USB-2-0-AT-1000-4-Puertos-2-204535982.jpg?v=637594981233700000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446469-100-100/Astrom-HUB-USB-2-0-AT-1000-4-Puertos-3-204535982.jpg?v=637594981235900000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446470-100-100/Astrom-HUB-USB-2-0-AT-1000-4-Puertos-4-204535982.jpg?v=637594981238400000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 10,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mini Teclado Multimedia Inalámbrico Pixel K236",
+      "description": " Mini teclado multimedia inlámbrico con panel táctil, Conexión Inalámbrica 2.4 Ghz, Número de teclas: 92, Rango de frecuencia: 2403Ghz  2480Ghz, Iluminación LED RGB, Batería recargable Liion de 600 mAh, Nano receptor USB, Alcance del bluetooth: Hasta 10 metros, Compatibilidad: Windows / Android / Smart TV / iOS, Medidas (Anch x Prof): 14.8 x 9.8 cm",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446217-750-750/Cybertel-Mini-Teclado-Multimedia-Inal-mbrico-Pixel-K236-1-204535956.jpg?v=637594974563830000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446340-100-100/Cybertel-Mini-Teclado-Multimedia-Inal-mbrico-Pixel-K236-2-204535956.jpg?v=637594980798470000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446341-100-100/Cybertel-Mini-Teclado-Multimedia-Inal-mbrico-Pixel-K236-3-204535956.jpg?v=637594980800970000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446342-100-100/Cybertel-Mini-Teclado-Multimedia-Inal-mbrico-Pixel-K236-4-204535956.jpg?v=637594980807030000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 15,
+      "purchasePrice": 10,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Parlantes 2.0 Cyborg CYB-S100",
+      "description": " Sistema Power Sound 2.0, Control de volumen, Bocinas: 2\" x 2, Alimentación de energía: Conexión USB, Conectividad: Mini Jack 3.5 mm, Estructura en ABS, Medidas (Alt x Anch x Prof): 11.5 x 22.1 x 11.5 cm, Compatibilidad: Computadoras / Laptop / Equipos de sonido",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446215-750-750/Cybertel-Parlantes-2-0-Cyborg-CYB-S100-1-204535954.jpg?v=637594974552600000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446332-100-100/Cybertel-Parlantes-2-0-Cyborg-CYB-S100-2-204535954.jpg?v=637594980775300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446333-100-100/Cybertel-Parlantes-2-0-Cyborg-CYB-S100-3-204535954.jpg?v=637594980777630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446334-100-100/Cybertel-Parlantes-2-0-Cyborg-CYB-S100-4-204535954.jpg?v=637594980783300000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 20,
+      "purchasePrice": 15,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Óptico Evolution CYB-M234 Negro",
+      "description": " Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión USB, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446210-750-750/Cybertel-Mouse-ptico-Evolution-CYB-M234-Negro-1-204535949.jpg?v=637594974536300000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446306-100-100/Cybertel-Mouse-ptico-Evolution-CYB-M234-Negro-2-204535949.jpg?v=637594980667530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446307-100-100/Cybertel-Mouse-ptico-Evolution-CYB-M234-Negro-3-204535949.jpg?v=637594980670200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446308-100-100/Cybertel-Mouse-ptico-Evolution-CYB-M234-Negro-4-204535949.jpg?v=637594980673330000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 8,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Óptico Dvinci CYB-M201",
+      "description": " Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión USB, Cable de nylon trenzado de 140 cm, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/446207-750-750/Cybertel-Mouse-ptico-Dvinci-CYB-M201-1-204535946.jpg?v=637594974530070000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/446296-100-100/Cybertel-Mouse-ptico-Dvinci-CYB-M201-2-204535946.jpg?v=637594980631430000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446297-100-100/Cybertel-Mouse-ptico-Dvinci-CYB-M201-3-204535946.jpg?v=637594980634270000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/446298-100-100/Cybertel-Mouse-ptico-Dvinci-CYB-M201-4-204535946.jpg?v=637594980636900000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 7,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Micronics Fuente de Poder Fanatic FNT-600W",
+      "description": " Fuente de Poder de 600 watts, Conectores para la placa:, Ventilador de 12 cm, Rejilla protectora, Cables enmallados para mayor orden y durabilidad, Factor de Control de Poder Activo (APFC): Mejora la Eficiencia Engergética, Incluye: Cable de poder",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439843-750-750/Micronics-Fuente-de-Poder-Fanatic-FNT-600W-1-195694442.jpg?v=637572281333500000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440207-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-600W-2-195694442.jpg?v=637572290618400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440208-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-600W-3-195694442.jpg?v=637572290621370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440209-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-600W-4-195694442.jpg?v=637572290623570000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 50,
+      "purchasePrice": 35,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Micronics Fuente de Poder Fanatic FNT-500W",
+      "description": " Fuente de Poder de 500 watts, Conectores para la placa:, Ventilador de 12 cm, Rejilla protectora, Cables enmallados para mayor orden y durabilidad, Factor de Control de Poder Activo (APFC): Mejora la Eficiencia Engergética, Incluye: Cable de poder",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439842-750-750/Micronics-Fuente-de-Poder-Fanatic-FNT-500W-1-195694441.jpg?v=637572281330530000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440008-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-500W-3-195694441.jpg?v=637572288590000000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440009-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-500W-4-195694441.jpg?v=637572288592630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440206-100-100/Micronics-Fuente-de-Poder-Fanatic-FNT-500W-2-195694441.jpg?v=637572290614330000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 40,
+      "purchasePrice": 30,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Inalámbrico Apollo CYB-M303",
+      "description": " Mouse Óptico Inalámbrico, Conexión Inalámbrica 2.4 Ghz, Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión Nano USB, Alcance Bluetooth: Hasta 10 metros, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439873-750-750/Cybertel-Mouse-Inal-mbrico-Apollo-CYB-M303-1-195694418.jpg?v=637572281424070000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440143-100-100/Cybertel-Mouse-Inal-mbrico-Apollo-CYB-M303-2-195694418.jpg?v=637572290441730000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440144-100-100/Cybertel-Mouse-Inal-mbrico-Apollo-CYB-M303-3-195694418.jpg?v=637572290444070000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440145-100-100/Cybertel-Mouse-Inal-mbrico-Apollo-CYB-M303-4-195694418.jpg?v=637572290447200000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 10,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Óptico Storm 1 CYB-M104 Rojo",
+      "description": " Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión USB, Cable de nylon trenzado de 150 cm, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439868-750-750/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Rojo-1-195694413.jpg?v=637572281399030000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440131-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Rojo-2-195694413.jpg?v=637572290319200000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440132-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Rojo-3-195694413.jpg?v=637572290338270000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/439868-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Rojo-1-195694413.jpg?v=637572281399030000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 8,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Óptico Storm 1 CYB-M104 Azul",
+      "description": " Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión USB, Cable de nylon trenzado de 150 cm, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439867-750-750/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Azul-1-195694412.jpg?v=637572281396870000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/439947-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Azul-3-195694412.jpg?v=637572288378500000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440130-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Azul-2-195694412.jpg?v=637572290300500000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/439867-100-100/Cybertel-Mouse-ptico-Storm-1-CYB-M104-Azul-1-195694412.jpg?v=637572281396870000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 8,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Cybertel Mouse Inalámbrico Rocker+ CYB-M302",
+      "description": " Mouse Óptico Inalámbrico, Conexión Inalámbrica 2.4 Ghz, Sensibilidad graduable de hasta 1000 DPI, Scroll para fácil desplazamiento, Inductor óptico avanzado, Alimentación de energía: Conexión Nano USB, Compatibilidad: Windows",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439860-750-750/Cybertel-Mouse-Inal-mbrico-Rocker-CYB-M302-1-195694404.jpg?v=637572281379330000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440107-100-100/Cybertel-Mouse-Inal-mbrico-Rocker-CYB-M302-2-195694404.jpg?v=637572289336300000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440108-100-100/Cybertel-Mouse-Inal-mbrico-Rocker-CYB-M302-3-195694404.jpg?v=637572289338430000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440109-100-100/Cybertel-Mouse-Inal-mbrico-Rocker-CYB-M302-4-195694404.jpg?v=637572289340600000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 8,
+      "purchasePrice": 5,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Micronics Parlantes 2.0 Rhapsody+ MIC-S315R Rojo",
+      "description": " Sistema Power Sound Portable 2.0, Control de volumen en línea, Parlantes: 2.5\" x 2, Alimentación de energía: Conexión USB, Conectividad: Jack 3.5 mm, Estructura en ABS, Medidas (Alt x Anch x Prof): 11.5 x 22 x 11.5 cm, Compatibilidad: Computadoras / TV / DVD / Smartphone / Tablet / Laptop / Equipos de sonido",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/439818-750-750/Micronics-Parlantes-2-0-Rhapsody-MIC-S315R-Rojo-1-195694381.jpg?v=637572281254770000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/440038-100-100/Micronics-Parlantes-2-0-Rhapsody-MIC-S315R-Rojo-2-195694381.jpg?v=637572288673530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440039-100-100/Micronics-Parlantes-2-0-Rhapsody-MIC-S315R-Rojo-3-195694381.jpg?v=637572288676170000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/440040-100-100/Micronics-Parlantes-2-0-Rhapsody-MIC-S315R-Rojo-4-195694381.jpg?v=637572288679130000"
+      ],
+      "suppliers": [2],
+      "categories": [4],
+      "salePrice": 12,
+      "purchasePrice": 8,
+      "stock": 15,
+      "discount": 0
+    },
+
+    {
+      "name": "Smart TV Frame QLED 50\" UHD 50LS03A",
+      "description": "Panel QLED 4K Resolución 4K UHD de 3840 x 2160 píxeles Procesador Quantum 4K Tecnología de imagen: Quantum HDR / HDR 10+ / HLG Sistema operativo Tizen Navegador Smart Hub Calidad de sonido Dolby Digital Plus Canales de sonido 5.1 Potencia de sonido de 40 watts Conectividad: WiFi / Bluetooth / Ethernet 4 Puertos HDMI / 2 Puertos USB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/479804-750-750/Smart-TV-Frame-QLED-50-UHD-50LS03A-1-227192466.jpg?v=637695627900100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/479719-100-100/Smart-TV-Frame-QLED-50-UHD-50LS03A-10-227192466.jpg?v=637695616397070000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/479720-100-100/Smart-TV-Frame-QLED-50-UHD-50LS03A-11-227192466.jpg?v=637695616400630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/479721-100-100/Smart-TV-Frame-QLED-50-UHD-50LS03A-12-227192466.jpg?v=637695616403470000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 1000,
+      "purchasePrice": 800,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Smart TV 65\" UHD 65UP7750 (2021) ThinQ AI",
+      "description": " Resolución 4K UHD de 3840 x 2160 píxeles, Tecnología de imagen: HDR / HLG, Tecnología de sonido: Ultra Surround, Canales de audio 2.0, Potencia de audio de 20 watts, Sistema operativo: WebOS 6.0, Navegador ThinQ AI, Sintonizador digital, Conectividad: WiFi / Bluetooth, 3 Puertos HDMI / 2 Puertos USB, Eficiencia energética: A, Incluye: Magic Remote Control,65UP7750PSB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/463112-750-750/LG-Smart-TV-65-UHD-65UP7750-2021-ThinQ-AI-1-219571288.jpg?v=637647530640400000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/463089-100-100/LG-Smart-TV-65-UHD-65UP7750-2021-ThinQ-AI-10-219571288.jpg?v=637647526927530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/463090-100-100/LG-Smart-TV-65-UHD-65UP7750-2021-ThinQ-AI-2-219571288.jpg?v=637647526930670000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/463091-100-100/LG-Smart-TV-65-UHD-65UP7750-2021-ThinQ-AI-3-219571288.jpg?v=637647526933500000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 700,
+      "purchasePrice": 600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Philips Smart TV 50\" UHD 50PUD7625",
+      "description": " Resolución 4K UHD de 3840 x 2160 píxeles, Tecnología de imagen: HDR 10+, Tecnología de sonido: Dolby Vision digital, Potencia de audio de 20 watts, Sistema operativo: Saphi, Sintonizador digital, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 2 Puertos USB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/462369-750-750/Philips-Smart-TV-50-UHD-50PUD7625-1-214271931.jpg?v=637644954492800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/462628-100-100/Philips-Smart-TV-50-UHD-50PUD7625-2-214271931.jpg?v=637645048957570000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/462629-100-100/Philips-Smart-TV-50-UHD-50PUD7625-3-214271931.jpg?v=637645048960230000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/462630-100-100/Philips-Smart-TV-50-UHD-50PUD7625-4-214271931.jpg?v=637645048964300000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 450,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "AOC Smart TV 50\" UHD 50U6305",
+      "description": " Resolución 4K UHD de 3840 x 2160 píxeles, Tecnología de imagen: HDR 10+, Tecnología de sonido: Dolby Vision digital, Potencia de audio de 20 watts, Sistema operativo: Linux, Sintonizador digital, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 2 Puertos USB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/462372-750-750/AOC-Smart-TV-50-UHD-50U6305-1-214271934.jpg?v=637644956319430000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/462642-100-100/AOC-Smart-TV-50-UHD-50U6305-2-214271934.jpg?v=637645050899230000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/462643-100-100/AOC-Smart-TV-50-UHD-50U6305-3-214271934.jpg?v=637645050917100000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/462644-100-100/AOC-Smart-TV-50-UHD-50U6305-4-214271934.jpg?v=637645050934300000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 400,
+      "purchasePrice": 300,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Smart TV Crystal 65\" UHD 65AU7000",
+      "description": " Panel Crystal UHD, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Crystal 4K, Tecnología de imagen: HDR / HLG, Sistema operativo Tizen, Navegador Smart Hub, Calidad de sonido Dolby Digital Plus, Canales de sonido 2.0, Potencia de sonido de 20 watts, Sintonizador digital: ISDBT, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 1 Puerto USB, Incluye: One remote,UN65AU7000GXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/457242-750-750/Samsung-Smart-TV-Crystal-65-UHD-65AU7000-1-205063671.jpg?v=637620902219800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/457014-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU7000-2-205063671.jpg?v=637620875546630000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/457015-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU7000-3-205063671.jpg?v=637620875550830000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/457016-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU7000-4-205063671.jpg?v=637620875552570000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 750,
+      "purchasePrice": 700,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Smart TV Crystal 43\" UHD 43AU7000",
+      "description": " Panel Crystal UHD, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Crystal 4K, Tecnología de imagen: HDR / HLG, Sistema operativo Tizen, Navegador Smart Hub, Calidad de sonido Dolby Digital Plus, Canales de sonido 2.0, Potencia de sonido de 20 watts, Sintonizador digital: ISDBT, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 1 Puerto USB, Incluye: One remote,UN43AU7000GXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/457236-750-750/Samsung-Smart-TV-Crystal-43-UHD-43AU7000-1-205063662.jpg?v=637620902194300000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/456976-100-100/Samsung-Smart-TV-Crystal-43-UHD-43AU7000-2-205063662.jpg?v=637620870009370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456977-100-100/Samsung-Smart-TV-Crystal-43-UHD-43AU7000-3-205063662.jpg?v=637620870011870000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456978-100-100/Samsung-Smart-TV-Crystal-43-UHD-43AU7000-4-205063662.jpg?v=637620870014830000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 450,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Smart TV Crystal 50\" UHD 50AU7000",
+      "description": " Panel Crystal UHD, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Crystal 4K, Tecnología de imagen: HDR / HLG, Sistema operativo Tizen, Navegador Smart Hub, Calidad de sonido Dolby Digital Plus, Canales de sonido 2.0, Potencia de sonido de 20 watts, Sintonizador digital: ISDBT, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 1 Puerto USB, Incluye: One remote,UN50AU7000GXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/457237-750-750/Samsung-Smart-TV-Crystal-50-UHD-50AU7000-1-205063663.jpg?v=637620902197730000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/456983-100-100/Samsung-Smart-TV-Crystal-50-UHD-50AU7000-2-205063663.jpg?v=637620870031570000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456984-100-100/Samsung-Smart-TV-Crystal-50-UHD-50AU7000-3-205063663.jpg?v=637620871836770000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456985-100-100/Samsung-Smart-TV-Crystal-50-UHD-50AU7000-4-205063663.jpg?v=637620871840230000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 500,
+      "purchasePrice": 400,
+      "stock": 15,
+      "discount": 0
+    },
+
+    {
+      "name": "Samsung Smart TV Crystal 65\" UHD 65AU8000",
+      "description": " Panel Crystal UHD, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Crystal 4K, Tecnología de imagen: HDR / HDR 10+ / HLG, Sistema operativo Tizen, Navegador Smart Hub, Calidad de sonido Dolby Digital Plus, Canales de sonido 2.0, Potencia de sonido de 20 watts, Asistente virtual: Bixby, Sintonizador digital: ISDBT, Conectividad: WiFi / Bluetooth v5.2 / Ethernet, 3 Puertos HDMI / 2 Puertos USB, Incluye: One remote,UN65AU8000GXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/445335-750-750/Samsung-Smart-TV-Crystal-65-UHD-65AU8000-1-205063672.jpg?v=637590290857000000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/445272-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU8000-10-205063672.jpg?v=637590286898270000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445273-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU8000-11-205063672.jpg?v=637590286907800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445274-100-100/Samsung-Smart-TV-Crystal-65-UHD-65AU8000-12-205063672.jpg?v=637590286915470000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 800,
+      "purchasePrice": 750,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "LG Smart TV 32\" HD 32LM637B",
+      "description": " Resolución HD de 1366 x 768 píxeles, Tecnología de imagen: HDR Mapeo dinamico de tonos, Tecnología de sonido: Virtual Surround Plus, Canales de audio 2.0, Potencia de audio de 10 watts, Sistema operativo: WebOS 4.5, Navegador ThinQ AI, Conectividad: WiFi / Bluetooth v5.0 / Ethernet, 3 Puertos HDMI / 2 Puertos USB, Eficiencia energética: A,32LM637BPSB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/441557-750-750/LG-Smart-TV-32-HD-32LM637B-1-204441821.jpg?v=637575754284130000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/441433-100-100/LG-Smart-TV-32-HD-32LM637B-2-204441821.jpg?v=637575752614070000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/441434-100-100/LG-Smart-TV-32-HD-32LM637B-3-204441821.jpg?v=637575752616730000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/441435-100-100/LG-Smart-TV-32-HD-32LM637B-4-204441821.jpg?v=637575752619400000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 300,
+      "purchasePrice": 250,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "LG Smart TV 50\" UHD 50UP7750 ThinQ AI",
+      "description": " Resolución 4K UHD de 3840 x 2160 píxeles, Tecnología de imagen: HDR / HLG, Tecnología de sonido: Ultra Surround, Canales de audio 2.0, Potencia de audio de 20 watts, Sistema operativo: WebOS 6.0, Navegador ThinQ AI, Conectividad: WiFi / Bluetooth v5.0 / Ethernet, 3 Puertos HDMI / 2 Puertos USB, Eficiencia energética: A, Incluye: Magic Remote Control,50UP7750PSB",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/458473-750-750/LG-Smart-TV-50-UHD-50UP7750-ThinQ-AI-1-216803966.jpg?v=637624970407800000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/461055-100-100/937988-2.jpg?v=637638820320000000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/461056-100-100/937988-3.jpg?v=637638820481170000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/461057-100-100/937988-4.jpg?v=637638820694900000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 500,
+      "purchasePrice": 450,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Panasonic Smart TV 43\" UHD TC-43HX550P",
+      "description": " Resolución 4K UHD de 3840 x 2160 píxeles, Tecnología de imagen: HDR / HDR 10+, Tecnología de sonido: Dolby Digital Plus, Canales de audio 2.0, Potencia de audio de 20 watts, Sistema Operativo: Android TV, Sintonizador digital, Conectividad: WiFi / Bluetooth / Ethernet, 3 Puertos HDMI / 2 Puertos USB, Incluye: Control remoto con control de voz",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/458474-750-750/Panasonic-Smart-TV-43-UHD-TC-43HX550P-1-216631880.jpg?v=637624972281900000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/458441-100-100/Panasonic-Smart-TV-43-UHD-TC-43HX550P-2-216631880.jpg?v=637624962942900000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/458442-100-100/Panasonic-Smart-TV-43-UHD-TC-43HX550P-3-216631880.jpg?v=637624962945430000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/458443-100-100/Panasonic-Smart-TV-43-UHD-TC-43HX550P-4-216631880.jpg?v=637624962947600000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 400,
+      "purchasePrice": 350,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "LG Smart TV NanoCell 65\" 8K UHD 65NANO96",
+      "description": " Panel NanoCell 8K de 7680 x 4320 píxeles, Tecnología de imagen: HDR 10+ / HLG / HDR HGIG / Dolby Vision, Calidad de sonido: Dolby Atmos, Canales de audio 2.2, Potencia de audio de 40 watts, Sistema operativo: WebOS 5.0, Navegador ThinQ AI, Conectividad: WiFi / Bluetooth / AirPlay 2, 4 Puertos HDMI / 3 Puertos USB, Incluye: Magic Remote Control,65NANO96SNA",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/410090-750-750/LG-Smart-TV-NanoCell-65-8K-UHD-65NANO96-1-156786205.jpg?v=637486836085500000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/401714-100-100/861236-2.jpg?v=637454727213570000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/401715-100-100/861236-3.jpg?v=637454727351530000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/401716-100-100/861236-4.jpg?v=637454727456430000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 2000,
+      "purchasePrice": 1800,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Televisor Smart TV 43\" FHD Hisense 43A4GSV VIDAA",
+      "description": "",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/510993-750-750/Televisor-Smart-TV-43-FHD-Hisense-43A4GSV-VIDAA-1-231710101.jpg?v=637776500101100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/510986-100-100/Televisor-Smart-TV-43-FHD-Hisense-43A4GSV-VIDAA-2-231710101.jpg?v=637776492761370000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/510987-100-100/Televisor-Smart-TV-43-FHD-Hisense-43A4GSV-VIDAA-3-231710101.jpg?v=637776492765470000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/510988-100-100/Televisor-Smart-TV-43-FHD-Hisense-43A4GSV-VIDAA-4-231710101.jpg?v=637776494567900000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 250,
+      "purchasePrice": 200,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Smart TV QLED 65\" UHD 65Q80A",
+      "description": " Panel QLED 4K, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Quantum Lite 4K, Tecnología de imagen: Quantum HDR 12x / HDR 10+ / HLG, Sistema operativo Tizen, Navegador Smart Hub, Calidad de sonido Dolby Digital Plus, Canales de sonido 2.2, Potencia de sonido de 60 watts, Sintonizador digital ISDBT, Conectividad: WiFi / Bluetooth / Ethernet, 4 Puertos HDMI / 2 Puertos USB, Incluye: One Remote,QN65Q80AAGXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/457228-750-750/Samsung-Smart-TV-QLED-65-UHD-65Q80A-1-205063653.jpg?v=637620902167100000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/456923-100-100/Samsung-Smart-TV-QLED-65-UHD-65Q80A-2-205063653.jpg?v=637620864447400000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456924-100-100/Samsung-Smart-TV-QLED-65-UHD-65Q80A-3-205063653.jpg?v=637620864451770000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/456925-100-100/Samsung-Smart-TV-QLED-65-UHD-65Q80A-4-205063653.jpg?v=637620864456000000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 1800,
+      "purchasePrice": 1600,
+      "stock": 15,
+      "discount": 0
+    },
+    {
+      "name": "Samsung Smart TV Neo QLED 65\" UHD 65QN90A",
+      "description": " Panel Neo QLED, Resolución 4K UHD de 3840 x 2160 píxeles, Procesador Neo Quantum 4K, Tecnología de imagen: Quantum HDR 32x / HDR 10+ / HLG, Sistema operativo Tizen, Navegador Smart Hub, Tecnología de sonido: Dolby Digital Plus, Decodificador de audio Dolby 5.1, Canales de sonido 4.2.2, Potencia de sonido de 60 watts, Asistente virtual: Bixby, Sintonizador digital: ISDBT, Conectividad: WiFi / Bluetooth / Ethernet, 4 Puertos HDMI / 2 Puertos USB, Incluye: One remote,QN65QN90AAGXPE",
+      "mainImg": "https://wongfood.vteximg.com.br/arquivos/ids/445334-750-750/Samsung-Smart-TV-Neo-QLED-65-UHD-65QN90A-1-205063655.jpg?v=637590290853230000",
+      "imgs": [
+        "https://wongfood.vteximg.com.br/arquivos/ids/445258-100-100/Samsung-Smart-TV-Neo-QLED-65-UHD-65QN90A-10-205063655.jpg?v=637590286714800000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445259-100-100/Samsung-Smart-TV-Neo-QLED-65-UHD-65QN90A-11-205063655.jpg?v=637590286727130000",
+        "https://wongfood.vteximg.com.br/arquivos/ids/445260-100-100/Samsung-Smart-TV-Neo-QLED-65-UHD-65QN90A-12-205063655.jpg?v=637590286739670000"
+      ],
+      "suppliers": [3],
+      "categories": [3],
+      "salePrice": 2100,
+      "purchasePrice": 2000,
+      "stock": 15,
+      "discount": 0
     }
   ]
 }
