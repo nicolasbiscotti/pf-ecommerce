@@ -10,6 +10,7 @@ const InputNumber = ({
   nameKey,
   err,
   keyErr,
+  className,
 }) => {
   const dispatch = useDispatch();
   const value = useSelector((state) => state[nameReducer][nameKey]);
@@ -18,7 +19,7 @@ const InputNumber = ({
     dispatch(actionGenerator(type, number));
   };
   return (
-    <InputNumberSyled>
+    <InputNumberSyled className={className}>
       <label htmlFor={placeholder}>
         {toUpperCaseFirstCharacter(placeholder)}
         {err && err[keyErr] && <span>*</span>}

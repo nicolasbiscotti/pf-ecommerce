@@ -1,8 +1,26 @@
 import styled from "styled-components";
 
 export const CreateProductStyled = styled.form`
-  margin: 0 auto;
+  display: grid;
+  gap: 15px;
+  margin-left: 250px;
   color: white;
-  width: 320px;
+  min-width: 320px;
+  max-width: 640px;
   padding: 25px;
+  .price {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+  .files {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 3px;
+  }
+  .selects {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    gap: 3px;
+  }
 `;

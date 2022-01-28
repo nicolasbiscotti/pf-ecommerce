@@ -48,22 +48,32 @@ const CreateProduct = () => {
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
       <InputName {...propsName} err={objError} />
-      <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
-      <InputNumber
-        {...propsPurchesePrice}
-        err={objError}
-        keyErr="purchasePrice"
-      />
-      <InputNumber {...propsStock} err={objError} keyErr="stock" />
+      <section className="price">
+        <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
+        <InputNumber
+          {...propsPurchesePrice}
+          err={objError}
+          keyErr="purchasePrice"
+        />
+        <InputNumber {...propsStock} err={objError} keyErr="stock" />
+      </section>
       <TextArea {...propsDescription} err={objError} />
-      <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
-      <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
-      <SelectBox
-        data={allCategories}
-        {...propsSelectCategories}
-        err={objError}
-      />
-      <SelectBox data={allSuppliers} {...propsSelectSuppliers} err={objError} />
+      <section className="files">
+        <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
+        <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
+      </section>
+      <section className="selects">
+        <SelectBox
+          data={allCategories}
+          {...propsSelectCategories}
+          err={objError}
+        />
+        <SelectBox
+          data={allSuppliers}
+          {...propsSelectSuppliers}
+          err={objError}
+        />
+      </section>
       <Button>Create</Button>
     </CreateProductStyled>
   );
