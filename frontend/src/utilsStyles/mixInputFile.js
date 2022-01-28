@@ -7,7 +7,6 @@ export const labelFileStyle = () => css`
   background-color: #e8474c;
   border: none;
   color: white;
-  font-weight: bold;
   width: ${width};
   text-align: center;
   padding-top: 8px;

@@ -24,12 +24,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
 import { Button } from "../../../common/button/Button";
+import { actionGenerator } from "../../../../services/actionGenerator";
+import { RESET_CP } from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   const createProduct = useSelector((state) => state.createProduct);
+  const resBackCreateProduct = useSelector(
+    (state) => state.createProduct.resBackCreateProduct
+  );
   const [objError, setObjError] = useState(
     validateCreateProduct(createProduct)
   );
@@ -44,6 +49,12 @@ const CreateProduct = () => {
       dispatch(reqCreteProduct(createProduct));
     }
   };
+
+  useEffect(() => {
+    if (resBackCreateProduct.msg === "Product created successfully") {
+      dispatch(actionGenerator(RESET_CP));
+    }
+  }, [resBackCreateProduct, dispatch]);
 
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
@@ -74,7 +85,9 @@ const CreateProduct = () => {
           err={objError}
         />
       </section>
-      <Button>Create</Button>
+      <Button width="150px" radius="0px" padding="8px" bgColor="#e8474c">
+        Create
+      </Button>
     </CreateProductStyled>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actionGenerator } from "../../../services/actionGenerator";
-import { EdarButton } from "../EdarButton/EdarButton";
 import { SelectBoxStyled } from "./style";
 
 const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
@@ -19,10 +18,10 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
   };
   return (
     <SelectBoxStyled>
-      <EdarButton onClick={handleOnClickCollapse}>
+      <label className="collapse" onClick={handleOnClickCollapse}>
         {title}
         {err[nameKey] && <span>*</span>}
-      </EdarButton>
+      </label>
       {collapse && data && (
         <div className="checks">
           {data.map(({ id, name }) => {
