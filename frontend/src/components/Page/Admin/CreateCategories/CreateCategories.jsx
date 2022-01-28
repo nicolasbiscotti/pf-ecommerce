@@ -1,14 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { urlCloudinaryCat } from "../../../../constants/cloudinary";
 import { getAllCategories } from "../../../../redux/reducers/categories/actions";
 import { reqCreateCategory } from "../../../../redux/reducers/crud categories/actions";
-import {
-  SET_CREATE_CATEGORY_IMG,
-  SET_CREATE_CATEGORY_NAME,
-} from "../../../../redux/reducers/crud categories/const";
-import { actionGenerator } from "../../../../services/actionGenerator";
-import { axiosPost } from "../../../../services/axios";
 import { Button } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputName from "../../../common/InputName/InputName";
@@ -22,26 +15,6 @@ function CreateCategories() {
   useEffect(() => {
     dispatch(getAllCategories());
   }, [dispatch]);
-
-  const handleOnChange = ({ e, type }) => {
-    const value = e.target.value;
-    dispatch(actionGenerator(type, value));
-  };
-
-  const handleOnChangeImg = async (e) => {
-    const imgs = e.target.files;
-    const formData = new FormData();
-    formData.append("file", imgs[0]);
-    formData.append("upload_preset", "categories");
-    try {
-      const data = await axiosPost(urlCloudinaryCat, formData);
-      const urlImg = data.secure_url;
-      dispatch(actionGenerator(SET_CREATE_CATEGORY_IMG, urlImg));
-    } catch (error) {
-      console.log(error);
-      dispatch(actionGenerator(SET_CREATE_CATEGORY_IMG, ""));
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,11 +47,10 @@ function CreateCategories() {
           <h3>Agregar Categoria </h3>
           <form action="" onSubmit={handleSubmit}>
             <InputName
-              handleChange={(e) =>
-                handleOnChange({ e, type: SET_CREATE_CATEGORY_NAME })
-              }
+              nameReducer="createCategories"
+              type="SET_CREATE_CATEGORY_NAME"
             />
-            <InputFile handleChange={handleOnChangeImg} />
+            <InputFile type="SET_CREATE_CATEGORY_IMG" />
             <Button type="submit" width="100%" padding="10px 0">
               Agregar
             </Button>
