@@ -1,23 +1,16 @@
 import styled from "styled-components";
-import { blackLight, redHard } from "../../../utilsStyles/utilsColors";
+import { basicInputStyle } from "../../../utilsStyles/mixInputs";
+import { basicLabelStyle } from "../../../utilsStyles/mixLabel";
+import { errSpan } from "../../../utilsStyles/mixSpan";
 
 export const InputNameStyled = styled.div`
-  input {
-    color: white;
-    width: 100%;
-    background-color: ${blackLight};
-    border: none;
-    padding: 10px;
-    outline: none;
-    &:focus {
-      background-color: gray;
-    }
-  }
   label {
-    margin-bottom: 10px;
-    display: block;
+    ${basicLabelStyle}
+  }
+  input {
+    ${basicInputStyle}
   }
   span {
-    color: ${redHard};
+    ${errSpan}
   }
 `;

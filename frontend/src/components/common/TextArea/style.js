@@ -1,23 +1,16 @@
 import styled from "styled-components";
-import { blackLight, redHard } from "../../../utilsStyles/utilsColors";
+import { basicInputStyle } from "../../../utilsStyles/mixInputs";
+import { basicLabelStyle } from "../../../utilsStyles/mixLabel";
+import { errSpan } from "../../../utilsStyles/mixSpan";
 
 export const TextAreaStyled = styled.div`
   textarea {
-    color: white;
-    width: 100%;
-    background-color: ${blackLight};
-    border: none;
-    padding: 10px;
-    outline: none;
-    &:focus {
-      background-color: gray;
-    }
+    ${basicInputStyle}
   }
   label {
-    display: block;
-    margin-bottom: 10px;
+    ${basicLabelStyle}
   }
   span {
-    color: ${redHard};
+    ${errSpan}
   }
 `;

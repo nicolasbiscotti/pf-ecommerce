@@ -20,7 +20,7 @@ const InputFileMultiple = ({ type, err, keyErr }) => {
     <InputFileMultipleStyled>
       <input id="imgs" type="file" onChange={handleOnChangeImgs} multiple />
       <label htmlFor="imgs">
-        Other Images
+        More Imgs
         {err && err[keyErr] && <span>*</span>}
       </label>
     </InputFileMultipleStyled>
