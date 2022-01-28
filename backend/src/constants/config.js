@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   JWTSECRET: process.env.JWTSECRET,
   GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,

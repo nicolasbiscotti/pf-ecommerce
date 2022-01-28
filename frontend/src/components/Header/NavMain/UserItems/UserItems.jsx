@@ -1,29 +1,8 @@
 import React, { useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
-import axios from "axios";
 import { useState } from "react";
-
-const apiUrl = process.env.REACT_APP_BACKEND;
-
-const instance = axios.create();
-
-instance.interceptors.request.use(
-  (config) => {
-    const { origin } = new URL(config.url);
-    const allowedOrigins = [apiUrl];
-    const token = localStorage.getItem("jwt");
-
-    if (allowedOrigins.includes(origin)) {
-      config.headers.authorization = `Bearer ${token}`;
-    }
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+import { corsAxiosGet } from "../../../../services/corsAxios";
 
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
@@ -31,7 +10,7 @@ export default function UserItems() {
 
   const getUser = async () => {
     try {
-      const { data } = await instance.get(`${apiUrl}/users/login/whoami`);
+      const data = await corsAxiosGet(`/users/login/whoami`);
       setUser(data);
       setFetchError(null);
     } catch (error) {
@@ -41,7 +20,7 @@ export default function UserItems() {
 
   const logout = async () => {
     try {
-      const { data } = await instance.get(`${apiUrl}/users/login/logout`);
+      const data = await corsAxiosGet(`/users/login/logout`);
       if (data.logout) {
         localStorage.removeItem("jwt");
       }

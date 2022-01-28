@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../../../redux/reducers/messages/actions";
 import { IconContext } from "react-icons/lib";
+import { corsAxiosGet } from "../../../services/corsAxios";
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -60,6 +61,15 @@ export default function LoginForm() {
     }
   };
 
+  const onSubmitGitHubHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await corsAxiosGet("/users/auth/githab");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <StyledForm>
       <form className="formSignup" action="" method="post" name="form">
@@ -105,15 +115,12 @@ export default function LoginForm() {
           Login
         </StyledButton>
 
-        <StyledButton
-          // onClick={() => navigate("register")}
-          backgroundcolor="#000"
-        >
+        <StyledButton onClick={onSubmitGitHubHandler} backgroundcolor="#000">
           {" "}
           <IconContext.Provider value={{ className: "icon" }}>
             <div className="iconTextButton">
               <BsGithub />
-              Log in via GitHub
+              Login via GitHub
             </div>
           </IconContext.Provider>
         </StyledButton>

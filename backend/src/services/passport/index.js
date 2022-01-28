@@ -74,7 +74,7 @@ module.exports = (config) => {
         clientID: config.GITHUB_CLIENT_ID,
         clientSecret: config.GITHUB_CLIENT_SECRET,
         scope: ["user:email"], // what we want to access from the github profile (only the email)
-        callbackURL: "http://localhost:3001/auth/githab/callback",
+        callbackURL: "http://localhost:3001/users/auth/githab/callback",
         passReqToCallback: true,
       },
       async (req, accessToken, refreshToken, profile, deno) => {
