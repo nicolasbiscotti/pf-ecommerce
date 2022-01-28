@@ -12,12 +12,22 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 5px;
   margin-top: 23px;
-  background-color: ${props => props.backgroundcolor || "#16bcdc"};
+  background-color: ${(props) => props.backgroundcolor || "#16bcdc"};
   &:hover {
     cursor: pointer;
-    background-color: #0d6efd;
+    background-color: ${(props) =>
+      props.backgroundcolor ? "rgba(255, 255, 255, 0.5)" : "#0d6efd"};
   }
   &:disabled {
     cursor: not-allowed;
+  }
+
+  .iconTextButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      margin-right: 10px;
+    }
   }
 `;

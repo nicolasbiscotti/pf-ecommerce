@@ -143,7 +143,7 @@ export default function RegisterForm() {
           onClick={() => navigate("/login")}
           backgroundcolor="#6c728d"
         >
-          Sing In
+          Login
         </StyledButton>
       </form>
     </StyledForm>

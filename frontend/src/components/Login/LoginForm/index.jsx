@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
 import axios from "axios";
-import { BsInfoCircle } from "react-icons/bs";
+import { BsInfoCircle, BsGithub } from "react-icons/bs";
 import validateUser from "../utils/validate";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setMessage } from "../../../redux/reducers/messages/actions";
+import { IconContext } from "react-icons/lib";
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -101,7 +102,20 @@ export default function LoginForm() {
         />
 
         <StyledButton onClick={onSubmitHandler} disabled={disabled}>
-          Sign In
+          Login
+        </StyledButton>
+
+        <StyledButton
+          // onClick={() => navigate("register")}
+          backgroundcolor="#000"
+        >
+          {" "}
+          <IconContext.Provider value={{ className: "icon" }}>
+            <div className="iconTextButton">
+              <BsGithub />
+              Log in via GitHub
+            </div>
+          </IconContext.Provider>
         </StyledButton>
 
         <StyledButton
