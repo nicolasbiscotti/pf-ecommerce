@@ -13,7 +13,7 @@ const InputName = ({ nameReducer, type, err }) => {
     <InputNameStyled>
       <label htmlFor="name">
         Name
-        {err.name && <span>*</span>}
+        {err && err.name && <span>*</span>}
       </label>
       <input id="name" type="text" onChange={handleOnChangeName} value={name} />
     </InputNameStyled>

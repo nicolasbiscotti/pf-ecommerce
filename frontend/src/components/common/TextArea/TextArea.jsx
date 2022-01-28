@@ -13,7 +13,7 @@ const TextArea = ({ type, nameReducer, err }) => {
     <TextAreaStyled>
       <label htmlFor={"description"}>
         Description
-        {err.description && <span>*</span>}
+        {err && err.description && <span>*</span>}
       </label>
       <textarea
         name=""

@@ -3,7 +3,14 @@ import { actionGenerator } from "../../../services/actionGenerator";
 import { toUpperCaseFirstCharacter } from "../../../services/services";
 import { InputNumberSyled } from "./style";
 
-const InputNumber = ({ placeholder, type, nameReducer, nameKey, err }) => {
+const InputNumber = ({
+  placeholder,
+  type,
+  nameReducer,
+  nameKey,
+  err,
+  keyErr,
+}) => {
   const dispatch = useDispatch();
   const value = useSelector((state) => state[nameReducer][nameKey]);
   const handleOnChange = (e) => {
@@ -14,7 +21,7 @@ const InputNumber = ({ placeholder, type, nameReducer, nameKey, err }) => {
     <InputNumberSyled>
       <label htmlFor={placeholder}>
         {toUpperCaseFirstCharacter(placeholder)}
-        {err[nameKey] && <span>*</span>}
+        {err && err[keyErr] && <span>*</span>}
       </label>
       <input
         id={placeholder}

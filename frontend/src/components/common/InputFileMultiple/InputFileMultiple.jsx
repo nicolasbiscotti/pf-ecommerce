@@ -4,7 +4,7 @@ import { actionGenerator } from "../../../services/actionGenerator";
 import { loadImgs } from "./services";
 import { InputFileMultipleStyled } from "./style";
 
-const InputFileMultiple = ({ type, err }) => {
+const InputFileMultiple = ({ type, err, keyErr }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const InputFileMultiple = ({ type, err }) => {
       <input id="imgs" type="file" onChange={handleOnChangeImgs} multiple />
       <label htmlFor="imgs">
         Other Images
-        {err.imgs && <span>*</span>}
+        {err && err[keyErr] && <span>*</span>}
       </label>
     </InputFileMultipleStyled>
   );

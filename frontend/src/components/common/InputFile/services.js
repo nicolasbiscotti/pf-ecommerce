@@ -9,6 +9,7 @@ export const loadImg = async function ({ e, dispatch, type }) {
   formData.append("upload_preset", namePreset);
   try {
     const data = await axiosPost(urlCloudinary, formData);
+    console.log(data);
     const urlImg = data.secure_url;
     dispatch(actionGenerator(type, urlImg));
   } catch (error) {
