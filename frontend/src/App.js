@@ -12,6 +12,7 @@ import RegisterForm from "./components/Login/RegisterForm";
 import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
+import Cart from "./components/cart";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>

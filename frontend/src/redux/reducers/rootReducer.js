@@ -7,12 +7,14 @@ import { suppliers } from "./suppliers";
 import { createProduct } from "./createProduct";
 import { createCategories } from "./crud categories";
 import { message } from "./messages";
+import { cart } from "./cart"
 
 export const rootReducer = combineReducers({
   products,
   forms,
   filters,
   categories,
+  cart,
   suppliers,
   createProduct,
   createCategories,
