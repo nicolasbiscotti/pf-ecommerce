@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const SideBarContentStyled = styled.nav`
-  width: 100%;
+  width: 250px;
   display: flex;
   font-family: "Rubik", sans-serif;
-  position: relative;
+  position: fixed;
   nav {
     position: fixed;
     width: 250px;
     left: -250px;
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     text-align: left;
     background-color: #081f4c;
@@ -52,7 +52,6 @@ export const SideBarContentStyled = styled.nav`
 
   .containerLinks {
     width: 100%;
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -108,6 +107,15 @@ export const SideBarContentStyled = styled.nav`
     transform: scaleX(1);
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
+
+  .signOut {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-bottom: 6rem;
   }
   @media screen and (min-width: 768px) {
     nav {

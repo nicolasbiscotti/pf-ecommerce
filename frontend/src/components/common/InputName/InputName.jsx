@@ -1,13 +1,22 @@
-const InputName = ({ handleChange, value }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { actionGenerator } from "../../../services/actionGenerator";
+import { InputNameStyled } from "./style";
+
+const InputName = ({ nameReducer, type, err }) => {
+  const dispatch = useDispatch();
+  const { name } = useSelector((state) => state[nameReducer]);
+  const handleOnChangeName = (e) => {
+    const name = e.target.value;
+    dispatch(actionGenerator(type, name));
+  };
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="name"
-        onChange={handleChange ? (e) => handleChange(e) : null}
-        value={value}
-      />
-    </div>
+    <InputNameStyled>
+      <label htmlFor="name">
+        Name
+        {err && err.name && <span>*</span>}
+      </label>
+      <input id="name" type="text" onChange={handleOnChangeName} value={name} />
+    </InputNameStyled>
   );
 };
 

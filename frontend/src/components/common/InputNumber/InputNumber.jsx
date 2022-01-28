@@ -1,14 +1,36 @@
-const InputNumber = ({ placeholder, handleChange }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { actionGenerator } from "../../../services/actionGenerator";
+import { toUpperCaseFirstCharacter } from "../../../services/services";
+import { InputNumberSyled } from "./style";
+
+const InputNumber = ({
+  placeholder,
+  type,
+  nameReducer,
+  nameKey,
+  err,
+  keyErr,
+}) => {
+  const dispatch = useDispatch();
+  const value = useSelector((state) => state[nameReducer][nameKey]);
+  const handleOnChange = (e) => {
+    const number = e.target.value;
+    dispatch(actionGenerator(type, number));
+  };
   return (
-    <div>
+    <InputNumberSyled>
+      <label htmlFor={placeholder}>
+        {toUpperCaseFirstCharacter(placeholder)}
+        {err && err[keyErr] && <span>*</span>}
+      </label>
       <input
         id={placeholder}
         type="number"
-        placeholder={placeholder}
-        onChange={handleChange ? (e) => handleChange(e) : null}
+        onChange={handleOnChange}
+        value={value}
+        min={0}
       />
-      <label htmlFor={placeholder}></label>
-    </div>
+    </InputNumberSyled>
   );
 };
 

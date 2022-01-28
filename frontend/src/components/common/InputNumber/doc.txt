@@ -1,0 +1,4 @@
+recibe 4 props nameReducer,nameKey, type y placeholder
+
+nameReducer será el estado global de redux al cual va acceder y nameKey la key especifica a halar del mismo
+y despacha una acción cada que escriba en el input, dicha acción va cargada con el type y el value del inputNumber
