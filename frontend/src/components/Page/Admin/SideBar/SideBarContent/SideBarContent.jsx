@@ -27,19 +27,27 @@ const SideBarContent = () => {
           <p>Admin</p>
         </div>
         <div className="containerLinks">
-          <Link className="hvr-bounce-to-right" to="create/product">
+          <Link
+            onClick={handleClick}
+            className="hvr-bounce-to-right"
+            to="create/product"
+          >
             Productos
           </Link>
-          <Link className="hvr-bounce-to-right" to="">
+          <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
             Facturas
           </Link>
-          <Link className="hvr-bounce-to-right" to="">
+          <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
             Usuarios
           </Link>
-          <Link className="hvr-bounce-to-right" to="create/category">
+          <Link
+            onClick={handleClick}
+            className="hvr-bounce-to-right"
+            to="create/category"
+          >
             Categorias
           </Link>
-          <Link className="hvr-bounce-to-right" to="">
+          <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
             Proveedores
           </Link>
         </div>
