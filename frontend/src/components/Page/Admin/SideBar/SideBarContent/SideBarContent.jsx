@@ -7,6 +7,7 @@ import { SideBarContentStyled } from "./style";
 const SideBarContent = () => {
   const [active, setActive] = useState(false);
   const [show, setshow] = useState(false);
+  
   const handleClick = () => {
     setActive(!active);
   };
@@ -14,7 +15,7 @@ const SideBarContent = () => {
   const handleClickShow = () => {
     setshow(!show);
   };
-
+  
   return (
     <SideBarContentStyled>
       <GoThreeBars
