@@ -4,6 +4,7 @@ const LocalStrategy = require("passport-local").Strategy;
 const GitHubStrategy = require("passport-github2").Strategy;
 /* eslint-disable no-unused-vars */
 const { User } = require("../../db");
+const userService = require("../../routes/users/services/userService");
 
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
@@ -79,8 +80,19 @@ module.exports = (config) => {
       },
       async (req, accessToken, refreshToken, profile, deno) => {
         try {
-          console.log(profile);
-          return done(null, false);
+          req.session.tempOAuthProfile = null;
+          const user = await userService.findUserByOauthProfile(
+            profile.id,
+            profile.provider
+          );
+          if (!user) {
+            req.session.tempOAuthProfile = {
+              profileId: profile.id,
+              provider: profile.provider,
+            };
+          }
+          console.log(`------------------> --> profile.id= ${profile.id}`);
+          return done(null, user);
         } catch (error) {
           return done(error);
         }

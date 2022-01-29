@@ -54,8 +54,16 @@ modelDefiners.forEach((model) => model(sequelize));
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
-const { Product, Category, Image, Supplier, User, Order, OrderDetail } =
-  sequelize.models;
+const {
+  Product,
+  Category,
+  Image,
+  Supplier,
+  User,
+  Order,
+  OrderDetail,
+  OauthProfile,
+} = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
@@ -88,6 +96,9 @@ User.belongsToMany(Product, { through: "Favorite" });
 
 User.hasMany(Order);
 Order.belongsTo(User);
+
+User.OauthProfile = User.hasMany(OauthProfile);
+OauthProfile.User = OauthProfile.belongsTo(User);
 
 Order.belongsToMany(Product, { through: OrderDetail });
 Product.belongsToMany(Order, { through: OrderDetail });

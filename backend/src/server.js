@@ -47,7 +47,7 @@ server.use(
     ],
     resave: false,
     saveUninitialized: true,
-    sameSite: "strict",
+    sameSite: "lax",
     maxAge: null,
   })
 );
