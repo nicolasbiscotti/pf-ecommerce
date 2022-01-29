@@ -26,11 +26,6 @@ import { reqCreteProduct } from "../../../../redux/reducers/createProduct/action
 import { ButtonAdmin } from "../../../common/button/Button";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import { RESET_CP } from "../../../../redux/reducers/createProduct/const";
-import {
-  bgButtonAdmin,
-  bgHoverButtonAdmin,
-  yellowLight,
-} from "../../../../utilsStyles/utilsColors";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
