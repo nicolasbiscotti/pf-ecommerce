@@ -1,12 +1,14 @@
 import { css } from "styled-components";
+import { bgButtonAdmin } from "./utilsColors";
 
 const width = "150px";
 //recuerde poner positon:relative; al padre
 export const labelFileStyle = () => css`
   display: inline-block;
-  background-color: #e8474c;
+  background-color: ${bgButtonAdmin};
   border: none;
   color: white;
+  font-weight: bold;
   width: ${width};
   text-align: center;
   padding-top: 8px;

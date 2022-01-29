@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../../../redux/reducers/categories/actions";
 import { reqCreateCategory } from "../../../../redux/reducers/crud categories/actions";
-import { Button } from "../../../common/button/Button";
+import { Button, ButtonAdmin } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputName from "../../../common/InputName/InputName";
 import { CreateCategorieStyled } from "./style";
@@ -66,9 +66,14 @@ function CreateCategories() {
               err={objError}
               keyErr="img"
             />
-            <Button type="submit" width="100%" padding="10px 0">
+            <ButtonAdmin
+              type="submit"
+              width="100%"
+              padding="10px 0"
+              margin="20px 0 0 0"
+            >
               Agregar
-            </Button>
+            </ButtonAdmin>
           </form>
         </div>
       </div>

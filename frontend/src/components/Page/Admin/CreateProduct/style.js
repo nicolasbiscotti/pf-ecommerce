@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { bgFormAdmin } from "../../../../utilsStyles/utilsColors";
 
 export const CreateProductStyled = styled.form`
   display: grid;
@@ -7,6 +8,7 @@ export const CreateProductStyled = styled.form`
   min-width: 320px;
   max-width: 640px;
   padding: 25px;
+  background-color: ${bgFormAdmin};
   .selects {
     display: grid;
     gap: 3px;
