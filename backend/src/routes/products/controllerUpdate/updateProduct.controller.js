@@ -1,5 +1,6 @@
 const { Product, Image } = require("../../../db");
 const { createImages } = require("../controllerPost/services/createImages");
+const { validateColumnUpdate, findOneProduct } = require("./services");
 
 const updateProduct = async (req, res, next) => {
   try {
@@ -17,37 +18,27 @@ const updateProduct = async (req, res, next) => {
       categories,
     } = req.body;
     const product = await Product.findByPk(id);
-    const columnsUpdate = {};
-    if (name && name !== product.name) {
-      columnsUpdate.name = name;
+    if (!product) {
+      return res.json({ msg: "Not found" });
     }
-    if (description && description !== product.description) {
-      columnsUpdate.description = description;
-    }
-    if (purchasePrice && purchasePrice !== product.purchasePrice) {
-      columnsUpdate.purchasePrice = purchasePrice;
-    }
-    if (salePrice && salePrice !== product.salePrice) {
-      columnsUpdate.salePrice = salePrice;
-    }
-    if (mainImg && mainImg !== product.mainImg) {
-      columnsUpdate.mainImg = mainImg;
-    }
-    if (stock && stock !== product.stock) {
-      columnsUpdate.stock = stock;
-    }
-    if (discount && discount !== product.discount) {
-      columnsUpdate.discount = discount;
-    }
+    const columnToUpdate = validateColumnUpdate(product, {
+      name,
+      description,
+      purchasePrice,
+      salePrice,
+      mainImg,
+      stock,
+      discount,
+    });
     if (categories) await product.setCategories(categories);
     if (suppliers) await product.setSuppliers(suppliers);
-
     if (imgs) {
       const intancesImage = await createImages(Image, imgs);
       await product.setImages(intancesImage);
     }
-    const updateProduct = await product.update(columnsUpdate);
-    res.json(updateProduct);
+    await product.update(columnToUpdate);
+    const productUpdated = await findOneProduct(id);
+    res.json({ msg: "Updated successfully", productUpdated });
   } catch (error) {
     next(error);
   }
