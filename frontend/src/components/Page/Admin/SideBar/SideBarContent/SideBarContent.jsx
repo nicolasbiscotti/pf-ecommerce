@@ -10,7 +10,6 @@ const SideBarContent = () => {
   const handleClick = () => {
     setActive(!active);
   };
-
   return (
     <SideBarContentStyled>
       <GoThreeBars
