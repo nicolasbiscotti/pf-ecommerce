@@ -23,9 +23,14 @@ import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
-import { Button } from "../../../common/button/Button";
+import { ButtonAdmin } from "../../../common/button/Button";
 import { actionGenerator } from "../../../../services/actionGenerator";
 import { RESET_CP } from "../../../../redux/reducers/createProduct/const";
+import {
+  bgButtonAdmin,
+  bgHoverButtonAdmin,
+  yellowLight,
+} from "../../../../utilsStyles/utilsColors";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
@@ -85,9 +90,7 @@ const CreateProduct = () => {
           err={objError}
         />
       </section>
-      <Button width="150px" radius="0px" padding="8px" bgColor="#e8474c">
-        Create
-      </Button>
+      <ButtonAdmin>Create</ButtonAdmin>
     </CreateProductStyled>
   );
 };

@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import {
+  bgButtonAdmin,
+  bgHoverButtonAdmin,
+} from "../../../utilsStyles/utilsColors";
 
 export const Button = styled.button`
   background-color: ${({ bgColor }) => bgColor || "#16bcdc"};
@@ -16,9 +20,21 @@ export const Button = styled.button`
     background-color: ${({ hoverBgColor }) => hoverBgColor || "#0695B1"};
     color: ${({ hoverColor }) => hoverColor || "#fff"};
     border: ${({ hoverBorder }) => hoverBorder || "none"};
-
   }
   cursor: pointer;
   transition: all 0.3s ease;
   line-height: 1;
+`;
+
+export const ButtonAdmin = styled(Button)`
+  background-color: ${bgButtonAdmin};
+  &:hover {
+    background-color: ${bgHoverButtonAdmin};
+  }
+  width: ${({ width }) => width || "150px"};
+  margin: ${({ margin }) => margin || "0 "};
+  font-size: inherit;
+  font-family: Rubik;
+  border-radius: 0;
+  padding: 8px;
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const CreateCategorieStyled = styled.div`
+  color: white;
   width: 100%;
   height: auto;
   display: flex;

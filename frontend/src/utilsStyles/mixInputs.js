@@ -1,10 +1,10 @@
 import { css } from "styled-components";
-import { blackLight } from "./utilsColors";
+import { bgInputAdmin } from "./utilsColors";
 
 export const basicInputStyle = () => css`
   color: white;
   width: 100%;
-  background-color: ${blackLight};
+  background-color: ${bgInputAdmin};
   border: none;
   padding: 10px;
   outline: none;
