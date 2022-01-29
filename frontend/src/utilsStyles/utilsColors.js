@@ -13,3 +13,4 @@ export const bgButtonAdmin = "#5168f4";
 export const textColorAdmin = "white";
 export const bgInputAdmin = "#25262a";
 export const bgHoverButtonAdmin = "#213ff5";
+export const colorErrSpan = "red";
