@@ -59,6 +59,34 @@ export const SideBarContentStyled = styled.nav`
     text-align: center;
   }
 
+  .containerProducts {
+    color: white;
+
+    p {
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+  }
+
+  .show {
+    opacity: 1;
+    height: 80px;
+  }
+
+  .opt {
+    text-align: center;
+  }
+
   a {
     padding: 10px;
     display: block;
