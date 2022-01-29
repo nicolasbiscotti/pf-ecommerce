@@ -1,0 +1,121 @@
+{
+    "id": "9P744457TR463293F",
+    "intent": "CAPTURE",
+    "status": "COMPLETED",
+    "purchase_units": [
+      {
+        "reference_id": "default",
+        "amount": {
+          "currency_code": "USD",
+          "value": "5.00",
+          "breakdown": {
+            "item_total": {
+              "currency_code": "USD",
+              "value": "5.00"
+            },
+            "shipping": {
+              "currency_code": "USD",
+              "value": "0.00"
+            },
+            "handling": {
+              "currency_code": "USD",
+              "value": "0.00"
+            },
+            "insurance": {
+              "currency_code": "USD",
+              "value": "0.00"
+            },
+            "shipping_discount": {
+              "currency_code": "USD",
+              "value": "0.00"
+            }
+          }
+        },
+        "payee": {
+          "email_address": "sb-qwi3t6875509@business.example.com",
+          "merchant_id": "NL7K5CGTU7TP6"
+        },
+        "description": "Buy in E-kommerce",
+        "items": [
+          {
+            "name": "i.name1",
+            "unit_amount": {
+              "currency_code": "USD",
+              "value": "3.00"
+            },
+            "tax": {
+              "currency_code": "USD",
+              "value": "0.00"
+            },
+            "quantity": "1"
+          },
+          {
+            "name": "i.name2",
+            "unit_amount": {
+              "currency_code": "USD",
+              "value": "2.00"
+            },
+            "tax": {
+              "currency_code": "USD",
+              "value": "0.00"
+            },
+            "quantity": "1"
+          }
+        ],
+        "shipping": {
+          "name": {
+            "full_name": "John Doe"
+          },
+          "address": {
+            "address_line_1": "Free Trade Zone",
+            "admin_area_2": "Buenos Aires",
+            "admin_area_1": "Buenos Aires",
+            "postal_code": "B1675",
+            "country_code": "AR"
+          }
+        },
+        "payments": {
+          "captures": [
+            {
+              "id": "7JL30426W2752740U",
+              "status": "COMPLETED",
+              "amount": {
+                "currency_code": "USD",
+                "value": "5.00"
+              },
+              "final_capture": true,
+              "seller_protection": {
+                "status": "ELIGIBLE",
+                "dispute_categories": [
+                  "ITEM_NOT_RECEIVED",
+                  "UNAUTHORIZED_TRANSACTION"
+                ]
+              },
+              "create_time": "2022-01-29T12:50:06Z",
+              "update_time": "2022-01-29T12:50:06Z"
+            }
+          ]
+        }
+      }
+    ],
+    "payer": {
+      "name": {
+        "given_name": "John",
+        "surname": "Doe"
+      },
+      "email_address": "sb-ndnre8251267@personal.example.com",
+      "payer_id": "BFULD4NEGFX7L",
+      "address": {
+        "country_code": "AR"
+      }
+    },
+    "create_time": "2022-01-29T12:49:56Z",
+    "update_time": "2022-01-29T12:50:06Z",
+    "links": [
+      {
+        "href": "https://api.sandbox.paypal.com/v2/checkout/orders/9P744457TR463293F",
+        "rel": "self",
+        "method": "GET"
+      }
+    ]
+  }
