@@ -38,7 +38,7 @@ const updateProduct = async (req, res, next) => {
     }
     await product.update(columnToUpdate);
     const productUpdated = await findOneProduct(id);
-    res.json({ msg: "Updated successfully", productUpdated });
+    res.json(productUpdated);
   } catch (error) {
     next(error);
   }
