@@ -4,7 +4,6 @@ import { errSpan } from "../../../utilsStyles/mixSpan";
 import { blackLight } from "../../../utilsStyles/utilsColors";
 
 export const SelectBoxStyled = styled.section`
-  position: relative;
   .collapse {
     ${labelFileStyle}
     span {
@@ -12,17 +11,14 @@ export const SelectBoxStyled = styled.section`
     }
   }
   .checks {
-    position: absolute;
-    left: 0;
-    bottom: 40px;
-    background-color: ${blackLight};
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    position: absolute;
+    background-color: ${blackLight};
     z-index: 100;
-    padding: 5px;
-    width: 100%;
-    @media (min-width: 375px) {
-      width: 200%;
+    padding: 15px;
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
     }
   }
 `;

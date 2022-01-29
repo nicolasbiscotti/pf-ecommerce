@@ -1,6 +1,6 @@
 import { css } from "styled-components";
-import { bgButtonAdmin } from "./utilsColors";
+import { colorErrSpan } from "./utilsColors";
 
 export const errSpan = () => css`
-  color: ${bgButtonAdmin};
+  color: ${colorErrSpan};
 `;
