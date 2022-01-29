@@ -9,3 +9,4 @@ export const SET_CP_IMGS = "SET_CREATE_IMGS";
 export const SET_CP_CATEGORIES = "SET_CREATE_CATEGORIES";
 export const SET_CP_SUPPLIERS = "SET_CREATE_SUPPLIERS";
 export const SET_RES_BACK_CP = "SET_RES_BACK_CP";
+export const RESET_CP = "RESET_CP";

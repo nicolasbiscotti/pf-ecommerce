@@ -4,7 +4,9 @@ export default function CartObj(array = []){
 }
 
 CartObj.prototype.existProduct = function(product){
-    if(this.products.some((e)=>e.idProduct===product.id)) return true;
+    if(this.products.some((e)=>e.idProduct===product.id)){
+        return true;
+    } 
     return false;
 }
 
@@ -14,6 +16,8 @@ CartObj.prototype.addProduct = function({product, count = 1}){
     }else{
         this.products.push({
             idProduct: product.id,
+            name:product.name,
+            img:product.img,
             price: product.price,
             count: count
         });
@@ -34,13 +38,7 @@ CartObj.prototype.deleteProduct = function(product){
 
 CartObj.prototype.setCountProduct = function({product,count}){
     if(this.existProduct(product)){
-        this.products=this.products.map((e)=>{
-            if(e.idProduct===product){
-                return {...e,count:count}
-            }else{
-                return e;
-            }
-        });
+        this.products.find((p)=>p.idProduct===product.id).count=count;
         return true;
     }else{
         return false;
@@ -51,7 +49,7 @@ CartObj.prototype.getSubtotalPrice = function(){
     if(this.countProducts===0){
         return 0;
     }
-    return this.products.reduce((pV,cV) => pV + (cV.count*cV.price))
+    return this.products.reduce((pV,cV) => pV + (cV.count*cV.price),0)
 }
 
 CartObj.prototype.getTotalCount = function(){
@@ -59,4 +57,12 @@ CartObj.prototype.getTotalCount = function(){
         return 0;
     }
     return this.products.reduce((pV,cV) => pV + cV.count)
+}
+
+CartObj.prototype.getCountProduct = function(product){
+    if(this.existProduct(product)){
+        return this.products.find((p)=>p.idProduct===product.id).count;
+    }else{
+        return 0;
+    }
 }

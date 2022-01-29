@@ -13,12 +13,12 @@ const creator = function(type,payload){
     }
 }
 
-export const addProduct = function(id,price,count = null){
+export const addProduct = function(id,name,img,price,count = null){
     return async function(dispatch){
         if(count===null){
-            await dispatch(creator(ADD_PRODUCT,{product:{id,price}}))
+            await dispatch(creator(ADD_PRODUCT,{product:{id,price,name,img}}))
         }else{
-            await dispatch(creator(ADD_PRODUCT,{product:{id,price},count:count}))
+            await dispatch(creator(ADD_PRODUCT,{product:{id,price,name,img},count:count}))
         }
     }
 }
@@ -31,7 +31,7 @@ export const deleteProduct = function(id){
 
 export const changeCountProduct = function (id,count){
     return async function(dispatch){
-        await dispatch(creator(CHANGE_PRODUCT,{product:{id},count:count}))
+        await dispatch(creator(CHANGE_PRODUCT,{product:{id:id},count:count}))
     }
 }
 

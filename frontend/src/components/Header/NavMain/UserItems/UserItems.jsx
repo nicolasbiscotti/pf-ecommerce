@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
 import axios from "axios";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const apiUrl = process.env.REACT_APP_BACKEND;
 
@@ -58,6 +58,13 @@ export default function UserItems() {
     }
   }, []);
 
+  const cart = useSelector(state => state.cart);
+  const [cartPrice,setCartPrice] = useState(cart.getSubtotalPrice());
+
+  useEffect(()=>{
+    setCartPrice(cart.getSubtotalPrice())
+  },[cart])
+
   return (
     <UserItemsStyled>
       <Box
@@ -70,7 +77,7 @@ export default function UserItems() {
             : ["Sign in", "Create an Account"]
         }
       />
-      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", "$0.00"]} />
+      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", `$${cartPrice}`]} />
     </UserItemsStyled>
   );
 }

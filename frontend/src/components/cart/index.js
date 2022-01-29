@@ -6,15 +6,13 @@ import Detailtbar from "./detailbar";
 
 const Cart = function(){
     const cart = useSelector(state=>state.cart);
-
-    console.log(cart)
     
     return (
         <CartStyled>
             <h1>SHOPPING CART</h1>
-            <div>
+            <div className="big-container">
                 <Cards {...cart} />
-                <Detailtbar />
+                <Detailtbar cart={cart}/>
             </div>
         </CartStyled>
     )

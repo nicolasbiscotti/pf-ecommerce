@@ -1,13 +1,13 @@
 import React from "react";
-import { CardsStyled } from "../cardstyled";
+import { Cardstyled } from "./styles";
 
-const Card = function({idProduct,price,count}){
+const Card = function({name,img,price,count}){
     return (
-        <CardsStyled>
-            {idProduct}
-            Price: {price}
-            Count: {count}
-        </CardsStyled>
+        <Cardstyled>
+            <img src={img} alt="product-img" />
+            <h2 className="name">{name}</h2>
+            <span>${price} x {count}</span>
+        </Cardstyled>
     )
 }
 

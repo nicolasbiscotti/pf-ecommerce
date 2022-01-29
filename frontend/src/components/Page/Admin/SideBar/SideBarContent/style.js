@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SideBarContentStyled = styled.nav`
+  z-index: 999;
   width: 250px;
   display: flex;
   font-family: "Rubik", sans-serif;

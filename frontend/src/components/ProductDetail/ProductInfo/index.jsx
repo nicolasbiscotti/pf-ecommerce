@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledProductInfo } from "./styled";
 import AddtoCart from "../../common/addToCard";
+import { Button } from "../../common/button/Button";
+import { useDispatch, useSelector } from "react-redux";
+import { changeCountProduct } from "../../../redux/reducers/cart/actions";
 
 export default function ProductInfo({ product }) {
-  const [quantity, setQuantity] = useState(1);
+  const cart = useSelector(state=>state.cart);
+  const dispatch = useDispatch();
+
+  const [quantity, setQuantity] = useState(cart.getCountProduct(product));
+  const [active,setActive] = useState(cart.existProduct(product)?true:false);
+
+  useEffect(()=>{
+    setQuantity(cart.getCountProduct(product));
+    setActive(cart.existProduct(product)?true:false);
+  },[cart,product])
 
   const onAddQuantityHandler = () => {
     if (quantity < product.stock) {
@@ -15,6 +27,14 @@ export default function ProductInfo({ product }) {
       setQuantity(quantity - 1);
     }
   };
+
+  const handleChangeCount = () => {
+    dispatch(changeCountProduct(product.id,quantity));
+  }
+
+  const deactive =(p) => {
+    setActive(p);
+  }
 
   return (
     <StyledProductInfo>
@@ -64,7 +84,8 @@ export default function ProductInfo({ product }) {
                 +
               </button>
             </div>
-            <AddtoCart product={product} className="addCart" />
+            <Button className={active?'active':'inactive'} onClick={handleChangeCount}>Change count</Button>
+            <AddtoCart product={product} className="addCart" count={quantity} deactive={deactive}/>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const SideBarContent = () => {
   return (
     <SideBarContentStyled>
       <GoThreeBars
-        color="#303030"
+        color="white"
         className={
           "bar className='hvr-bounce-to-right' " +
           (active === true ? "active" : "")

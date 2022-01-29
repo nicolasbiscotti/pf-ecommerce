@@ -101,6 +101,13 @@ export const StyledProductInfo = styled.section`
             background-color: #0d6efd;
           }
         }
+        .active{
+          display: flex;
+        }
+
+        .inactive{
+          display: none;
+        }
       }
     }
   }
