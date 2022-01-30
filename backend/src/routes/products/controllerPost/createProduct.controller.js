@@ -1,4 +1,4 @@
-const { Product, Supplier, Image, Category } = require("../../../db");
+const { Product, Image, Category } = require("../../../db");
 const { isCategories } = require("../../../services/isCategory");
 const { createImages } = require("./services/createImages");
 
