@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
 import axios from "axios";
 import { BsInfoCircle, BsGithub } from "react-icons/bs";
@@ -9,6 +9,13 @@ import { useDispatch } from "react-redux";
 import { setMessage } from "../../../redux/reducers/messages/actions";
 import { IconContext } from "react-icons/lib";
 import { corsAxiosGet } from "../../../services/corsAxios";
+import {
+  REACT_APP_GITHUB_CLIENT_ID,
+  REACT_APP_GITHUB_CLIENT_SECRET,
+  REACT_APP_PROXY_URL,
+  REACT_APP_REDIRECT_URI,
+} from "../../../constants";
+import { login } from "../../../redux/reducers/github/actions";
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -61,18 +68,76 @@ export default function LoginForm() {
     }
   };
 
-  const onSubmitGitHubHandler = async (e) => {
-    e.preventDefault();
+  const oauthurl = `https://github.com/login/oauth/authorize?scope=user:email&client_id=${REACT_APP_GITHUB_CLIENT_ID}&redirect_uri=${REACT_APP_REDIRECT_URI}`;
+
+  const [gitHubData, setGitHubData] = useState({
+    errorMessage: "",
+    isLoadin: false,
+  });
+
+  const sendGitHubCode = async (url) => {
+    const newUrl = url.split("?code=");
+    window.history.pushState({}, null, newUrl[0]);
+    setGitHubData({ ...gitHubData, isLoading: true });
+
+    const requestData = {
+      clientId: REACT_APP_GITHUB_CLIENT_ID,
+      redirectUri: REACT_APP_REDIRECT_URI,
+      clientSecret: REACT_APP_GITHUB_CLIENT_SECRET,
+      code: newUrl[1],
+    };
+
+    const proxyUrl = REACT_APP_PROXY_URL + `?${url.split("?")[1]}`;
+
+    // Use code parameter and other parameters to make POST request to proxy_server
     try {
-      const { data } = await corsAxiosGet("/users/auth/githab");
+      const { data } = await axios.post(proxyUrl, requestData);
+      // dispatch(login({ user: data, isLoggedIn: true }));
+      console.log(`--------------> code from api = ${JSON.stringify(data)}`);
+      navigate("/");
     } catch (error) {
-      console.log(error.message);
+      setGitHubData({
+        isLoadin: false,
+        errorMessage: "Sorry! Login via GitHub has failed!",
+      });
     }
   };
 
+  useEffect(() => {
+    // After requesting Github access, Github redirects back to your app with a code parameter
+    const url = window.location.href;
+    const hasCode = url.includes("?code=");
+    const hasError = url.includes("?error");
+
+    // If Github API returns the code parameter
+    if (hasCode) {
+      sendGitHubCode(url);
+    } else if (hasError) {
+      setGitHubData({
+        isLoadin: false,
+        errorMessage: "Sorry! Login via GitHub has failed!",
+      });
+    }
+  }, []);
+
+  // const onSubmitGitHubHandler = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const { data } = await corsAxiosGet("/users/auth/githab");
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // };
+
   return (
     <StyledForm>
-      <form className="formSignup" action="" method="post" name="form">
+      <form
+        className="formSignup"
+        autoComplete="off"
+        action=""
+        method="post"
+        name="form"
+      >
         <label htmlFor="username">
           User Name
           {errors.username ? (
@@ -115,7 +180,14 @@ export default function LoginForm() {
           Login
         </StyledButton>
 
-        <StyledButton onClick={onSubmitGitHubHandler} backgroundcolor="#000">
+        <StyledButton
+          as="a"
+          href={oauthurl}
+          onClick={() => {
+            setGitHubData({ ...gitHubData, errorMessage: "" });
+          }}
+          backgroundcolor="#131212"
+        >
           {" "}
           <IconContext.Provider value={{ className: "icon" }}>
             <div className="iconTextButton">

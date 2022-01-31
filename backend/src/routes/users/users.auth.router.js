@@ -26,35 +26,40 @@ usersAuth.get(
   }
 );
 
-usersAuth.get("/complete", async (req, res, next) => {
-  try {
-    if (!req.session.tempOAuthProfile) {
+usersAuth.post(
+  "/complete",
+  passport.authenticate("github"),
+  async (req, res, next) => {
+    try {
+      console.log(`-------------->>> tempOAuthProfile = ${JSON.stringify(req.session.tempOAuthProfile)}`)
+      if (!req.session.tempOAuthProfile) {
+        return res.json({
+          message: {
+            text: "Login in via GitHub failed!!",
+            type: "danger",
+          },
+        });
+      }
+      if (req.user) {
+        const user = await userService.find(req.user.id);
+        userService.pushOauthProfile(user, req.session.tempOAuthProfile);
+        return res.json({
+          message: {
+            text: "Your GitHub profile was successfully linked!!",
+            type: "success",
+          },
+        });
+      }
       return res.json({
         message: {
-          text: "Login in via GitHub failed!!",
-          type: "danger",
+          text: "Try login again!!",
+          type: "fail",
         },
       });
+    } catch (error) {
+      return next(error);
     }
-    if (req.user) {
-      const user = await userService.find(req.user.id);
-      userService.pushOauthProfile(user, req.session.tempOAuthProfile);
-      return res.json({
-        message: {
-          text: "Your GitHub profile was successfully linked!!",
-          type: "success",
-        },
-      });
-    }
-    return res.json({
-      message: {
-        text: "Try login again!!",
-        type: "fail",
-      },
-    });
-  } catch (error) {
-    return next(error);
   }
-});
+);
 
 module.exports = usersAuth;

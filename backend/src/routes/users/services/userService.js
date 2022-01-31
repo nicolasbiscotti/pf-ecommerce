@@ -74,7 +74,7 @@ const userService = {
         where: { profileId, provider },
         include: User,
       });
-      return oauthProfile ? oauthProfile.User : {};
+      return oauthProfile ? oauthProfile.User : false;
     } catch (error) {
       console.log(error);
     }

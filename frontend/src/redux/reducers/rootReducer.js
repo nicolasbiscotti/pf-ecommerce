@@ -7,6 +7,7 @@ import { suppliers } from "./suppliers";
 import { createProduct } from "./createProduct";
 import { createCategories } from "./crud categories";
 import { message } from "./messages";
+import { github } from "./github";
 
 export const rootReducer = combineReducers({
   products,
@@ -17,4 +18,5 @@ export const rootReducer = combineReducers({
   createProduct,
   createCategories,
   message,
+  github,
 });

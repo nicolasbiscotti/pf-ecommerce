@@ -78,7 +78,7 @@ module.exports = (config) => {
         callbackURL: config.REDIRECT_URI,
         passReqToCallback: true,
       },
-      async (req, accessToken, refreshToken, profile, deno) => {
+      async (req, accessToken, refreshToken, profile, done) => {
         try {
           req.session.tempOAuthProfile = null;
           const user = await userService.findUserByOauthProfile(
@@ -91,7 +91,6 @@ module.exports = (config) => {
               provider: profile.provider,
             };
           }
-          console.log(`------------------> --> profile.id= ${profile.id}`);
           return done(null, user);
         } catch (error) {
           return done(error);
