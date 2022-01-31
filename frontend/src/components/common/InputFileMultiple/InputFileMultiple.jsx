@@ -14,7 +14,9 @@ const InputFileMultiple = ({ type, err, keyErr }) => {
   }, [dispatch, type]);
 
   const handleOnChangeImgs = async (e) => {
-    await loadImgs({ e, dispatch, type });
+    if (e.target.files.length) {
+      await loadImgs({ e, dispatch, type });
+    }
   };
   return (
     <InputFileMultipleStyled>

@@ -14,23 +14,27 @@ import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
 import Cart from "./components/cart";
+import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
+import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 
 function App() {
   return (
     <AppStyled className="App">
       <Routes>
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>
-          <Route path="product" />
+          <Route index element={<ShowProduct />} />
+          <Route path="products" element={<ShowProduct />} />
           <Route path="create/product" element={<CreateProduct />} />
+          <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
         </Route>
 

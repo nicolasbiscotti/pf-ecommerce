@@ -9,6 +9,8 @@ import { createCategory } from "./crud categories";
 import { message } from "./messages";
 import { cart } from "./cart"
 import { productsNames } from "./autocomplete";
+import { updateProduct } from "./updateProduct";
+import { productsAdmin } from "./productsAdmin";
 
 export const rootReducer = combineReducers({
   products,
@@ -20,5 +22,6 @@ export const rootReducer = combineReducers({
   createProduct,
   createCategory,
   message,
-  productsNames,
+  updateProduct,
+  productsAdmin,
 });
