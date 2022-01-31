@@ -39,7 +39,6 @@ export const filters = (store = initialStore, { type, payload }) => {
     case SELECT_NAME_SEARCH:
       delete store["category"];
       delete store["priceRange"];
-      delete store["sort"];
       return {
         ...store,
         nameSearch: { name: payload },

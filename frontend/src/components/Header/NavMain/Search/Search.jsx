@@ -13,25 +13,23 @@ function Search({ data }) {
   const [showSuggestions, setShowSuggestions] = useState(true);
   let navigate = useNavigate();
 
-  const handleCleanInput = (f = [], i = "") => {
-    setFilteredData(f);
-    setInputWord(i);
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleOuterClick);
-    return () => {
-      document.removeEventListener("click", handleOuterClick);
-    };
-  }, []);
-
   const handleOuterClick = (e) => {
-    if (searchInput.current && !searchInput.current.contains(e.target)) {
+    if (!searchInput.current.contains(e.target)) {
       setShowSuggestions(false);
     } else {
       setShowSuggestions(true);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOuterClick);
+  }, []);
+
+  const handleCleanInput = (f = [], i = "") => {
+    setFilteredData(f);
+    setInputWord(i);
+  };
+
   const handleFilter = (event) => {
     if (event.target.value === "") {
       handleCleanInput();

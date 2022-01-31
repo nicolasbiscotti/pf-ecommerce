@@ -50,7 +50,7 @@ export const NavMainStyled = styled.div`
       }
     }
     @media screen and (min-width: 550px) and (max-width: 680px) {
-      nav > :nth-child(3) > :nth-child(2) p {
+      nav > :nth-child(3) > :first-child p {
         display: none;
       }
     }
@@ -89,7 +89,7 @@ export const NavMainStyled = styled.div`
         width: 4.2rem;
         height: 4.2rem;
       }
-      > :nth-child(3) > :nth-child(2) p {
+      > :nth-child(3) > :first-child p {
         display: none;
       }
     }
