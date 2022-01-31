@@ -1,5 +1,10 @@
 export const validateCreateProduct = (createProduct) => {
   const errors = {};
+  if (createProduct.hasOwnProperty("discount")) {
+    if (createProduct.discount < "0") {
+      errors.discount = "*";
+    }
+  }
   if (!/^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/.test(createProduct.name)) {
     errors.name = "*";
   }

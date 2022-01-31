@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGetStateDispatch } from "../../../../hooks/useGetStateDispatch/useGetStateDispatch";
 import { updateProduct } from "../../../../redux/reducers/updateProduct/action";
@@ -8,6 +9,7 @@ import InputName from "../../../common/InputName/InputName";
 import InputNumber from "../../../common/InputNumber/InputNumber";
 import SelectBox from "../../../common/SelectBox/SelectBox";
 import TextArea from "../../../common/TextArea/TextArea";
+import { validateCreateProduct } from "../CreateProduct/validate";
 import { useProductById } from "./hooks/useProductById";
 import { propsCategories, propsSuppliers } from "./propHooks";
 import { propsImgs, propsMainImg } from "./propsFiles";
@@ -29,29 +31,49 @@ export default function UpdateProduct() {
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   const product = useSelector((state) => state.updateProduct);
 
+  const [objError, setObjError] = useState(validateCreateProduct(product));
+
+  useEffect(() => {
+    setObjError(validateCreateProduct(product));
+  }, [product]);
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProduct({ ...product, id }));
+    if (Object.keys(objError).length === 0) {
+      dispatch(updateProduct({ ...product, id }));
+    }
   };
 
   return (
     <UpdateProductStyled>
       <form action="" onSubmit={handleOnSubmit}>
-        <InputName {...propsName} />
+        <InputName {...propsName} err={objError} />
         <section className="price">
-          <InputNumber {...propsSalePrice} />
-          <InputNumber {...propsPurchesePrice} />
-          <InputNumber {...propsStock} />
-          <InputNumber {...propsDiscount} />
+          <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
+          <InputNumber
+            {...propsPurchesePrice}
+            err={objError}
+            keyErr="purchasePrice"
+          />
+          <InputNumber {...propsStock} err={objError} keyErr="stock" />
+          <InputNumber {...propsDiscount} err={objError} keyErr="discount" />
         </section>
-        <TextArea {...propsDescription} />
+        <TextArea {...propsDescription} err={objError} />
         <section className="files">
-          <InputFile {...propsMainImg} />
-          <InputFileMultiple {...propsImgs} />
+          <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
+          <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
         </section>
         <section className="selects">
-          <SelectBox data={allCategories} {...propsSelectCategories} />
-          <SelectBox data={allSuppliers} {...propsSelectSuppliers} />
+          <SelectBox
+            data={allCategories}
+            {...propsSelectCategories}
+            err={objError}
+          />
+          <SelectBox
+            data={allSuppliers}
+            {...propsSelectSuppliers}
+            err={objError}
+          />
         </section>
         <ButtonAdmin>Save</ButtonAdmin>
       </form>
