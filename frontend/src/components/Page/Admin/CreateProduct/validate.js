@@ -8,13 +8,13 @@ export const validateCreateProduct = (createProduct) => {
   if (!/^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/.test(createProduct.name)) {
     errors.name = "*";
   }
-  if (createProduct.salePrice <= "0") {
+  if (createProduct.salePrice < "0") {
     errors.salePrice = "*";
   }
-  if (createProduct.purchasePrice <= "0") {
+  if (createProduct.purchasePrice < "0") {
     errors.purchasePrice = "*";
   }
-  if (createProduct.stock <= "0") {
+  if (createProduct.stock < "0") {
     errors.stock = "*";
   }
   if (createProduct.description === "") {

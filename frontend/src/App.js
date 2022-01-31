@@ -21,13 +21,13 @@ function App() {
   return (
     <AppStyled className="App">
       <Routes>
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
-          <Route path="/checkout" element={<Checkout />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>
