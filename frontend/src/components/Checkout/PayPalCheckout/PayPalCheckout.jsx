@@ -1,48 +1,27 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-export default function PayPalCheckout({ order, amountToPay, formData }) {
-  /*
-    const orderItems = order.items.length > 0 && order.items.map((i) => {
-        return {
-          name: i.name,
-          unit_amount: {value: i.amount, currency_code: 'USD'},
-          quantity: i.quantity,
-          description: "",
-        };
-      const orderItemsTotal = orderItems.reduce((i,a) => (i.unit_amount.value * i.quantity) + a).toString();
-    const purchaseAmount = {
-      value: orderItemsTotal,
-      currency_code: "USD",
-      breakdown: {
-        item_total: { value: orderItemsTotal, currency_code: "USD" },
+export default function PayPalCheckout({ cart, formData }) {
+  const orderItems = cart.products.map((i) => {
+    return {
+      name: i.name,
+      unit_amount: { value: i.price.toString(), currency_code: "USD" },
+      quantity: i.count.toString(),
+      description: "",
+    };
+  });
+  console.log(orderItems);
+  const orderItemsTotal = cart.getSubtotalPrice().toString();
+  const purchaseAmount = {
+    value: orderItemsTotal,
+    currency_code: "USD",
+    breakdown: {
+      item_total: {
+        value: orderItemsTotal + ".0",
+        currency_code: "USD",
       },
     },
-    //"purchase_units.amount: purchaseAmount"
-
-
-     const payer = {
-        email_address: formData.email,
-        // phone: {
-        //   phone_number: {
-        //       national_number: '4543433243',
-        //   }
-        // },
-        // name: {
-        //   given_name: 'PayPal',
-        //   surname: 'Customer',
-        // },
-        address: {
-          address_line_1: formData.address + " " + formData.addresscontinue,
-          address_line_2: 'Apt 2',
-          admin_area_2: formData.city,
-          admin_area_1: formData.province ||'CA',
-          postal_code: formData.postalcode,
-          country_code: 'AR',
-        },
-    }
-
-  }; */
+  };
   const payment = (data, actions) => {
     const payment = {
       payer: {
@@ -67,15 +46,10 @@ export default function PayPalCheckout({ order, amountToPay, formData }) {
       },
       purchase_units: [
         {
-          amount: {
-            value: "5.0" || "order.total",
-            currency_code: "USD",
-            breakdown: {
-              item_total: { value: "5.0", currency_code: "USD" },
-            },
-          },
+          amount: purchaseAmount,
           description: "Buy in E-kommerce",
-          items: /* orderItems ||  */ [
+          items: orderItems,
+          /* [
             {
               name: "i.name1",
               unit_amount: { value: "3", currency_code: "USD" }, // si no es igual la suma con amount_breakdown tira error
@@ -88,7 +62,7 @@ export default function PayPalCheckout({ order, amountToPay, formData }) {
               quantity: "1",
               description: "",
             },
-          ],
+          ], */
           shipping: {
             name: {
               full_name: "",
@@ -180,25 +154,25 @@ export default function PayPalCheckout({ order, amountToPay, formData }) {
 //  }
 //},
 
-//"payments": {
-//  "captures": [
-//    {
-//      "id": "7JL30426W2752740U",
-//      "status": "COMPLETED",
-//      "amount": {
-//        "currency_code": "USD",
-//        "value": "5.00"
-//      },
-//      "final_capture": true,
-//      "seller_protection": {
-//        "status": "ELIGIBLE",
-//        "dispute_categories": [
-//          "ITEM_NOT_RECEIVED",
-//          "UNAUTHORIZED_TRANSACTION"
-//        ]
-//      },
-//      "create_time": "2022-01-29T12:50:06Z",
-//      "update_time": "2022-01-29T12:50:06Z"
-//    }
-//  ]
-//}
+// "payments": {
+//   "captures": [
+//     {
+//       "id": "7JL30426W2752740U",
+//       "status": "COMPLETED",
+//       "amount": {
+//         "currency_code": "USD",
+//         "value": "5.00"
+//       },
+//       "final_capture": true,
+//       "seller_protection": {
+//         "status": "ELIGIBLE",
+//         "dispute_categories": [
+//           "ITEM_NOT_RECEIVED",
+//           "UNAUTHORIZED_TRANSACTION"
+//         ]
+//       },
+//       "create_time": "2022-01-29T12:50:06Z",
+//       "update_time": "2022-01-29T12:50:06Z"
+//     }
+//   ]
+// }

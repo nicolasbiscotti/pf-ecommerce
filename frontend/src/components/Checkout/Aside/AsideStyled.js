@@ -11,7 +11,7 @@ export const AsideStyled = styled.aside`
     font-weight: 400;
     color: #2b2929;
   }
-  .card-container {
+  div .card-container {
     padding: 4rem 18%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ export const AsideStyled = styled.aside`
       margin-bottom: 1rem;
     }
   }
-  .amount-container {
+  div .amount-container {
     margin: 0 12%;
     padding: 2rem 0.2rem;
     display: flex;
