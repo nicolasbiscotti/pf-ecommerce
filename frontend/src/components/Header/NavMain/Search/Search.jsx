@@ -13,21 +13,24 @@ function Search({ data }) {
   const [showSuggestions, setShowSuggestions] = useState(true);
   let navigate = useNavigate();
 
-  const handleOuterClick = (e) => {
-    if (!searchInput.current.contains(e.target)) {
-      setShowSuggestions(false);
-    } else {
-      setShowSuggestions(true);
-    }
+  const handleCleanInput = (f = [], i = "") => {
+    setFilteredData(f);
+    setInputWord(i);
   };
 
   useEffect(() => {
     document.addEventListener("click", handleOuterClick);
+    return () => {
+      document.removeEventListener("click", handleOuterClick);
+    };
   }, []);
 
-  const handleCleanInput = (f = [], i = "") => {
-    setFilteredData(f);
-    setInputWord(i);
+  const handleOuterClick = (e) => {
+    if (searchInput.current && !searchInput.current.contains(e.target)) {
+      setShowSuggestions(false);
+    } else {
+      setShowSuggestions(true);
+    }
   };
 
   const handleFilter = (event) => {

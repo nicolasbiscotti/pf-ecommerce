@@ -1,13 +1,24 @@
 import React from "react";
 import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
-//import MPCheckout from "./MPCheckout/MPCheckout";
-import { CheckoutStyled } from "./CheckoutStyled";
+import { CheckoutStyled, NavlinkHome } from "./CheckoutStyled";
+import { IoIosArrowBack } from "react-icons/io";
+import { Asidecards } from "./Aside/Asidecards";
 
-function Checkout() {
+function Checkout({ order }) {
+  //order --> { ...items: [ {name: "", amount: "", quantity: ""}, ]}
   return (
     <CheckoutStyled>
-      <PayPalCheckout />
-      {/* <MPCheckout /> */}
+      <div className="header-container">
+        <NavlinkHome to="/">
+          <IoIosArrowBack /> e-kommerce
+        </NavlinkHome>
+      </div>
+      <div className="main-container">
+        <div className="app-container">
+          <PayPalCheckout order={order} />
+        </div>
+        <Asidecards />
+      </div>
     </CheckoutStyled>
   );
 }
