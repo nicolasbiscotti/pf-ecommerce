@@ -11,7 +11,6 @@ import { cart } from "./cart"
 import { productsNames } from "./autocomplete";
 import { updateProduct } from "./updateProduct";
 import { productsAdmin } from "./productsAdmin";
-import { productsNames } from "./autocomplete";
 
 export const rootReducer = combineReducers({
   products,
