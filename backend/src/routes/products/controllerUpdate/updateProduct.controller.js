@@ -1,8 +1,8 @@
 const { Product, Image } = require("../../../db");
 const { createImages } = require("../controllerPost/services/createImages");
-const { validateColumnUpdate, findOneProduct } = require("./services");
+const { validateColumnUpdate } = require("./services");
 
-const updateProduct = async (req, res, next) => {
+const updateProduct = async (req, res) => {
   try {
     const {
       id,
@@ -37,10 +37,10 @@ const updateProduct = async (req, res, next) => {
       await product.setImages(intancesImage);
     }
     await product.update(columnToUpdate);
-    const productUpdated = await findOneProduct(id);
-    res.json(productUpdated);
+    res.json({ msg: "Updated successfully" });
   } catch (error) {
-    next(error);
+    return res.json({ msg: "Updated error" });
+    //next(error);
   }
 };
 

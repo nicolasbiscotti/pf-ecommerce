@@ -18,6 +18,7 @@ export const updateProduct = (body) => {
     try {
       const resUpdateProduct = await axiosPut(`/products`, body);
       dispatch(actionGenerator(SET_UP_RES_UP, resUpdateProduct));
+      alert(resUpdateProduct.msg);
     } catch (error) {
       console.log(error);
     }
