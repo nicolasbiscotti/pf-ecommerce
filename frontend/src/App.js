@@ -14,6 +14,7 @@ import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
+import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/admin" element={<Admin />}>
           <Route path="products" element={<ShowProduct />} />
           <Route path="create/product" element={<CreateProduct />} />
+          <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
         </Route>
 
