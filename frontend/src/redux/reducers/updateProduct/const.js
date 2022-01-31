@@ -1,0 +1,12 @@
+export const SET_UP_NAME = "SET_UP_NAME";
+export const SET_UP_SALE_PRICE = "SET_UP_SALE_PRICE";
+export const SET_UP_PURCHASE_PRICE = "SET_UP_PURCHASE_PRICE";
+export const SET_UP_STOCK = "SET_UP_STOCK";
+export const SET_UP_DESCRIPTION = "SET_UP_DESCRIPTION";
+export const SET_UP_MAIN_IMG = "SET_UP_MAIN_IMG";
+export const SET_UP_IMGS = "SET_UP_IMGS";
+export const SET_UP_CATEGORIES = "SET_UP_CATEGORIES";
+export const SET_UP_SUPPLIERS = "SET_UP_SUPPLIERS";
+export const SET_UP_RES_UP = "SET_UP_RES_UP";
+export const SET_UP_PRODUCT = "SET_UP_PRODUCT";
+export const SET_UP_DISCOUNT = "SET_UP_DISCOUNT";

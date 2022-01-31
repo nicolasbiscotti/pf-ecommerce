@@ -20,7 +20,7 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
     <SelectBoxStyled>
       <label className="collapse" onClick={handleOnClickCollapse}>
         {title}
-        {err[nameKey] && <span>*</span>}
+        {err && err[nameKey] && <span>*</span>}
       </label>
       {collapse && data && (
         <div className="checks">

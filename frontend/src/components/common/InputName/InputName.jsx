@@ -7,7 +7,7 @@ const InputName = ({ nameReducer, type, err }) => {
   const { name } = useSelector((state) => state[nameReducer]);
   const handleOnChangeName = (e) => {
     const name = e.target.value;
-    dispatch(actionGenerator(type, name));
+    type && dispatch(actionGenerator(type, name));
   };
   return (
     <InputNameStyled>

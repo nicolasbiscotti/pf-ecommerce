@@ -15,7 +15,9 @@ const InputFile = ({ type, err, keyErr }) => {
   }, [dispatch, type]);
 
   const handleOnChangeImg = async (e) => {
-    await loadImg({ e, dispatch, type });
+    if (e.target.files.length) {
+      await loadImg({ e, dispatch, type });
+    }
   };
 
   return (
