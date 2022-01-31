@@ -5,7 +5,7 @@ import Card from "./card/index"
 const Cards = function({products}){
     return (
         <CardsStyled>
-            {products.map((p)=><Card {...p} />)}
+            {products.map((p)=><Card {...p}/>)}
         </CardsStyled>
     )
 }

@@ -25,6 +25,7 @@ instance.interceptors.request.use(
   }
 );
 
+
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
   const [fetchError, setFetchError] = useState(null);
@@ -58,12 +59,7 @@ export default function UserItems() {
     }
   }, []);
 
-  const cart = useSelector(state => state.cart);
-  const [cartPrice,setCartPrice] = useState(cart.getSubtotalPrice());
-
-  useEffect(()=>{
-    setCartPrice(cart.getSubtotalPrice())
-  },[cart])
+  var cart = useSelector(state => state.cart);
 
   return (
     <UserItemsStyled>
@@ -77,7 +73,7 @@ export default function UserItems() {
             : ["Sign in", "Create an Account"]
         }
       />
-      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", `$${cartPrice}`]} />
+      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", `$${cart.getSubtotalPrice()}`]}/>
     </UserItemsStyled>
   );
 }
