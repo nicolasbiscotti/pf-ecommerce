@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { mainBgcolor } from "../../../utilsStyles/utilsColors";
 
 export const NavTopStyled = styled.div`
+  button {
+    margin: 11px;
+    a {
+      color: white;
+    }
+  }
   height: 5.6vh;
   border-bottom: 0.01rem solid ${mainBgcolor};
   @media screen and (min-width: 550px) and (max-width: 992px) {
