@@ -1,25 +1,24 @@
 import React from "react";
 import { AsideStyled } from "./AsideStyled";
 
-export function Asidecards({ order }) {
+export function Asidecards({ cart }) {
   return (
     <AsideStyled>
-      {/* order.items && order.items.map(i =>{ }) */}
-      <div className="card-container">
-        <img
-          src="https://blog.movical.net/wp-content/uploads/2019/11/encontrar-el-archivo-boot.img-en-un-tel%C3%A9fono-Huawei-min-1024x1024.jpg"
-          alt=""
-        />
-        <h3>Samsung Galaxy Inter Vs</h3>
-        <h5>Price: $1000 USD</h5>
-        <h5>Quantity: </h5>
-      </div>
-      <div className="amount-container">
-        <span>Product : </span>
-        <span>$1000</span>
-      </div>
-      {/*  */}
-
+      {cart.products.length > 0 &&
+        cart.products.map((i) => (
+          <div key={i.name}>
+            <div className="card-container">
+              <img src={i.img} alt="" />
+              <h3>{i.name}</h3>
+              <h5>Price: ${i.price} USD</h5>
+              <h5>Quantity: {i.count}</h5>
+            </div>
+            <div className="amount-container">
+              <span>Product : </span>
+              <span>${i.price * i.count}</span>
+            </div>
+          </div>
+        ))}
       {/* Total */}
       <div
         className="amount-container"
@@ -30,7 +29,7 @@ export function Asidecards({ order }) {
         }}
       >
         <span>Total : </span>
-        <span>$1000</span>
+        <span>${cart.getSubtotalPrice()}</span>
       </div>
     </AsideStyled>
   );

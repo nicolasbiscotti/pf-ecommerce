@@ -5,10 +5,11 @@ import { IoIosArrowBack } from "react-icons/io";
 import { Asidecards } from "./Aside/Asidecards";
 import Addressform from "./Step1/Addressform";
 import Step2 from "./Step2/Step2";
+import { useSelector } from "react-redux";
 
-function Checkout({ order }) {
-  //order --> { ...items: [ {name: "", amount: "", quantity: ""}, ]}
-
+function Checkout() {
+  //cart --> { ...items: [ {name: "", amount: "", quantity: "", (opcional) img: ""}, ]}
+  const cart = useSelector((store) => store.cart);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     address: "",
@@ -42,10 +43,10 @@ function Checkout({ order }) {
           ) : step === 2 ? (
             <Step2 formData={formData} setStep={setStep} />
           ) : (
-            <PayPalCheckout order={order} formData={formData} />
+            <PayPalCheckout cart={cart} formData={formData} />
           )}
         </div>
-        <Asidecards />
+        <Asidecards cart={cart} />
       </div>
     </CheckoutStyled>
   );
