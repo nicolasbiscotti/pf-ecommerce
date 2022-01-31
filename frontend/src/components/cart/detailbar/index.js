@@ -1,9 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../common/button/Button";
 import { DetailbarStyled } from "./styles";
 
 const Detailtbar = function({cart}){
+    const navigate = useNavigate()
+
     const subtotal=cart.getSubtotalPrice();
-    const shipping=subtotal>0?7:0
+    const shipping=subtotal>0?7:0;
+
+    function checkout(){
+        navigate(`/checkout?total=${subtotal+shipping}`);
+    }
 
     return (
         <DetailbarStyled>
@@ -13,6 +21,8 @@ const Detailtbar = function({cart}){
                 <br />
                 <li key={2}><span className="item"><b>Total:</b></span> <span className="price"><b>${subtotal+shipping}.00</b></span></li>
             </ul>
+            <br />
+            <Button onClick={checkout}>Checkout</Button>
         </DetailbarStyled>
     )
 }
