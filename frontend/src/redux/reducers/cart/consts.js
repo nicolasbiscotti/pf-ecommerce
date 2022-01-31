@@ -1,0 +1,4 @@
+export const SET_LOCAL_CART = "SET_LOCAL_CART";
+export const ADD_PRODUCT = "ADD_PRODUCT";
+export const DELETE_PRODUCT = "DELETE_PRODUCT";
+export const CHANGE_PRODUCT = "CHANGE_PRODUCT";

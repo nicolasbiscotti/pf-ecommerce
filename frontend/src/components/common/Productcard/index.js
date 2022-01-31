@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../button/Button";
 import { ProductCardStyled } from "./style";
+import AddtoCart from "../addToCard";
 
 export default function ProductCard({ product }) {
   return (
@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
       <h4>{product.name}</h4>
       <section>
         <h5>${product.salePrice}</h5>
-        <Button width="60px">BUY</Button>
+        <AddtoCart width="60px" product={product}/>
       </section>
     </ProductCardStyled>
   );

@@ -13,6 +13,7 @@ import RegisterForm from "./components/Login/RegisterForm";
 import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
+import Cart from "./components/cart";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 
@@ -25,6 +26,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
         </Route>
 
