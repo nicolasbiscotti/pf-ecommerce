@@ -42,4 +42,17 @@ export const AsideStyled = styled.aside`
       color: #3e3e3e;
     }
   }
+  .amount-container {
+    margin: 0 12%;
+    padding: 2rem 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    span {
+      font-size: 1.8rem;
+      color: #3e3e3e;
+    }
+  }
 `;

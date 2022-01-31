@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { CartStyled } from "./styles";
 import Cards from "./cards";
 import Detailtbar from "./detailbar";
-import { NavLink } from "react-router-dom";
 
 const Cart = function () {
   var cart = useSelector((state) => state.cart);
@@ -15,9 +14,6 @@ const Cart = function () {
         <Cards {...cart} />
         <Detailtbar cart={cart} />
       </div>
-      <button style={{ width: "50vw" }}>
-        <NavLink to="/checkout">asdddddd</NavLink>
-      </button>
     </CartStyled>
   );
 };
