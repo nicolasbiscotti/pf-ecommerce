@@ -32,7 +32,7 @@ export const CheckoutStyled = styled.div`
     .app-container {
       width: 60%;
       margin-top: 1rem;
-      padding: 4rem 1.5rem 0;
+      padding: 2rem 1.5rem 0;
       background: #fff;
       border-radius: 6px;
       box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);

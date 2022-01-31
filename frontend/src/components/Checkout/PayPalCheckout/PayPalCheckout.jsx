@@ -1,7 +1,7 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-export default function PayPalCheckout({ order, amountToPay }) {
+export default function PayPalCheckout({ order, amountToPay, formData }) {
   /*
     const orderItems = order.items.length > 0 && order.items.map((i) => {
         return {
@@ -19,9 +19,52 @@ export default function PayPalCheckout({ order, amountToPay }) {
       },
     },
     //"purchase_units.amount: purchaseAmount"
+
+
+     const payer = {
+        email_address: formData.email,
+        // phone: {
+        //   phone_number: {
+        //       national_number: '4543433243',
+        //   }
+        // },
+        // name: {
+        //   given_name: 'PayPal',
+        //   surname: 'Customer',
+        // },
+        address: {
+          address_line_1: formData.address + " " + formData.addresscontinue,
+          address_line_2: 'Apt 2',
+          admin_area_2: formData.city,
+          admin_area_1: formData.province ||'CA',
+          postal_code: formData.postalcode,
+          country_code: 'AR',
+        },
+    }
+
   }; */
   const payment = (data, actions) => {
     const payment = {
+      payer: {
+        email_address: formData.email,
+        // phone: {
+        //   phone_number: {
+        //       national_number: '4543433243',
+        //   }
+        // },
+        // name: {
+        //   given_name: 'PayPal',
+        //   surname: 'Customer',
+        // },
+        address: {
+          address_line_1: formData.address + " " + formData.addresscontinue,
+          address_line_2: "Apt 2",
+          admin_area_2: formData.city,
+          admin_area_1: formData.province || "CA",
+          postal_code: formData.postalcode,
+          country_code: "AR",
+        },
+      },
       purchase_units: [
         {
           amount: {
@@ -46,6 +89,19 @@ export default function PayPalCheckout({ order, amountToPay }) {
               description: "",
             },
           ],
+          shipping: {
+            name: {
+              full_name: "",
+            },
+            address: {
+              address_line_1: formData.address + " " + formData.addresscontinue,
+              address_line_2: "Apt 2",
+              admin_area_2: formData.city,
+              admin_area_1: formData.province || "CA",
+              postal_code: formData.postalcode,
+              country_code: "AR",
+            },
+          },
         },
       ],
     };
@@ -61,6 +117,7 @@ export default function PayPalCheckout({ order, amountToPay }) {
         // let payment = payments[0].amount.value; // amount
         // let address = res.purchase_units.shipping.address; // Object
         //let email = res.payer.email_address;
+        console.log(res);
         alert(`Payment processed correctly, ID: ${res.id}`);
       })
       .catch((error) => {
@@ -96,6 +153,20 @@ export default function PayPalCheckout({ order, amountToPay }) {
   );
 }
 
+// "payer": {
+//   "name": {
+//     "given_name": "John",
+//     "surname": "Doe"
+//   },
+//   "email_address": "sb-ndnre8251267@personal.example.com",
+//   "payer_id": "BFULD4NEGFX7L",
+//   "address": {
+//     "country_code": "AR"
+//   }
+// },
+
+//purchase_units
+//
 //"shipping": {
 //  "name": {
 //    "full_name": "John Doe"
@@ -109,25 +180,25 @@ export default function PayPalCheckout({ order, amountToPay }) {
 //  }
 //},
 
-// "payments": {
-//   "captures": [
-//     {
-//       "id": "7JL30426W2752740U",
-//       "status": "COMPLETED",
-//       "amount": {
-//         "currency_code": "USD",
-//         "value": "5.00"
-//       },
-//       "final_capture": true,
-//       "seller_protection": {
-//         "status": "ELIGIBLE",
-//         "dispute_categories": [
-//           "ITEM_NOT_RECEIVED",
-//           "UNAUTHORIZED_TRANSACTION"
-//         ]
-//       },
-//       "create_time": "2022-01-29T12:50:06Z",
-//       "update_time": "2022-01-29T12:50:06Z"
-//     }
-//   ]
-// }
+//"payments": {
+//  "captures": [
+//    {
+//      "id": "7JL30426W2752740U",
+//      "status": "COMPLETED",
+//      "amount": {
+//        "currency_code": "USD",
+//        "value": "5.00"
+//      },
+//      "final_capture": true,
+//      "seller_protection": {
+//        "status": "ELIGIBLE",
+//        "dispute_categories": [
+//          "ITEM_NOT_RECEIVED",
+//          "UNAUTHORIZED_TRANSACTION"
+//        ]
+//      },
+//      "create_time": "2022-01-29T12:50:06Z",
+//      "update_time": "2022-01-29T12:50:06Z"
+//    }
+//  ]
+//}
