@@ -1,7 +1,7 @@
 import React from "react";
 import { AsideStyled } from "./AsideStyled";
 
-export function Asidecards({ cart }) {
+export function Asidecards({ cart, shippingAmount }) {
   return (
     <AsideStyled>
       {cart.products.length > 0 &&
@@ -28,8 +28,8 @@ export function Asidecards({ cart }) {
           marginBottom: "2rem",
         }}
       >
-        <span>Total : </span>
-        <span>${cart.getSubtotalPrice()}</span>
+        <span>Total (plus shipping) : </span>
+        <span>${cart.getSubtotalPrice() + Number(shippingAmount)}</span>
       </div>
     </AsideStyled>
   );

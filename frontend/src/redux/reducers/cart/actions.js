@@ -52,7 +52,8 @@ export const setLocalCart = function (localCart) {
 };
 
 export const deleteCart = function () {
-  return {
-    type: DELETE_CART,
+  return async function (dispatch) {
+    await localStorage.removeItem("cart");
+    await dispatch(creator(DELETE_CART));
   };
 };

@@ -10,7 +10,7 @@ const Detailtbar = function ({ cart }) {
   const shipping = subtotal > 0 ? 7 : 0;
 
   function checkout() {
-    navigate(`/checkout?total=${subtotal + shipping}`);
+    navigate(`/checkout?shipping=${shipping}`);
   }
 
   return (
@@ -41,4 +41,3 @@ const Detailtbar = function ({ cart }) {
 };
 
 export default Detailtbar;
-

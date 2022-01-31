@@ -6,9 +6,12 @@ import { Asidecards } from "./Aside/Asidecards";
 import Addressform from "./Step1/Addressform";
 import Step2 from "./Step2/Step2";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 function Checkout() {
-  //cart --> { ...items: [ {name: "", amount: "", quantity: "", (opcional) img: ""}, ]}
+  //cart --> {...products:[{name: "", amount: "", quantity: "", (opcional) img: ""},...] }
+  const search = useLocation().search;
+  const shippingAmount = new URLSearchParams(search).get("shipping");
   const cart = useSelector((store) => store.cart);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -43,10 +46,14 @@ function Checkout() {
           ) : step === 2 ? (
             <Step2 formData={formData} setStep={setStep} />
           ) : (
-            <PayPalCheckout cart={cart} formData={formData} />
+            <PayPalCheckout
+              cart={cart}
+              formData={formData}
+              shippingAmount={shippingAmount}
+            />
           )}
         </div>
-        <Asidecards cart={cart} />
+        <Asidecards cart={cart} shippingAmount={shippingAmount} />
       </div>
     </CheckoutStyled>
   );
