@@ -16,7 +16,7 @@ export default function ShowProduct() {
   return (
     <ShowProductStyled>
       <table>
-        <caption>Products</caption>
+        <caption>PRODUCTS</caption>
         <thead>
           <TableHeader />
         </thead>

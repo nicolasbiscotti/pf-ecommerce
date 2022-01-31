@@ -1,6 +1,8 @@
 import { SET_ALL_CATEGORIES } from "../categories/const";
 import {
   CREATE_CATEGORY,
+  DELETE_CATEGORY,
+  RESET_CATEGORY,
   SET_CREATE_CATEGORY_IMG,
   SET_CREATE_CATEGORY_NAME,
 } from "./const";
@@ -8,6 +10,7 @@ import {
 const initialState = {
   name: "",
   img: "",
+  msg: "",
 };
 
 export const createCategory = (state = initialState, { type, payload }) => {
@@ -33,6 +36,19 @@ export const createCategory = (state = initialState, { type, payload }) => {
         ...state,
         allCategories: payload,
       };
+    case RESET_CATEGORY:
+      return {
+        ...state,
+        name: "",
+        img: "",
+      };
+
+    case DELETE_CATEGORY:
+      return {
+        ...state,
+        allCategories: payload,
+      };
+
     default:
       return state;
   }

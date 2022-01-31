@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../../../redux/reducers/categories/actions";
-import { reqCreateCategory } from "../../../../redux/reducers/crud categories/actions";
+import {
+  reqCreateCategory,
+  reqDeleteCategory,
+} from "../../../../redux/reducers/crud categories/actions";
 import { Button, ButtonAdmin } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputName from "../../../common/InputName/InputName";
@@ -12,7 +15,6 @@ function CreateCategories() {
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.categories.allCategories);
   const createCategory = useSelector((state) => state.createCategory);
-
   const [objError, setObjError] = useState(
     validateCreateCategory(createCategory)
   );
@@ -30,6 +32,11 @@ function CreateCategories() {
     dispatch(reqCreateCategory(createCategory));
   };
 
+  const handleDelete = (e, category) => {
+    e.preventDefault();
+    dispatch(reqDeleteCategory(category.id));
+  };
+
   return (
     <CreateCategorieStyled>
       <h2>Categories {`(${allCategories.length})`}</h2>
@@ -45,6 +52,7 @@ function CreateCategories() {
                   bgColor="#dc3545"
                   padding="10px 0"
                   hoverBgColor="#BB2D3B"
+                  onClick={(e) => handleDelete(e, category)}
                 >
                   Delete
                 </Button>

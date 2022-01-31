@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCart } from "../../../../redux/reducers/cart/actions";
 
 const apiUrl = process.env.REACT_APP_BACKEND;
 
@@ -25,10 +26,11 @@ instance.interceptors.request.use(
   }
 );
 
-
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
   const [fetchError, setFetchError] = useState(null);
+
+  const dispatch = useDispatch();
 
   const getUser = async () => {
     try {
@@ -44,7 +46,8 @@ export default function UserItems() {
     try {
       const { data } = await instance.get(`${apiUrl}/users/login/logout`);
       if (data.logout) {
-        localStorage.removeItem("jwt");
+        dispatch(deleteCart());
+        localStorage.clear();
       }
       setUser({});
     } catch (error) {
@@ -59,7 +62,7 @@ export default function UserItems() {
     }
   }, []);
 
-  var cart = useSelector(state => state.cart);
+  var cart = useSelector((state) => state.cart);
 
   return (
     <UserItemsStyled>
@@ -73,7 +76,11 @@ export default function UserItems() {
             : ["Sign in", "Create an Account"]
         }
       />
-      <Box Imgsrc="cart" Imgalt="Cart image" Text={["My Cart", `$${cart.getSubtotalPrice()}`]}/>
+      <Box
+        Imgsrc="cart"
+        Imgalt="Cart image"
+        Text={["My Cart", `$${cart.getSubtotalPrice()}`]}
+      />
     </UserItemsStyled>
   );
 }
