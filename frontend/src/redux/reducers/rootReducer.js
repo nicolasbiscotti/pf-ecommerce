@@ -8,6 +8,7 @@ import { createProduct } from "./createProduct";
 import { createCategory } from "./crud categories";
 import { message } from "./messages";
 import { updateProduct } from "./updateProduct";
+import { productsAdmin } from "./productsAdmin";
 
 export const rootReducer = combineReducers({
   products,
@@ -19,4 +20,5 @@ export const rootReducer = combineReducers({
   createCategory,
   message,
   updateProduct,
+  productsAdmin,
 });
