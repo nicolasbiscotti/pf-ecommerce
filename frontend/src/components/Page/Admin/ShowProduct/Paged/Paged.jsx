@@ -18,17 +18,12 @@ export default function Paged({ nameReducer }) {
         nextLabel={<FaAngleDoubleRight />}
         breakLabel="..."
         pageCount={pageCount ? pageCount : 0}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        pageRangeDisplayed={5}
         onPageChange={handleOnPageChange}
-        /* containerClassName="paged"
-        pageLinkClassName="page-item-link"
-        previousClassName="paged-item"
-        nextClassName="paged-item"
-        breakClassName="paged-item"
-         */
-        activeClassName="active"
-        /* forcePage={page ? page : 0} */
+        activeLinkClassName="active"
+        previousClassName="previous"
+        nextClassName="next"
       />
     </PagedStyled>
   );
