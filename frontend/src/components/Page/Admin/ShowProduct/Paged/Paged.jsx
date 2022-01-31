@@ -6,7 +6,7 @@ import { getAllProductsAdmin } from "../../../../../redux/reducers/productsAdmin
 
 export default function Paged({ nameReducer }) {
   const dispatch = useDispatch();
-  const { pageCount, page } = useSelector((state) => state[nameReducer]);
+  const { pageCount } = useSelector((state) => state[nameReducer]);
   const handleOnPageChange = ({ selected }) => {
     console.log(selected);
     dispatch(getAllProductsAdmin({ page: selected }));

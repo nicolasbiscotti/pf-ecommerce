@@ -1,4 +1,5 @@
 import {
+  SET_UP_DISCOUNT,
   SET_UP_PURCHASE_PRICE,
   SET_UP_SALE_PRICE,
   SET_UP_STOCK,
@@ -21,4 +22,10 @@ export const propsStock = {
   type: SET_UP_STOCK,
   nameReducer: "updateProduct",
   nameKey: "stock",
+};
+export const propsDiscount = {
+  placeholder: "Discount",
+  type: SET_UP_DISCOUNT,
+  nameReducer: "updateProduct",
+  nameKey: "discount",
 };

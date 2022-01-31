@@ -8,3 +8,5 @@ export const SET_UP_IMGS = "SET_UP_IMGS";
 export const SET_UP_CATEGORIES = "SET_UP_CATEGORIES";
 export const SET_UP_SUPPLIERS = "SET_UP_SUPPLIERS";
 export const SET_UP_RES_UP = "SET_UP_RES_UP";
+export const SET_UP_PRODUCT = "SET_UP_PRODUCT";
+export const SET_UP_DISCOUNT = "SET_UP_DISCOUNT";
