@@ -2,13 +2,19 @@ import styled from "styled-components";
 import { bgButtonAdmin } from "../../../../utilsStyles/utilsColors";
 
 export const ShowProductStyled = styled.section`
-  color: white;
   display: grid;
-  justify-items: center;
-  table {
-    tbody {
-      tr {
-        background-color: ${bgButtonAdmin};
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  div {
+    display: grid;
+    gap: 10px;
+    table {
+      tbody {
+        tr {
+          background-color: ${bgButtonAdmin};
+        }
       }
     }
   }

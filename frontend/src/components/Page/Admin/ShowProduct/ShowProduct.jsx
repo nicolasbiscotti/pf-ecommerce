@@ -15,14 +15,16 @@ export default function ShowProduct() {
   }, [dispatch]);
   return (
     <ShowProductStyled>
-      <table>
-        <caption>PRODUCTS</caption>
-        <thead>
-          <TableHeader />
-        </thead>
-        <tbody>{mapProducts(products)}</tbody>
-      </table>
-      <Paged nameReducer={"productsAdmin"} />
+      <div>
+        <table>
+          <caption>PRODUCTS</caption>
+          <thead>
+            <TableHeader />
+          </thead>
+          <tbody>{mapProducts(products)}</tbody>
+        </table>
+        <Paged nameReducer={"productsAdmin"} />
+      </div>
     </ShowProductStyled>
   );
 }
