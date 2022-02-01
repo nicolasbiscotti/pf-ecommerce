@@ -1,19 +1,18 @@
 import { Link } from "react-router-dom";
-import { ButtonAdmin } from "../../../../common/button/Button";
+import { MdModeEditOutline } from "react-icons/md";
+import { RowsStyled } from "./style";
 export default function Rows({ id, name, salePrice, stock, discount }) {
   return (
-    <tr>
-      <td>{name}</td>
+    <RowsStyled>
+      <td className="name">
+        <span>{name}</span>
+        <Link to={`/admin/update/product/${id}`}>
+          <MdModeEditOutline />
+        </Link>
+      </td>
       <td>{salePrice}</td>
       <td>{stock}</td>
       <td>{discount}</td>
-      <td>
-        <ButtonAdmin>
-          <Link to={`/admin/update/product/${id}`} style={{ color: "white" }}>
-            Edit
-          </Link>
-        </ButtonAdmin>
-      </td>
-    </tr>
+    </RowsStyled>
   );
 }

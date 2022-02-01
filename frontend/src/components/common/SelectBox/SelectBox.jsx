@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useCollapse } from "../../../hooks/useCollapse";
 import { actionGenerator } from "../../../services/actionGenerator";
 import { SelectBoxStyled } from "./style";
 
 const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
   const dispatch = useDispatch();
-  const [collapse, setCollapse] = useState(false);
+  const { handleCollapse, collapse, setCollapse } = useCollapse();
   const state = useSelector((state) => state[nameReducer][nameKey]);
 
   const handleOnChangeChecks = (e) => {
@@ -13,17 +14,18 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
     dispatch(actionGenerator(type, valueCheck));
   };
 
-  const handleOnClickCollapse = () => {
-    setCollapse(!collapse);
-  };
   return (
     <SelectBoxStyled>
-      <label className="collapse" onClick={handleOnClickCollapse}>
-        {title}
-        {err && err[nameKey] && <span>*</span>}
+      <label className="collapse">
+        <label onMouseOver={() => setCollapse(true)} onClick={handleCollapse}>
+          {title}
+        </label>
+        {err && err[nameKey] && (
+          <span onMouseOver={() => console.log("*")}>*</span>
+        )}
       </label>
       {collapse && data && (
-        <div className="checks">
+        <div className="checks" onMouseLeave={handleCollapse}>
           {data.map(({ id, name }) => {
             return (
               <span key={name}>
