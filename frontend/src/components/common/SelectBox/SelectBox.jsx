@@ -16,13 +16,13 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
 
   return (
     <SelectBoxStyled>
-      <label
-        className="collapse"
-        onMouseOver={() => setCollapse(true)}
-        onClick={handleCollapse}
-      >
-        {err && err[nameKey] && <span>*</span>}
-        {title}
+      <label className="collapse">
+        <label onMouseOver={() => setCollapse(true)} onClick={handleCollapse}>
+          {title}
+        </label>
+        {err && err[nameKey] && (
+          <span onMouseOver={() => console.log("*")}>*</span>
+        )}
       </label>
       {collapse && data && (
         <div className="checks" onMouseLeave={handleCollapse}>
