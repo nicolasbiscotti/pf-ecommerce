@@ -11,6 +11,9 @@ export const ShowProductStyled = styled.section`
     display: grid;
     gap: 10px;
     table {
+      caption {
+        font-weight: bold;
+      }
       tbody {
         tr {
           background-color: ${bgButtonAdmin};
