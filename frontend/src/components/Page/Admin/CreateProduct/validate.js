@@ -5,7 +5,7 @@ export const validateCreateProduct = (createProduct) => {
       errors.discount = "*";
     }
   }
-  if (!/^[A-Za-z0-9\s]+$/g.test(createProduct.name)) {
+  if (createProduct.name === "") {
     errors.name = "*";
   }
   if (createProduct.salePrice < "0") {

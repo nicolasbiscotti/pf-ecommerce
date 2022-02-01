@@ -4,10 +4,10 @@ export default function TableHeader() {
   return (
     <TableHeaderStyled>
       <th>NAME</th>
-      <th>SALE PRICE</th>
+      <th>PRICE</th>
       <th>STOCK</th>
-      <th>DISCOUNT</th>
-      <th>*</th>
+      <th>%</th>
+      <th></th>
     </TableHeaderStyled>
   );
 }

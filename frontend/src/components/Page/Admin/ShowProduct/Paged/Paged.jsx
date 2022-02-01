@@ -8,7 +8,6 @@ export default function Paged({ nameReducer }) {
   const dispatch = useDispatch();
   const { pageCount } = useSelector((state) => state[nameReducer]);
   const handleOnPageChange = ({ selected }) => {
-    console.log(selected);
     dispatch(getAllProductsAdmin({ page: selected }));
   };
   return (
@@ -19,7 +18,7 @@ export default function Paged({ nameReducer }) {
         breakLabel="..."
         pageCount={pageCount ? pageCount : 0}
         marginPagesDisplayed={1}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={1}
         onPageChange={handleOnPageChange}
         activeLinkClassName="active"
         previousClassName="previous"
