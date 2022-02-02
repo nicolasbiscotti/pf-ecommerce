@@ -7,3 +7,6 @@ export const REACT_APP_GITHUB_CLIENT_ID =
   process.env.REACT_APP_GITHUB_CLIENT_ID;
 export const REACT_APP_PROXY_URL = process.env.REACT_APP_PROXY_URL;
 export const REACT_APP_BACKEND_PORT = process.env.REACT_APP_BACKEND_PORT;
+export const REACT_APP_GITHUB_OAUTH_URL =
+  process.env.REACT_APP_GITHUB_OAUTH_URL;
+export const REACT_APP_POST_PROXY_URL = process.env.REACT_APP_POST_PROXY_URL;

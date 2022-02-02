@@ -1,26 +1,22 @@
 import { useEffect, useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
 import axios from "axios";
-import { BsInfoCircle, BsGithub } from "react-icons/bs";
 import validateUser from "../utils/validate";
+import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { IconContext } from "react-icons/lib";
+import { setMessage } from "../../../redux/reducers/messages/actions";
 import {
   REACT_APP_GITHUB_OAUTH_URL,
-  REACT_APP_PROXY_URL,
+  REACT_APP_POST_PROXY_URL,
 } from "../../../constants";
-import {
-  deleteMessage,
-  login,
-  setMessage,
-} from "../../../redux/reducers/login/actions";
+import { deleteMessage, login } from "../../../redux/reducers/login/actions";
 
-export default function LoginForm() {
+export default function SSOForm() {
   const [user, setUser] = useState({
     username: "",
-    password: "",
+    email: "",
   });
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors] = useState({});
@@ -40,47 +36,29 @@ export default function LoginForm() {
     setDisabled(
       () =>
         validateUser(newUser).errors.length > 0 ||
-        validateUser(newUser, ["username", "password"]).hasRequired
+        validateUser(newUser, ["username", "email"]).hasRequired
     );
   };
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const onSubmitHandler = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post("/users/login", { ...user });
-      if (data.jwt) {
-        dispatch(login(data.jwt));
-        dispatch(setMessage(data.message));
-        navigate("/");
-      } else {
-        dispatch(setMessage(data.message));
-        navigate("/login")
-      }
-    } catch (error) {
-      console.log(error.message);
-      
-    }
-  };
+  const navigate = useNavigate();
 
   const sendGitHubCode = async (url) => {
     const newUrl = url.split("?code=");
     window.history.pushState({}, null, newUrl[0]);
 
-    const proxyUrl = REACT_APP_PROXY_URL + `?${url.split("?")[1]}`;
+    const proxyUrl = REACT_APP_POST_PROXY_URL + `?${url.split("?")[1]}`;
 
     // Use code parameter and other parameters to make POST request to proxy_server
     try {
-      const { data } = await axios.get(proxyUrl);
+      const { data } = await axios.post(proxyUrl, { ...user });
       if (data.jwt) {
         dispatch(login(data.jwt));
         dispatch(setMessage(data.message));
         navigate("/");
       } else {
         dispatch(setMessage(data.message));
-        navigate("/login");
+        navigate("/login/ssoRegister");
       }
     } catch (error) {
       console.log(error);
@@ -116,7 +94,7 @@ export default function LoginForm() {
         name="form"
       >
         <label htmlFor="username">
-          User Name
+          User Name{" "}
           {errors.username ? (
             <span className="errorHelp">
               <BsInfoCircle /> <span>{errors.username}</span>
@@ -133,12 +111,11 @@ export default function LoginForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
-
-        <label htmlFor="password">
-          Password
-          {errors.password ? (
+        <label htmlFor="email">
+          Email
+          {errors.email ? (
             <span className="errorHelp">
-              <BsInfoCircle /> <span>{errors.password}</span>
+              <BsInfoCircle /> <span>{errors.email}</span>
             </span>
           ) : (
             " "
@@ -146,16 +123,12 @@ export default function LoginForm() {
         </label>
         <input
           className="formStyling"
-          type="password"
-          name="password"
-          value={user.password}
+          type="email"
+          name="email"
+          value={user.email}
           onChange={userChangeHandler}
           placeholder=""
         />
-
-        <StyledButton onClick={onSubmitHandler} disabled={disabled}>
-          Login
-        </StyledButton>
 
         <StyledButton
           as="a"
@@ -163,22 +136,9 @@ export default function LoginForm() {
           onClick={() => {
             dispatch(deleteMessage());
           }}
-          backgroundcolor="#131212"
+          disabled={disabled}
         >
-          {" "}
-          <IconContext.Provider value={{ className: "icon" }}>
-            <div className="iconTextButton">
-              <BsGithub />
-              Login via GitHub
-            </div>
-          </IconContext.Provider>
-        </StyledButton>
-
-        <StyledButton
-          onClick={() => navigate("register")}
-          backgroundcolor="#6c728d"
-        >
-          Create an acount
+          Create Account
         </StyledButton>
       </form>
     </StyledForm>

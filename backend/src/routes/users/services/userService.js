@@ -1,14 +1,8 @@
 const { User, OauthProfile, Op, conn } = require("../../../db");
 
 const userService = {
-  createUser: async ({
-    username,
-    password,
-    firstName,
-    lastName,
-    email,
-    type,
-  }) => {
+  createUser: async (userData) => {
+    const { username, password, firstName, lastName, email, type } = userData;
     try {
       const existingUser = await User.findOne({
         where: {
@@ -32,49 +26,50 @@ const userService = {
       console.error(error);
     }
   },
+  /** 
+   * @function createSocialUser: first try to find en existin user, if user exists 
+   * add the oauthProfile (beacouse in the GitHub strategy already check if OauthProfile exists), 
+   * if no user exists then create a complete socialUser
+   * @return [user::User, created::Boolean] (user linked with a provider)
+   */
   createSocialUser: async (username, email, oauthProfile) => {
     try {
       const { profileId, provider } = oauthProfile;
-      const existingPrifile = await OauthProfile.findOne({
+
+      const existingUser = await User.findOne({
         where: {
-          profileId,
-          provider,
+          [Op.or]: [{ email }, { username }],
         },
+        include: OauthProfile,
       });
-      if (existingPrifile) {
-        return [existingPrifile, false];
+
+      if (existingUser) {
+        const profile = await OauthProfile.create({ profileId, provider });
+        existingUser.addOauthProfile(profile);
+        return [existingUser, false];
       } else {
-        const profile = await OauthProfile.create(
+        const user = await User.create(
           {
-            profileId,
-            provider,
-            User: {
-              username,
-              email,
-            },
+            username,
+            email,
+            OauthProfiles: { profileId, provider },
           },
-          {
-            include: [
-              {
-                association: OauthProfile.User,
-              },
-            ],
-          }
+          { include: [{ association: User.OauthProfile }] }
         );
-        return [profile, true];
+        return [user, true];
       }
     } catch (error) {
       console.error(error);
     }
   },
 
-  findUserByOauthProfile: async (profileId, provider) => {
+  findUserByOauthProfile: async (profile) => {
+    const { profileId, provider } = profile;
     try {
-      const oauthProfile = await OauthProfile.findOne({
-        where: { profileId, provider },
-        include: User,
+      const user = await User.findOne({
+        include: [{ model: OauthProfile, where: { profileId, provider } }],
       });
-      return oauthProfile ? oauthProfile.User : false;
+      return user;
     } catch (error) {
       console.log(error);
     }
@@ -83,15 +78,6 @@ const userService = {
     try {
       const user = await User.findByPk(userId);
       return user;
-    } catch (error) {
-      console.error(error);
-    }
-  },
-  pushOauthProfile: async (user, oauthProfile) => {
-    try {
-      const { profileId, provider } = oauthProfile;
-      const profile = await OauthProfile.create({ profileId, provider });
-      await user.addOauthProfile(profile);
     } catch (error) {
       console.error(error);
     }

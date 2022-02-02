@@ -62,7 +62,13 @@ export default function RegisterForm() {
 
   return (
     <StyledForm>
-      <form className="formSignup" action="" method="post" name="form">
+      <form
+        className="formSignup"
+        autoComplete="off"
+        action=""
+        method="post"
+        name="form"
+      >
         <label htmlFor="username">
           User Name{" "}
           {errors.username ? (

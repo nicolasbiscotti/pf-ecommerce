@@ -4,7 +4,7 @@ import { Footer } from "../../Footer/Footer";
 import { StyledLoginPage } from "./styled";
 
 export default function LoginPage() {
-  const message = useSelector((state) => state.message.message);
+  const message = useSelector((state) => state.login.message);
   return (
     <StyledLoginPage>
       <header></header>

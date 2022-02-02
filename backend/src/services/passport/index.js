@@ -19,12 +19,12 @@ module.exports = (config) => {
       {
         passReqToCallback: true,
         usernameField: "username", // set the name that passport looks for the field in model User
-        passwordField: "password", // line 13 and 14 shows the default values
+        passwordField: "password",
       },
       async (req, username, password, done) => {
         try {
           const user = await User.findOne({
-            where: { username: req.body.username },
+            where: { username: username },
           });
           if (!user) {
             req.session.messages.push({
@@ -36,7 +36,7 @@ module.exports = (config) => {
           // if (user && !user.verified) {
           //   return done(null, false);
           // }
-          const isValid = await user.comparePassword(req.body.password);
+          const isValid = await user.comparePassword(password);
           if (!isValid) {
             req.session.messages.push({
               text: "Invalid username or password.",
@@ -81,15 +81,20 @@ module.exports = (config) => {
       async (req, accessToken, refreshToken, profile, done) => {
         try {
           req.session.tempOAuthProfile = null;
-          const user = await userService.findUserByOauthProfile(
-            profile.id,
-            profile.provider
-          );
+          const user = await userService.findUserByOauthProfile({
+            profileId: profile.id,
+            provider: profile.provider,
+          });
           if (!user) {
-            req.session.tempOAuthProfile = {
-              profileId: profile.id,
-              provider: profile.provider,
-            };
+            const [newUser, created] = userService.createSocialUser(
+              profile.username,
+              profile.emails[0],
+              {
+                profileId: profile.id,
+                provider: profile.provider,
+              }
+            );
+            user = newUser;
           }
           return done(null, user);
         } catch (error) {

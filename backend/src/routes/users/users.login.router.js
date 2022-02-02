@@ -1,13 +1,14 @@
 const { Router } = require("express");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
-const { JWTSECRET } = require("../../constants/config");
+const { JWTSECRET, FAILURE_REDIRECT } = require("../../constants/config");
 
 const usersLogin = Router();
 
 usersLogin.post(
   "/",
   passport.authenticate("local", {
+    failureRedirect: FAILURE_REDIRECT,
     session: false,
   }),
   async (req, res, next) => {

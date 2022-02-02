@@ -2,14 +2,11 @@ const userService = require("../services/userService");
 
 const userByOauthProfile = async (req, res, next) => {
   try {
-    const user = await userService.findUserByOauthProfile(
-      req.query.profileId,
-      req.query.provider
-    );
+    const user = await userService.findUserByOauthProfile(req.query);
     if (user) {
-      res.json({ ...user.dataValues });
+      res.json({ user });
     } else {
-      res.json({ msg: "Some went wrong." });
+      res.json({ message: "Some went wrong.", user });
     }
   } catch (error) {
     next(error);
