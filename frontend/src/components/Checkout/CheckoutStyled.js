@@ -50,4 +50,7 @@ export const NavlinkHome = styled(NavLink)`
   &:visited {
     color: white;
   }
+  span {
+    padding-left: 2rem;
+  }
 `;

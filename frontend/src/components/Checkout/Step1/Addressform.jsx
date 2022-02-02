@@ -53,7 +53,7 @@ function Addressform({ setFormData, setStep, formData }) {
     validate ? setStep(2) : alert("Invalid data");
   };
   return (
-    <AddressformStyled onSubmit={handleSubmit}>
+    <AddressformStyled>
       <FormElement
         setName="Address"
         placeFholder={placeFholder}
@@ -90,7 +90,9 @@ function Addressform({ setFormData, setStep, formData }) {
         setRef={emailref}
         handleChange={handleChange}
       />
-      <StyledButton backgroundcolor={"#123456"}>Submit</StyledButton>
+      <StyledButton backgroundcolor={"#123456"} onClick={handleSubmit}>
+        Submit
+      </StyledButton>
     </AddressformStyled>
   );
 }

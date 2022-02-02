@@ -27,7 +27,8 @@ function Checkout() {
     <CheckoutStyled>
       <div className="header-container">
         <NavlinkHome to="/">
-          <IoIosArrowBack /> e-kommerce
+          <IoIosArrowBack />
+          <span>e-kommerce</span>
         </NavlinkHome>
       </div>
       <div className="main-container">
