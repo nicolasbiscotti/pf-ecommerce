@@ -6,7 +6,10 @@ import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setMessage } from "../../../redux/reducers/messages/actions";
+import {
+  deleteMessage,
+  setMessage,
+} from "../../../redux/reducers/login/actions";
 
 export default function RegisterForm() {
   const [user, setUser] = useState({
@@ -47,6 +50,7 @@ export default function RegisterForm() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    dispatch(deleteMessage());
     try {
       const { data } = await axios.post("/users", { ...user });
       dispatch(setMessage(data.message));
@@ -146,7 +150,10 @@ export default function RegisterForm() {
         </StyledButton>
 
         <StyledButton
-          onClick={() => navigate("/login")}
+          onClick={() => {
+            dispatch(deleteMessage());
+            navigate("/login");
+          }}
           backgroundcolor="#6c728d"
         >
           Login

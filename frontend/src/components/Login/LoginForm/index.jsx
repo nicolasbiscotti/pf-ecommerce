@@ -49,6 +49,7 @@ export default function LoginForm() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    dispatch(deleteMessage());
     try {
       const { data } = await axios.post("/users/login", { ...user });
       if (data.jwt) {
@@ -57,11 +58,10 @@ export default function LoginForm() {
         navigate("/");
       } else {
         dispatch(setMessage(data.message));
-        navigate("/login")
+        navigate("/login");
       }
     } catch (error) {
       console.log(error.message);
-      
     }
   };
 
@@ -175,7 +175,10 @@ export default function LoginForm() {
         </StyledButton>
 
         <StyledButton
-          onClick={() => navigate("register")}
+          onClick={() => {
+            dispatch(deleteMessage());
+            navigate("register");
+          }}
           backgroundcolor="#6c728d"
         >
           Create an acount

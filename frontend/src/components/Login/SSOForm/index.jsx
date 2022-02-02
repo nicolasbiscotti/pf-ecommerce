@@ -6,12 +6,15 @@ import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setMessage } from "../../../redux/reducers/messages/actions";
 import {
   REACT_APP_GITHUB_OAUTH_URL,
   REACT_APP_POST_PROXY_URL,
 } from "../../../constants";
-import { deleteMessage, login } from "../../../redux/reducers/login/actions";
+import {
+  setMessage,
+  deleteMessage,
+  login,
+} from "../../../redux/reducers/login/actions";
 
 export default function SSOForm() {
   const [user, setUser] = useState({
