@@ -25,8 +25,8 @@ export const login = (state = initialState, { type, payload }) => {
         username: payload.username,
       };
     case LOGOUT:
-      localStorage.setItem("jwt", null);
-      localStorage.setItem("username", null);
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("username");
       return {
         ...state,
         jwt: null,
@@ -49,7 +49,7 @@ export const login = (state = initialState, { type, payload }) => {
         gitHubCode: payload,
       };
     case CLEAR_GITHUB_CODE:
-      localStorage.setItem("gitHubCode", null);
+      localStorage.removeItem("gitHubCode");
       return {
         ...state,
         gitHubCode: null,

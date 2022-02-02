@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
 import axios from "axios";
 import validateUser from "../utils/validate";
@@ -6,10 +6,6 @@ import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {
-  REACT_APP_GITHUB_OAUTH_URL,
-  REACT_APP_POST_PROXY_URL,
-} from "../../../constants";
 import {
   setMessage,
   deleteMessage,
@@ -46,11 +42,11 @@ export default function SSOForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const sendGitHubCode = async (url) => {
-    const newUrl = url.split("?code=");
-    window.history.pushState({}, null, newUrl[0]);
-
-    const proxyUrl = REACT_APP_POST_PROXY_URL + `?${url.split("?")[1]}`;
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    dispatch(deleteMessage());
+    const gitHubCode = localStorage.getItem("gitHubCode");
+    const proxyUrl = `/users/auth/githab/ssoRegister?${gitHubCode}`;
 
     // Use code parameter and other parameters to make POST request to proxy_server
     try {
@@ -61,31 +57,12 @@ export default function SSOForm() {
         navigate("/");
       } else {
         dispatch(setMessage(data.message));
-        navigate("/login/ssoRegister");
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    // After requesting Github access, Github redirects back to your app with a code parameter
-    const url = window.location.href;
-    const hasCode = url.includes("?code=");
-    const hasError = url.includes("?error");
-
-    // If Github API returns the code parameter
-    if (hasCode) {
-      sendGitHubCode(url);
-    } else if (hasError) {
-      dispatch(
-        setMessage({
-          text: "Sorry! Login via GitHub has failed!",
-          type: "danger",
-        })
-      );
-    }
-  }, []);
 
   return (
     <StyledForm>
@@ -133,14 +110,7 @@ export default function SSOForm() {
           placeholder=""
         />
 
-        <StyledButton
-          as="a"
-          href={REACT_APP_GITHUB_OAUTH_URL}
-          onClick={() => {
-            dispatch(deleteMessage());
-          }}
-          disabled={disabled}
-        >
+        <StyledButton onClick={onSubmitHandler} disabled={disabled}>
           Create Account
         </StyledButton>
       </form>

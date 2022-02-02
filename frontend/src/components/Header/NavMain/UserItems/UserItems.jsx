@@ -3,10 +3,14 @@ import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
 import { useState } from "react";
 import { corsAxiosGet } from "../../../../services/corsAxios";
+import { deleteMessage, logout } from "../../../../redux/reducers/login/actions";
+import { useDispatch } from "react-redux";
 
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
   const [fetchError, setFetchError] = useState(null);
+
+  const dispatch = useDispatch();
 
   const getUser = async () => {
     try {
@@ -18,12 +22,13 @@ export default function UserItems() {
     }
   };
 
-  const logout = async () => {
+  const userLogout = async () => {
     try {
       const data = await corsAxiosGet(`/users/login/logout`);
       if (data.logout) {
-        localStorage.removeItem("jwt");
+        dispatch(logout());
       }
+      dispatch(deleteMessage());
       setUser({});
     } catch (error) {
       setFetchError(error.message);
@@ -40,7 +45,7 @@ export default function UserItems() {
   return (
     <UserItemsStyled>
       <Box
-        logout={logout}
+        logout={userLogout}
         Imgsrc="user"
         Imgalt="User image"
         Text={

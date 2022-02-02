@@ -77,25 +77,16 @@ module.exports = (config) => {
         scope: ["user:email"], // what we want to access from the github profile (only the email)
         callbackURL: config.REDIRECT_URI,
         passReqToCallback: true,
+        usernameField: "username", // set the name that passport looks for the field in model User
       },
       async (req, accessToken, refreshToken, profile, done) => {
         try {
-          req.session.tempOAuthProfile = null;
-          const user = await userService.findUserByOauthProfile({
-            profileId: profile.id,
-            provider: profile.provider,
-          });
-          if (!user) {
-            const [newUser, created] = userService.createSocialUser(
-              profile.username,
-              profile.emails[0],
-              {
-                profileId: profile.id,
-                provider: profile.provider,
-              }
-            );
-            user = newUser;
-          }
+          const [user, created] = await userService.createSocialUser(
+            req.body.username,
+            req.body.email,
+            { profileId: profile.id, provider: profile.provider }
+          );
+
           return done(null, user);
         } catch (error) {
           return done(error);

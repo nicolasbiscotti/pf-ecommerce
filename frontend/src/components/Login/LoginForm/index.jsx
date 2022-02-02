@@ -7,13 +7,11 @@ import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { IconContext } from "react-icons/lib";
-import {
-  REACT_APP_GITHUB_OAUTH_URL,
-  REACT_APP_PROXY_URL,
-} from "../../../constants";
+import { REACT_APP_GITHUB_OAUTH_URL } from "../../../constants";
 import {
   deleteMessage,
   login,
+  setGitHubCode,
   setMessage,
 } from "../../../redux/reducers/login/actions";
 
@@ -65,28 +63,6 @@ export default function LoginForm() {
     }
   };
 
-  const sendGitHubCode = async (url) => {
-    const newUrl = url.split("?code=");
-    window.history.pushState({}, null, newUrl[0]);
-
-    const proxyUrl = REACT_APP_PROXY_URL + `?${url.split("?")[1]}`;
-
-    // Use code parameter and other parameters to make POST request to proxy_server
-    try {
-      const { data } = await axios.get(proxyUrl);
-      if (data.jwt) {
-        dispatch(login(data.jwt));
-        dispatch(setMessage(data.message));
-        navigate("/");
-      } else {
-        dispatch(setMessage(data.message));
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     // After requesting Github access, Github redirects back to your app with a code parameter
     const url = window.location.href;
@@ -95,7 +71,9 @@ export default function LoginForm() {
 
     // If Github API returns the code parameter
     if (hasCode) {
-      sendGitHubCode(url);
+      const gitHubCode = url.split("?")[1];
+      dispatch(setGitHubCode(gitHubCode));
+      navigate("/login/ssoRegister");
     } else if (hasError) {
       dispatch(
         setMessage({
