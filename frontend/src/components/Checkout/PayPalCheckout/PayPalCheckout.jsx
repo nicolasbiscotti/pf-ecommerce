@@ -1,7 +1,10 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { deleteCart } from "../../../redux/reducers/cart/actions";
+import { useDispatch } from "react-redux";
 
-export default function PayPalCheckout({ cart, formData }) {
+export default function PayPalCheckout({ cart, formData, shippingAmount }) {
+  const dispatch = useDispatch();
   const orderItems = cart.products.map((i) => {
     return {
       name: i.name,
@@ -10,15 +13,20 @@ export default function PayPalCheckout({ cart, formData }) {
       description: "",
     };
   });
-  console.log(orderItems);
   const orderItemsTotal = cart.getSubtotalPrice().toString();
   const purchaseAmount = {
-    value: orderItemsTotal,
+    value: shippingAmount
+      ? Number(orderItemsTotal) + Number(shippingAmount) + ".0"
+      : orderItemsTotal,
     currency_code: "USD",
     breakdown: {
       item_total: {
         value: orderItemsTotal + ".0",
         currency_code: "USD",
+      },
+      shipping: {
+        currency_code: "USD",
+        value: shippingAmount ? shippingAmount + ".0" : "0.0",
       },
     },
   };
@@ -93,6 +101,7 @@ export default function PayPalCheckout({ cart, formData }) {
         //let email = res.payer.email_address;
         console.log(res);
         alert(`Payment processed correctly, ID: ${res.id}`);
+        dispatch(deleteCart());
       })
       .catch((error) => {
         console.log(error);
