@@ -1,9 +1,17 @@
-import { DELETE_MESSAGE, LOGIN, LOGOUT, SET_MESSAGE } from "./actions";
+import {
+  DELETE_MESSAGE,
+  LOGIN,
+  LOGOUT,
+  SET_GITHUB_CODE,
+  CLEAR_GITHUB_CODE,
+  SET_MESSAGE,
+} from "./actions";
 
 const initialState = {
   jwt: localStorage.getItem("jwt") || false,
-  user: localStorage.getItem("user") || null,
+  username: localStorage.getItem("username") || null,
   message: "",
+  gitHubCode: localStorage.getItem("gitHubCode") || null,
 };
 
 export const login = (state = initialState, { type, payload }) => {
@@ -33,6 +41,18 @@ export const login = (state = initialState, { type, payload }) => {
       return {
         ...state,
         message: "",
+      };
+    case SET_GITHUB_CODE:
+      localStorage.setItem("gitHubCode", payload);
+      return {
+        ...state,
+        gitHubCode: payload,
+      };
+    case CLEAR_GITHUB_CODE:
+      localStorage.setItem("gitHubCode", null);
+      return {
+        ...state,
+        gitHubCode: null,
       };
     default:
       return state;
