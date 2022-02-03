@@ -2,6 +2,21 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { mainBgcolor, borderscolor } from "../../utilsStyles/utilsColors";
 
+export const NavlinkHome = styled(NavLink)`
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0rem;
+  display: flex;
+  align-items: center;
+  &:visited {
+    color: white;
+  }
+  span {
+    padding-left: 2rem;
+  }
+`;
+
 export const CheckoutStyled = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -38,19 +53,15 @@ export const CheckoutStyled = styled.div`
       box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);
     }
   }
-`;
-
-export const NavlinkHome = styled(NavLink)`
-  color: white;
-  font-size: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 0rem;
-  display: flex;
-  align-items: center;
-  &:visited {
-    color: white;
-  }
-  span {
-    padding-left: 2rem;
+  .success-container {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    h1 {
+      margin-top: 0.7rem;
+    }
   }
 `;

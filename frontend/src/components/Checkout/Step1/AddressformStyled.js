@@ -7,6 +7,9 @@ export const AddressformStyled = styled.div`
   grid-template-rows: repeat(7, 1fr);
   justify-items: center;
   gap: 2rem;
+  div:first-child {
+    grid-column: span 2;
+  }
   button {
     grid-column: span 2;
     width: 50%;
