@@ -9,6 +9,10 @@ export const CreateCategorieStyled = styled.div`
   justify-content: space-evenly;
   font-family: "Rubik", sans-serif;
 
+  .icon {
+    font-size: 2rem;
+  }
+
   h2 {
     text-align: center;
     margin: 50px 0;
