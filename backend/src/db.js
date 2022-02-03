@@ -90,9 +90,9 @@ Product.belongsToMany(User, { through: "Favorite" });
 User.belongsToMany(Product, { through: "Favorite" });
 
 User.hasMany(Order);
-Order.belongsTo(User);
+Order.belongsTo(User, {as: "user"});
 
-Order.belongsToMany(Product, { through: OrderDetail });
+Order.belongsToMany(Product, { through: OrderDetail, as: "details"});
 Product.belongsToMany(Order, { through: OrderDetail });
 
 module.exports = {
