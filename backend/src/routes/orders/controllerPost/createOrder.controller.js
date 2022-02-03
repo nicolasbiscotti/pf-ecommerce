@@ -1,16 +1,28 @@
-const { Order } = require("../../../db");
+const { Order, Product, User } = require("../../../db");
 
 const createOrder = async (req, res, next) => {
   try {
-    const { date, adress, id, products, price, amount } = req.body;
+    const { date, adress, idUser, products } = req.body;
     const newOrder = await Order.create({
       date, adress
     });
 
-    await newOrder.setUser(id) // id del usuario que compra
-    await newOrder.setProducts(products, {through: { amount, price }}) // id de productos
-    // OrderDetails.bulkCreate(products,{in})
-    res.json({ msg: "Successful", newOrder });
+    await newOrder.setUser(idUser) // id del usuario que compra
+
+    for (let i = 0; i < products.length; i++) {
+      const { id, price, amount } = products[i]
+      await newOrder.addProducts([id], {through: { amount, price }})
+    }
+  /*
+    const order = await Order.findOne({
+      id: newOrder.id,
+      include: [
+        {model: Product, attributes: ["name"]},
+        {model: User, attributes: ["username", "email"]}
+      ]
+    })
+    */
+    res.json({ msg: "Order created successfully" });
   } catch (error) {
     next(error);
   }
