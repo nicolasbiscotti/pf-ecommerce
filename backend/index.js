@@ -23,6 +23,8 @@ const {
   loadMockCategories,
   loadMockProducts,
   loadMockSuppliers,
+  loadMockUsers,
+  loadMockOrders,
 } = require("./src/services/fillDatabase.js");
 const PORT = process.env.PORT;
 
@@ -32,6 +34,8 @@ conn.sync({ force: true }).then(() => {
     await loadMockSuppliers();
     await loadMockCategories();
     await loadMockProducts();
+    await loadMockUsers();
+    await loadMockOrders();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
 });
