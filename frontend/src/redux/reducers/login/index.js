@@ -1,10 +1,12 @@
 import {
-  DELETE_MESSAGE,
   LOGIN,
   LOGOUT,
   SET_GITHUB_CODE,
   CLEAR_GITHUB_CODE,
   SET_MESSAGE,
+  DELETE_MESSAGE,
+  SET_GOOGLE_DATA,
+  CLEAR_GOOGLE_DATA,
 } from "./actions";
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
   username: localStorage.getItem("username") || null,
   message: "",
   gitHubCode: localStorage.getItem("gitHubCode") || null,
+  googleData: localStorage.getItem("googleData") || null,
 };
 
 export const login = (state = initialState, { type, payload }) => {
@@ -53,6 +56,18 @@ export const login = (state = initialState, { type, payload }) => {
       return {
         ...state,
         gitHubCode: null,
+      };
+      case SET_GOOGLE_DATA:
+      localStorage.setItem("googleData", payload);
+      return {
+        ...state,
+        googleData: payload,
+      };
+    case CLEAR_GOOGLE_DATA:
+      localStorage.removeItem("googleData");
+      return {
+        ...state,
+        googleData: null,
       };
     default:
       return state;

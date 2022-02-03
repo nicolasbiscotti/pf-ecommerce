@@ -7,11 +7,17 @@ import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { IconContext } from "react-icons/lib";
-import { REACT_APP_GITHUB_OAUTH_URL } from "../../../constants";
+import GoogleLogin from "react-google-login";
+import {
+  GOOGLE_CLIENT_ID,
+  GOOGLE_OAUTH_URL,
+  REACT_APP_GITHUB_OAUTH_URL,
+} from "../../../constants";
 import {
   deleteMessage,
   login,
   setGitHubCode,
+  setGoogleData,
   setMessage,
 } from "../../../redux/reducers/login/actions";
 
@@ -61,6 +67,15 @@ export default function LoginForm() {
     } catch (error) {
       console.log(error.message);
     }
+  };
+
+  // handle google login callback
+  const handleGoogleLogin = async (response) => {
+    console.log(response);
+    const { data } = await axios.post(GOOGLE_OAUTH_URL, {
+      token: response.tokenId,
+    });
+    dispatch(setGoogleData(data));
   };
 
   useEffect(() => {
@@ -151,6 +166,14 @@ export default function LoginForm() {
             </div>
           </IconContext.Provider>
         </StyledButton>
+
+        <GoogleLogin
+          clientId={GOOGLE_CLIENT_ID}
+          buttonText="Login with Google"
+          onSuccess={handleGoogleLogin}
+          onFailure={handleGoogleLogin}
+          cookiePolicy={"single_host_origin"}
+        />
 
         <StyledButton
           onClick={() => {
