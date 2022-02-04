@@ -1,0 +1,18 @@
+GET http://localhost:3001/orders/1 HTTP/1.1
+###
+PUT http://localhost:3001/orders/1 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "idUser": 1,
+    "date": "2022/01/31",
+    "adress": "numero 2",
+    "products": [
+        {
+            "id": 1,
+            "amount": 5,
+            "price": 200
+        }
+    ]
+}
