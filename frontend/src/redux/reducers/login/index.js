@@ -10,7 +10,8 @@ import {
 } from "./actions";
 
 const initialState = {
-  jwt: localStorage.getItem("jwt") || false,
+  isLoggedIn: localStorage.getItem("isLoggedIn") || false,
+  jwt: localStorage.getItem("jwt") || null,
   username: localStorage.getItem("username") || null,
   message: "",
   gitHubCode: localStorage.getItem("gitHubCode") || null,
@@ -22,18 +23,26 @@ export const login = (state = initialState, { type, payload }) => {
     case LOGIN:
       localStorage.setItem("jwt", payload.jwt);
       localStorage.setItem("username", payload.username);
+      localStorage.setItem("isLoggedIn", true);
       return {
         ...state,
+        isLoggedIn: true,
         jwt: payload.jwt,
         username: payload.username,
       };
     case LOGOUT:
+      localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("jwt");
       localStorage.removeItem("username");
+      localStorage.removeItem("gitHubCode");
+      localStorage.removeItem("googleData");
       return {
-        ...state,
-        jwt: null,
-        username: null,
+        isLoggedIn: localStorage.getItem("isLoggedIn") || false,
+        jwt: localStorage.getItem("jwt") || null,
+        username: localStorage.getItem("username") || null,
+        message: "",
+        gitHubCode: localStorage.getItem("gitHubCode") || null,
+        googleData: localStorage.getItem("googleData") || null,
       };
     case SET_MESSAGE:
       return {
@@ -57,7 +66,7 @@ export const login = (state = initialState, { type, payload }) => {
         ...state,
         gitHubCode: null,
       };
-      case SET_GOOGLE_DATA:
+    case SET_GOOGLE_DATA:
       localStorage.setItem("googleData", payload);
       return {
         ...state,

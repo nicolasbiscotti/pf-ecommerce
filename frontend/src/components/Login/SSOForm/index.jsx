@@ -10,6 +10,7 @@ import {
   setMessage,
   deleteMessage,
   login,
+  fetchAuth,
 } from "../../../redux/reducers/login/actions";
 
 export default function SSOForm() {
@@ -44,24 +45,20 @@ export default function SSOForm() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    dispatch(deleteMessage());
-    const gitHubCode = localStorage.getItem("gitHubCode");
-    const proxyUrl = `/users/auth/githab/ssoRegister?${gitHubCode}`;
 
-    // Use code parameter and other parameters to make POST request to proxy_server
-    try {
-      const { data } = await axios.post(proxyUrl, { ...user });
-      if (data.jwt) {
-        dispatch(login(data.jwt));
-        dispatch(setMessage(data.message));
-        navigate("/");
-      } else {
-        dispatch(setMessage(data.message));
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    const gitHubCode = localStorage.getItem("gitHubCode");
+
+    dispatch(
+      fetchAuth({
+        proxyURL: "/users/auth/github/ssoRegister",
+        authCode: gitHubCode,
+        userData: {...user, accessToken: "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"},
+        onFinish: "/",
+        onComplete: "/login/ssoRegister",
+        onFailure: "/login",
+        navigate,
+      })
+    );
   };
 
   return (

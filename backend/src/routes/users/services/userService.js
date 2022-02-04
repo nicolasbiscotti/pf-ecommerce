@@ -26,9 +26,9 @@ const userService = {
       console.error(error);
     }
   },
-  /** 
-   * @function createSocialUser: first try to find en existin user, if user exists 
-   * add the oauthProfile (beacouse in the GitHub strategy already check if OauthProfile exists), 
+  /**
+   * @function createSocialUser: first try to find en existin user, if user exists
+   * add the oauthProfile (beacouse in the GitHub strategy already check if OauthProfile exists),
    * if no user exists then create a complete socialUser
    * @return [user::User, created::Boolean] (user linked with a provider)
    */
@@ -44,9 +44,13 @@ const userService = {
       });
 
       if (existingUser) {
-        const profile = await OauthProfile.create({ profileId, provider });
-        existingUser.addOauthProfile(profile);
-        return [existingUser, false];
+        const profile = await OauthProfile.build({ profileId, provider });
+        if (existingUser.hasOauthProfile(profile)) {
+          return [existingUser, false];
+        } else {
+          existingUser.addOauthProfile(profile);
+          return [existingUser, false];
+        }
       } else {
         const user = await User.create(
           {

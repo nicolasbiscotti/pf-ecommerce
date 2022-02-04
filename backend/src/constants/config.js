@@ -6,4 +6,6 @@ module.exports = {
   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
   REDIRECT_URI: process.env.REDIRECT_URI,
   FAILURE_REDIRECT: process.env.FAILURE_REDIRECT,
+
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
 };

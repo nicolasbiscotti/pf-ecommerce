@@ -81,13 +81,23 @@ module.exports = (config) => {
       },
       async (req, accessToken, refreshToken, profile, done) => {
         try {
-          const [user, created] = await userService.createSocialUser(
-            req.body.username,
-            req.body.email,
-            { profileId: profile.id, provider: profile.provider }
-          );
-
-          return done(null, user);
+          const existingUser = await userService.findUserByOauthProfile({
+            profileId: profile.id,
+            provider: profile.provider,
+          });
+          if (existingUser) {
+            return done(null, existingUser);
+          } else if (req.body.username) {
+            const [user, created] = await userService.createSocialUser(
+              req.body.username,
+              req.body.email,
+              { profileId: profile.id, provider: profile.provider }
+            );
+            return done(null, user);
+          }
+          req.session.accessToken = accessToken;
+          console.log(`req.session: ${JSON.stringify(req.session)}`);
+          return done(null, false);
         } catch (error) {
           return done(error);
         }

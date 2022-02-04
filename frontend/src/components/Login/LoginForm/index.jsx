@@ -15,7 +15,7 @@ import {
 } from "../../../constants";
 import {
   deleteMessage,
-  login,
+  fetchAuth,
   setGitHubCode,
   setGoogleData,
   setMessage,
@@ -53,20 +53,15 @@ export default function LoginForm() {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    dispatch(deleteMessage());
-    try {
-      const { data } = await axios.post("/users/login", { ...user });
-      if (data.jwt) {
-        dispatch(login(data.jwt));
-        dispatch(setMessage(data.message));
-        navigate("/");
-      } else {
-        dispatch(setMessage(data.message));
-        navigate("/login");
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
+    dispatch(
+      fetchAuth({
+        proxyURL: "/users/login",
+        userData: { ...user },
+        onFinish: "/",
+        onFailure: "/login",
+        navigate,
+      })
+    );
   };
 
   // handle google login callback
@@ -88,7 +83,15 @@ export default function LoginForm() {
     if (hasCode) {
       const gitHubCode = url.split("?")[1];
       dispatch(setGitHubCode(gitHubCode));
-      navigate("/login/ssoRegister");
+      dispatch(
+        fetchAuth({
+          proxyURL: "/users/auth/github",
+          authCode: gitHubCode,
+          onFinish: "/",
+          onComplete: "/login/ssoRegister",
+          navigate,
+        })
+      );
     } else if (hasError) {
       dispatch(
         setMessage({
