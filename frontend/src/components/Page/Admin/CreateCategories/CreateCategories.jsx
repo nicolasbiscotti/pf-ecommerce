@@ -10,6 +10,7 @@ import InputFile from "../../../common/InputFile/InputFile";
 import InputName from "../../../common/InputName/InputName";
 import { CreateCategorieStyled } from "./style";
 import { validateCreateCategory } from "./validate";
+import { MdDeleteForever } from "react-icons/md";
 
 function CreateCategories() {
   const dispatch = useDispatch();
@@ -51,10 +52,11 @@ function CreateCategories() {
                 <Button
                   bgColor="#dc3545"
                   padding="10px 0"
+                  width="50px"
                   hoverBgColor="#BB2D3B"
                   onClick={(e) => handleDelete(e, category)}
                 >
-                  Delete
+                  <MdDeleteForever className="icon" />
                 </Button>
               </li>
             ))}
