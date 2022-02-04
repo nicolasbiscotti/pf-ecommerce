@@ -1,7 +1,13 @@
 import React from "react";
 import { FormElementStyled } from "./FormElementStyled";
 
-function FormElement({ setRef, placeFholder, setName, handleChange }) {
+function FormElement({
+  setRef,
+  placeFholder,
+  setName,
+  handleChange,
+  formData,
+}) {
   return (
     <FormElementStyled>
       <label>{setName}</label>
@@ -10,6 +16,7 @@ function FormElement({ setRef, placeFholder, setName, handleChange }) {
         name={setName}
         placeholder={setName}
         ref={setRef}
+        value={formData[setName.toLowerCase().replace(" ", "")]}
         onFocus={() => placeFholder(setRef)}
         onChange={() => handleChange(setRef)}
       />

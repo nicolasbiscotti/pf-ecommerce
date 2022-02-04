@@ -2,9 +2,16 @@ import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { deleteCart } from "../../../redux/reducers/cart/actions";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
-export default function PayPalCheckout({ cart, formData, shippingAmount }) {
+export default function PayPalCheckout({
+  cart,
+  formData,
+  shippingAmount,
+  setStep,
+}) {
   const dispatch = useDispatch();
+
   const orderItems = cart.products.map((i) => {
     return {
       name: i.name,
@@ -40,8 +47,8 @@ export default function PayPalCheckout({ cart, formData, shippingAmount }) {
         //   }
         // },
         // name: {
-        //   given_name: 'PayPal',
-        //   surname: 'Customer',
+        //   given_name: "PayPal",
+        //   surname: "Customer",
         // },
         address: {
           address_line_1: formData.address + " " + formData.addresscontinue,
@@ -57,23 +64,9 @@ export default function PayPalCheckout({ cart, formData, shippingAmount }) {
           amount: purchaseAmount,
           description: "Buy in E-kommerce",
           items: orderItems,
-          /* [
-            {
-              name: "i.name1",
-              unit_amount: { value: "3", currency_code: "USD" }, // si no es igual la suma con amount_breakdown tira error
-              quantity: "1",
-              description: "",
-            },
-            {
-              name: "i.name2",
-              unit_amount: { value: "2", currency_code: "USD" },
-              quantity: "1",
-              description: "",
-            },
-          ], */
           shipping: {
             name: {
-              full_name: "",
+              full_name: formData.fullname,
             },
             address: {
               address_line_1: formData.address + " " + formData.addresscontinue,
@@ -89,25 +82,48 @@ export default function PayPalCheckout({ cart, formData, shippingAmount }) {
     };
     return actions.order.create(payment);
   };
+
   const onApprove = (data, actions) => {
     return actions.order
       .capture()
       .then((res) => {
-        // let payments = res.purchase_units.payments.capture;
-        // let date = payments.create_time;
-        // let status = payments[0].status;
-        // let payment = payments[0].amount.value; // amount
-        // let address = res.purchase_units.shipping.address; // Object
-        //let email = res.payer.email_address;
         console.log(res);
-        alert(`Payment processed correctly, ID: ${res.id}`);
-        dispatch(deleteCart());
+        let payments = res.purchase_units[0].payments.captures[0];
+        let status = payments.final_capture;
+        if (status) {
+          let date = payments.create_time;
+          let amount = payments.amount.value;
+          let address = res.purchase_units[0].shipping.address; //Object address_line_1: "Sarmiento 4642", address_line_2: "Apt 2" admin_area_1: "Argentina",admin_area_2: "Santa Fe",country_code: "AR", postal_code: "3000"
+          //let email = res.payer.email_address;
+          let customerName = res.purchase_units[0].shipping.name.full_name;
+          //let items = res.purchase_units[0].items //[{name unit_amout(.value) quantity},{}]
+
+          const orderData = {
+            date,
+            amount,
+            address,
+            email: formData.email,
+            customerName,
+          };
+          alert(`Payment processed correctly, ID: ${res.id}`);
+          axios("/sendmail", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=UTF-8",
+              "Access-Control-Allow-Origin": "*",
+            },
+            data: { ...orderData },
+          });
+          dispatch(deleteCart());
+          setStep(4);
+        }
       })
       .catch((error) => {
         console.log(error);
-        alert("An error ocurred while processing the paymnet");
+        alert("An error ocurred while processing the payment");
       });
   };
+
   const onError = (error) => {
     console.log(error);
     alert("Payment failed, try again");

@@ -28,7 +28,8 @@ export const Step2Styled = styled.div`
     }
   }
   button {
-    grid-column: span 2;
+    /* grid-column: span 2;
+    width: 50%; */
     width: 50%;
   }
 `;
