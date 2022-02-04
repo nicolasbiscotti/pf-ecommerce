@@ -2,13 +2,15 @@ const { Order, Product, User } = require("../../../db");
 
 const updateStatusOrder = async (req, res, next) => {
   try {
-    const { status } = req.body;
+    const { status, id } = req.body;
     
+
     const orderUpdate = await Order.update({
       status,
     }, {
-      where: { id: id }
+      where: {id}
     });
+    console.log(orderUpdate)
 
     res.json({ msg: "Order updated successfully", orderUpdate });
   } catch (error) {
