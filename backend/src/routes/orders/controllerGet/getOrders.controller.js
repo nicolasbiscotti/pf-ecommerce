@@ -34,7 +34,6 @@ const getOrders = async (req, res, next) => {
       pageCount: Math.ceil(count / ORDER_PER_PAGE),
       ordersCount: count,
       orders: cleanOrders(rows),
-      // orders: rows,
     };
 
     res.json(data);

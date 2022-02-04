@@ -1,4 +1,5 @@
 const { Order, Product, User } = require("../../../db");
+const { cleanOrder } = require("../services/cleanOrder");
 
 const getOrder = async (req, res, next) => {
   try {
@@ -18,7 +19,7 @@ const getOrder = async (req, res, next) => {
       ],
     });
     
-    res.json(data);
+    res.json(cleanOrder(data));
   } catch (error) {
     next(error);
   }
