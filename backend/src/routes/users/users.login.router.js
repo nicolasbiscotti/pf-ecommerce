@@ -49,4 +49,17 @@ usersLogin.get(
   }
 );
 
+usersLogin.get(
+  "/myid",
+  passport.authenticate("jwt", {
+    session: false,
+  }),
+  (req, res) => {
+    return res.json({
+      id: req.user.id,
+      email: req.user.email,
+    });
+  }
+);
+
 module.exports = usersLogin;
