@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
-import { useState } from "react";
 import { corsAxiosGet } from "../../../../services/corsAxios";
 import { deleteMessage, logout } from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
