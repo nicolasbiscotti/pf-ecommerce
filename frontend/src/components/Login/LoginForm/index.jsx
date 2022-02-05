@@ -104,7 +104,7 @@ export default function LoginForm() {
         })
       );
     }
-  }, []);
+  }, [navigate, dispatch]);
 
   return (
     <StyledForm>
