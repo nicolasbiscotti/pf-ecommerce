@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
-import axios from "axios";
 import validateUser from "../utils/validate";
 import { BsInfoCircle } from "react-icons/bs";
 import { StyledButton } from "../Styled/StyledButton";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
-  setMessage,
-  deleteMessage,
-  login,
   fetchAuth,
 } from "../../../redux/reducers/login/actions";
 

@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   font-size: 13px;
   text-align: center;
-  color: #ffffff;
+  color: ${(props) => props.fontcolor || "#fff" };
   padding: 8px 0;
   width: 100%;
   height: 35px;
@@ -15,8 +15,7 @@ export const StyledButton = styled.button`
   background-color: ${(props) => props.backgroundcolor || "#16bcdc"};
   &:hover {
     cursor: pointer;
-    background-color: ${(props) =>
-      props.backgroundcolor ? "rgba(255, 255, 255, 0.5)" : "#0d6efd"};
+    background-color: ${(props) => props.hoverbgcolor || "#0d6efd"};
   }
   &:disabled {
     cursor: not-allowed;

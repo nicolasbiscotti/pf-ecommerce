@@ -2,6 +2,8 @@ const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const LocalStrategy = require("passport-local").Strategy;
 const GitHubStrategy = require("passport-github2").Strategy;
+const CustomStrategy = require("passport-custom").Strategy;
+const { OAuth2Client } = require("google-auth-library");
 /* eslint-disable no-unused-vars */
 const { User } = require("../../db");
 const userService = require("../../routes/users/services/userService");
@@ -87,22 +89,50 @@ module.exports = (config) => {
           });
           if (existingUser) {
             return done(null, existingUser);
-          } else if (req.body.username) {
+          } else {
             const [user, created] = await userService.createSocialUser(
-              req.body.username,
-              req.body.email,
+              profile.username,
+              profile.emails[0].value,
               { profileId: profile.id, provider: profile.provider }
             );
             return done(null, user);
           }
-          req.session.accessToken = accessToken;
-          console.log(`req.session: ${JSON.stringify(req.session)}`);
-          return done(null, false);
         } catch (error) {
           return done(error);
         }
       }
     )
+  );
+
+  passport.use(
+    "google-local",
+    new CustomStrategy(async (req, done) => {
+      const client = new OAuth2Client(config.GOOGLE_CLIENT_ID);
+      try {
+        const { token } = req.body;
+        const ticket = await client.verifyIdToken({
+          idToken: token,
+          audience: config.GOOGLE_CLIENT_ID,
+        });
+        const { name, email } = ticket.getPayload();
+        const existingUser = await userService.findUserByOauthProfile({
+          profileId: "12345",
+          provider: "google",
+        });
+        if (existingUser) {
+          return done(null, existingUser);
+        } else {
+          const [user, created] = await userService.createSocialUser(
+            name,
+            email,
+            { profileId: "12345", provider: "google" }
+          );
+          return done(null, user);
+        }
+      } catch (error) {
+        return done(error);
+      }
+    })
   );
 
   passport.serializeUser((user, done) => {

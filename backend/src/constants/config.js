@@ -8,4 +8,7 @@ module.exports = {
   FAILURE_REDIRECT: process.env.FAILURE_REDIRECT,
 
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+  GOOGLE_PATH: process.env.GOOGLE_PATH,
+  GOOGLE_CALLBACK_URL: `http://localhost:3001${process.env.GOOGLE_PATH}/callback`,
 };

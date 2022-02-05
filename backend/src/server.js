@@ -7,6 +7,9 @@ const {
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
   REDIRECT_URI,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  GOOGLE_CALLBACK_URL,
 } = require("./constants/config");
 // We are using cookie based sessions
 // http://expressjs.com/en/resources/middleware/cookie-session.html
@@ -26,6 +29,9 @@ const passport = setupPassport({
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
   REDIRECT_URI,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  GOOGLE_CALLBACK_URL,
 });
 
 server.name = "API";

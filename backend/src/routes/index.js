@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { GOOGLE_PATH } = require("../constants/config");
 const products = require("./products/products.router");
 const suppliers = require("./suppliers/suppliers.router");
 const categories = require("./categories/categories.roter");
@@ -15,6 +16,6 @@ router.use("/categories", categories);
 router.use("/users", users);
 router.use("/users/login", usersLogin);
 router.use("/users/auth/github", usersAuth);
-router.use("/users/auth/google", usersAuthGoogle);
+router.use(GOOGLE_PATH, usersAuthGoogle);
 
 module.exports = router;

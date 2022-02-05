@@ -9,7 +9,7 @@ export default function LoginPage() {
     <StyledLoginPage>
       <header></header>
       <main>
-        {message ? <span className={message.type}>{message.text}</span> : ""}
+        {message ? <span className={`message ${message.type}`}>{message.text}</span> : ""}
         {/* LoginRegister or RegisterForm */}
         <Outlet />
       </main>

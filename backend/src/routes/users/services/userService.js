@@ -44,14 +44,22 @@ const userService = {
       });
 
       if (existingUser) {
-        const profile = await OauthProfile.build({ profileId, provider });
-        if (existingUser.hasOauthProfile(profile)) {
+        console.log(`existin user `);
+        const [profile, created] = await OauthProfile.findOrCreate({
+          where: { provider },
+          defaults: { profileId },
+        });
+        console.log(profile.toJSON());
+        if (!created) {
+          console.log(`existin user profile`);
           return [existingUser, false];
         } else {
+          console.log(`existin user no profile`);
           existingUser.addOauthProfile(profile);
           return [existingUser, false];
         }
       } else {
+        console.log(`no user `);
         const user = await User.create(
           {
             username,

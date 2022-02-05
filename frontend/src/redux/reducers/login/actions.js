@@ -27,16 +27,11 @@ export function fetchAuth({
     dispatch(deleteMessage());
     proxyURL = authCode ? `${proxyURL}?${authCode}` : proxyURL;
     userData = userData ? userData : {};
-    const body = authToken
-      ? {
-          token: authToken,
-        }
-      : { ...userData };
+    const body = { ...userData, token: authToken };
 
     // Use code parameter and other parameters to make POST request to proxy_server
     try {
       const { data } = await axios.post(proxyURL, body);
-      console.log(`--->code<--- = ${authCode}`);
       if (data.state === State.FINISH) {
         dispatch(login(data.jwt));
         dispatch(setMessage(data.message));
@@ -55,7 +50,7 @@ export function fetchAuth({
           type: "danger",
         })
       );
-      navigate("/");
+      navigate("/login");
     }
   };
 }

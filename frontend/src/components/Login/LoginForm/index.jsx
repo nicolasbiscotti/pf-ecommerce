@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { StyledForm } from "../Styled/StyledForm";
-import axios from "axios";
 import { BsInfoCircle, BsGithub } from "react-icons/bs";
 import validateUser from "../utils/validate";
 import { StyledButton } from "../Styled/StyledButton";
@@ -8,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { IconContext } from "react-icons/lib";
 import GoogleLogin from "react-google-login";
+import { FcGoogle } from "react-icons/fc";
 import {
   GOOGLE_CLIENT_ID,
   GOOGLE_OAUTH_URL,
@@ -17,7 +17,6 @@ import {
   deleteMessage,
   fetchAuth,
   setGitHubCode,
-  setGoogleData,
   setMessage,
 } from "../../../redux/reducers/login/actions";
 
@@ -66,11 +65,15 @@ export default function LoginForm() {
 
   // handle google login callback
   const handleGoogleLogin = async (response) => {
-    console.log(response);
-    const { data } = await axios.post(GOOGLE_OAUTH_URL, {
-      token: response.tokenId,
-    });
-    dispatch(setGoogleData(data));
+    dispatch(
+      fetchAuth({
+        proxyURL: GOOGLE_OAUTH_URL,
+        authToken: response.tokenId,
+        onFinish: "/",
+        onFailure: "/login",
+        navigate,
+      })
+    );
   };
 
   useEffect(() => {
@@ -89,6 +92,7 @@ export default function LoginForm() {
           authCode: gitHubCode,
           onFinish: "/",
           onComplete: "/login/ssoRegister",
+          onFailure: "/login",
           navigate,
         })
       );
@@ -160,6 +164,7 @@ export default function LoginForm() {
             dispatch(deleteMessage());
           }}
           backgroundcolor="#131212"
+          hoverbgcolor="rgba(0, 0, 0, 0.35)"
         >
           {" "}
           <IconContext.Provider value={{ className: "icon" }}>
@@ -172,10 +177,26 @@ export default function LoginForm() {
 
         <GoogleLogin
           clientId={GOOGLE_CLIENT_ID}
-          buttonText="Login with Google"
+          buttonText="Login via Google"
           onSuccess={handleGoogleLogin}
           onFailure={handleGoogleLogin}
           cookiePolicy={"single_host_origin"}
+          render={(renderProps) => (
+            <StyledButton
+              onClick={renderProps.onClick}
+              disabled={renderProps.disabled}
+              backgroundcolor="#rgba(255, 255, 255, 0.6)"
+              hoverbgcolor="rgba(255, 255, 255, 0.8)"
+              fontcolor="rgba(25, 25, 25, 0.65)"
+            >
+              <IconContext.Provider value={{ className: "icon" }}>
+                <div className="iconTextButton">
+                  <FcGoogle />
+                  Login via Google
+                </div>
+              </IconContext.Provider>
+            </StyledButton>
+          )}
         />
 
         <StyledButton
@@ -184,6 +205,7 @@ export default function LoginForm() {
             navigate("register");
           }}
           backgroundcolor="#6c728d"
+          hoverbgcolor="rgba(255, 255, 255, 0.35)"
         >
           Create an acount
         </StyledButton>
