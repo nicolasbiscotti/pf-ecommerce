@@ -2,6 +2,15 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
 const cors = require("cors");
+const {
+  JWTSECRET,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+  REDIRECT_URI,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  GOOGLE_CALLBACK_URL,
+} = require("./constants/config");
 // We are using cookie based sessions
 // http://expressjs.com/en/resources/middleware/cookie-session.html
 const session = require("cookie-session");
@@ -15,7 +24,15 @@ require("./db.js");
 
 const server = express();
 // passport set up.
-const passport = setupPassport({ JWTSECRET: process.env.JWTSECRET });
+const passport = setupPassport({
+  JWTSECRET,
+  GITHUB_CLIENT_ID,
+  GITHUB_CLIENT_SECRET,
+  REDIRECT_URI,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  GOOGLE_CALLBACK_URL,
+});
 
 server.name = "API";
 
@@ -36,7 +53,7 @@ server.use(
     ],
     resave: false,
     saveUninitialized: true,
-    sameSite: "strict",
+    sameSite: "lax",
     maxAge: null,
   })
 );
@@ -78,7 +95,6 @@ server.use((err, req, res, next) => {
   const status = err.status || 500;
   const message = err.message || err;
   console.error(err);
-  console.log(`----------->flash errors: ${req.session.messages[0]}`);
   res.status(status).send(message);
 });
 

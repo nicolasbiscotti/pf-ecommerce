@@ -1,12 +1,19 @@
 const { Router } = require("express");
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
+const { JWTSECRET, FAILURE_REDIRECT } = require("../../constants/config");
+const State = {
+  COMPLETE: "COMPLETE",
+  FINISH: "FINISH",
+  FAILURE: "FAILURE",
+};
 
 const usersLogin = Router();
 
 usersLogin.post(
   "/",
   passport.authenticate("local", {
+    failureRedirect: `${FAILURE_REDIRECT}/login/failure`,
     session: false,
   }),
   async (req, res, next) => {
@@ -16,10 +23,11 @@ usersLogin.post(
         {
           userId: req.user.id,
         },
-        process.env.JWTSECRET,
+        JWTSECRET,
         { expiresIn: "24h" }
       );
       return res.json({
+        state: State.FINISH,
         jwt: token,
         message: { text: "You are logged in now!!", type: "success" },
       });
@@ -28,6 +36,20 @@ usersLogin.post(
     }
   }
 );
+
+usersLogin.get("/failure", (req, res, next) => {
+  try {
+    return res.json({
+      state: State.FAILURE,
+      message: {
+        text: "Invalid username or password",
+        type: "danger",
+      },
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
 
 usersLogin.get(
   "/whoami",

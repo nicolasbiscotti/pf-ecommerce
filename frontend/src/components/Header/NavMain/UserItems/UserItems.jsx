@@ -1,30 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
-import axios from "axios";
+import { corsAxiosGet } from "../../../../services/corsAxios";
+import { deleteMessage, logout } from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCart } from "../../../../redux/reducers/cart/actions";
 
-const apiUrl = process.env.REACT_APP_BACKEND;
-
-const instance = axios.create();
-
-instance.interceptors.request.use(
-  (config) => {
-    const { origin } = new URL(config.url);
-    const allowedOrigins = [apiUrl];
-    const token = localStorage.getItem("jwt");
-
-    if (allowedOrigins.includes(origin)) {
-      config.headers.authorization = `Bearer ${token}`;
-    }
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
 
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
@@ -34,7 +15,7 @@ export default function UserItems() {
 
   const getUser = async () => {
     try {
-      const { data } = await instance.get(`${apiUrl}/users/login/whoami`);
+      const data = await corsAxiosGet(`/users/login/whoami`);
       setUser(data);
       setFetchError(null);
     } catch (error) {
@@ -42,13 +23,15 @@ export default function UserItems() {
     }
   };
 
-  const logout = async () => {
+  const userLogout = async () => {
     try {
-      const { data } = await instance.get(`${apiUrl}/users/login/logout`);
+      const data = await corsAxiosGet(`/users/login/logout`);
       if (data.logout) {
+        dispatch(logout());
         dispatch(deleteCart());
         localStorage.clear();
       }
+      dispatch(deleteMessage());
       setUser({});
     } catch (error) {
       setFetchError(error.message);
@@ -67,7 +50,7 @@ export default function UserItems() {
   return (
     <UserItemsStyled>
       <Box
-        logout={logout}
+        logout={userLogout}
         Imgsrc="user"
         Imgalt="User image"
         Text={
