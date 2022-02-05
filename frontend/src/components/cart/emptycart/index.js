@@ -1,22 +1,28 @@
 import React from "react";
+import { Button } from "../../common/button/Button";
 import EmptycartStyled, { NavlinkShop } from "./styles";
-import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 
 function Emptycart() {
   return (
     <EmptycartStyled>
-      <MdOutlineRemoveShoppingCart
-        style={{
-          color: "rgb(210, 215, 211)",
-          fontSize: "15rem",
-          marginBottom: "3rem",
-        }}
-      />
-      <h1 style={{ marginBottom: "8rem" }}>Your cart is empty</h1>
+      <img src="https://i.imgur.com/dCdflKN.png" alt="" />
+      <h1>Your Cart is Empty</h1>
+      <NavlinkShop to="/shop" margin={"4rem 0 6rem 0"}>
+        <Button
+          textTransform={"lowercase"}
+          fontSize={"2rem"}
+          fontWeight={"500"}
+          width={"18ch"}
+          height={"4rem"}
+          bgColor={"#3b78ff"}
+          hoverBgColor={"#4a89ff"}
+          radius={"3rem"}
+        >
+          continue shopping
+        </Button>
+      </NavlinkShop>
       <NavlinkShop to="/shop">
-        <p style={{ color: "rgba(0,0,0,.6)" }}>
-          Dont know what to buy? Shop today's deals!
-        </p>
+        <p>Don't know what to buy? shop today's deals!</p>
       </NavlinkShop>
     </EmptycartStyled>
   );

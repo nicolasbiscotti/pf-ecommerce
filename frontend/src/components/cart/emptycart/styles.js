@@ -8,16 +8,30 @@ const EmptycartStyled = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-top: 10rem;
+  img {
+    width: 15rem;
+    margin-left: -3rem;
+  }
+  h1 {
+    padding: 0 4rem;
+    text-align: center;
+  }
 `;
 
 export const NavlinkShop = styled(NavLink)`
   color: black;
   font-size: 2.5rem;
+  margin: ${({ margin }) => margin || "0"};
   &:visited {
     color: black;
   }
   span {
     padding-left: 2rem;
+  }
+  p {
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 4rem;
+    text-align: center;
   }
 `;
 
