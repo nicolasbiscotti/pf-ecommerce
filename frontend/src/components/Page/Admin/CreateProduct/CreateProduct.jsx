@@ -23,13 +23,18 @@ import InputName from "../../../common/InputName/InputName";
 import { useDispatch, useSelector } from "react-redux";
 import { validateCreateProduct } from "./validate";
 import { reqCreteProduct } from "../../../../redux/reducers/createProduct/actions";
-import { EdarButton } from "../../../common/EdarButton/EdarButton";
+import { ButtonAdmin } from "../../../common/button/Button";
+import { actionGenerator } from "../../../../services/actionGenerator";
+import { RESET_CP } from "../../../../redux/reducers/createProduct/const";
 
 const CreateProduct = () => {
   const dispatch = useDispatch();
   const { allCategories } = useGetStateDispatch(propsCategories);
   const { allSuppliers } = useGetStateDispatch(propsSuppliers);
   const createProduct = useSelector((state) => state.createProduct);
+  const resBackCreateProduct = useSelector(
+    (state) => state.createProduct.resBackCreateProduct
+  );
   const [objError, setObjError] = useState(
     validateCreateProduct(createProduct)
   );
@@ -45,26 +50,44 @@ const CreateProduct = () => {
     }
   };
 
+  useEffect(() => {
+    if (resBackCreateProduct.msg === "Product created successfully") {
+      dispatch(actionGenerator(RESET_CP));
+    }
+  }, [resBackCreateProduct, dispatch]);
+
   return (
     <CreateProductStyled onSubmit={handleOnSubmitCreateProduct}>
-      <InputName {...propsName} err={objError} />
-      <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
-      <InputNumber
-        {...propsPurchesePrice}
-        err={objError}
-        keyErr="purchasePrice"
-      />
-      <InputNumber {...propsStock} err={objError} keyErr="stock" />
-      <TextArea {...propsDescription} err={objError} />
-      <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
-      <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
-      <SelectBox
-        data={allCategories}
-        {...propsSelectCategories}
-        err={objError}
-      />
-      <SelectBox data={allSuppliers} {...propsSelectSuppliers} err={objError} />
-      <EdarButton>Create</EdarButton>
+      <form>
+        <InputName {...propsName} err={objError} />
+        <section className="price">
+          <InputNumber {...propsSalePrice} err={objError} keyErr="salePrice" />
+          <InputNumber
+            {...propsPurchesePrice}
+            err={objError}
+            keyErr="purchasePrice"
+          />
+          <InputNumber {...propsStock} err={objError} keyErr="stock" />
+        </section>
+        <TextArea {...propsDescription} err={objError} />
+        <section className="files">
+          <InputFile {...propsMainImg} err={objError} keyErr="mainImg" />
+          <InputFileMultiple {...propsImgs} err={objError} keyErr="imgs" />
+        </section>
+        <section className="selects">
+          <SelectBox
+            data={allCategories}
+            {...propsSelectCategories}
+            err={objError}
+          />
+          <SelectBox
+            data={allSuppliers}
+            {...propsSelectSuppliers}
+            err={objError}
+          />
+        </section>
+        <ButtonAdmin>Create</ButtonAdmin>
+      </form>
     </CreateProductStyled>
   );
 };

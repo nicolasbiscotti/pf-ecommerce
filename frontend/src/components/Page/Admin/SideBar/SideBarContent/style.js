@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SideBarContentStyled = styled.nav`
+  z-index: 999;
   width: 250px;
   display: flex;
   font-family: "Rubik", sans-serif;
@@ -55,6 +56,34 @@ export const SideBarContentStyled = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .containerProducts {
+    color: white;
+
+    p {
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 600ms ease-in-out;
+  }
+
+  .show {
+    opacity: 1;
+    height: 80px;
+  }
+
+  .opt {
     text-align: center;
   }
 

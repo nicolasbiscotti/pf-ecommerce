@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "username": "client1",
+      "password": "client1",
+      "firstName": "client",
+      "lastName": "client client",
+      "email": "client1@gmail.com",
+      "verified": false,
+      "state": true,
+      "type": "client",
+      "verificationToken": false
+    },
+    {
+      "username": "client2",
+      "password": "client2",
+      "firstName": "client2",
+      "lastName": "client2 client2",
+      "email": "client2@gmail.com",
+      "verified": false,
+      "state": true,
+      "type": "client",
+      "verificationToken": false
+    }
+  ]
+}

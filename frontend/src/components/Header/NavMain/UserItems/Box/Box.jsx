@@ -22,13 +22,17 @@ function Box({ Imgsrc, Imgalt, Text, logout }) {
     }
   };
 
+  const toCart = () => {
+    navigate("/cart")
+  }
+
   return (
     <BoxStyled>
       <img src={Imgsrc === "user" ? userIc : cartIc} alt={Imgalt} />
       <div>
-        <p onClick={loginOrHome}>{Text[0]}</p>
+        <p onClick={Imgsrc === "user" ? loginOrHome : toCart}>{Text[0]}</p>
 
-        <p onClick={logoutOrRegister}>
+        <p onClick={Imgsrc === "user" ? logoutOrRegister : toCart}>
           {Text[1].includes(".") ? <b>{Text[1]}</b> : Text[1]}
         </p>
       </div>

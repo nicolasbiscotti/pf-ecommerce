@@ -88,19 +88,23 @@ Image.belongsToMany(Product, {
   timestamps: false,
 });
 
-Product.belongsToMany(Supplier, { through: "ProductSupplier" });
+Product.belongsToMany(Supplier, {
+  as: "suppliers",
+  through: "ProductSupplier",
+});
 Supplier.belongsToMany(Product, { through: "ProductSupplier" });
 
 Product.belongsToMany(User, { through: "Favorite" });
 User.belongsToMany(Product, { through: "Favorite" });
 
 User.hasMany(Order);
-Order.belongsTo(User);
+Order.belongsTo(User, {as: "user"});
 
 User.OauthProfile = User.hasMany(OauthProfile);
 OauthProfile.User = OauthProfile.belongsTo(User);
 
 Order.belongsToMany(Product, { through: OrderDetail });
+Order.belongsToMany(Product, { through: OrderDetail, as: "details"});
 Product.belongsToMany(Order, { through: OrderDetail });
 
 module.exports = {

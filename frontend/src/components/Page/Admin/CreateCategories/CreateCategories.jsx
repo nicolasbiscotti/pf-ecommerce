@@ -1,16 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../../../redux/reducers/categories/actions";
-import { reqCreateCategory } from "../../../../redux/reducers/crud categories/actions";
-import { Button } from "../../../common/button/Button";
+import {
+  reqCreateCategory,
+  reqDeleteCategory,
+} from "../../../../redux/reducers/crud categories/actions";
+import { Button, ButtonAdmin } from "../../../common/button/Button";
 import InputFile from "../../../common/InputFile/InputFile";
 import InputName from "../../../common/InputName/InputName";
 import { CreateCategorieStyled } from "./style";
+import { validateCreateCategory } from "./validate";
+import { MdDeleteForever } from "react-icons/md";
 
 function CreateCategories() {
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.categories.allCategories);
-  const createCategories = useSelector((state) => state.createCategories);
+  const createCategory = useSelector((state) => state.createCategory);
+  const [objError, setObjError] = useState(
+    validateCreateCategory(createCategory)
+  );
+
+  useEffect(() => {
+    setObjError(validateCreateCategory(createCategory));
+  }, [createCategory]);
 
   useEffect(() => {
     dispatch(getAllCategories());
@@ -18,7 +30,12 @@ function CreateCategories() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(reqCreateCategory(createCategories));
+    dispatch(reqCreateCategory(createCategory));
+  };
+
+  const handleDelete = (e, category) => {
+    e.preventDefault();
+    dispatch(reqDeleteCategory(category.id));
   };
 
   return (
@@ -35,9 +52,11 @@ function CreateCategories() {
                 <Button
                   bgColor="#dc3545"
                   padding="10px 0"
+                  width="50px"
                   hoverBgColor="#BB2D3B"
+                  onClick={(e) => handleDelete(e, category)}
                 >
-                  Delete
+                  <MdDeleteForever className="icon" />
                 </Button>
               </li>
             ))}
@@ -47,13 +66,24 @@ function CreateCategories() {
           <h3>Agregar Categoria </h3>
           <form action="" onSubmit={handleSubmit}>
             <InputName
-              nameReducer="createCategories"
+              nameReducer="createCategory"
               type="SET_CREATE_CATEGORY_NAME"
+              err={objError}
+              keyErr="name"
             />
-            <InputFile type="SET_CREATE_CATEGORY_IMG" />
-            <Button type="submit" width="100%" padding="10px 0">
+            <InputFile
+              type="SET_CREATE_CATEGORY_IMG"
+              err={objError}
+              keyErr="img"
+            />
+            <ButtonAdmin
+              type="submit"
+              width="100%"
+              padding="10px 0"
+              margin="20px 0 0 0"
+            >
               Agregar
-            </Button>
+            </ButtonAdmin>
           </form>
         </div>
       </div>

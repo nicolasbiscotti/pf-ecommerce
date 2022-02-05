@@ -15,13 +15,15 @@ const InputFile = ({ type, err, keyErr }) => {
   }, [dispatch, type]);
 
   const handleOnChangeImg = async (e) => {
-    await loadImg({ e, dispatch, type });
+    if (e.target.files.length) {
+      await loadImg({ e, dispatch, type });
+    }
   };
 
   return (
     <InputFileStyled>
       <label htmlFor="image">
-        Image
+        IMG
         {err && err[keyErr] && <span>*</span>}
       </label>
       <input id="image" type="file" onChange={handleOnChangeImg} />

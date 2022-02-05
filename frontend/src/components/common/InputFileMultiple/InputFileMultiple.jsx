@@ -14,13 +14,15 @@ const InputFileMultiple = ({ type, err, keyErr }) => {
   }, [dispatch, type]);
 
   const handleOnChangeImgs = async (e) => {
-    await loadImgs({ e, dispatch, type });
+    if (e.target.files.length) {
+      await loadImgs({ e, dispatch, type });
+    }
   };
   return (
     <InputFileMultipleStyled>
       <input id="imgs" type="file" onChange={handleOnChangeImgs} multiple />
       <label htmlFor="imgs">
-        Other Images
+        IMGS
         {err && err[keyErr] && <span>*</span>}
       </label>
     </InputFileMultipleStyled>

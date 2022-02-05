@@ -1,15 +1,20 @@
 export const validateCreateProduct = (createProduct) => {
   const errors = {};
-  if (!/^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/.test(createProduct.name)) {
+  if (createProduct.hasOwnProperty("discount")) {
+    if (createProduct.discount < "0") {
+      errors.discount = "*";
+    }
+  }
+  if (createProduct.name === "") {
     errors.name = "*";
   }
-  if (createProduct.salePrice <= "0") {
+  if (createProduct.salePrice < "0") {
     errors.salePrice = "*";
   }
-  if (createProduct.purchasePrice <= "0") {
+  if (createProduct.purchasePrice < "0") {
     errors.purchasePrice = "*";
   }
-  if (createProduct.stock <= "0") {
+  if (createProduct.stock < "0") {
     errors.stock = "*";
   }
   if (createProduct.description === "") {

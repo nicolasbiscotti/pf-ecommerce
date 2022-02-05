@@ -1,4 +1,5 @@
 import {
+  RESET_CP,
   SET_CP_CATEGORIES,
   SET_CP_DESCRIPTION,
   SET_CP_IMGS,
@@ -21,7 +22,7 @@ const initialState = {
   imgs: [],
   categories: [],
   suppliers: [],
-  resBackCreateProduct: null,
+  resBackCreateProduct: {},
 };
 
 export const createProduct = (state = initialState, { type, payload }) => {
@@ -83,6 +84,10 @@ export const createProduct = (state = initialState, { type, payload }) => {
       return {
         ...state,
         resBackCreateProduct: payload,
+      };
+    case RESET_CP:
+      return {
+        ...initialState,
       };
     default:
       return state;
