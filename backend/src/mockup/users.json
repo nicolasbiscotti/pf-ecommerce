@@ -8,8 +8,7 @@
       "email": "client1@gmail.com",
       "verified": false,
       "state": true,
-      "type": "client",
-      "verificationToken": false
+      "type": "client"
     },
     {
       "username": "client2",
@@ -19,8 +18,17 @@
       "email": "client2@gmail.com",
       "verified": false,
       "state": true,
-      "type": "client",
-      "verificationToken": false
+      "type": "client"
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "firstName": "admin",
+      "lastName": "root",
+      "email": "admin@gmail.com",
+      "verified": false,
+      "state": true,
+      "type": "admin"
     }
   ]
 }
