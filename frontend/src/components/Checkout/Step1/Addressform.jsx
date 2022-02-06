@@ -21,7 +21,7 @@ function Addressform({ setFormData, setStep, formData }) {
       : (addressref.current.placeholder = "Address");
     ref.current.name === "Address continue"
       ? (addressCref.current.placeholder = "")
-      : (addressCref.current.placeholder = "Address(continue)");
+      : (addressCref.current.placeholder = "Address continue (optional)");
     ref.current.name === "City"
       ? (cityref.current.placeholder = "")
       : (cityref.current.placeholder = "City");
@@ -49,6 +49,8 @@ function Addressform({ setFormData, setStep, formData }) {
         /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formData[prop])
           ? (validate = true)
           : (validate = false);
+      } else if(prop === "addresscontinue") {
+        continue
       } else if (formData[prop].length > 0) validate = true;
       if (!validate) break;
     }

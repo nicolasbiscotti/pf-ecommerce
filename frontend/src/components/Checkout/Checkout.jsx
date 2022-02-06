@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { CheckoutStyled, NavlinkHome } from "./CheckoutStyled";
@@ -8,13 +8,39 @@ import Step2 from "./Step2/Step2";
 import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdCheckCircle } from "react-icons/md";
+import axios from "axios";
+
+const apiUrl = process.env.REACT_APP_BACKEND;
+
+const instance = axios.create();
+
+instance.interceptors.request.use(
+  (config) => {
+    const { origin } = new URL(config.url);
+    const allowedOrigins = [apiUrl];
+    const token = localStorage.getItem("jwt");
+
+    if (allowedOrigins.includes(origin)) {
+      config.headers.authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 function Checkout() {
   const search = useLocation().search;
   const shippingAmount = new URLSearchParams(search).get("shipping");
   const cart = useSelector((store) => store.cart);
   const [step, setStep] = useState(1);
-
+  const [userData, setUserData] = useState({
+    id: "",
+    email: "",
+  });
+  
   const [formData, setFormData] = useState({
     fullname: "",
     address: "",
@@ -24,6 +50,23 @@ function Checkout() {
     postalcode: "",
     email: "",
   });
+
+  const getUser = async () => {
+    try {
+      const { data } = await instance.get(`${apiUrl}/users/login/myid`);
+      setUserData(data);
+      setFormData({...formData, email: data.email})
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      getUser();
+    }
+    //eslint-disable-next-line
+  }, []);
 
   return (
     <CheckoutStyled>
@@ -56,6 +99,7 @@ function Checkout() {
                 formData={formData}
                 shippingAmount={shippingAmount}
                 setStep={setStep}
+                userData={userData}
               />
             )}
           </div>
