@@ -65,10 +65,24 @@ module.exports = (config) => {
           const user = await User.findByPk(jwtPayload.userId);
           return done(null, user);
         } catch (error) {
-          return done(null, false);
+          return done(error);
         }
       }
     )
+  );
+
+  passport.use(
+    "admin",
+    new CustomStrategy(async (req, done) => {
+      try {
+        if (req.user.type === "admin") {
+          return done(null, req.user);
+        }
+        return done(null);
+      } catch (error) {
+        return done(error);
+      }
+    })
   );
 
   passport.use(
@@ -125,7 +139,7 @@ module.exports = (config) => {
           const [user, created] = await userService.createSocialUser(
             name,
             email,
-            { profileId: "12345", provider: "google" }
+            { profileId: email, provider: "google" }
           );
           return done(null, user);
         }

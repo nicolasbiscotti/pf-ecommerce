@@ -3,12 +3,14 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { deleteCart } from "../../../redux/reducers/cart/actions";
 import { useDispatch } from "react-redux";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default function PayPalCheckout({
   cart,
   formData,
   shippingAmount,
   setStep,
+  userData,
 }) {
   const dispatch = useDispatch();
 
@@ -51,8 +53,8 @@ export default function PayPalCheckout({
         //   surname: "Customer",
         // },
         address: {
-          address_line_1: formData.address + " " + formData.addresscontinue,
-          address_line_2: "Apt 2",
+          address_line_1: formData.address,
+          address_line_2: formData.addresscontinue,
           admin_area_2: formData.city,
           admin_area_1: formData.province || "CA",
           postal_code: formData.postalcode,
@@ -69,8 +71,8 @@ export default function PayPalCheckout({
               full_name: formData.fullname,
             },
             address: {
-              address_line_1: formData.address + " " + formData.addresscontinue,
-              address_line_2: "Apt 2",
+              address_line_1: formData.address,
+              address_line_2: formData.addresscontinue,
               admin_area_2: formData.city,
               admin_area_1: formData.province || "CA",
               postal_code: formData.postalcode,
@@ -93,10 +95,19 @@ export default function PayPalCheckout({
         if (status) {
           let date = payments.create_time;
           let amount = payments.amount.value;
-          let address = res.purchase_units[0].shipping.address; //Object address_line_1: "Sarmiento 4642", address_line_2: "Apt 2" admin_area_1: "Argentina",admin_area_2: "Santa Fe",country_code: "AR", postal_code: "3000"
-          //let email = res.payer.email_address;
+          let address = Object.values(
+            res.purchase_units[0].shipping.address
+          ).reduce((a, s) => a + " " + s);
           let customerName = res.purchase_units[0].shipping.name.full_name;
-          //let items = res.purchase_units[0].items //[{name unit_amout(.value) quantity},{}]
+          let products = cart.products.map((p) => {
+            return {
+              id: p.idProduct,
+              name: p.name,
+              img: p.img,
+              price: p.price,
+              amount: p.count,
+            };
+          });
 
           const orderData = {
             date,
@@ -104,16 +115,33 @@ export default function PayPalCheckout({
             address,
             email: formData.email,
             customerName,
+            products,
+            idUser: userData.id,
           };
-          alert(`Payment processed correctly, ID: ${res.id}`);
-          axios("/sendmail", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json;charset=UTF-8",
-              "Access-Control-Allow-Origin": "*",
-            },
-            data: { ...orderData },
+          swal({
+            title: `Payment processed correctly`,
+            text: `ID: ${res.id}`,
+            icon: "success",
+            button: "Accept",
           });
+          axios.all([
+            axios("/sendmail", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Access-Control-Allow-Origin": "*",
+              },
+              data: { ...orderData },
+            }),
+            axios("/orders", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json;charset=UTF-8",
+                "Access-Control-Allow-Origin": "*",
+              },
+              data: { ...orderData },
+            }),
+          ]);
           dispatch(deleteCart());
           setStep(4);
         }
@@ -126,10 +154,16 @@ export default function PayPalCheckout({
 
   const onError = (error) => {
     console.log(error);
-    alert("Payment failed, try again");
+    swal({
+      title: `Payment has failed, please try again`,
+      icon: "error",
+    });
   };
   const onCancel = (data, actions) => {
-    alert("Payment was cancel by the user");
+    swal({
+      title: `Payment was cancel by the user`,
+      icon: "error",
+    });
   };
   return (
     <PayPalScriptProvider
@@ -201,3 +235,7 @@ export default function PayPalCheckout({
 //     }
 //   ]
 // }
+
+//let email = res.payer.email_address;
+//let items = res.purchase_units[0].items //[{name unit_amout(.value) quantity},{}]
+//address Object address_line_1: "Sarmiento 4642", address_line_2: "Apt 2" admin_area_1: "Argentina",admin_area_2: "Santa Fe",country_code: "AR", postal_code: //"3000"

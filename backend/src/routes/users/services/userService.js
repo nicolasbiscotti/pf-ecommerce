@@ -94,6 +94,28 @@ const userService = {
       console.error(error);
     }
   },
+  updateUser: async (userData) => {
+    try {
+      const user = await User.findByPk(userData.id);
+      if (!user) {
+        return "no user found";
+      }
+      const where = (userData.username && { username: userData.username }) || {
+        username: "",
+      };
+      const existingUser = await User.findOne({
+        where,
+      });
+      if (!existingUser) {
+        await user.update(userData);
+        await user.save();
+        return "successfully updated";
+      }
+      return "unique key restricction violated";
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
 
 module.exports = userService;

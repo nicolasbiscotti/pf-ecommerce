@@ -3,7 +3,7 @@
     {
       "idUser": 1,
       "date": "2022/01/31",
-      "adress": "mexico df, calle tal numero 2",
+      "address": "mexico df, calle tal numero 2",
       "products": [
         {
           "id": 1,
@@ -13,6 +13,23 @@
         {
           "id": 2,
           "amount": 2,
+          "price": 300
+        }
+      ]
+    },
+    {
+      "idUser": 2,
+      "date": "2022/01/31",
+      "adress": "mexico df, calle tal numero 2",
+      "products": [
+        {
+          "id": 1,
+          "amount": 1,
+          "price": 200
+        },
+        {
+          "id": 2,
+          "amount": 1,
           "price": 300
         }
       ]

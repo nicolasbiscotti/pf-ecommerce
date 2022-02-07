@@ -1,5 +1,6 @@
 const { ORDER_PER_PAGE } = require("../../../constants/orders");
 const { Order, Product, User } = require("../../../db");
+const {cleanOrders} = require("../services/cleanOrders");
 
 const getOrders = async (req, res, next) => {
   try {
@@ -32,7 +33,7 @@ const getOrders = async (req, res, next) => {
       ordersByPage: ORDER_PER_PAGE,
       pageCount: Math.ceil(count / ORDER_PER_PAGE),
       ordersCount: count,
-      orders: rows,
+      orders: cleanOrders(rows),
     };
 
     res.json(data);

@@ -1,15 +1,17 @@
 module.exports = {
   cleanOrders: (rows) => {
     return rows.map((item) => {
-      console.log(item.details, "->")
-      const {
-        name,
-        OrderDetail,
-      } = item.details;
+      const { id, date, status, adress, user } = item;
+
+      const detailsMaped = item.details.map((element) => {
+        const { name, OrderDetail } = element;
+        const { amount, price } = OrderDetail
+        return { name, amount, price}
+      });
+
       return {
-        name,
-        amount: OrderDetail.amount,
-        price: OrderDetail.price,
+        id, date, status, adress, user,
+        details: detailsMaped
       };
     });
   },
