@@ -13,7 +13,6 @@ export const ordersAdmin = (state = initialState, { type, payload }) => {
   const cases = {
     [GET_ORDERS_LIST]: () => {
       const newData = setData({ payload, state })
-      console.log(newData)
       return newData},
   };
   return (cases[type] && cases[type]()) || state;

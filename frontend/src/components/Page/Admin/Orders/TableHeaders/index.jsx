@@ -9,5 +9,3 @@ export default function TableHeader({ headers }) {
     </TableHeaderStyled>
   );
 }
-
-// Object.keys(ordersData.orders[0])
