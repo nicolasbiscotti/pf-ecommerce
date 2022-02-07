@@ -45,7 +45,7 @@ const SideBarContent = () => {
                 className="opt hvr-bounce-to-right"
                 onClick={handleClick}
               >
-                Show Products
+                Show
               </Link>
               <Link
                 to="create/product"
