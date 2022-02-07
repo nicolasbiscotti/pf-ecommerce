@@ -1,5 +1,6 @@
 import axios from "axios";
 import { corsAxiosGet } from "../../../services/corsAxios";
+import { deleteCart } from "../cart/actions";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const SET_MESSAGE = "SET_MESSAGE";
@@ -84,10 +85,24 @@ export function login(jwt, username) {
   };
 }
 
-export function logout() {
-  return {
-    type: LOGOUT,
+export function completeLogout() {
+  return async function (dispatch) {
+    try {
+      const data = await corsAxiosGet(`/users/login/logout`);
+      if (data.logout) {
+        dispatch(logout());
+        dispatch(deleteCart());
+        localStorage.clear();
+      }
+      dispatch(deleteMessage());
+    } catch (error) {
+      console.log(error);
+    }
   };
+}
+
+export function logout() {
+  return { type: LOGOUT };
 }
 
 export function setMessage(message) {

@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
-import { corsAxiosGet } from "../../../../services/corsAxios";
 import {
-  deleteMessage,
+  completeLogout,
   fetchUser,
-  logout,
 } from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCart } from "../../../../redux/reducers/cart/actions";
+
 import { useNavigate } from "react-router-dom";
 
 export default function UserItems() {
@@ -18,17 +16,7 @@ export default function UserItems() {
   const navigate = useNavigate();
 
   const userLogout = async () => {
-    try {
-      const data = await corsAxiosGet(`/users/login/logout`);
-      if (data.logout) {
-        dispatch(logout());
-        dispatch(deleteCart());
-        localStorage.clear();
-      }
-      dispatch(deleteMessage());
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(completeLogout());
   };
 
   useEffect(() => {
