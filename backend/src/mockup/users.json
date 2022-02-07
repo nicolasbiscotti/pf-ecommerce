@@ -29,6 +29,16 @@
       "verified": false,
       "state": true,
       "type": "admin"
+    },
+    {
+      "username": "superuser",
+      "password": "superuser",
+      "firstName": "admin",
+      "lastName": "root",
+      "email": "nicotti@gmail",
+      "verified": true,
+      "state": true,
+      "type": "admin"
     }
   ]
 }

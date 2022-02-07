@@ -63,6 +63,9 @@ module.exports = (config) => {
       async (jwtPayload, done) => {
         try {
           const user = await User.findByPk(jwtPayload.userId);
+          if (user && !user.verified) {
+            return done(null, false);
+          }
           return done(null, user);
         } catch (error) {
           return done(error);
