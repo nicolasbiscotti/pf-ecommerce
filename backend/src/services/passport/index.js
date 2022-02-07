@@ -139,7 +139,7 @@ module.exports = (config) => {
           const [user, created] = await userService.createSocialUser(
             name,
             email,
-            { profileId: "12345", provider: "google" }
+            { profileId: email, provider: "google" }
           );
           return done(null, user);
         }
