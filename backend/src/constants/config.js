@@ -13,4 +13,6 @@ module.exports = {
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
   GOOGLE_PATH: process.env.GOOGLE_PATH,
   GOOGLE_CALLBACK_URL: `http://localhost:3001${process.env.GOOGLE_PATH}/callback`,
+
+  GMAIL_EDAR_KEY: process.env.GMAIL_EDAR_KEY,
 };
