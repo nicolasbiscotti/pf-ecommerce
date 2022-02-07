@@ -52,6 +52,52 @@ export const CheckoutStyled = styled.div`
       border-radius: 6px;
       box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);
     }
+
+    .steps {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .step {
+      position: relative;
+      line-height: 1.5;
+      text-align: center;
+      height: 30px;
+      width: 30px;
+      margin: 0 1rem;
+      display: block;
+      border: 2px solid #263c97;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .step:before,
+    .step:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 20px;
+      height: 3px;
+      bottom: 11px;
+      right: -22px;
+      background: #263c97;
+    }
+
+    .app-container .step:last-child:before,
+    .app-container .step:last-child:after {
+      display: none;
+    }
+
+    .step.active {
+      background-color: #263c97;
+    }
+
+    .check {
+      color: #fff;
+      vertical-align: middle;
+      font-size: 2rem;
+    }
   }
   .success-container {
     height: 60vh;
@@ -62,6 +108,21 @@ export const CheckoutStyled = styled.div`
     margin-top: 2rem;
     h1 {
       margin-top: 0.7rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-container {
+      flex-direction: column;
+
+      .app-container {
+        width: 100%;
+        margin-top: 3rem;
+        padding: 2rem 1.5rem 0;
+        background: #fff;
+        border-radius: 6px;
+        box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);
+      }
     }
   }
 `;
