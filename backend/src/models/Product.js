@@ -49,5 +49,9 @@ module.exports = (sequelize) => {
         max: 100,
       },
     },
+    isActive: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+    },
   });
 };
