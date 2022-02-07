@@ -1,5 +1,5 @@
 import { GET_ORDERS_LIST } from "./const";
-import { setDataPa } from "./services/setDataPa";
+import { setData } from "./services/setData";
 
 const initialState = {
   page: 0,
@@ -7,10 +7,14 @@ const initialState = {
   pageCount: 0,
   ordersCount: 0,
   orders: [],
+  ordersKeys: []
 };
 export const ordersAdmin = (state = initialState, { type, payload }) => {
   const cases = {
-    [GET_ORDERS_LIST]: () => setDataPa({ payload, state }),
+    [GET_ORDERS_LIST]: () => {
+      const newData = setData({ payload, state })
+      console.log(newData)
+      return newData},
   };
   return (cases[type] && cases[type]()) || state;
 };
