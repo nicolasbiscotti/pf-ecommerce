@@ -14,10 +14,10 @@ const createOrder = async (req, res, next) => {
         const { id, price, amount } = products[i];
         await newOrder.addDetails([id], { through: { amount, price } });
       }
+      res.json({ msg: "Order created successfully" });
     } else {
       res.json({ msg: "Id is not recognized" });
     }
-    res.json({ msg: "Order created successfully" });
   } catch (error) {
     next(error);
   }
