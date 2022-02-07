@@ -7,6 +7,7 @@ function Step2({ formData, setStep }) {
     <Step2Styled>
       <div className="card">
         <div>
+          <div>Name: {formData.fullname}</div>
           <div>
             Address: {formData.address} {formData.addresscontinue}
           </div>
@@ -20,6 +21,9 @@ function Step2({ formData, setStep }) {
           </div>
         </div>
       </div>
+      <StyledButton backgroundcolor={"#123456"} onClick={() => setStep(1)}>
+        Back
+      </StyledButton>
       <StyledButton backgroundcolor={"#123456"} onClick={() => setStep(3)}>
         Continue
       </StyledButton>

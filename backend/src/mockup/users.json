@@ -1,26 +1,34 @@
 {
   "users": [
     {
-      "username": "client1",
-      "password": "client1",
+      "username": "client1234",
+      "password": "client1234",
       "firstName": "client",
       "lastName": "client client",
       "email": "client1@gmail.com",
       "verified": false,
       "state": true,
-      "type": "client",
-      "verificationToken": false
+      "type": "client"
     },
     {
-      "username": "client2",
-      "password": "client2",
+      "username": "client2345",
+      "password": "client2345",
       "firstName": "client2",
       "lastName": "client2 client2",
       "email": "client2@gmail.com",
       "verified": false,
       "state": true,
-      "type": "client",
-      "verificationToken": false
+      "type": "client"
+    },
+    {
+      "username": "admin123",
+      "password": "admin123",
+      "firstName": "admin",
+      "lastName": "root",
+      "email": "admin@gmail.com",
+      "verified": false,
+      "state": true,
+      "type": "admin"
     }
   ]
 }

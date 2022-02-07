@@ -13,6 +13,7 @@ import RegisterForm from "./components/Login/RegisterForm";
 import LoginForm from "./components/Login/LoginForm";
 import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
+import SSOForm from "./components/Login/SSOForm";
 import Cart from "./components/cart";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/login" element={<LoginPage />}>
           <Route index element={<LoginForm />} />
           <Route path="register" element={<RegisterForm />} />
+          <Route path="ssoRegister" element={<SSOForm />} />
         </Route>
 
         <Route path="/login/whoami" element={<WhoAmI />} />

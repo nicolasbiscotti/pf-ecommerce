@@ -12,6 +12,7 @@ module.exports = (sequelize) => {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       password: {
         type: DataTypes.STRING,
@@ -19,6 +20,7 @@ module.exports = (sequelize) => {
         get() {
           return () => this.getDataValue("password");
         },
+        defaultValue: () => crypto.randomBytes(10).toString("hex"),
       },
       verified: {
         type: DataTypes.BOOLEAN,
@@ -44,13 +46,15 @@ module.exports = (sequelize) => {
         validator: {
           isEmail: true,
         },
+        allowNull: false,
       },
       state: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
       },
       type: {
-        type: DataTypes.ENUM("client", "admin"),
+        type: DataTypes.ENUM("user", "client", "admin"),
+        defaultValue: "user",
       },
     },
     { timestamps: false }

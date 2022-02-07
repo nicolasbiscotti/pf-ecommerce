@@ -1,16 +1,24 @@
-const { User } = require("../../../db");
+const transporter = require("../../../config/nodemailer");
+const { URL_BASE_BACKEND } = require("../../../constants/config");
+const userService = require("../services/userService");
 
 const createUser = async (req, res, next) => {
   try {
-    const { username, password, firstName, lastName, email, type } = req.body;
-    const [user, created] = await User.findOrCreate({
-      where: { email, username },
-      defaults: { username, password, firstName, lastName, type },
-    });
+    const [user, created] = await userService.createUser(req.body);
     if (created) {
+      transporter.sendMail({
+        from: '"verify email 👻" <testedarcode@gmail.com>', // sender address
+        to: user.email, // list of receivers
+        subject: "verify email ✔", // Subject line
+        text: `${URL_BASE_BACKEND}/users/verify/${user.id}/${user.verificationToken}`, // plain text body
+        //html: "<b>Hello world?</b>", // html body
+      });
       res.json({
         successfully: true,
-        message: { text: "User created successfully", type: "success" },
+        message: {
+          text: `User ${user.username} created successfully`,
+          type: "success",
+        },
       });
     } else {
       res.json({

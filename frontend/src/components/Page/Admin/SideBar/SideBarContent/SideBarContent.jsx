@@ -7,7 +7,7 @@ import { SideBarContentStyled } from "./style";
 const SideBarContent = () => {
   const [active, setActive] = useState(false);
   const [show, setshow] = useState(false);
-  
+
   const handleClick = () => {
     setActive(!active);
   };
@@ -15,7 +15,7 @@ const SideBarContent = () => {
   const handleClickShow = () => {
     setshow(!show);
   };
-  
+
   return (
     <SideBarContentStyled>
       <GoThreeBars
@@ -34,7 +34,7 @@ const SideBarContent = () => {
         <div className="containerLinks">
           <div className="containerProducts ">
             <p className="hvr-bounce-to-right" onClick={handleClickShow}>
-              Productos
+              Products
             </p>
             <div
               className={show === true ? "options show" : "options"}
@@ -45,7 +45,7 @@ const SideBarContent = () => {
                 className="opt hvr-bounce-to-right"
                 onClick={handleClick}
               >
-                All Products
+                Show
               </Link>
               <Link
                 to="create/product"
@@ -58,25 +58,25 @@ const SideBarContent = () => {
           </div>
 
           <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
-            Facturas
+            Bills
           </Link>
           <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
-            Usuarios
+            Users
           </Link>
           <Link
             onClick={handleClick}
             className="hvr-bounce-to-right"
             to="create/category"
           >
-            Categorias
+            Categories
           </Link>
           <Link onClick={handleClick} className="hvr-bounce-to-right" to="">
-            Proveedores
+            Suppliers
           </Link>
         </div>
         <div className="signOut">
           <Link className="hvr-bounce-to-right" to="/">
-            Cerrar Sesion
+            Log Out
           </Link>
         </div>
       </nav>

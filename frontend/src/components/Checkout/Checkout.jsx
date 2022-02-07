@@ -1,20 +1,48 @@
-import React, { useState } from "react";
-import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import { CheckoutStyled, NavlinkHome } from "./CheckoutStyled";
-import { IoIosArrowBack } from "react-icons/io";
 import { Asidecards } from "./Aside/Asidecards";
 import Addressform from "./Step1/Addressform";
 import Step2 from "./Step2/Step2";
-import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
+import { IoIosArrowBack } from "react-icons/io";
+import { MdCheckCircle } from "react-icons/md";
+import axios from "axios";
+
+const apiUrl = process.env.REACT_APP_BACKEND;
+
+const instance = axios.create();
+
+instance.interceptors.request.use(
+  (config) => {
+    const { origin } = new URL(config.url);
+    const allowedOrigins = [apiUrl];
+    const token = localStorage.getItem("jwt");
+
+    if (allowedOrigins.includes(origin)) {
+      config.headers.authorization = `Bearer ${token}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 function Checkout() {
-  //cart --> {...products:[{name: "", amount: "", quantity: "", (opcional) img: ""},...] }
   const search = useLocation().search;
   const shippingAmount = new URLSearchParams(search).get("shipping");
   const cart = useSelector((store) => store.cart);
   const [step, setStep] = useState(1);
+  const [userData, setUserData] = useState({
+    id: "",
+    email: "",
+  });
+  
   const [formData, setFormData] = useState({
+    fullname: "",
     address: "",
     addresscontinue: "",
     city: "",
@@ -23,38 +51,78 @@ function Checkout() {
     email: "",
   });
 
+  const getUser = async () => {
+    try {
+      const { data } = await instance.get(`${apiUrl}/users/login/myid`);
+      setUserData(data);
+      setFormData({...formData, email: data.email})
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("jwt")) {
+      getUser();
+    }
+    //eslint-disable-next-line
+  }, []);
+
   return (
     <CheckoutStyled>
       <div className="header-container">
         <NavlinkHome to="/">
-          <IoIosArrowBack /> e-kommerce
+          <IoIosArrowBack />
+          <span>e-kommerce</span>
         </NavlinkHome>
       </div>
-      <div className="main-container">
-        <div className="app-container">
-          <div>
-            <span onClick={() => setStep(1)}>Step 1</span>
-            <span onClick={() => setStep(2)}>Step 2</span>
-            <span onClick={() => setStep(3)}>Step 3</span>
+      {step !== 4 ? (
+        <div className="main-container">
+          <div className="app-container">
+            <div>
+              <span onClick={() => setStep(1)}>Step 1</span>
+              <span onClick={() => setStep(2)}>Step 2</span>
+              <span onClick={() => setStep(3)}>Step 3</span>
+              <span onClick={() => setStep(4)}>Step 4</span>
+            </div>
+            {step === 1 ? (
+              <Addressform
+                setFormData={setFormData}
+                formData={formData}
+                setStep={setStep}
+              />
+            ) : step === 2 ? (
+              <Step2 formData={formData} setStep={setStep} />
+            ) : (
+              <PayPalCheckout
+                cart={cart}
+                formData={formData}
+                shippingAmount={shippingAmount}
+                setStep={setStep}
+                userData={userData}
+              />
+            )}
           </div>
-          {step === 1 ? (
-            <Addressform
-              setFormData={setFormData}
-              formData={formData}
-              setStep={setStep}
-            />
-          ) : step === 2 ? (
-            <Step2 formData={formData} setStep={setStep} />
-          ) : (
-            <PayPalCheckout
-              cart={cart}
-              formData={formData}
-              shippingAmount={shippingAmount}
-            />
-          )}
+          <Asidecards cart={cart} shippingAmount={shippingAmount} />
         </div>
-        <Asidecards cart={cart} shippingAmount={shippingAmount} />
-      </div>
+      ) : (
+        <div className="success-container">
+          <MdCheckCircle
+            style={{ color: "rgba(0,128,0,.75)", fontSize: "10rem" }}
+          />
+          <h1 style={{ marginBottom: "8rem" }}>
+            Your purchase has been confirmed !
+          </h1>
+          <p style={{ color: "rgba(0,0,0,.6)", textAlign: "center" }}>
+            Brevely you will recive an email with the data of your transaction.
+          </p>
+          <NavlinkHome to="/">
+            <p style={{ color: "rgba(0,0,0,.6)", textAlign: "center" }}>
+              <br /> Return to Home
+            </p>
+          </NavlinkHome>
+        </div>
+      )}
     </CheckoutStyled>
   );
 }

@@ -1,79 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
-import axios from "axios";
+import {
+  completeLogout,
+  fetchUser,
+} from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCart } from "../../../../redux/reducers/cart/actions";
 
-const apiUrl = process.env.REACT_APP_BACKEND;
-
-const instance = axios.create();
-
-instance.interceptors.request.use(
-  (config) => {
-    const { origin } = new URL(config.url);
-    const allowedOrigins = [apiUrl];
-    const token = localStorage.getItem("jwt");
-
-    if (allowedOrigins.includes(origin)) {
-      config.headers.authorization = `Bearer ${token}`;
-    }
-
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+import { useNavigate } from "react-router-dom";
 
 export default function UserItems() {
-  const [user, setUser] = useState({ username: "" });
-  const [fetchError, setFetchError] = useState(null);
-
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const username = useSelector((state) => state.login.username);
+  const navigate = useNavigate();
 
-  const getUser = async () => {
-    try {
-      const { data } = await instance.get(`${apiUrl}/users/login/whoami`);
-      setUser(data);
-      setFetchError(null);
-    } catch (error) {
-      setFetchError(error.message);
-    }
-  };
-
-  const logout = async () => {
-    try {
-      const { data } = await instance.get(`${apiUrl}/users/login/logout`);
-      if (data.logout) {
-        dispatch(deleteCart());
-        localStorage.clear();
-      }
-      setUser({});
-    } catch (error) {
-      setFetchError(error.message);
-      console.log(fetchError);
-    }
+  const userLogout = async () => {
+    dispatch(completeLogout());
   };
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
-      getUser();
+      dispatch(fetchUser(navigate));
     }
-  }, []);
+  }, [dispatch, navigate]);
 
   var cart = useSelector((state) => state.cart);
 
   return (
     <UserItemsStyled>
       <Box
-        logout={logout}
+        logout={userLogout}
         Imgsrc="user"
         Imgalt="User image"
         Text={
-          localStorage.getItem("jwt")
-            ? [user.username, "Log out"]
-            : ["Sign in", "Create an Account"]
+          isLoggedIn ? [username, "Log out"] : ["Sign in", "Create an Account"]
         }
       />
       <Box

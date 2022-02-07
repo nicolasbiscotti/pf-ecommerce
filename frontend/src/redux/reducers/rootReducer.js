@@ -5,8 +5,8 @@ import { filters } from "./filters";
 import { categories } from "./categories";
 import { suppliers } from "./suppliers";
 import { createProduct } from "./createProduct";
+import { login } from "./login";
 import { createCategory } from "./crud categories";
-import { message } from "./messages";
 import { cart } from "./cart"
 import { productsNames } from "./autocomplete";
 import { updateProduct } from "./updateProduct";
@@ -20,8 +20,8 @@ export const rootReducer = combineReducers({
   cart,
   suppliers,
   createProduct,
+  login,
   createCategory,
-  message,
   updateProduct,
   productsAdmin,
   productsNames,
