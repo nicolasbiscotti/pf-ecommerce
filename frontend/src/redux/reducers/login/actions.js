@@ -1,4 +1,6 @@
 import axios from "axios";
+import { corsAxiosGet } from "../../../services/corsAxios";
+import { deleteCart } from "../cart/actions";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const SET_MESSAGE = "SET_MESSAGE";
@@ -7,6 +9,7 @@ export const SET_GITHUB_CODE = "SET_GITHUB_CODE";
 export const CLEAR_GITHUB_CODE = "CLEAR_GITHUB_CODE";
 export const SET_GOOGLE_DATA = "SET_GOOGLE_DATA";
 export const CLEAR_GOOGLE_DATA = "CLEAR_GOOGLE_DATA";
+export const SET_USERNAME = "SET_USERNAME";
 const State = {
   COMPLETE: "COMPLETE",
   FINISH: "FINISH",
@@ -55,6 +58,25 @@ export function fetchAuth({
   };
 }
 
+export function fetchUser(navigate) {
+  return async function (dispatch) {
+    try {
+      const data = await corsAxiosGet(`/users/login/whoami`);
+      dispatch(setUsername(data.username));
+    } catch (error) {
+      dispatch(logout());
+      navigate("/login");
+    }
+  };
+}
+
+export function setUsername(username) {
+  return {
+    type: SET_USERNAME,
+    payload: username,
+  };
+}
+
 export function login(jwt, username) {
   username = username || null;
   return {
@@ -63,10 +85,24 @@ export function login(jwt, username) {
   };
 }
 
-export function logout() {
-  return {
-    type: LOGOUT,
+export function completeLogout() {
+  return async function (dispatch) {
+    try {
+      const data = await corsAxiosGet(`/users/login/logout`);
+      if (data.logout) {
+        dispatch(logout());
+        dispatch(deleteCart());
+        localStorage.clear();
+      }
+      dispatch(deleteMessage());
+    } catch (error) {
+      console.log(error);
+    }
   };
+}
+
+export function logout() {
+  return { type: LOGOUT };
 }
 
 export function setMessage(message) {

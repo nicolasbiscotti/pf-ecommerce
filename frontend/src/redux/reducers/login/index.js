@@ -7,6 +7,7 @@ import {
   DELETE_MESSAGE,
   SET_GOOGLE_DATA,
   CLEAR_GOOGLE_DATA,
+  SET_USERNAME,
 } from "./actions";
 
 const initialState = {
@@ -53,6 +54,11 @@ export const login = (state = initialState, { type, payload }) => {
       return {
         ...state,
         message: "",
+      };
+      case SET_USERNAME:
+      return {
+        ...state,
+        username: payload,
       };
     case SET_GITHUB_CODE:
       localStorage.setItem("gitHubCode", payload);
