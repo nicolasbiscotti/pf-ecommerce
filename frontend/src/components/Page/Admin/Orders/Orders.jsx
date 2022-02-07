@@ -7,7 +7,7 @@ import {mapOrders} from "./services/mapOrders";
 
 export default function Orders() {
   const dispatch = useDispatch();
-  const { orders, ordersKeys } = useSelector((state) => state.ordersAdmin)
+  const { orders } = useSelector((state) => state.ordersAdmin)
   // const [orderHeaders, setOrderHeaders] = useState([])
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function Orders() {
         <table>
           <caption>ORDERS</caption>
           <thead>
-            <TableHeader headers={ordersKeys} />
+            <TableHeader />
           </thead>
           <tbody>
             {
