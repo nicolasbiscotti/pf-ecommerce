@@ -2,16 +2,21 @@ import React, { useState, useEffect } from "react";
 import { UserItemsStyled } from "./UserItemsStyled";
 import Box from "./Box/Box";
 import { corsAxiosGet } from "../../../../services/corsAxios";
-import { deleteMessage, logout } from "../../../../redux/reducers/login/actions";
+import {
+  deleteMessage,
+  logout,
+} from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteCart } from "../../../../redux/reducers/cart/actions";
-
+import { useNavigate } from "react-router-dom";
 
 export default function UserItems() {
   const [user, setUser] = useState({ username: "" });
   const [fetchError, setFetchError] = useState(null);
 
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const navigate = useNavigate();
 
   const getUser = async () => {
     try {
@@ -19,7 +24,8 @@ export default function UserItems() {
       setUser(data);
       setFetchError(null);
     } catch (error) {
-      setFetchError(error.message);
+      dispatch(logout());
+      navigate("/login");
     }
   };
 
@@ -54,7 +60,7 @@ export default function UserItems() {
         Imgsrc="user"
         Imgalt="User image"
         Text={
-          localStorage.getItem("jwt")
+          isLoggedIn
             ? [user.username, "Log out"]
             : ["Sign in", "Create an Account"]
         }
