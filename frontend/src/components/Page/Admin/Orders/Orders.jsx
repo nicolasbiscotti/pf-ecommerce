@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { ShowProductStyled } from "../ShowProduct/style";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllOrdersAdmin } from "../../../../redux/reducers/orders/actions";
-import TableHeader from "./TableHeaders";
+import Paged from "./Paged/Paged"
 import {mapOrders} from "./services/mapOrders";
+import { ShowProductStyled } from "../ShowProduct/style";
+import TableHeader from "./TableHeaders";
 
 export default function Orders() {
   const dispatch = useDispatch();
@@ -23,13 +24,10 @@ export default function Orders() {
             <TableHeader />
           </thead>
           <tbody>
-            {
-              mapOrders(orders)
-            }
+            {mapOrders(orders)}
           </tbody>
         </table>
-        {
-        }
+        <Paged nameReducer={"ordersAdmin"} />
       </div>
     </ShowProductStyled>
   )
