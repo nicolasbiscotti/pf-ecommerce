@@ -17,6 +17,7 @@ import SSOForm from "./components/Login/SSOForm";
 import Cart from "./components/cart";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
+import Orders from "./components/Page/Admin/Orders/Orders";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="create/product" element={<CreateProduct />} />
           <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
+          <Route path="orders" element={<Orders/> } />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>
