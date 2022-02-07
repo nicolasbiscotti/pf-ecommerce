@@ -121,9 +121,6 @@ function Checkout() {
               <div className="step" onClick={result ? () => setStep(3) : null}>
                 {step === 4 ? <BsCheck className="check" /> : "3"}
               </div>
-              {/*  <div className="step">
-                {step === 4 ? <BsCheck className="check" /> : "4"}
-              </div> */}
             </div>
             {step === 1 ? (
               <Addressform
