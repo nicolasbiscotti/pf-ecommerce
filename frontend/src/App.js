@@ -33,16 +33,16 @@ function App() {
           <Route path="favorites" />
         </Route>
 
-        <Route path="/admin" element={<Admin />}>
+        <Route
+          path="/admin"
+          element={
+            <RequireAuth isAdmin={true} redict="/login">
+              <Admin />
+            </RequireAuth>
+          }
+        >
           <Route index element={<ShowProduct />} />
-          <Route
-            path="products"
-            element={
-              <RequireAuth isAdmin={true}>
-                <ShowProduct />
-              </RequireAuth>
-            }
-          />
+          <Route path="products" element={<ShowProduct />} />
           <Route path="create/product" element={<CreateProduct />} />
           <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />

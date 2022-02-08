@@ -39,7 +39,7 @@ export const login = (state = initialState, { type, payload }) => {
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("jwt");
       localStorage.removeItem("username");
-      localStorage.setItem("userType");
+      localStorage.removeItem("userType");
       localStorage.removeItem("gitHubCode");
       localStorage.removeItem("googleData");
       return {
