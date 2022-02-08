@@ -1,5 +1,5 @@
 export const setData = ({ payload, state }) => {
-  const { page, ordersByPage, pageCount, ordersCount, orders } = payload;
+  const { page, ordersByPage, pageCount, ordersCount, orders, ordersDetails } = payload;
   return {
     ...state,
     page,
@@ -7,6 +7,6 @@ export const setData = ({ payload, state }) => {
     pageCount,
     ordersCount,
     orders,
-    ordersKeys: Object.keys(orders[0]).slice(1)
+    ordersDetails,
   };
 };

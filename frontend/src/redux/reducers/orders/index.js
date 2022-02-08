@@ -7,7 +7,6 @@ const initialState = {
   pageCount: 0,
   ordersCount: 0,
   orders: [],
-  ordersKeys: [],
   ordersDetails: {}
 };
 export const ordersAdmin = (state = initialState, { type, payload }) => {
@@ -16,7 +15,8 @@ export const ordersAdmin = (state = initialState, { type, payload }) => {
       return setData({ payload, state })
     },
     [GET_ONE_ORDER]: () => {
-      return setData({ payload, state })
+      console.log(payload)
+      return {...state, ordersDetails: payload }
     }  
   };
   return (cases[type] && cases[type]()) || state;
