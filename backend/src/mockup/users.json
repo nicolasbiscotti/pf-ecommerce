@@ -6,7 +6,7 @@
       "firstName": "admin",
       "lastName": "root",
       "email": "admin@gmail.com",
-      "verified": false,
+      "verified": true,
       "state": true,
       "type": "admin"
     },
