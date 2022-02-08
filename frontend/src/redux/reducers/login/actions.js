@@ -32,14 +32,13 @@ export function fetchAuth({
     proxyURL = authCode ? `${proxyURL}?${authCode}` : proxyURL;
     userData = userData ? userData : {};
     const body = { ...userData, token: authToken };
-
     // Use code parameter and other parameters to make POST request to proxy_server
     try {
       const { data } = await axios.post(proxyURL, body);
       if (data.state === State.FINISH) {
         dispatch(login(data.jwt));
         dispatch(setMessage(data.message));
-        navigate(onFinish);
+        navigate(onFinish); 
       } else if (data.state === State.COMPLETE) {
         dispatch(setMessage(data.message));
         navigate(onComplete);

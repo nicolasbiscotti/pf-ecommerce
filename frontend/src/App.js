@@ -11,7 +11,6 @@ import Checkout from "./components/Checkout/Checkout";
 import CreateCategories from "./components/Page/Admin/CreateCategories/CreateCategories";
 import RegisterForm from "./components/Login/RegisterForm";
 import LoginForm from "./components/Login/LoginForm";
-import WhoAmI from "./components/Login/WhoAmI";
 import LoginPage from "./components/Login/LoginPage/LoginPage";
 import SSOForm from "./components/Login/SSOForm";
 import Cart from "./components/cart";
@@ -55,7 +54,6 @@ function App() {
           <Route path="ssoRegister" element={<SSOForm />} />
         </Route>
 
-        <Route path="/login/whoami" element={<WhoAmI />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AppStyled>

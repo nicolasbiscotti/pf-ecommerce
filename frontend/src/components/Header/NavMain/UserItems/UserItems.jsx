@@ -15,7 +15,7 @@ export default function UserItems() {
   const username = useSelector((state) => state.login.username);
   const navigate = useNavigate();
 
-  const userLogout = async () => {
+  const userLogout = () => {
     dispatch(completeLogout());
   };
 
