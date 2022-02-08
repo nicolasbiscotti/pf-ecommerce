@@ -18,6 +18,7 @@ import Cart from "./components/cart";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 import Orders from "./components/Page/Admin/Orders/Orders";
+import RequireAuth from "./AuthProvider/RequireAuth";
 
 function App() {
   return (
@@ -34,11 +35,18 @@ function App() {
 
         <Route path="/admin" element={<Admin />}>
           <Route index element={<ShowProduct />} />
-          <Route path="products" element={<ShowProduct />} />
+          <Route
+            path="products"
+            element={
+              <RequireAuth isAdmin={true}>
+                <ShowProduct />
+              </RequireAuth>
+            }
+          />
           <Route path="create/product" element={<CreateProduct />} />
           <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
-          <Route path="orders" element={<Orders/> } />
+          <Route path="orders" element={<Orders />} />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>

@@ -57,7 +57,11 @@ usersLogin.get(
     session: false,
   }),
   (req, res) => {
-    return res.json({ username: req.user.username, email: req.user.email });
+    return res.json({
+      username: req.user.username,
+      email: req.user.email,
+      userType: req.user.type,
+    });
   }
 );
 

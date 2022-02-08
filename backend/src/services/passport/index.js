@@ -35,9 +35,13 @@ module.exports = (config) => {
             });
             return done(null, false);
           }
-          // if (user && !user.verified) {
-          //   return done(null, false);
-          // }
+          if (user && !user.verified) {
+            req.session.messages.push({
+              text: "verify your email account.",
+              type: "danger",
+            });
+            return done(null, false);
+          }
           const isValid = await user.comparePassword(password);
           if (!isValid) {
             req.session.messages.push({

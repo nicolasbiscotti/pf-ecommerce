@@ -8,12 +8,14 @@ import {
   SET_GOOGLE_DATA,
   CLEAR_GOOGLE_DATA,
   SET_USERNAME,
+  SET_USERTYPE,
 } from "./actions";
 
 const initialState = {
   isLoggedIn: localStorage.getItem("isLoggedIn") || false,
   jwt: localStorage.getItem("jwt") || null,
   username: localStorage.getItem("username") || null,
+  userType: localStorage.getItem("userType") || null,
   message: "",
   gitHubCode: localStorage.getItem("gitHubCode") || null,
   googleData: localStorage.getItem("googleData") || null,
@@ -24,23 +26,27 @@ export const login = (state = initialState, { type, payload }) => {
     case LOGIN:
       localStorage.setItem("jwt", payload.jwt);
       localStorage.setItem("username", payload.username);
+      localStorage.setItem("userType", payload.userType);
       localStorage.setItem("isLoggedIn", true);
       return {
         ...state,
         isLoggedIn: true,
         jwt: payload.jwt,
         username: payload.username,
+        userType: payload.userType,
       };
     case LOGOUT:
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("jwt");
       localStorage.removeItem("username");
+      localStorage.setItem("userType");
       localStorage.removeItem("gitHubCode");
       localStorage.removeItem("googleData");
       return {
         isLoggedIn: localStorage.getItem("isLoggedIn") || false,
         jwt: localStorage.getItem("jwt") || null,
         username: localStorage.getItem("username") || null,
+        userType: localStorage.getItem("userType") || null,
         message: "",
         gitHubCode: localStorage.getItem("gitHubCode") || null,
         googleData: localStorage.getItem("googleData") || null,
@@ -55,10 +61,15 @@ export const login = (state = initialState, { type, payload }) => {
         ...state,
         message: "",
       };
-      case SET_USERNAME:
+    case SET_USERNAME:
       return {
         ...state,
         username: payload,
+      };
+      case SET_USERTYPE:
+      return {
+        ...state,
+        userType: payload,
       };
     case SET_GITHUB_CODE:
       localStorage.setItem("gitHubCode", payload);
