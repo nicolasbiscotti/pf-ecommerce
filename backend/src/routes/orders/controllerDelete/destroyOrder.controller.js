@@ -2,11 +2,11 @@ const { Order } = require("../../../db");
 
 const destroyOrder = async (req, res, next) => {
   try {
-    const { id } = req.params
+    const { id } = req.params;
     const isDestroyed = await Order.destroy({
-      where: {id}
+      where: { id },
     });
-    if(isDestroyed) {
+    if (isDestroyed) {
       res.json({ msg: "Order destroyed successfully" });
     } else {
       res.json({ msg: "Order haven't destroyed" });
@@ -16,4 +16,3 @@ const destroyOrder = async (req, res, next) => {
   }
 };
 module.exports = destroyOrder;
-

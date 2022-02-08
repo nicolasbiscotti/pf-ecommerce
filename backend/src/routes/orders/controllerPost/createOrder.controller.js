@@ -1,4 +1,4 @@
-const { Order, Product, User } = require("../../../db");
+const { Order } = require("../../../db");
 
 const createOrder = async (req, res, next) => {
   try {
@@ -7,7 +7,7 @@ const createOrder = async (req, res, next) => {
 
     if (idUser) {
       newOrder = await Order.create({
-        date, adress: address,
+        date, address: address,
       });
       await newOrder.setUser(idUser); // id del usuario que compra
       for (let i = 0; i < products.length; i++) {

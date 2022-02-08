@@ -11,10 +11,10 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       status: {
-        type: DataTypes.ENUM("pending", "done", "canceled"),
+        type: DataTypes.ENUM("pending", "done"),
         defaultValue: "pending",
       },
-      adress: {
+      address: {
         type: DataTypes.STRING,
         allowNull: false,
       },
