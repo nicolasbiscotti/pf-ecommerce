@@ -46,26 +46,27 @@ const userService = {
       });
 
       if (existingUser) {
-        console.log(`existin user `);
+        //existin user
         const [profile, created] = await OauthProfile.findOrCreate({
           where: { provider },
           defaults: { profileId },
         });
         console.log(profile.toJSON());
         if (!created) {
-          console.log(`existin user profile`);
+          // existin user profile
           return [existingUser, false];
         } else {
-          console.log(`existin user no profile`);
+          // existin user without profile
           existingUser.addOauthProfile(profile);
           return [existingUser, false];
         }
       } else {
-        console.log(`no user `);
+        // no user --> create a new one
         const user = await User.create(
           {
             username,
             email,
+            verified: true,
             OauthProfiles: { profileId, provider },
           },
           { include: [{ association: User.OauthProfile }] }
