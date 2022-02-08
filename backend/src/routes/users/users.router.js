@@ -7,10 +7,14 @@ const userByOauthProfile = require("./controllerGet/userByOauthProfile.controlle
 const verification = require("./controllerGet/verification.controller");
 const createSocialUser = require("./controllerPost/createSocialUser.controller");
 const createUser = require("./controllerPost/createUser.controller");
+const sendResetPassLink = require("./controllerPost/sendReset.password.controller");
+const resetPassword = require("./controllerPut/reset.password.controller");
 const updateUserController = require("./controllerPut/updateUser.controller");
 
 const users = Router();
 
+users.route("/resetpassword").put(resetPassword);
+users.route("/sendResetPassword").post(sendResetPassLink);
 users.route("/id/:id").get(passport.authenticate("admin"), userById);
 users
   .route("/update")

@@ -82,6 +82,7 @@ const userService = {
     const { profileId, provider } = profile;
     try {
       const user = await User.findOne({
+        where: { isActive: true },
         include: [{ model: OauthProfile, where: { profileId, provider } }],
       });
       return user;
@@ -92,6 +93,16 @@ const userService = {
   find: async (userId) => {
     try {
       const user = await User.findByPk(userId);
+      if (!user.isActive) return null;
+      return user;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+  findByEmail: async (email) => {
+    try {
+      const user = await User.findOne({ where: { email } });
+      if (!user.isActive) return null;
       return user;
     } catch (error) {
       console.error(error);
@@ -100,7 +111,7 @@ const userService = {
   updateUser: async (userData) => {
     try {
       const user = await User.findByPk(userData.id);
-      if (!user) {
+      if (!user || !user.isActive) {
         return "no user found";
       }
       const where = (userData.username && { username: userData.username }) || {
