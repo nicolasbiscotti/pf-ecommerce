@@ -55,6 +55,7 @@ module.exports = (config) => {
     )
   );
   passport.use(
+    "jwt",
     new JWTStrategy(
       {
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(), // extract the bearer tocken send by the fronend app

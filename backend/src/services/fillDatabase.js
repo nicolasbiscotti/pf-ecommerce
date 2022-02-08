@@ -31,11 +31,11 @@ module.exports = {
   },
   loadMockProducts: async function () {
     const superUser = { username: SUPER_USER, password: SUPER_PASSWORD };
+    const { jwt } = await axiosPost(
+      `${URL_BASE_BACKEND}/users/login`,
+      superUser
+    );
     try {
-      const { jwt } = await axiosPost(
-        `${URL_BASE_BACKEND}/users/login`,
-        superUser
-      );
       for (let i = 0; i < products.length; i++) {
         const element = products[i];
         await axios.post(
@@ -62,10 +62,22 @@ module.exports = {
     }
   },
   loadMockOrders: async function () {
+    const superUser = { username: SUPER_USER, password: SUPER_PASSWORD };
+    const { jwt } = await axiosPost(
+      `${URL_BASE_BACKEND}/users/login`,
+      superUser
+    );
     try {
       for (let i = 0; i < orders.length; i++) {
         const element = orders[i];
-        await axiosPost(`${URL_BASE_BACKEND}/orders`, element);
+        //await axiosPost(`${URL_BASE_BACKEND}/orders`, element);
+        await axios.post(
+          `${URL_BASE_BACKEND}/orders`,
+          { ...element },
+          {
+            headers: { Authorization: `Bearer ${jwt}` },
+          }
+        );
       }
     } catch (error) {
       console.log(error);
