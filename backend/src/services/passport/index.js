@@ -55,6 +55,7 @@ module.exports = (config) => {
     )
   );
   passport.use(
+    "jwt",
     new JWTStrategy(
       {
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(), // extract the bearer tocken send by the fronend app
@@ -76,16 +77,23 @@ module.exports = (config) => {
 
   passport.use(
     "admin",
-    new CustomStrategy(async (req, done) => {
-      try {
-        if (req.user.type === "admin") {
-          return done(null, req.user);
+    new JWTStrategy(
+      {
+        jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+        secretOrKey: config.JWTSECRET,
+      },
+      async (jwtPayload, done) => {
+        try {
+          const user = await User.findByPk(jwtPayload.userId);
+          if (user && !user.verified && user.type !== "admin") {
+            return done(null, false);
+          }
+          return done(null, user);
+        } catch (error) {
+          return done(error);
         }
-        return done(null);
-      } catch (error) {
-        return done(error);
       }
-    })
+    )
   );
 
   passport.use(

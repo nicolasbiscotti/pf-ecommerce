@@ -11,22 +11,14 @@ const userService = require("./services/userService");
 
 const users = Router();
 
-users
-  .route("/id/:id")
-  .get(passport.authenticate("jwt"), passport.authenticate("admin"), userById);
+users.route("/id/:id").get(passport.authenticate("admin"), userById);
 users
   .route("/update")
-  .put(
-    passport.authenticate("jwt"),
-    passport.authenticate("admin"),
-    updateUserController
-  );
-users.route("/social").post(passport.authenticate("jwt"), createSocialUser);
+  .put(passport.authenticate("admin"), updateUserController);
+users.route("/social").post(passport.authenticate("admin"), createSocialUser);
 users.route("/social").get(passport.authenticate("admin"), userByOauthProfile);
 users.route("/verify/:userId/:token").get(verification);
-users
-  .route("/")
-  .get(passport.authenticate("jwt"), passport.authenticate("admin"), listUsers);
+users.route("/").get(passport.authenticate("admin"), listUsers);
 users.route("/").post(createUser);
 
 module.exports = users;
