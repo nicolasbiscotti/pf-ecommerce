@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const AsideStyled = styled.aside`
+
   width: 35%;
   height: 100%;
   min-height: calc(100vh - 6rem);
@@ -55,4 +56,24 @@ export const AsideStyled = styled.aside`
       color: #3e3e3e;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 3rem 0;
+    width: 100%;
+    height: 100%;
+    .card-container {
+      padding: 4rem 5%;
+
+    }
+    .amount-container {
+      margin: 0 5%;
+      padding: 2rem 0.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #d7d7d7;
+      border-bottom: 1px solid #d7d7d7;
+      
+  }
+
 `;

@@ -8,6 +8,7 @@ import Step2 from "./Step2/Step2";
 import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdCheckCircle } from "react-icons/md";
+import { BsCheck } from "react-icons/bs";
 import axios from "axios";
 
 const apiUrl = process.env.REACT_APP_BACKEND;
@@ -40,7 +41,7 @@ function Checkout() {
     id: "",
     email: "",
   });
-  
+
   const [formData, setFormData] = useState({
     fullname: "",
     address: "",
@@ -55,7 +56,7 @@ function Checkout() {
     try {
       const { data } = await instance.get(`${apiUrl}/users/login/myid`);
       setUserData(data);
-      setFormData({...formData, email: data.email})
+      setFormData({ ...formData, email: data.email });
     } catch (error) {
       console.log(error.message);
     }
@@ -68,6 +69,25 @@ function Checkout() {
     //eslint-disable-next-line
   }, []);
 
+  const validate = () => {
+    let validate = false;
+
+    if (
+      formData.fullname.length > 0 &&
+      formData.address.length > 0 &&
+      formData.addresscontinue.length > 0 &&
+      formData.city.length > 0 &&
+      formData.province.length > 0 &&
+      formData.postalcode.length > 0 &&
+      formData.email.length > 0
+    ) {
+      validate = true;
+    }
+    return validate;
+  };
+
+  const result = validate();
+
   return (
     <CheckoutStyled>
       <div className="header-container">
@@ -79,11 +99,28 @@ function Checkout() {
       {step !== 4 ? (
         <div className="main-container">
           <div className="app-container">
-            <div>
-              <span onClick={() => setStep(1)}>Step 1</span>
-              <span onClick={() => setStep(2)}>Step 2</span>
-              <span onClick={() => setStep(3)}>Step 3</span>
-              <span onClick={() => setStep(4)}>Step 4</span>
+            <div className="steps">
+              <div
+                className={`step ${
+                  step === 2 || step === 3 || step === 4 ? "active" : ""
+                }`}
+                onClick={() => setStep(1)}
+              >
+                {step === 2 || step === 3 || step === 4 ? (
+                  <BsCheck className="check" />
+                ) : (
+                  "1"
+                )}
+              </div>
+              <div
+                className={`step ${step === 3 ? "active" : ""}`}
+                onClick={result ? () => setStep(2) : null}
+              >
+                {step === 3 ? <BsCheck className="check" /> : "2"}
+              </div>
+              <div className="step" onClick={result ? () => setStep(3) : null}>
+                {step === 4 ? <BsCheck className="check" /> : "3"}
+              </div>
             </div>
             {step === 1 ? (
               <Addressform

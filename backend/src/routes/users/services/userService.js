@@ -2,7 +2,8 @@ const { User, OauthProfile, Op, conn } = require("../../../db");
 
 const userService = {
   createUser: async (userData) => {
-    const { username, password, firstName, lastName, email, type } = userData;
+    const { username, password, firstName, lastName, email, type, verified } =
+      userData;
     try {
       const existingUser = await User.findOne({
         where: {
@@ -19,6 +20,7 @@ const userService = {
           lastName,
           email,
           type,
+          verified,
         });
         return [user, true];
       }
