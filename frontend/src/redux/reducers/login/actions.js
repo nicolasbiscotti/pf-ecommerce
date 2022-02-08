@@ -10,6 +10,7 @@ export const CLEAR_GITHUB_CODE = "CLEAR_GITHUB_CODE";
 export const SET_GOOGLE_DATA = "SET_GOOGLE_DATA";
 export const CLEAR_GOOGLE_DATA = "CLEAR_GOOGLE_DATA";
 export const SET_USERNAME = "SET_USERNAME";
+export const SET_USERTYPE = "SET_USERTYPE";
 const State = {
   COMPLETE: "COMPLETE",
   FINISH: "FINISH",
@@ -31,14 +32,13 @@ export function fetchAuth({
     proxyURL = authCode ? `${proxyURL}?${authCode}` : proxyURL;
     userData = userData ? userData : {};
     const body = { ...userData, token: authToken };
-
     // Use code parameter and other parameters to make POST request to proxy_server
     try {
       const { data } = await axios.post(proxyURL, body);
       if (data.state === State.FINISH) {
         dispatch(login(data.jwt));
         dispatch(setMessage(data.message));
-        navigate(onFinish);
+        navigate(onFinish); 
       } else if (data.state === State.COMPLETE) {
         dispatch(setMessage(data.message));
         navigate(onComplete);
@@ -63,6 +63,7 @@ export function fetchUser(navigate) {
     try {
       const data = await corsAxiosGet(`/users/login/whoami`);
       dispatch(setUsername(data.username));
+      dispatch(setUserType(data.userType));
     } catch (error) {
       dispatch(logout());
       navigate("/login");
@@ -77,11 +78,19 @@ export function setUsername(username) {
   };
 }
 
-export function login(jwt, username) {
+export function setUserType(userType) {
+  return {
+    type: SET_USERTYPE,
+    payload: userType,
+  };
+}
+
+export function login(jwt, username, userType) {
   username = username || null;
+  userType = userType || null;
   return {
     type: LOGIN,
-    payload: { jwt, username },
+    payload: { jwt, username, userType },
   };
 }
 
