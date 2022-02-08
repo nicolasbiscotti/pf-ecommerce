@@ -1,26 +1,6 @@
 {
   "users": [
     {
-      "username": "client1234",
-      "password": "client1234",
-      "firstName": "client",
-      "lastName": "client client",
-      "email": "client1@gmail.com",
-      "verified": false,
-      "state": true,
-      "type": "client"
-    },
-    {
-      "username": "client2345",
-      "password": "client2345",
-      "firstName": "client2",
-      "lastName": "client2 client2",
-      "email": "client2@gmail.com",
-      "verified": false,
-      "state": true,
-      "type": "client"
-    },
-    {
       "username": "admin123",
       "password": "admin123",
       "firstName": "admin",
