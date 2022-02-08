@@ -6,6 +6,7 @@ import {
   fetchUser,
 } from "../../../../redux/reducers/login/actions";
 import { useDispatch, useSelector } from "react-redux";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 import { useNavigate } from "react-router-dom";
 
@@ -29,6 +30,18 @@ export default function UserItems() {
 
   return (
     <UserItemsStyled>
+      <BurgerMenu username={username}>
+        <Box
+          logout={userLogout}
+          Imgsrc="user"
+          Imgalt="User image"
+          Text={
+            localStorage.getItem("jwt")
+              ? [username, "Log out"]
+              : ["Sign in", "Create an Account"]
+          }
+        />
+      </BurgerMenu>
       <Box
         logout={userLogout}
         Imgsrc="user"

@@ -1,23 +1,37 @@
 import React, { useState } from "react";
-import { BurgerMenuStyled } from "./BurgerMenuStyled";
+import { LocationMenuStyled } from "./LocationMenuStyled";
 import { GoLocation } from "react-icons/go";
 import Modal from "./Modal/Modal";
 import { ButtonStyled } from "./Button/ButtonStyled";
+import { useEffect } from "react";
+import axios from "axios";
 
-function BurgerMenu() {
+function LocationMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOnClose = () => {
     setIsOpen(false);
   };
+
+  const [country, setCountry] = useState("");
+  useEffect(() => {
+    let mounted = true;
+    if (mounted) {
+      axios.get("https://ipapi.co/json/").then((response) => {
+        setCountry(response.data.country_capital);
+      });
+    }
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   return (
-    <BurgerMenuStyled>
-      <GoLocation
-        style={{ width: "2.5rem", height: "2.5rem", marginBottom: "0.4rem" }}
-      />
+    <LocationMenuStyled>
+      <GoLocation />
       <div>
         <p>Enviar a</p>
-        <p>---</p>
+        <p>{country.length > 0 ? country : "---"}</p>
       </div>
       <div style={{ position: "relative", zIndex: 1 }}>
         <ButtonStyled
@@ -31,8 +45,8 @@ function BurgerMenu() {
         ></ButtonStyled>
         <Modal open={isOpen} onClose={handleOnClose}></Modal>
       </div>
-    </BurgerMenuStyled>
+    </LocationMenuStyled>
   );
 }
 
-export default BurgerMenu;
+export default LocationMenu;

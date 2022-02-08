@@ -1,12 +1,12 @@
 import React from "react";
 import { NavFootStyled } from "./NavFootStyled";
-import BurgerMenu from "./BurgerMenu/BurgerMenu";
+import LocationMenu from "./LocationMenu/LocationMenu";
 import Shopsection from "./Shopsection/Shopsection";
 
 function NavFoot() {
   return (
     <NavFootStyled>
-      <BurgerMenu />
+      <LocationMenu />
       <Shopsection />
     </NavFootStyled>
   );

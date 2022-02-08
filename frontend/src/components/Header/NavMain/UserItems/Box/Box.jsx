@@ -2,7 +2,7 @@ import React from "react";
 import { BoxStyled } from "./BoxStyled";
 import userIcon from "../../../../../utilsStyles/utilsImages/loggin-icon.png";
 import cartIcon from "../../../../../utilsStyles/utilsImages/cart-icon.png";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function Box({ Imgsrc, Imgalt, Text, logout }) {
   const userIc = userIcon;
@@ -23,12 +23,14 @@ function Box({ Imgsrc, Imgalt, Text, logout }) {
   };
 
   const toCart = () => {
-    navigate("/cart")
-  }
+    navigate("/cart");
+  };
 
   return (
     <BoxStyled>
-      <img src={Imgsrc === "user" ? userIc : cartIc} alt={Imgalt} />
+      <NavLink to={Imgsrc === "user" ? "/login" : "/cart"}>
+        <img src={Imgsrc === "user" ? userIc : cartIc} alt={Imgalt}></img>
+      </NavLink>
       <div>
         <p onClick={Imgsrc === "user" ? loginOrHome : toCart}>{Text[0]}</p>
 

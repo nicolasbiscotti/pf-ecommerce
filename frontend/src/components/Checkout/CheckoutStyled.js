@@ -46,6 +46,7 @@ export const CheckoutStyled = styled.div`
     justify-content: space-between;
     .app-container {
       width: 60%;
+      min-height: 30vh;
       margin-top: 1rem;
       padding: 2rem 1.5rem 0;
       background: #fff;
@@ -99,30 +100,41 @@ export const CheckoutStyled = styled.div`
       font-size: 2rem;
     }
   }
-  .success-container {
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    h1 {
-      margin-top: 0.7rem;
+  @media screen and (min-width: 992px) and (max-width: 1280px) {
+    .main-container {
+      padding: 0 1.5rem 0 1rem;
+      .app-container {
+        width: 65%;
+        margin-right: 1px;
+      }
     }
   }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 780px) and (max-width: 992px) {
     .main-container {
-      flex-direction: column;
-
+      padding: 0 1rem;
+      .app-container {
+        width: 65%;
+        padding: 2rem 0.5rem 0;
+        margin-right: 2px;
+      }
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 780px) {
+    .main-container {
+      width: 100%;
+      min-height: calc(100vh - 6rem);
+      padding: 0 2rem 0 2rem;
+      flex-direction: column-reverse;
       .app-container {
         width: 100%;
-        margin-top: 3rem;
-        padding: 2rem 1.5rem 0;
-        background: #fff;
-        border-radius: 6px;
-        box-shadow: 0 0.0625rem 0.125rem 0 rgb(0 0 0 / 15%);
+        margin-top: 1rem;
+        padding: 2rem 1rem 0;
       }
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 550px) {
+    .main-container {
+      padding: 0 1rem;
     }
   }
 `;

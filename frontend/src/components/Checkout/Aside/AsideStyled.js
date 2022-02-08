@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const AsideStyled = styled.aside`
-
   width: 35%;
   height: 100%;
   min-height: calc(100vh - 6rem);
@@ -56,24 +55,53 @@ export const AsideStyled = styled.aside`
       color: #3e3e3e;
     }
   }
-
-  @media screen and (max-width: 768px) {
-    margin: 3rem 0;
-    width: 100%;
-    height: 100%;
-    .card-container {
-      padding: 4rem 5%;
-
-    }
-    .amount-container {
-      margin: 0 5%;
-      padding: 2rem 0.2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 1px solid #d7d7d7;
-      border-bottom: 1px solid #d7d7d7;
-      
+  .total-container {
+    margin-top: 0.5rem;
+    border-top: none;
+    margin-bottom: 2rem;
   }
 
+  @media screen and (min-width: 780px) and (max-width: 992px) {
+    div .card-container {
+      padding: 4rem 2rem;
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 780px) {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    min-height: 30vh;
+    align-items: flex-start;
+    div .card-container {
+      width: 240px;
+      padding: 1rem;
+      margin: 0 2rem;
+      border-left: 1px solid #d7d7d7;
+      border-right: 1px solid #d7d7d7;
+    }
+    .item-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 40vh;
+    }
+    div .amount-container {
+      width: 240px;
+      margin: 0 2rem;
+      padding: 2rem 0.2rem;
+      align-self: flex-end;
+    }
+    .total-container {
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      margin: 0 1rem;
+      padding-top: 20%;
+      background-color: #e3e3e3;
+      span {
+        width: 240px;
+      }
+    }
+  }
 `;

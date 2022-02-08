@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CheckoutStyled, NavlinkHome } from "./CheckoutStyled";
 import { Asidecards } from "./Aside/Asidecards";
 import Addressform from "./Step1/Addressform";
 import Step2 from "./Step2/Step2";
 import PayPalCheckout from "./PayPalCheckout/PayPalCheckout";
 import { IoIosArrowBack } from "react-icons/io";
-import { MdCheckCircle } from "react-icons/md";
 import { BsCheck } from "react-icons/bs";
+
 import axios from "axios";
+import Success from "./Step4/Success.jsx";
+import swal from "sweetalert";
 
 const apiUrl = process.env.REACT_APP_BACKEND;
 
@@ -37,6 +39,7 @@ function Checkout() {
   const shippingAmount = new URLSearchParams(search).get("shipping");
   const cart = useSelector((store) => store.cart);
   const [step, setStep] = useState(1);
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     id: "",
     email: "",
@@ -47,7 +50,7 @@ function Checkout() {
     address: "",
     addresscontinue: "",
     city: "",
-    province: "",
+    country: "",
     postalcode: "",
     email: "",
   });
@@ -65,6 +68,12 @@ function Checkout() {
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
       getUser();
+    } else {
+      swal({
+        title: `Please login to continue`,
+        icon: "info",
+        button: "Accept",
+      }).then((res) => navigate("/login"));
     }
     //eslint-disable-next-line
   }, []);
@@ -77,7 +86,7 @@ function Checkout() {
       formData.address.length > 0 &&
       formData.addresscontinue.length > 0 &&
       formData.city.length > 0 &&
-      formData.province.length > 0 &&
+      formData.country.length > 0 &&
       formData.postalcode.length > 0 &&
       formData.email.length > 0
     ) {
@@ -143,22 +152,7 @@ function Checkout() {
           <Asidecards cart={cart} shippingAmount={shippingAmount} />
         </div>
       ) : (
-        <div className="success-container">
-          <MdCheckCircle
-            style={{ color: "rgba(0,128,0,.75)", fontSize: "10rem" }}
-          />
-          <h1 style={{ marginBottom: "8rem" }}>
-            Your purchase has been confirmed !
-          </h1>
-          <p style={{ color: "rgba(0,0,0,.6)", textAlign: "center" }}>
-            Brevely you will recive an email with the data of your transaction.
-          </p>
-          <NavlinkHome to="/">
-            <p style={{ color: "rgba(0,0,0,.6)", textAlign: "center" }}>
-              <br /> Return to Home
-            </p>
-          </NavlinkHome>
-        </div>
+        <Success></Success>
       )}
     </CheckoutStyled>
   );

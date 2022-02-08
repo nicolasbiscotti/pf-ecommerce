@@ -4,6 +4,7 @@ import { deleteCart } from "../../../redux/reducers/cart/actions";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import swal from "sweetalert";
+import { PayPalStyle } from "./PayPalStyle";
 
 export default function PayPalCheckout({
   cart,
@@ -56,7 +57,7 @@ export default function PayPalCheckout({
           address_line_1: formData.address,
           address_line_2: formData.addresscontinue,
           admin_area_2: formData.city,
-          admin_area_1: formData.province || "CA",
+          admin_area_1: formData.country || "CA",
           postal_code: formData.postalcode,
           country_code: "AR",
         },
@@ -74,7 +75,7 @@ export default function PayPalCheckout({
               address_line_1: formData.address,
               address_line_2: formData.addresscontinue,
               admin_area_2: formData.city,
-              admin_area_1: formData.province || "CA",
+              admin_area_1: formData.country || "CA",
               postal_code: formData.postalcode,
               country_code: "AR",
             },
@@ -89,7 +90,6 @@ export default function PayPalCheckout({
     return actions.order
       .capture()
       .then((res) => {
-        console.log(res);
         let payments = res.purchase_units[0].payments.captures[0];
         let status = payments.final_capture;
         if (status) {
@@ -166,23 +166,26 @@ export default function PayPalCheckout({
     });
   };
   return (
-    <PayPalScriptProvider
-      options={{
-        "client-id":
-          "AZiW78_gEbx0Wdp3puDrpDaYyKLMXMK5ADl7kMOrmVIqYi57n9vJE8Wn6TrARd3O8nRLqmn0qqr0p2lM",
-      }}
-    >
-      <PayPalButtons
-        style={{
-          layout: "horizontal",
-          color: "gold",
+    <PayPalStyle>
+      <p>Pay with:</p>
+      <PayPalScriptProvider
+        options={{
+          "client-id":
+            "AZiW78_gEbx0Wdp3puDrpDaYyKLMXMK5ADl7kMOrmVIqYi57n9vJE8Wn6TrARd3O8nRLqmn0qqr0p2lM",
         }}
-        createOrder={(data, actions) => payment(data, actions)}
-        onApprove={(data, actions) => onApprove(data, actions)}
-        onCancel={(data, actions) => onCancel(data, actions)}
-        onError={(error) => onError(error)}
-      />
-    </PayPalScriptProvider>
+      >
+        <PayPalButtons
+          style={{
+            layout: "horizontal",
+            color: "gold",
+          }}
+          createOrder={(data, actions) => payment(data, actions)}
+          onApprove={(data, actions) => onApprove(data, actions)}
+          onCancel={(data, actions) => onCancel(data, actions)}
+          onError={(error) => onError(error)}
+        />
+      </PayPalScriptProvider>
+    </PayPalStyle>
   );
 }
 
