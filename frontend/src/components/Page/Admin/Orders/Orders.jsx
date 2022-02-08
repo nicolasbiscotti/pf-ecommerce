@@ -5,11 +5,11 @@ import Paged from "./Paged/Paged"
 import {mapOrders} from "./services/mapOrders";
 import { ShowProductStyled } from "../ShowProduct/style";
 import TableHeader from "./TableHeaders";
+import Details from "./Details/Details";
 
 export default function Orders() {
   const dispatch = useDispatch();
   const { orders } = useSelector((state) => state.ordersAdmin)
-  // const [orderHeaders, setOrderHeaders] = useState([])
 
   useEffect(() => {
     dispatch(getAllOrdersAdmin({ page: 0 }));
@@ -28,6 +28,7 @@ export default function Orders() {
           </tbody>
         </table>
         <Paged nameReducer={"ordersAdmin"} />
+        <Details/>
       </div>
     </ShowProductStyled>
   )

@@ -1,6 +1,10 @@
-import { MdExpandMore, MdExpandLess } from "react-icons/md";
+import { BsFillStickyFill } from "react-icons/bs";
 import { RowsStyled } from "../../ShowProduct/Rows/style";
+
 export default function Rows({ id, date, status, address, user, details }) {
+  const handlerClick = () => {
+    console.log("holo")
+  }
   return (
     <RowsStyled>
       <td>{id}</td>
@@ -8,7 +12,9 @@ export default function Rows({ id, date, status, address, user, details }) {
       <td>{user.email}</td>
       <td>{date.split('T')[0]}</td>
       <td>{status}</td>
-      <td><MdExpandMore/><MdExpandLess/></td>
+      <td onClick={handlerClick()}>
+        <BsFillStickyFill/>
+        </td>
     </RowsStyled>
   );
 }
