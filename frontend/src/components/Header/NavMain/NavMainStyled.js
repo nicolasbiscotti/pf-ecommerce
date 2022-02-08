@@ -7,6 +7,7 @@ export const NavMainStyled = styled.div`
   height: 18vh;
   border-top: 1px solid ${borderscolor};
   ${flexSpacebetweenCenter};
+  position: relative;
   nav {
     width: 98%;
     height: 100%;
@@ -38,20 +39,10 @@ export const NavMainStyled = styled.div`
       > :nth-child(3) {
         grid-row: 1;
         grid-column: 3;
+        justify-self: center;
       }
       * p {
         font-size: 1.5rem;
-      }
-    }
-    @media screen and (min-width: 550px) and (max-width: 680px) {
-      nav > :nth-child(3) img {
-        width: 4.2rem;
-        height: 4.2rem;
-      }
-    }
-    @media screen and (min-width: 550px) and (max-width: 680px) {
-      nav > :nth-child(3) > :nth-child(2) p {
-        display: none;
       }
     }
   }
@@ -67,7 +58,6 @@ export const NavMainStyled = styled.div`
       a {
         grid-column: span 1;
         text-align: center;
-        font-size: 3rem;
       }
       > :nth-child(2) {
         grid-column: span 3;
@@ -78,20 +68,16 @@ export const NavMainStyled = styled.div`
           width: 90%;
         }
       }
-      > :nth-child(3) {
-        grid-row: 1;
-        grid-column: 3;
-      }
       * p {
         font-size: 1.5rem;
       }
-      > :nth-child(3) img {
-        width: 4.2rem;
-        height: 4.2rem;
-      }
-      > :nth-child(3) > :nth-child(2) p {
-        display: none;
-      }
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 380px) {
+    nav {
+      display: grid;
+      grid-template-columns: 8fr 1fr 8fr;
+      grid-template-rows: 1fr 1fr;
     }
   }
 `;

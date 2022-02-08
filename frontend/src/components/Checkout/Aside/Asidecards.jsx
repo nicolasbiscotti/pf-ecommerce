@@ -6,7 +6,7 @@ export function Asidecards({ cart, shippingAmount }) {
     <AsideStyled>
       {cart.products.length > 0 &&
         cart.products.map((i) => (
-          <div key={i.name}>
+          <div key={i.name} className="item-container">
             <div className="card-container">
               <img src={i.img} alt="" />
               <h3>{i.name}</h3>
@@ -20,14 +20,7 @@ export function Asidecards({ cart, shippingAmount }) {
           </div>
         ))}
       {/* Total */}
-      <div
-        className="amount-container"
-        style={{
-          marginTop: "0.5rem",
-          borderTop: "none",
-          marginBottom: "2rem",
-        }}
-      >
+      <div className="amount-container total-container">
         <span>Total (plus shipping) : </span>
         <span>${cart.getSubtotalPrice() + Number(shippingAmount)}</span>
       </div>

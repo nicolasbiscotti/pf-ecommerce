@@ -2,60 +2,42 @@ import React, { useRef } from "react";
 import { StyledButton } from "../../Login/Styled/StyledButton";
 import { AddressformStyled } from "./AddressformStyled";
 import FormElement from "./Formelement/FormElement";
+import {
+  placeholderFm,
+  handleSubmitFm,
+  handleChangeFm,
+} from "./utils/functions";
 
 function Addressform({ setFormData, setStep, formData }) {
   const fullname = useRef();
   const addressref = useRef();
   const addressCref = useRef();
   const cityref = useRef();
-  const provinceref = useRef();
+  const countryref = useRef();
   const postalcoderef = useRef();
   const emailref = useRef();
 
   const placeFholder = (ref) => {
-    ref.current.name === "Full name"
-      ? (fullname.current.placeholder = "")
-      : (fullname.current.placeholder = "Full name");
-    ref.current.name === "Address"
-      ? (addressref.current.placeholder = "")
-      : (addressref.current.placeholder = "Address");
-    ref.current.name === "Address continue"
-      ? (addressCref.current.placeholder = "")
-      : (addressCref.current.placeholder = "Address continue (optional)");
-    ref.current.name === "City"
-      ? (cityref.current.placeholder = "")
-      : (cityref.current.placeholder = "City");
-    ref.current.name === "Province"
-      ? (provinceref.current.placeholder = "")
-      : (provinceref.current.placeholder = "Province");
-    ref.current.name === "Postal code"
-      ? (postalcoderef.current.placeholder = "")
-      : (postalcoderef.current.placeholder = "Postal code");
-    ref.current.name === "Email"
-      ? (emailref.current.placeholder = "")
-      : (emailref.current.placeholder = "Email");
+    placeholderFm(
+      ref,
+      fullname,
+      addressref,
+      addressCref,
+      cityref,
+      countryref,
+      postalcoderef,
+      emailref
+    );
   };
+
   const handleChange = (ref) => {
-    let value = ref.current.value;
-    let name = ref.current.name.toLowerCase().replace(" ", "");
-    setFormData({ ...formData, [name]: value });
+    handleChangeFm(ref, setFormData, formData);
   };
 
   const handleSubmit = () => {
-    let validate = false;
-    for (let prop in formData) {
-      if (prop === "email") {
-        //eslint-disable-next-line
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(formData[prop])
-          ? (validate = true)
-          : (validate = false);
-      } else if(prop === "addresscontinue") {
-        continue
-      } else if (formData[prop].length > 0) validate = true;
-      if (!validate) break;
-    }
-    validate ? setStep(2) : alert("Invalid data");
+    handleSubmitFm(formData, setStep);
   };
+
   return (
     <AddressformStyled>
       <FormElement
@@ -87,9 +69,9 @@ function Addressform({ setFormData, setStep, formData }) {
         formData={formData}
       />
       <FormElement
-        setName="Province"
+        setName="Country"
         placeFholder={placeFholder}
-        setRef={provinceref}
+        setRef={countryref}
         handleChange={handleChange}
         formData={formData}
       />

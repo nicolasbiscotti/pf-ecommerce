@@ -12,13 +12,19 @@ export const FormElementStyled = styled.div`
   }
   input {
     width: 100%;
-    padding: 0.8em;
-    padding-top: 2rem;
+    padding: 1.6rem 0.8em 1.2rem;
     border-radius: 0.5em;
     border: 1px solid #adadad;
     outline: none;
+    font-size: 1.6rem;
     &::placeholder {
       content: ${({ placeholder }) => placeholder || "algo"};
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 550px) {
+    input {
+      height: 4.4rem;
+      padding-left: 0.5rem;
     }
   }
 `;

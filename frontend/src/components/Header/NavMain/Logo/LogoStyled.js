@@ -9,4 +9,13 @@ export const LogoStyled = styled(NavLink)`
   &:visited {
     color: white;
   }
+  @media screen and (min-width: 0px) and (max-width: 610px) {
+    font-size: 3rem;
+  }
+  @media screen and (min-width: 0px) and (max-width: 480px) {
+    font-size: 2.5rem;
+  }
+  @media screen and (min-width: 0px) and (max-width: 350px) {
+    font-size: 2.2rem;
+  }
 `;

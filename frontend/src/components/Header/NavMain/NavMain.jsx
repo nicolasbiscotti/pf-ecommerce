@@ -28,6 +28,3 @@ function NavMain() {
 }
 
 export default NavMain;
-
-//acá tengo que pasarle la data de productos al searchbar para que
-// pueda mostrar las sugerencias

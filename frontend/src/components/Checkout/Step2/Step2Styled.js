@@ -21,15 +21,37 @@ export const Step2Styled = styled.div`
       flex-direction: column;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      word-break: break-all;
+      word-break: break-word;
       div {
         width: 100%;
+        font-weight: 600;
+        font-size: 2rem;
       }
     }
   }
   button {
-    /* grid-column: span 2;
-    width: 50%; */
     width: 50%;
+    min-width: 10rem;
+    background-color: #123456;
+  }
+  @media screen and (min-width: 0px) and (max-width: 1280px) {
+    .card {
+      padding: 0;
+      .row-2 {
+        padding-left: 1rem;
+      }
+    }
+  }
+  @media screen and (min-width: 0px) and (max-width: 550px) {
+    .card div {
+      width: 100%;
+      div {
+        line-height: 3rem;
+        margin: 0.5rem 0;
+      }
+    }
+    .card .row-2 {
+      padding: 0;
+    }
   }
 `;
