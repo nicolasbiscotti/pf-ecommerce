@@ -33,8 +33,8 @@ conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     await loadMockSuppliers();
     await loadMockCategories();
-    await loadMockProducts();
     await loadMockUsers();
+    await loadMockProducts();
     await loadMockOrders();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
