@@ -1,10 +1,10 @@
 import { axiosGet, axiosPut } from "../../../services/axios";
 import { actionCreator } from "../products/actions";
-import { GET_ONE_ORDER, GET_ORDERS_LIST, UPDATE_STATUS_ONE_ORDER } from "./const";
+import { GET_ONE_ORDER, GET_ORDERS_LIST } from "./const";
 
-export const getAllOrdersAdmin = ({ page }) => {
+export const getAllOrdersAdmin = ({ page, status }) => {
   return async (dispatch) => {
-    const allOrdersAdmin = await axiosGet(`/orders?page=${page}`);
+    const allOrdersAdmin = await axiosGet(`/orders?page=${page || "0"}&status=${status || ""}`);
     dispatch(actionCreator(GET_ORDERS_LIST, allOrdersAdmin));
   };
 };
@@ -18,10 +18,10 @@ export const getOrderDetailAdmin = ({ id }) => {
 };
 
 export const updateOrderStatusDetailAdmin = ({ id, status }) => {
-  return async (dispatch) => {
-    console.log(id, status)
+  return async () => {
     const isUpdated = await axiosPut(`/orders/${id}`, {id, status});
-    getAllOrdersAdmin()
-    dispatch(actionCreator(UPDATE_STATUS_ONE_ORDER, isUpdated));
+    console.log(isUpdated.msg)
+    await getAllOrdersAdmin({ page:0, status:"" });
+    // dispatch(actionCreator(UPDATE_STATUS_ONE_ORDER, isUpdated));
   };
 };

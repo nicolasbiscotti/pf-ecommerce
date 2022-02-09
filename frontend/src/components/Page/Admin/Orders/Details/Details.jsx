@@ -73,12 +73,12 @@ export default function Details({ closeModal }) {
                   {
                     (ordersDetails.status === "pending") ? (
                       <select className="selectinput" name="status" type="text">
-                        <option selected value="pending">Pending</option>
+                        <option defaultValue value="pending">Pending</option>
                         <option value="done">Done</option>
                       </select>
                     ) : (ordersDetails.status === "done") && (
                       <select className="selectinput" name="status" type="text" disabled>
-                        <option selected value="done">Done</option>
+                        <option defaultValue value="done">Done</option>
                       </select>
                     )
                   }

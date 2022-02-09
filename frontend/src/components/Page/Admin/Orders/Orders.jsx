@@ -11,11 +11,20 @@ export default function Orders() {
   const dispatch = useDispatch();
   const { orders } = useSelector((state) => state.ordersAdmin)
   const [showDetails, setShowDetails] = useState(false)
+  const [orderFilters, setOrderFilters] = useState({ status: "" })
   useEffect(() => {
     dispatch(getAllOrdersAdmin({ page: 0 }));
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getAllOrdersAdmin({ page: 0, status: orderFilters.status }))
+  }, [orderFilters, dispatch])
 
+  async function handlerChangeStatus(e) {
+    const { name, value } = e.target
+    await setOrderFilters({ [name]: value })
+
+  }
   return (
     <ShowProductStyled className="orders">
       <div>
@@ -23,9 +32,9 @@ export default function Orders() {
           <caption>
             ORDERS
             <div>
+              <label htmlFor="status">Filter by Status: {orderFilters.status}</label>
 
-              <label htmlFor="">Filter by Status</label>
-              <select name="" id="">
+              <select name="status" id="status" onChange={handlerChangeStatus}>
                 <option value="">All</option>
                 <option value="pending">Pending</option>
                 <option value="done">Done</option>
