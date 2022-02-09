@@ -7,6 +7,6 @@ export const setData = ({ payload, state }) => {
     pageCount,
     ordersCount,
     orders,
-    ordersDetails,
+    ordersDetails: ordersDetails || {},
   };
 };

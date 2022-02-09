@@ -1,4 +1,4 @@
-import { GET_ORDERS_LIST, GET_ONE_ORDER } from "./const";
+import { GET_ORDERS_LIST, GET_ONE_ORDER, UPDATE_STATUS_ONE_ORDER } from "./const";
 import { setData } from "./services/setData";
 
 const initialState = {
@@ -15,9 +15,11 @@ export const ordersAdmin = (state = initialState, { type, payload }) => {
       return setData({ payload, state })
     },
     [GET_ONE_ORDER]: () => {
-      console.log(payload)
       return {...state, ordersDetails: payload }
-    }  
+    },
+    [UPDATE_STATUS_ONE_ORDER]: () => {
+
+    }
   };
   return (cases[type] && cases[type]()) || state;
 };

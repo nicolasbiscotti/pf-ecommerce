@@ -7,6 +7,7 @@ export const ShowProductStyled = styled.section`
   align-items: center;
   min-height: 100vh;
   color: white;
+  position: relative;
   div {
     display: grid;
     gap: 10px;

@@ -40,5 +40,19 @@ export const CreateProductStyled = styled.div`
         gap: 3px;
       }
     }
+    label {
+      margin-bottom: -10px;
+      margin-top: 10px;
+    }
+  }
+  &.modalContent {
+    margin: 0;
+    min-height: initial;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* position: absolute; */
   }
 `;

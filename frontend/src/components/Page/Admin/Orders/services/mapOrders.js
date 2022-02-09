@@ -1,7 +1,10 @@
 import Rows from "../Rows/Rows";
 
-export const mapOrders = (orders) => {
-  return orders.map((props) => {
-    return <Rows key={props.id} {...props} />;
-  });
+export const MapOrders = ({orders, openModal}) => {
+  return (
+    <>
+    {orders.map((props) => 
+      <Rows key={props.id} {...props} openModal={openModal}/>)}
+    </>
+    )
 };
