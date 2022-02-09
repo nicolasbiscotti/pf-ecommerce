@@ -4,7 +4,6 @@ export default function TableHeader() {
   const headers = [
     "id",
     "user",
-    "email",
     "date",
     "status",
   ]
