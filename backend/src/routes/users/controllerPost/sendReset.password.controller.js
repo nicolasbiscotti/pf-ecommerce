@@ -9,9 +9,8 @@ const State = {
 
 const sendResetPassLink = async (req, res, next) => {
   try {
-    const { email } = req.body;
-    const user = await userService.findByEmail(email);
-    if (user || user.isActive) {
+    const user = await userService.findByEmailOrUsername(req.body);
+    if (user) {
       transporter.sendMail({
         from: '"reset password 👻" <testedarcode@gmail.com>', // sender address
         to: user.email, // list of receivers

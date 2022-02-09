@@ -41,6 +41,7 @@ const userService = {
       const existingUser = await User.findOne({
         where: {
           [Op.or]: [{ email }, { username }],
+          isActive: true,
         },
         include: OauthProfile,
       });
@@ -92,17 +93,26 @@ const userService = {
   },
   find: async (userId) => {
     try {
-      const user = await User.findByPk(userId);
-      if (!user.isActive) return null;
+      const user = await User.findByPk(userId, { where: { isActive: true } });
       return user;
     } catch (error) {
       console.error(error);
     }
   },
-  findByEmail: async (email) => {
+  findByEmailOrUsername: async ({ email, username }) => {
+    const query = {};
+    if (email && username) {
+      query.where = {
+        [Op.or]: [{ email }, { username }],
+        isActive: true,
+      };
+    } else if (email && !username) {
+      query.where = { email };
+    } else if (!email && username) {
+      query.where = { username };
+    }
     try {
-      const user = await User.findOne({ where: { email } });
-      if (!user.isActive) return null;
+      const user = await User.findOne(query);
       return user;
     } catch (error) {
       console.error(error);

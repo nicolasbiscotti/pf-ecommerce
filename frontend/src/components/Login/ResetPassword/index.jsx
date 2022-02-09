@@ -22,7 +22,7 @@ export default function RequestResetPass() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  
+
   const dispatch = useDispatch();
 
   const userChangeHandler = (e) => {
@@ -44,8 +44,6 @@ export default function RequestResetPass() {
     );
   };
 
-  
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -54,7 +52,6 @@ export default function RequestResetPass() {
         id: searchParams.get("id"),
         token: searchParams.get("token"),
       };
-      console.log(`${JSON.stringify(body)}`);
       const { data } = await axios.put("/users/resetpassword", body);
       if (data.state === State.FINISH) {
         dispatch(setMessage(data.message));
