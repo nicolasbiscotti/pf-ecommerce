@@ -18,4 +18,7 @@ export const PayPalStyle = styled.div`
     justify-content: center;
     padding-top: 4rem;
   }
+  div #smart-menu {
+    z-index: 1;
+  }
 `;
