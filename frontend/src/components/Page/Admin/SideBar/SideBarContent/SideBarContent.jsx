@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { GoThreeBars } from "react-icons/go";
 import { FaUserCircle } from "react-icons/fa";
 import { SideBarContentStyled } from "./style";
-import { completeLogout } from "../../../../../redux/reducers/login/actions";
-import { useDispatch } from "react-redux";
 
 const SideBarContent = () => {
   const [active, setActive] = useState(false);
@@ -16,13 +14,6 @@ const SideBarContent = () => {
 
   const handleClickShow = () => {
     setshow(!show);
-  };
-
-  const dispatch = useDispatch();
-
-  const userLogout = (e) => {
-    e.preventDefault();
-    dispatch(completeLogout());
   };
 
   return (
@@ -91,8 +82,8 @@ const SideBarContent = () => {
           </Link>
         </div>
         <div className="signOut">
-          <Link className="hvr-bounce-to-right" to="/" onClick={userLogout}>
-            Log Out
+          <Link className="hvr-bounce-to-right" to="/">
+            Home
           </Link>
         </div>
       </nav>
