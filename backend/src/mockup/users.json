@@ -19,6 +19,15 @@
       "verified": true,
       "state": true,
       "type": "admin"
+    },
+    {
+      "username": "leilab",
+      "password": "Etacarinae22",
+      "firstName": "Leila",
+      "lastName": "bula",
+      "email": "leilabula22@gmail",
+      "verified": true,
+      "state": true
     }
   ]
 }

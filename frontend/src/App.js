@@ -18,6 +18,7 @@ import Cart from "./components/cart";
 import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 import Orders from "./components/Page/Admin/Orders/Orders";
+import OrderUser from "./components/Routes/orders";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
+          <Route path="orders" element={<OrderUser />} />
         </Route>
 
         <Route path="/admin" element={<Admin />}>

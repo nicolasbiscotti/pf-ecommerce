@@ -8,3 +8,15 @@ export const getAllOrdersAdmin = ({ page }) => {
     dispatch(actionCreator(GET_ORDERS_LIST, allOrdersAdmin));
   };
 };
+
+export const getAllOrdersUser = (page = false) => {
+  return async function (dispatch){
+    let allOrdersUser;
+    if(page){
+      allOrdersUser = await axiosGet(`/orders/user?page=${page}`);
+    }else{
+      allOrdersUser = await axiosGet("/orders/user");
+    }
+    dispatch(actionCreator(GET_ORDERS_LIST, allOrdersUser))
+  }
+}
