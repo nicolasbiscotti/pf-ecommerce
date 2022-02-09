@@ -3,10 +3,10 @@ const userService = require("../services/userService");
 const userByOauthProfile = async (req, res, next) => {
   try {
     const user = await userService.findUserByOauthProfile(req.query);
-    if (user) {
-      res.json({ user });
+    if (!user || !user.isActive) {
+      res.json({ msg: "No user found." });
     } else {
-      res.json({ message: "Some went wrong.", user });
+      res.json({ ...user.toJSON() });
     }
   } catch (error) {
     next(error);

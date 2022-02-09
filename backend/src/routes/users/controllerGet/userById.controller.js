@@ -4,10 +4,10 @@ const userById = async (req, res, next) => {
   const id = req.params.id;
   try {
     const user = await User.findByPk(id);
-    if (user) {
-      res.json({ ...user.dataValues });
+    if (!user || !user.isActive) {
+      res.json({ msg: "No user found." });
     } else {
-      res.json({ msg: "Some went wrong." });
+      res.json({ ...user.toJSON() });
     }
   } catch (error) {
     next(error);

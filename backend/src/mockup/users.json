@@ -19,6 +19,16 @@
       "verified": true,
       "state": true,
       "type": "admin"
+    },
+    {
+      "username": "nicolas",
+      "password": "nico2010",
+      "firstName": "nicolas",
+      "lastName": "biscotti",
+      "email": "nicolas.biscotti@outlook.es",
+      "verified": true,
+      "state": true,
+      "type": "user"
     }
   ]
 }
