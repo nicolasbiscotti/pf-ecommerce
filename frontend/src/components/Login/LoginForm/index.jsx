@@ -154,7 +154,7 @@ export default function LoginForm() {
         />
         <label htmlFor="password">
           <span className="helpInfo">
-            <BsInfoCircle /> <Link to="/login/requestPassReset">Forgot your password?</Link>
+            <BsInfoCircle /> <Link to="/login/requestPassReset">Forget your password?</Link>
           </span>
         </label>
 
