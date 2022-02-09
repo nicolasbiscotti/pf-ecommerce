@@ -1,6 +1,6 @@
 import { BsFillStickyFill } from "react-icons/bs";
 import { RowsStyled } from "../../ShowProduct/Rows/style";
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { getOrderDetailAdmin } from "../../../../../redux/reducers/orders/actions";
 
 export default function Rows({ id, date, status, address, user, details, openModal}) {
