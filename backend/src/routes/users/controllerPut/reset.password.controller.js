@@ -12,7 +12,9 @@ const resetPassword = async (req, res, next) => {
     if (
       !user ||
       token !== user.verificationToken ||
-      password !== confirmpassword
+      password !== confirmpassword ||
+      password.length < 8 ||
+      confirmpassword.length < 8
     ) {
       return res.json({
         state: State.FAILURE,
