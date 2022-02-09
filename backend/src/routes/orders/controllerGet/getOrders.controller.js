@@ -4,9 +4,10 @@ const { cleanOrders } = require("../services/cleanOrders");
 
 const getOrders = async (req, res, next) => {
   try {
-    const { page = 0 } = req.query;
+    const { page = 0, status } = req.query;
 
     const { count, rows } = await Order.findAndCountAll({
+      where: status ? {status}: {},
       attributes: ["id", "date", "status", "address"],
       offset: page * ORDER_PER_PAGE,
       limit: ORDER_PER_PAGE,
