@@ -7,11 +7,12 @@ import { suppliers } from "./suppliers";
 import { createProduct } from "./createProduct";
 import { login } from "./login";
 import { createCategory } from "./crud categories";
-import { cart } from "./cart"
+import { cart } from "./cart";
 import { productsNames } from "./autocomplete";
 import { updateProduct } from "./updateProduct";
 import { productsAdmin } from "./productsAdmin";
 import { ordersAdmin } from "./orders";
+import { geolocation } from "./geolocation";
 
 export const rootReducer = combineReducers({
   products,
@@ -27,4 +28,5 @@ export const rootReducer = combineReducers({
   productsAdmin,
   productsNames,
   ordersAdmin,
+  geolocation,
 });

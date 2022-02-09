@@ -1,7 +1,7 @@
 import React from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { deleteCart } from "../../../redux/reducers/cart/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import swal from "sweetalert";
 import { PayPalStyle } from "./PayPalStyle";
@@ -14,6 +14,8 @@ export default function PayPalCheckout({
   userData,
 }) {
   const dispatch = useDispatch();
+
+  const country = useSelector((store) => store.geolocation);
 
   const orderItems = cart.products.map((i) => {
     return {
@@ -59,7 +61,7 @@ export default function PayPalCheckout({
           admin_area_2: formData.city,
           admin_area_1: formData.country || "CA",
           postal_code: formData.postalcode,
-          country_code: "AR",
+          country_code: country.countryCode || "",
         },
       },
       purchase_units: [
@@ -77,7 +79,7 @@ export default function PayPalCheckout({
               admin_area_2: formData.city,
               admin_area_1: formData.country || "CA",
               postal_code: formData.postalcode,
-              country_code: "AR",
+              country_code: country.countryCode || "",
             },
           },
         },

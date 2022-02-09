@@ -29,6 +29,8 @@ const updateStatusOrder = async (req, res, next) => {
         });
         let query = "?" + `name=${user.firstName}&email=${user.email}`;
         res.redirect(307, "/sendmail/dispatch" + query);
+      } else {
+        res.send({ msg: "Order updated successfully" });
       }
     } else {
       res.status(404).json({ msg: "Could not find order" });
