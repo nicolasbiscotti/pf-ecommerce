@@ -94,7 +94,11 @@ export default function PayPalCheckout({
         let status = payments.final_capture;
         if (status) {
           let date = payments.create_time;
-          let amount = payments.amount.value;
+          let amount = {
+            total: payments.amount.value,
+            shipping: shippingAmount,
+            orderItemsTotal: orderItemsTotal,
+          };
           let address = Object.values(
             res.purchase_units[0].shipping.address
           ).reduce((a, s) => a + " " + s);
