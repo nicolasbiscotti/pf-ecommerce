@@ -38,6 +38,8 @@ server.name = "API";
 
 server.use(cors());
 
+server.use(express.static("public"));
+
 // Initialize session management with cookie-session
 server.use(
   session({

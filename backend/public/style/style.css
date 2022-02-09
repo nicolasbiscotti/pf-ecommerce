@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ededed;
+}
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #484f71;
+  border-radius: 5px;
+}
+h3 {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  padding: 1rem 0;
+}
+.danger {
+  color: tomato;
+}
+.success {
+  color: #36af46;
+}
+a {
+  font-weight: 700;
+  text-decoration: none;
+ 
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  padding: 8px 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 23px;
+  background-color: #2ac0dd;
+}

@@ -29,8 +29,8 @@ export const StyledForm = styled.div`
         display: flex;
         align-items: center;
         text-transform: none;
-        color: lightcyan;
         a {
+          color: lightcyan;
           margin-left: 5px;
         }
       }
