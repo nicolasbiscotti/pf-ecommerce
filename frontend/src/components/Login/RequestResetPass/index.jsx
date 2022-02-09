@@ -50,7 +50,7 @@ export default function RequestResetPass() {
       });
       if (data.state === State.FINISH) {
         dispatch(setMessage(data.message));
-        navigate("/login/resetPassword");
+        navigate("/login");
       } else {
         dispatch(setMessage(data.message));
         navigate("/login");

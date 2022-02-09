@@ -20,8 +20,10 @@ export default function RequestResetPass() {
   });
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors] = useState({});
-
-  const queryParams = useSearchParams();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  
+  const dispatch = useDispatch();
 
   const userChangeHandler = (e) => {
     const newUser = { ...user, [e.target.name]: e.target.value };
@@ -42,16 +44,18 @@ export default function RequestResetPass() {
     );
   };
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("/users/resetPassword", {
+      const body = {
         ...user,
-        ...queryParams,
-      });
+        id: searchParams.get("id"),
+        token: searchParams.get("token"),
+      };
+      console.log(`${JSON.stringify(body)}`);
+      const { data } = await axios.put("/users/resetpassword", body);
       if (data.state === State.FINISH) {
         dispatch(setMessage(data.message));
         navigate("/login");
