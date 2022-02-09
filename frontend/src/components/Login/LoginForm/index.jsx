@@ -3,7 +3,7 @@ import { StyledForm } from "../Styled/StyledForm";
 import { BsInfoCircle, BsGithub } from "react-icons/bs";
 import validateUser from "../utils/validate";
 import { StyledButton } from "../Styled/StyledButton";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { IconContext } from "react-icons/lib";
 import GoogleLogin from "react-google-login";
@@ -152,6 +152,11 @@ export default function LoginForm() {
           onChange={userChangeHandler}
           placeholder=""
         />
+        <label htmlFor="password">
+          <span className="helpInfo">
+            <BsInfoCircle /> <Link to="/login/requestPassReset">Forgot your password?</Link>
+          </span>
+        </label>
 
         <StyledButton onClick={onSubmitHandler} disabled={disabled}>
           Login

@@ -18,6 +18,8 @@ import ShowProduct from "./components/Page/Admin/ShowProduct/ShowProduct";
 import UpdateProduct from "./components/Page/Admin/UpdateProduct/UpdateProduct";
 import Orders from "./components/Page/Admin/Orders/Orders";
 import RequireAuth from "./AuthProvider/RequireAuth";
+import RequestResetPass from "./components/Login/RequestResetPass";
+import ResetPassword from "./components/Login/ResetPassword";
 
 function App() {
   return (
@@ -52,6 +54,8 @@ function App() {
           <Route index element={<LoginForm />} />
           <Route path="register" element={<RegisterForm />} />
           <Route path="ssoRegister" element={<SSOForm />} />
+          <Route path="requestPassReset" element={<RequestResetPass />} />
+          <Route path="resetPassword" element={<ResetPassword />} />
         </Route>
 
         <Route path="*" element={<Navigate to="/" />} />
