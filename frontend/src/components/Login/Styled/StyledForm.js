@@ -25,6 +25,15 @@ export const StyledForm = styled.div`
           margin-left: 5px;
         }
       }
+      .helpInfo {
+        display: flex;
+        align-items: center;
+        text-transform: none;
+        color: lightcyan;
+        a {
+          margin-left: 5px;
+        }
+      }
     }
     .formStyling {
       color: white;
