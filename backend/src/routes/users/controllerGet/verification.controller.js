@@ -1,4 +1,5 @@
 const userService = require("../services/userService");
+const {REDIRECT_URI} = require("../../../constants/config")
 
 const verification = async (req, res, next) => {
   try {
@@ -14,12 +15,6 @@ const verification = async (req, res, next) => {
           type: "danger",
         })
       );
-      // res.json({
-      //   message: {
-      //     text: "Invalid credentials provided!",
-      //     type: "danger",
-      //   },
-      // });
     } else {
       user.verified = true;
       await user.save();
@@ -51,7 +46,7 @@ function render({ type, text }) {
         <h3 class="${type}">${text}</h3>
         ${
           type === "success"
-            ? '<a href="http://localhost:3000/login">go to loggin ...</a>'
+            ? `<a href="${REDIRECT_URI}">go to loggin ...</a>`
             : ""
         }
         
