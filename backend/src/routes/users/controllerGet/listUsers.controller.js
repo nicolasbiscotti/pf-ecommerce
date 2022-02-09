@@ -1,10 +1,12 @@
 const { User, OauthProfile } = require("../../../db");
+const { where } = require("../utils/where");
 
 const listUsers = async (req, res, next) => {
   try {
+    const { isActive } = req.body;
     const users = await User.findAll({
       attributes: ["id", "username", "email", "isActive", "type"],
-      where: { isActive: true },
+      where: where({ isActive }),
       include: { model: OauthProfile, througth: { attributes: [] } },
     });
     if (users.length) {
