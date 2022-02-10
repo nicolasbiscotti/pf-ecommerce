@@ -20,6 +20,7 @@ export default function ShowUsers() {
               <td>Username</td>
               <td>Email</td>
               <td>Type</td>
+              <td></td>
             </tr>
           </thead>
           <tbody>{mapUsers(allUsers)}</tbody>

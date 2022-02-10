@@ -5,13 +5,19 @@ export const RowUserSc = styled.tr`
   .btnEdit {
     display: none;
     color: white;
+    cursor: pointer;
   }
-  &:hover {
-    .type {
-      display: none;
-    }
-    .btnEdit {
-      display: inline-block;
+  .delete {
+    cursor: pointer;
+  }
+  .edit {
+    &:hover {
+      .type {
+        display: none;
+      }
+      .btnEdit {
+        display: inline-block;
+      }
     }
   }
 `;

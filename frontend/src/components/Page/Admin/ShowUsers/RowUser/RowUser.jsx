@@ -1,6 +1,10 @@
 import { MdModeEditOutline } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { updateTypeUser } from "../../../../../redux/reducers/users/action";
+import {
+  deleteUser,
+  updateTypeUser,
+} from "../../../../../redux/reducers/users/action";
 import { RowUserSc } from "./style";
 export default function RowUser({ id, username, email, type }) {
   const dispatch = useDispatch();
@@ -15,9 +19,12 @@ export default function RowUser({ id, username, email, type }) {
     <RowUserSc>
       <td>{username}</td>
       <td>{email}</td>
-      <td>
+      <td className="edit">
         <span className="type">{type}</span>
         <MdModeEditOutline className="btnEdit" onClick={handleOnClickEdit} />
+      </td>
+      <td className="delete">
+        <AiFillDelete onClick={() => dispatch(deleteUser({ id }))} />
       </td>
     </RowUserSc>
   );
