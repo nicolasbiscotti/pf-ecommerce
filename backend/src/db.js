@@ -103,7 +103,7 @@ Order.belongsTo(User, { as: "user" });
 User.OauthProfile = User.hasMany(OauthProfile);
 OauthProfile.User = OauthProfile.belongsTo(User);
 
-Order.belongsToMany(Product, { through: OrderDetail });
+Order.belongsToMany(Product, { through: OrderDetail, as: 'details' });
 Product.belongsToMany(Order, { through: OrderDetail });
 
 module.exports = {

@@ -25,7 +25,6 @@ const getOrders = async (req, res, next) => {
         },
       ],
     });
-
     const data = {
       page: parseInt(page),
       ordersByPage: ORDER_PER_PAGE,
