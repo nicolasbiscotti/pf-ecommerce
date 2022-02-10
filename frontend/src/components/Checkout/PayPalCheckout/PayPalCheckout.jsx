@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import swal from "sweetalert";
 import { PayPalStyle } from "./PayPalStyle";
+import { corsAxiosPost } from "../../../services/corsAxios";
 
 export default function PayPalCheckout({
   cart,
@@ -131,22 +132,8 @@ export default function PayPalCheckout({
             button: "Accept",
           });
           axios.all([
-            axios("/sendmail", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json;charset=UTF-8",
-                "Access-Control-Allow-Origin": "*",
-              },
-              data: { ...orderData },
-            }),
-            axios("/orders", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json;charset=UTF-8",
-                "Access-Control-Allow-Origin": "*",
-              },
-              data: { ...orderData },
-            }),
+            corsAxiosPost("/sendmail", { ...orderData }),
+            corsAxiosPost("/orders", { ...orderData }),
           ]);
           dispatch(deleteCart());
           setStep(4);
@@ -245,6 +232,5 @@ export default function PayPalCheckout({
 //   ]
 // }
 
-//let email = res.payer.email_address;
 //let items = res.purchase_units[0].items //[{name unit_amout(.value) quantity},{}]
 //address Object address_line_1: "Sarmiento 4642", address_line_2: "Apt 2" admin_area_1: "Argentina",admin_area_2: "Santa Fe",country_code: "AR", postal_code: //"3000"
