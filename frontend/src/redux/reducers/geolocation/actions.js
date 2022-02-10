@@ -8,10 +8,10 @@ export function actionCreator(actionType, data) {
   };
 }
 
-export const getGeoUser = function () {
+export const getGeoUser = function (payload) {
   return async function (dispatch) {
     try {
-      const res = await axios.get("/geolocation/user");
+      const res = await axios.get(`/geolocation/user?ip=${payload}`);
       dispatch(actionCreator(GET_GEO_LOCATION, res.data));
     } catch (error) {
       console.log(error);
