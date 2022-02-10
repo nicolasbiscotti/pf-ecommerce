@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { OrdersUserStyled } from "./styles";
-import { getAllOrdersAdmin, getAllOrdersUser } from "../../../redux/reducers/orders/actions";
+import { getAllOrdersUser } from "../../../redux/reducers/orders/actions";
+import OrderCard from "./card";
 
 const OrderUser = function(){
   const dispatch=useDispatch();
-  const orders = useSelector(state=>state.ordersAdmin.ordersAdmin);
+  const orders = useSelector(state=>state.ordersAdmin);
   const [params,setParams] = useState({...orders});
 
   dispatch(getAllOrdersUser());
@@ -17,7 +18,12 @@ const OrderUser = function(){
   return (
     <OrdersUserStyled>
       <h1>Orders History</h1>
-      
+      <div>
+
+      </div>
+      <div>
+        {params.orders.map((e)=><OrderCard order={e} />)}
+      </div>
     </OrdersUserStyled>
   )
 }

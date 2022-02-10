@@ -1,11 +1,13 @@
 import React from "react";
-import cardOrderStyled from "./styles";
+import {CardOrderStyled} from "./styles";
 
 const OrderCard = function({order}){
   return (
-    <cardOrderStyled>
-      
-    </cardOrderStyled>
+    <CardOrderStyled>
+      <h1>N° {order.id} </h1>
+      <h2>Date: {order.date} </h2>
+      <h5>Status: {order.status.toUpperCase()} </h5>
+    </CardOrderStyled>
   )
 }
 
