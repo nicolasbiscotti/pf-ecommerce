@@ -6,7 +6,7 @@ import { SelectBoxStyled } from "./style";
 
 const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
   const dispatch = useDispatch();
-  const { handleCollapse, collapse, setCollapse } = useCollapse();
+  const { handleCollapse, collapse } = useCollapse();
   const state = useSelector((state) => state[nameReducer][nameKey]);
 
   const handleOnChangeChecks = (e) => {
@@ -16,16 +16,12 @@ const SelectBox = ({ data, nameReducer, nameKey, type, title, err }) => {
 
   return (
     <SelectBoxStyled>
-      <label className="collapse">
-        <label onMouseOver={() => setCollapse(true)} onClick={handleCollapse}>
-          {title}
-        </label>
-        {err && err[nameKey] && (
-          <span onMouseOver={() => console.log("*")}>*</span>
-        )}
+      <label className="collapse" onClick={handleCollapse}>
+        <label>{title}</label>
+        {err && err[nameKey] && <span>*</span>}
       </label>
       {collapse && data && (
-        <div className="checks" onMouseLeave={handleCollapse}>
+        <div className="checks">
           {data.map(({ id, name }) => {
             return (
               <span key={name}>
