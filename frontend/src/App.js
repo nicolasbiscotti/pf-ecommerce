@@ -35,8 +35,18 @@ function App() {
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
-          <Route path="orders" element={<OrderUser />} />
-          <Route path="orders/:id" element={<OrderDetail />} />
+
+          <Route path="orders" element={
+            <RequireAuth redict="/">
+              <OrderUser />
+            </RequireAuth>
+          } />
+          {/* <Route path="orders" element={<OrderUser />} /> */}
+          <Route path="orders/:id"  element={
+            <RequireAuth redict="/">
+              <OrderDetail />
+            </RequireAuth>
+          }  />
         </Route>
 
         <Route
