@@ -38,9 +38,8 @@ export const CreateCategorieStyled = styled.div`
     ul li {
       padding: 10px;
       border: 1px solid #9d9d9d;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 83% 1fr;
     }
   }
 
