@@ -40,10 +40,6 @@ export const CreateProductStyled = styled.div`
         gap: 3px;
       }
     }
-    label {
-      margin-bottom: -10px;
-      margin-top: 10px;
-    }
   }
   &.modalContent {
     margin: 0;
