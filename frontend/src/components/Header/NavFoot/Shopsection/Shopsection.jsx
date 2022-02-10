@@ -7,7 +7,7 @@ function NavFoot() {
     <ShopsectionStyled>
       <Shopbutton to="/shop" span="SHOP" />
       <Shopbutton to="/favorites" span="FAVORITES" />
-      <Shopbutton to="/favorites" span="SECTION I" />
+      <Shopbutton to="/orders" span="ORDERS" />
     </ShopsectionStyled>
   );
 }

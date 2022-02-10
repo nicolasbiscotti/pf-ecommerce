@@ -20,6 +20,8 @@ import Orders from "./components/Page/Admin/Orders/Orders";
 import RequireAuth from "./AuthProvider/RequireAuth";
 import RequestResetPass from "./components/Login/RequestResetPass";
 import ResetPassword from "./components/Login/ResetPassword";
+import OrderUser from "./components/Routes/orders";
+import OrderDetail from "./components/Routes/orders/OrderDetail"
 import ShowUsers from "./components/Page/Admin/ShowUsers/ShowUsers";
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
+          <Route path="orders" element={<OrderUser />} />
+          <Route path="orders/:id" element={<OrderDetail />} />
         </Route>
 
         <Route

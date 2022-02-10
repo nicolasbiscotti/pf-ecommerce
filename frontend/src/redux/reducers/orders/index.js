@@ -7,7 +7,10 @@ const initialState = {
   ordersCount: 0,
   orders: [],
   ordersDetails: {},
+  ordersKeys: [],
+  ordersUsers: []
 };
+
 export const ordersAdmin = (state = initialState, { type, payload }) => {
   const cases = {
     [GET_ORDERS_LIST]: () => {
@@ -20,7 +23,7 @@ export const ordersAdmin = (state = initialState, { type, payload }) => {
     },
     [UPDATE_STATUS_ONE_ORDER]: () => {
 
-    }
+    },
   };
   return (cases[type] && cases[type]()) || state;
 };

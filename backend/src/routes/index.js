@@ -10,6 +10,7 @@ const usersAuthGoogle = require("./users/users.auth.google.router");
 const mail = require("./mails/mail.router");
 const orders = require("./orders/orders.router");
 const userGeoLocation = require("./geolocation/userGeoLocation.router");
+const ordersUser = require("./orderUser/orderUser.router");
 
 const router = Router();
 
@@ -23,5 +24,6 @@ router.use(GOOGLE_PATH, usersAuthGoogle);
 router.use("/sendmail", mail);
 router.use("/orders", orders);
 router.use("/geolocation", userGeoLocation);
+router.use("/user/orders", ordersUser)
 
 module.exports = router;

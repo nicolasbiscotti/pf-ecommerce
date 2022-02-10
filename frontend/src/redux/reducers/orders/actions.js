@@ -1,4 +1,3 @@
-// import { axiosGet, axiosPut } from "../../../services/axios";
 import { corsAxiosGet, corsAxiosPut } from "../../../services/corsAxios";
 import { actionCreator } from "../products/actions";
 import { GET_ONE_ORDER, GET_ORDERS_LIST } from "./const";
@@ -23,5 +22,24 @@ export const updateOrderStatusDetailAdmin = ({ id, status }) => {
     console.log(isUpdated.msg)
     await getAllOrdersAdmin({ page:0, status:"" });
     // dispatch(actionCreator(UPDATE_STATUS_ONE_ORDER, isUpdated));
+  };
+};
+
+export const getAllOrdersUser = ({id, page}) => {
+  return async function (dispatch){
+    let allOrdersUser;
+    if(page){
+      allOrdersUser = await corsAxiosGet(`/user/orders?page=${page}`);
+    }else{
+      allOrdersUser = await corsAxiosGet("/user/orders");
+    }
+    dispatch(actionCreator(GET_ORDERS_LIST, allOrdersUser))
+  }
+}
+
+export const getOrderDetailUser = ({ id }) => {
+  return async (dispatch) => {
+    const orderDetail = await corsAxiosGet(`/user/orders/${id}`);
+    dispatch(actionCreator(GET_ONE_ORDER, orderDetail));
   };
 };
