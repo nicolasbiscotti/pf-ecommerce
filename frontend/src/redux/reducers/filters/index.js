@@ -15,6 +15,7 @@ export const filters = (store = initialStore, { type, payload }) => {
     case SELECT_CATEGORY:
       if (payload.name === "All" && payload.id === -1) {
         delete store["category"];
+        delete store["nameSearch"];
         return {
           ...store,
         };
