@@ -21,13 +21,13 @@ corsAxios.interceptors.request.use(
 );
 export default corsAxios;
 
-export const corsAxiosGet = async ({ url }) => {
+export const corsAxiosGet = async ( url ) => {
   // url --> "/users/delete"
   const { data } = await corsAxios.get(`${REACT_APP_BACKEND}${url}`);
   return data;
 };
 
-export const corsAxiosPost = async ({ url, body }) => {
+export const corsAxiosPost = async ( url, body ) => {
   const { data } = await corsAxios.post(`${REACT_APP_BACKEND}${url}`, {
     ...body,
   });
