@@ -50,6 +50,7 @@ function App() {
           <Route path="create/category" element={<CreateCategories />} />
           <Route path="orders" element={<Orders />} />
           <Route path="users" element={<ShowUsers />} />
+          <Route path="update/users/:id" element={<ShowUsers />} />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>
