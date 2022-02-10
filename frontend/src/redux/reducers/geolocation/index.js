@@ -1,4 +1,4 @@
-import { GET_GEO_LOCATION } from "./const";
+import { GET_GEO_LOCATION, SET_CAPITAL } from "./const";
 
 const initialState = {};
 
@@ -8,7 +8,10 @@ export const geolocation = (state = initialState, { type, payload }) => {
       return {
         countryCapital: payload.country_capital,
         countryCode: payload.country_code,
+        countryName: payload.country_name,
       };
+    case SET_CAPITAL:
+      return { ...state, countryCapital: payload };
     default:
       return state;
   }
