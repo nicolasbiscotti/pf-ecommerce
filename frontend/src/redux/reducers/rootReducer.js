@@ -13,6 +13,7 @@ import { updateProduct } from "./updateProduct";
 import { productsAdmin } from "./productsAdmin";
 import { ordersAdmin } from "./orders";
 import { geolocation } from "./geolocation";
+import { users } from "./users";
 
 export const rootReducer = combineReducers({
   products,
@@ -29,4 +30,5 @@ export const rootReducer = combineReducers({
   productsNames,
   ordersAdmin,
   geolocation,
+  users,
 });

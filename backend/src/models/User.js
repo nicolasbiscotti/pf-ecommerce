@@ -57,8 +57,8 @@ module.exports = (sequelize) => {
         defaultValue: true,
       },
       type: {
-        type: DataTypes.ENUM("user", "client", "admin"),
-        defaultValue: "user",
+        type: DataTypes.ENUM("client", "admin"),
+        defaultValue: "client",
       },
     },
     { timestamps: false }

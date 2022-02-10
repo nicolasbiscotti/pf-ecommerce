@@ -22,6 +22,8 @@ import RequestResetPass from "./components/Login/RequestResetPass";
 import ResetPassword from "./components/Login/ResetPassword";
 import OrderUser from "./components/Routes/orders";
 import OrderDetail from "./components/Routes/orders/OrderDetail"
+import ShowUsers from "./components/Page/Admin/ShowUsers/ShowUsers";
+
 function App() {
   return (
     <AppStyled className="App">
@@ -51,6 +53,8 @@ function App() {
           <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="users" element={<ShowUsers />} />
+          <Route path="update/users/:id" element={<ShowUsers />} />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>
