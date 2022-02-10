@@ -11,7 +11,7 @@ const createOrder = async (req, res, next) => {
       await newOrder.setUser(idUser); // id del usuario que compra
       for (let i = 0; i < products.length; i++) {
         const { id, price, amount } = products[i];
-        await newOrder.addProduct(id, { through: { amount, price } });
+        await newOrder.addDetails([id], { through: { amount, price } });
       }
       res.json({ msg: "Order created successfully" });
     } else {
