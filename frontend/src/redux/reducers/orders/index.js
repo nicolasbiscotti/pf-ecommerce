@@ -1,4 +1,4 @@
-import { GET_ORDERS_LIST, GET_ONE_ORDER, UPDATE_STATUS_ONE_ORDER } from "./const";
+import { GET_ORDERS_LIST, GET_ONE_ORDER, UPDATE_STATUS_ONE_ORDER, GET_ORDERS_USER } from "./const";
 
 const initialState = {
   page: 0,
@@ -7,7 +7,10 @@ const initialState = {
   ordersCount: 0,
   orders: [],
   ordersDetails: {},
+  ordersKeys: [],
+  ordersUsers: []
 };
+
 export const ordersAdmin = (state = initialState, { type, payload }) => {
   const cases = {
     [GET_ORDERS_LIST]: () => {

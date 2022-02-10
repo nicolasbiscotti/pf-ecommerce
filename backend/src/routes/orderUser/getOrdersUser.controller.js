@@ -1,13 +1,13 @@
-const { ORDER_PER_PAGE } = require("../../../constants/orders");
-const { Order, Product, User } = require("../../../db");
-const { cleanOrders } = require("../services/cleanOrders");
+const { Order, Product, User } = require("../../db");
+const { ORDER_PER_PAGE } = require("../../constants/orders");
+const { cleanOrders } = require("../orders/services/cleanOrders");
 
-const getOrders = async (req, res, next) => {
+const getOrderUser = async (req, res, next) => {
   try {
-    const { page = 0, status } = req.query;
-
+    const idUser  = req.user.id;
+    const { page = 0 } = req.query;
     const { count, rows } = await Order.findAndCountAll({
-      where: status ? {status}: {},
+      where: { userId: idUser},
       attributes: ["id", "date", "status", "address"],
       offset: page * ORDER_PER_PAGE,
       limit: ORDER_PER_PAGE,
@@ -15,17 +15,16 @@ const getOrders = async (req, res, next) => {
       include: [
         {
           model: User,
-          attributes: ["username", "email"],
+          attributes: ["username", "id"],
           as: "user",
         },
         {
           model: Product,
-          attributes: ["name"],
+          attributes: ["name","id","mainImg"],
           as: "Products",
         },
       ],
     });
-
     const data = {
       page: parseInt(page),
       ordersByPage: ORDER_PER_PAGE,
@@ -39,4 +38,4 @@ const getOrders = async (req, res, next) => {
     next(error);
   }
 };
-module.exports = getOrders;
+module.exports = getOrderUser;

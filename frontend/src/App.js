@@ -20,6 +20,7 @@ import Orders from "./components/Page/Admin/Orders/Orders";
 import RequireAuth from "./AuthProvider/RequireAuth";
 import RequestResetPass from "./components/Login/RequestResetPass";
 import ResetPassword from "./components/Login/ResetPassword";
+import OrderUser from "./components/Routes/orders";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="detailts/:idProduct" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
+          <Route path="orders" element={<OrderUser />} />
         </Route>
 
         <Route
