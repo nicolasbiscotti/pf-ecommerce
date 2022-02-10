@@ -20,6 +20,7 @@ import Orders from "./components/Page/Admin/Orders/Orders";
 import RequireAuth from "./AuthProvider/RequireAuth";
 import RequestResetPass from "./components/Login/RequestResetPass";
 import ResetPassword from "./components/Login/ResetPassword";
+import ShowUsers from "./components/Page/Admin/ShowUsers/ShowUsers";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path="update/product/:id" element={<UpdateProduct />} />
           <Route path="create/category" element={<CreateCategories />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="users" element={<ShowUsers />} />
         </Route>
 
         <Route path="/login" element={<LoginPage />}>
