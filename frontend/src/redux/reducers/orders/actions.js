@@ -17,10 +17,10 @@ export const getOrderDetailAdmin = ({ id }) => {
 };
 
 export const updateOrderStatusDetailAdmin = ({ id, status }) => {
-  return async () => {
+  return async (dispatch) => {
     const isUpdated = await corsAxiosPut(`/orders/${id}`, {id, status});
     console.log(isUpdated.msg)
-    await getAllOrdersAdmin({ page:0, status:"" });
+     dispatch(getAllOrdersAdmin({ page:0, status:"" }));
     // dispatch(actionCreator(UPDATE_STATUS_ONE_ORDER, isUpdated));
   };
 };
