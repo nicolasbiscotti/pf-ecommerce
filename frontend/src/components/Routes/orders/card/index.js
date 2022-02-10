@@ -1,17 +1,19 @@
 import React from "react";
+import { Button } from "../../../common/button/Button";
 import {CardOrderStyled} from "./styles";
 
 const OrderCard = function({order}){
+  console.log(order)
   return (
     <CardOrderStyled>
       <div>
         <div>
-          <h2>N° {order.id} </h2>
-          <h2>Date: {order.date} </h2>
-          <h4>Status: {order.status.toUpperCase()} </h4>
-          <h4>Direction: </h4>
+          <p>N° {order.id} </p>
+          <p>Date: {order.date.split('T')[0]} </p>
+          <p>Status: {order.status.toUpperCase()} </p>
+          <p>Address: {order.address}</p>
         </div>
-        <span>Ver detalles</span>
+        <span><Button>Ver detalles</Button></span>
       </div>
       <div>
         {}
