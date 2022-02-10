@@ -9,18 +9,18 @@ const OrderUser = function(){
   const orders = useSelector(state=>state.ordersAdmin);
   const [params,setParams] = useState({...orders});
 
-  dispatch(getAllOrdersUser());
+  useEffect(()=>{
+    dispatch(getAllOrdersUser());
+  },[dispatch])
 
   useEffect(()=>{
     setParams({...orders})
-  },[orders,setParams]);
+  },[orders]);
 
   return (
     <OrdersUserStyled>
       <h1>Orders History</h1>
-      <div>
-
-      </div>
+      <p>You have {params.ordersCount} orders. </p>
       <div>
         {params.orders.map((e)=><OrderCard order={e} />)}
       </div>

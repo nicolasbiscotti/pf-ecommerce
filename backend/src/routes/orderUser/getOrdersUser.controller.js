@@ -20,13 +20,11 @@ const getOrderUser = async (req, res, next) => {
         },
         {
           model: Product,
-          attributes: ["name"],
+          attributes: ["name","id","mainImg"],
           as: "Products",
         },
       ],
     });
-
-    console.log(rows)
     const data = {
       page: parseInt(page),
       ordersByPage: ORDER_PER_PAGE,
