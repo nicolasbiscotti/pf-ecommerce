@@ -5,7 +5,7 @@
       "password": "admin123",
       "firstName": "admin",
       "lastName": "root",
-      "email": "admin@gmail.com",
+      "email": "@arriondovfernando@gmail.com",
       "verified": true,
       "state": true,
       "type": "admin"
@@ -15,7 +15,7 @@
       "password": "superuser",
       "firstName": "admin",
       "lastName": "root",
-      "email": "nicotti@gmail",
+      "email": "testedarcode@gmail.com",
       "verified": true,
       "state": true,
       "type": "admin"
