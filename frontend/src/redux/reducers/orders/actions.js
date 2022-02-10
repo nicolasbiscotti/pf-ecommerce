@@ -39,7 +39,6 @@ export const getAllOrdersUser = ({id, page}) => {
 
 export const getOrderDetailUser = ({ id }) => {
   return async (dispatch) => {
-    console.log("entramos")
     const orderDetail = await corsAxiosGet(`/user/orders/${id}`);
     dispatch(actionCreator(GET_ONE_ORDER, orderDetail));
   };

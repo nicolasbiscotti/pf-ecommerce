@@ -11,7 +11,7 @@ export const CardOrderStyled = styled.div`
     display: flex;
   }
   .cardOrderBottom {
-    display: flex;
+    display: "flex";
     
   }
   hr {

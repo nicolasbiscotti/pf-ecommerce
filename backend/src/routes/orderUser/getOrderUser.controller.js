@@ -4,8 +4,8 @@ const { cleanUserOrder } = require("./services/cleanUserOrder");
 const getOrderUser = async (req, res, next) => {
   try {
     // const idUser = req.user.id;
-    const { idOrder } = req.params;
-    const data = await Order.findByPk(idOrder, {
+    const { id } = req.params;
+    const data = await Order.findByPk(id, {
       include: [
         {
           model: User, 
@@ -19,7 +19,6 @@ const getOrderUser = async (req, res, next) => {
         },
       ],
     });
-    
     res.json(cleanUserOrder(data));
   } catch (error) {
     next(error);

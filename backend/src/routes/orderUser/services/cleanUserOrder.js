@@ -1,6 +1,6 @@
 module.exports = {
   cleanUserOrder: (order) => {
-    const { id, date, status, address, user, details } = order;
+    const { id,date, status, address, user, details } = order;
 
     const orderDetails = details.map((element) => {
       const { name, mainImg, id, OrderDetail } = element;

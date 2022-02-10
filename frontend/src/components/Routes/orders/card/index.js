@@ -3,20 +3,18 @@ import { Link } from "react-router-dom";
 import { Button } from "../../../common/button/Button";
 import { CardOrderStyled } from "./styles";
 
-const OrderCard = function ({ order }) {
+const OrderCard = function ({ order, props }) {
   return (
-    <CardOrderStyled>
+    <CardOrderStyled props={props}>
       <div>
-        {/* <div className="cardOrderTop"> */}
           <p>
             <b>N°</b> {order.id}&emsp;&emsp;
-            <b>Date</b> {order.date.split("T")[0]}&emsp;&emsp;
+            <b>Date</b> {order.date}&emsp;&emsp;
             <b>Status</b> {order.status.toUpperCase()}
           </p>
           <p>
             <b>Address</b> {order.address}
           </p>
-        {/* </div> */}
       </div>
       <hr />
       <div>
