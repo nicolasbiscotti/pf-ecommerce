@@ -1,26 +1,32 @@
-const { Order, Product, User } = require("../../../db");
-const { cleanOrders } = require("../services/cleanOrder");
+const { Order, Product, User } = require("../../db");
+const { ORDER_PER_PAGE } = require("../../constants/orders");
+const { cleanOrders } = require("../orders/services/cleanOrders");
 
 const getOrderUser = async (req, res, next) => {
   try {
-    const { idUser } = req.user.id;
+    const idUser  = req.user.id;
     const { page = 0 } = req.query;
-
     const { count, rows } = await Order.findAndCountAll({
+      where: { userId: idUser},
       attributes: ["id", "date", "status", "address"],
-      where: { idUser },
       offset: page * ORDER_PER_PAGE,
       limit: ORDER_PER_PAGE,
       distinct: true,
       include: [
         {
+          model: User,
+          attributes: ["username", "id"],
+          as: "user",
+        },
+        {
           model: Product,
           attributes: ["name"],
-          as: "details",
+          as: "Products",
         },
       ],
     });
 
+    console.log(rows)
     const data = {
       page: parseInt(page),
       ordersByPage: ORDER_PER_PAGE,

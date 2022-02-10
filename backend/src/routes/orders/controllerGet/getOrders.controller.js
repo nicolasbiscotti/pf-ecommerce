@@ -20,7 +20,7 @@ const getOrders = async (req, res, next) => {
         {
           model: Product,
           attributes: ["name"],
-          as: "details",
+          as: "Products",
         },
       ],
     });

@@ -3,7 +3,7 @@ module.exports = {
     return rows.map((item) => {
       const { id, date, status, address, user } = item;
 
-      const detailsMaped = item.details.map((element) => {
+      const detailsMaped = item.Products.map((element) => {
         const { name, OrderDetail } = element;
         const { amount, price } = OrderDetail
         return { name, amount, price}

@@ -203,6 +203,23 @@
           "price": 300
         }
       ]
+    },
+    {
+      "idUser": 3,
+      "date": "2022/01/31",
+      "address": "colombia, calle tal numero 2",
+      "products": [
+        {
+          "id": 1,
+          "amount": 1,
+          "price": 200
+        },
+        {
+          "id": 2,
+          "amount": 1,
+          "price": 300
+        }
+      ]
     }
   ]
 }

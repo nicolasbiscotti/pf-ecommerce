@@ -1,21 +1,21 @@
-import { axiosGet } from "../../../services/axios";
+import { corsAxiosGet } from "../../../services/corsAxios";
 import { actionCreator } from "../products/actions";
 import { GET_ORDERS_LIST } from "./const";
 
 export const getAllOrdersAdmin = ({ page }) => {
   return async (dispatch) => {
-    const allOrdersAdmin = await axiosGet(`/orders?page=${page}`);
+    const allOrdersAdmin = await corsAxiosGet(`/orders?page=${page}`);
     dispatch(actionCreator(GET_ORDERS_LIST, allOrdersAdmin));
   };
 };
 
-export const getAllOrdersUser = (page = false) => {
+export const getAllOrdersUser = (id,page = false) => {
   return async function (dispatch){
     let allOrdersUser;
     if(page){
-      allOrdersUser = await axiosGet(`/orders/user?page=${page}`);
+      allOrdersUser = await corsAxiosGet(`/user/orders?page=${page}`);
     }else{
-      allOrdersUser = await axiosGet("/orders/user");
+      allOrdersUser = await corsAxiosGet("/user/orders");
     }
     dispatch(actionCreator(GET_ORDERS_LIST, allOrdersUser))
   }
