@@ -6,6 +6,7 @@ import { ButtonStyled } from "./Button/ButtonStyled";
 import { useEffect } from "react";
 import { getGeoUser } from "../../../../redux/reducers/geolocation/actions";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 function LocationMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,10 @@ function LocationMenu() {
   useEffect(() => {
     let mounted = true;
     if (mounted && Object.keys(country).length === 0) {
-      dispatch(getGeoUser());
+      (async () => {
+        let ip = await axios("https://ipapi.co/ip").then((res) => res.data);
+        dispatch(getGeoUser(ip));
+      })();
     }
     return () => {
       mounted = false;
