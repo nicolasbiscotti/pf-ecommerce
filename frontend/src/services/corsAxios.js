@@ -34,7 +34,7 @@ export const corsAxiosPost = async ( url, body ) => {
   return data;
 };
 
-export const corsAxiosPut = async ({ url, body }) => {
+export const corsAxiosPut = async ( url, body ) => {
   const { data } = await corsAxios.put(`${REACT_APP_BACKEND}${url}`, {
     ...body,
   });
