@@ -9,6 +9,9 @@ export const ButtonStyled = styled.button`
   top: ${({ top }) => top || "auto"};
   left: ${({ left }) => left || "auto"};
   z-index: ${({ zindex }) => zindex || "auto"};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   &:hover {
     cursor: pointer;
   }

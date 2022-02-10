@@ -1,1 +1,2 @@
 export const GET_GEO_LOCATION = "GET_GEO_LOCATION";
+export const SET_CAPITAL = "SET_CAPITAL";

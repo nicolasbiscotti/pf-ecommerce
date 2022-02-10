@@ -1,48 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDom from "react-dom";
 import { CgClose } from "react-icons/cg";
-import { ButtonStyled } from "../Button/ButtonStyled";
+import { ButtonStyled, ModalStyled } from "./ModalStyled";
 import { lightblue } from "../../../../../utilsStyles/utilsColors";
+import { useDispatch, useSelector } from "react-redux";
+import { setCapital } from "../../../../../redux/reducers/geolocation/actions";
+import { useEffect } from "react";
+import axios from "axios";
 
-const MODAL_STYLES = {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  height: "35vh",
-  width: "50%",
-  padding: "3rem",
-  zIndex: 1000,
-  borderRadius: "0.4rem",
-  backgroundColor: "#FFF",
-  fontFamily: "Helvetica",
-  fontSize: "1.7rem",
-  filter: "blur(0.1rem)",
-};
+function Modal({ isOpen, children, onClose, setIsOpen }) {
+  const countryName = useSelector((store) => store.geolocation.countryName);
+  const [states, setStates] = useState([]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (isOpen) {
+      axios(`https://www.universal-tutorial.com/api/states/${countryName}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+          "Access-Control-Allow-Origin": "*",
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJfZW1haWwiOiJhcnJpb25kb3ZmZXJuYW5kb0BnbWFpbC5jb20iLCJhcGlfdG9rZW4iOiI4V2RWVmpUY2JyQlhXN2dJeWx3NUhPUF9QY25lQ0duTEFGb3d5U1pDNzhTMXJJblM3cUE3SmFrY1p3ejM1bnh6dmgwIn0sImV4cCI6MTY0NDUzMzEwNH0.vV2iR3FwP6nl4Z8qlrRjZf64Y67XfDjO7PEKc95g7Hc",
+        },
+        redirect: "follow",
+      })
+        .then((response) => setStates([...response.data]))
+        .catch((error) => console.log("error", error));
+    }
+  }, [isOpen, countryName]);
 
-const OVERLAY_STYLES = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: "rgba(0, 0, 0, .5)",
-  zIndex: 1000,
-};
+  const handleChange = (e) => {
+    if (e.target.value === "") return;
+    dispatch(setCapital(e.target.value));
+    setIsOpen(false);
+  };
 
-function Modal({ open, children, onClose }) {
-  if (!open) return null;
+  if (!isOpen) return null;
 
   return ReactDom.createPortal(
-    <>
-      <div style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <ModalStyled>
+      <div className="overlay-styles" />
+      <div className="modal-styles">
+        <div className="modal-container">
           <div>
-            <h3 style={{ marginBottom: "0.7rem" }}>
-              Elegí donde recibir tus compras
-            </h3>
-            <p>Podrás ver costos y tiempo de entrega en todo lo que busques.</p>
+            <h3>Choose your location</h3>
+            <p>
+              <br />
+              &nbsp; Delivery options and delivery speeds may vary for different
+              locations
+            </p>
+            <select
+              defaultValue=""
+              style={{ width: "80%" }}
+              onChange={(e) => handleChange(e)}
+            >
+              <option></option>
+              {states.length > 0 &&
+                states.map((s) => (
+                  <option key={s.state_name} value={s.state_name}>
+                    {s.state_name}
+                  </option>
+                ))}
+            </select>
           </div>
           <ButtonStyled onClick={onClose}>
             <CgClose
@@ -56,7 +75,7 @@ function Modal({ open, children, onClose }) {
           </ButtonStyled>
         </div>
       </div>
-    </>,
+    </ModalStyled>,
     document.getElementById("portal")
   );
 }

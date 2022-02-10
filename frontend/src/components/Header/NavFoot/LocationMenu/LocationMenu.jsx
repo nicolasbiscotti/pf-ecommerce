@@ -32,7 +32,7 @@ function LocationMenu() {
     <LocationMenuStyled>
       <GoLocation />
       <div>
-        <p>Enviar a</p>
+        <p>Deliver to</p>
         <p>{Object.keys(country).length ? country.countryCapital : "---"}</p>
       </div>
       <div style={{ position: "relative", zIndex: 1 }}>
@@ -45,7 +45,11 @@ function LocationMenu() {
           left="-8rem"
           zindex="-1"
         ></ButtonStyled>
-        <Modal open={isOpen} onClose={handleOnClose}></Modal>
+        <Modal
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          onClose={handleOnClose}
+        ></Modal>
       </div>
     </LocationMenuStyled>
   );

@@ -7,6 +7,7 @@ const getUserGeoLocation = async (req, res, next) => {
       data = {
         country_capital: response.data.country_capital,
         country_code: response.data.country_code,
+        country_name: response.data.country_name,
       };
     });
     res.json(data);
