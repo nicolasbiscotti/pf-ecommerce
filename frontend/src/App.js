@@ -21,7 +21,7 @@ import RequireAuth from "./AuthProvider/RequireAuth";
 import RequestResetPass from "./components/Login/RequestResetPass";
 import ResetPassword from "./components/Login/ResetPassword";
 import OrderUser from "./components/Routes/orders";
-
+import OrderDetail from "./components/Routes/orders/OrderDetail"
 function App() {
   return (
     <AppStyled className="App">
@@ -34,6 +34,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="favorites" />
           <Route path="orders" element={<OrderUser />} />
+          <Route path="orders/:id" element={<OrderDetail />} />
         </Route>
 
         <Route

@@ -9,7 +9,6 @@ export const getAllOrdersAdmin = ({ page, status }) => {
   };
 };
 
-
 export const getOrderDetailAdmin = ({ id }) => {
   return async (dispatch) => {
     const orderDetail = await corsAxiosGet(`/orders/${id}`);
@@ -25,7 +24,8 @@ export const updateOrderStatusDetailAdmin = ({ id, status }) => {
     // dispatch(actionCreator(UPDATE_STATUS_ONE_ORDER, isUpdated));
   };
 };
-export const getAllOrdersUser = (id,page = false) => {
+
+export const getAllOrdersUser = ({id, page}) => {
   return async function (dispatch){
     let allOrdersUser;
     if(page){
@@ -36,3 +36,11 @@ export const getAllOrdersUser = (id,page = false) => {
     dispatch(actionCreator(GET_ORDERS_LIST, allOrdersUser))
   }
 }
+
+export const getOrderDetailUser = ({ id }) => {
+  return async (dispatch) => {
+    console.log("entramos")
+    const orderDetail = await corsAxiosGet(`/user/orders/${id}`);
+    dispatch(actionCreator(GET_ONE_ORDER, orderDetail));
+  };
+};

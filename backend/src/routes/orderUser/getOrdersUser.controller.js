@@ -2,7 +2,7 @@ const { Order, Product, User } = require("../../db");
 const { ORDER_PER_PAGE } = require("../../constants/orders");
 const { cleanUserOrders } = require("./services/cleanUserOrders");
 
-const getOrderUser = async (req, res, next) => {
+const getOrdersUser = async (req, res, next) => {
   try {
     const idUser = req.user.id;
     const { page = 0 } = req.query;
@@ -38,4 +38,4 @@ const getOrderUser = async (req, res, next) => {
     next(error);
   }
 };
-module.exports = getOrderUser;
+module.exports = getOrdersUser;

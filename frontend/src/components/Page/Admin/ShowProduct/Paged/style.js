@@ -23,6 +23,9 @@ export const PagedStyled = styled.div`
         &:hover {
           background-color: ${bgButtonAdmin};
         }
+        .orderClients {
+        background-color: red;
+        }
       }
     }
   }

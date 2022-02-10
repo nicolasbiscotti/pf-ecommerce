@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { OrdersUserStyled } from "./styles";
 import { getAllOrdersUser } from "../../../redux/reducers/orders/actions";
 import OrderCard from "./card";
+import Paged from "./Paged/Paged";
 
 const OrderUser = function(){
   const dispatch=useDispatch();
@@ -10,20 +11,20 @@ const OrderUser = function(){
   const [params,setParams] = useState({...orders});
 
   useEffect(()=>{
-    dispatch(getAllOrdersUser());
+    dispatch(getAllOrdersUser({page: 0}));
   },[dispatch])
 
   useEffect(()=>{
     setParams({...orders})
   },[orders]);
-
   return (
     <OrdersUserStyled>
       <h1>Orders History</h1>
       <p>You have {params.ordersCount} orders. </p>
       <div>
-        {params.orders.map((e)=><OrderCard order={e} />)}
+        {params.orders.map((e, index)=><OrderCard key={e.id} order={e} />)}
       </div>
+      <Paged nameReducer={"ordersAdmin"} className="orderClients"/>  
     </OrdersUserStyled>
   )
 }

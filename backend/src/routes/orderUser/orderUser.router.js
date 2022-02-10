@@ -1,10 +1,12 @@
 const { Router } = require("express");
-const getOrderUser = require("./getOrdersUser.controller");
+const getOrdersUser = require("./getOrdersUser.controller");
+const getOrderUser = require("./getOrderUser.controller");
 const passport = require("passport");
 
 const ordersUser = Router();
 
 
-ordersUser.route("/").get(passport.authenticate("jwt"), getOrderUser);
+ordersUser.route("/").get(passport.authenticate("jwt"), getOrdersUser);
+ordersUser.route("/:id").get(passport.authenticate("jwt"), getOrderUser);
 
 module.exports = ordersUser;

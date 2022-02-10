@@ -1,4 +1,4 @@
-import { GET_ORDERS_LIST, GET_ONE_ORDER, UPDATE_STATUS_ONE_ORDER, GET_ORDERS_USER } from "./const";
+import { GET_ORDERS_LIST, GET_ONE_ORDER, UPDATE_STATUS_ONE_ORDER } from "./const";
 
 const initialState = {
   page: 0,
@@ -23,7 +23,7 @@ export const ordersAdmin = (state = initialState, { type, payload }) => {
     },
     [UPDATE_STATUS_ONE_ORDER]: () => {
 
-    }
+    },
   };
   return (cases[type] && cases[type]()) || state;
 };
