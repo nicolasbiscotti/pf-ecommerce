@@ -1,13 +1,22 @@
 const nodemailer = require("nodemailer");
-const { USER_NODEMAILER, PASS_NODEMAILER } = require("../constants/config");
+const {
+  NODEMAILER_USER,
+  NODEMAILER_CLIENT_ID,
+  NODEMAILER_REFRESH_TOKEN,
+  NODEMAILRE_ACCES_TOKEN,
+} = require("../constants/config");
 
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 465,
-  secure: true, // true for 465, false for other ports
+  secure: true,
   auth: {
-    user: USER_NODEMAILER, // generated ethereal user
-    pass: PASS_NODEMAILER, // generated ethereal password
+    type: "OAuth2",
+    user: NODEMAILER_USER,
+    clientId: NODEMAILER_CLIENT_ID,
+    clientSecret: NODEMAILER_CLIENT_ID,
+    refreshToken: NODEMAILER_REFRESH_TOKEN,
+    accessToken: NODEMAILRE_ACCES_TOKEN,
   },
 });
 

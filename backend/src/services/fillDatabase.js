@@ -6,6 +6,7 @@ const { users } = require("../mockup/users.json");
 const { orders } = require("../mockup/orders.json");
 const { axiosPost } = require("./axios");
 const axios = require("axios");
+const userService = require("../routes/users/services/userService");
 const { SUPER_USER, SUPER_PASSWORD } = process.env;
 
 module.exports = {
@@ -54,8 +55,8 @@ module.exports = {
   loadMockUsers: async function () {
     try {
       for (let i = 0; i < users.length; i++) {
-        const element = users[i];
-        await axiosPost(`${URL_BASE_BACKEND}/users`, element);
+        const user = users[i];
+        await userService.createUser(user);
       }
     } catch (error) {
       console.log(error);
