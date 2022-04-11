@@ -1,5 +1,5 @@
 const transporter = require("../../../config/nodemailer");
-const { REDIRECT_URI } = require("../../../constants/config");
+const { REDIRECT_URI, NODEMAILER_USER } = require("../../../constants/config");
 const userService = require("../services/userService");
 const State = {
   COMPLETE: "COMPLETE",
@@ -12,7 +12,7 @@ const sendResetPassLink = async (req, res, next) => {
     const user = await userService.findByEmailOrUsername(req.body);
     if (user) {
       transporter.sendMail({
-        from: '"reset password 👻" <testedarcode@gmail.com>', // sender address
+        from: `"reset password 👻" <${NODEMAILER_USER}>`, // sender address
         to: user.email, // list of receivers
         subject: "reset password required ✔", // Subject line
         text: `${REDIRECT_URI}/resetPassword?id=${user.id}&token=${user.verificationToken}`, // plain text body
