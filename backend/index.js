@@ -32,10 +32,10 @@ const PORT = process.env.PORT;
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
     await loadMockUsers();
-    // await loadMockSuppliers();
-    // await loadMockCategories();
+    await loadMockSuppliers();
+    await loadMockCategories();
     await loadMockProducts();
-    // await loadMockOrders();
+    await loadMockOrders();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
   });
 });
