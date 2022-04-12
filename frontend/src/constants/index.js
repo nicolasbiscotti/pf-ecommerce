@@ -7,8 +7,7 @@ export const REACT_APP_GITHUB_CLIENT_SECRET =
 export const REACT_APP_GITHUB_CLIENT_ID =
   process.env.REACT_APP_GITHUB_CLIENT_ID;
 export const REACT_APP_PROXY_URL = process.env.REACT_APP_PROXY_URL;
-export const REACT_APP_GITHUB_OAUTH_URL =
-  process.env.REACT_APP_GITHUB_OAUTH_URL;
+export const REACT_APP_GITHUB_OAUTH_URL = `https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}`;
 export const REACT_APP_POST_PROXY_URL = process.env.REACT_APP_POST_PROXY_URL;
 
 // Google OAuth Login

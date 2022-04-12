@@ -29,11 +29,11 @@ const {
 const PORT = process.env.PORT;
 
 // Syncing all the models at once.
-conn.sync({ force: false }).then(() => {
+conn.sync({ force: true }).then(() => {
   server.listen(PORT, async () => {
+    await loadMockUsers();
     await loadMockSuppliers();
     await loadMockCategories();
-    await loadMockUsers();
     await loadMockProducts();
     await loadMockOrders();
     console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
