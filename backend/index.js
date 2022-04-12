@@ -26,10 +26,11 @@ const {
   loadMockUsers,
   loadMockOrders,
 } = require("./src/services/fillDatabase.js");
+const { SEQUELIZE_SYNC_FORCE } = require("./src/constants/config.js");
 const PORT = process.env.PORT;
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: SEQUELIZE_SYNC_FORCE }).then(() => {
   server.listen(PORT, async () => {
     await loadMockUsers();
     await loadMockSuppliers();
