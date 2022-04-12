@@ -1,4 +1,4 @@
-const { URL_BASE_BACKEND } = require("../constants/urls");
+const { URL_BASE_BACKEND } = require("../constants/config");
 const { suppliers } = require("../mockup/suppliers.json");
 const { categories } = require("../mockup/categories.json");
 const { products } = require("../mockup/products.json");

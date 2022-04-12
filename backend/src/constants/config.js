@@ -12,7 +12,7 @@ module.exports = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
   GOOGLE_PATH: process.env.GOOGLE_PATH,
-  GOOGLE_CALLBACK_URL: `http://localhost:3001${process.env.GOOGLE_PATH}/callback`,
+  GOOGLE_CALLBACK_URL: `${process.env.URL_BASE_BACKEND}${process.env.GOOGLE_PATH}/callback`,
 
   NODEMAILER_USER: process.env.NODEMAILER_USER,
   NODEMAILER_CLIENT_ID: process.env.NODEMAILER_CLIENT_ID,
